@@ -62,8 +62,10 @@ def main() -> None:
 
     pack_validator = validator("pack.schema.json")
     total = 0
+    searchable_form_count = 0
     difficulty_counts = {str(level): 0 for level in range(1, 6)}
     identifiers: set[str] = set()
+    production_families: dict[str, dict] = {}
     for item in manifest["packs"]:
         path = EXPRESSIONS / item["file"]
         if not path.is_file():
@@ -83,10 +85,21 @@ def main() -> None:
             difficulty_counts[str(family["difficulty"])] += 1
             if family["publicationStatus"] != "verified":
                 raise SystemExit(f"Production pack contains an unverified family: {family['id']}")
+            review = family["review"]
+            if not all(review["gates"].values()):
+                raise SystemExit(f"Verified family has an incomplete review gate: {family['id']}")
+            if review.get("reviewerType") not in {"human", "ai-editorial", "mixed"} or not review.get("verifiedAt"):
+                raise SystemExit(f"Verified family lacks disclosed final-review metadata: {family['id']}")
+            production_families[family["id"]] = family
+            searchable_forms = {family["primary"]["japanese"]}
+            searchable_forms.update(form["japanese"] for form in family["forms"])
+            searchable_form_count += len(searchable_forms)
         total += pack["familyCount"]
 
     if total != manifest["familyCount"]:
         raise SystemExit("Manifest familyCount does not equal the sum of pack counts.")
+    if searchable_form_count != manifest["searchableFormCount"]:
+        raise SystemExit("Manifest searchableFormCount does not equal production pack contents.")
     if difficulty_counts != manifest["difficultyCounts"]:
         raise SystemExit("Manifest difficultyCounts do not equal production pack contents.")
     if manifest["productionReady"] != (manifest["publicationStatus"] == "production" and total > 0):
@@ -132,6 +145,9 @@ def main() -> None:
 
     source_registry = load_json(EXPRESSIONS / "source-registry.json")
     source_ids = {item["id"] for item in source_registry["sources"]}
+    for family in production_families.values():
+        if any(source["sourceId"] not in source_ids for source in family["sources"]):
+            raise SystemExit(f"Production family references an unknown source: {family['id']}")
     reviewed_families: dict[str, dict] = {}
     for path in sorted((EXPRESSIONS / "reviewed").glob("*.json")):
         family = load_json(path)
@@ -145,7 +161,7 @@ def main() -> None:
             raise SystemExit(f"Reviewed family gates are inconsistent: {family['id']}")
         if any(source["sourceId"] not in source_ids for source in family["sources"]):
             raise SystemExit(f"Reviewed family references an unknown source: {family['id']}")
-        if family["id"] in reviewed_families:
+        if family["id"] in reviewed_families or family["id"] in production_families:
             raise SystemExit(f"Duplicate reviewed family id: {family['id']}")
         reviewed_families[family["id"]] = family
 
@@ -155,14 +171,29 @@ def main() -> None:
     for path in sorted((EXPRESSIONS / "editorial" / "decisions").glob("*.json")):
         decision = load_json(path)
         validate_or_raise(decision_validator, decision, str(path.relative_to(ROOT)))
-        if decision["familyId"] not in reviewed_families:
-            raise SystemExit(f"Editorial decision references a missing reviewed family: {decision['familyId']}")
+        family_id = decision["familyId"]
+        if family_id not in reviewed_families and family_id not in production_families:
+            raise SystemExit(f"Editorial decision references a missing family: {family_id}")
+        if decision["finalPublicationApproved"] != (family_id in production_families):
+            raise SystemExit(f"Editorial decision publication state is inconsistent: {family_id}")
+        family = production_families.get(family_id, reviewed_families.get(family_id))
+        if decision["finalPublicationApproved"] and (
+            decision["reviewer"] != family["review"]["reviewer"]
+            or decision["reviewerType"] != family["review"]["reviewerType"]
+            or decision["reviewedAt"] != family["review"]["verifiedAt"]
+        ):
+            raise SystemExit(f"Editorial decision reviewer metadata is inconsistent: {family_id}")
         for candidate_id in decision["mergedCandidates"]:
             if candidate_id not in candidate_ids:
                 raise SystemExit(f"Editorial decision references a missing candidate: {candidate_id}")
             if candidate_id in assigned_candidates:
                 raise SystemExit(f"Candidate assigned by more than one decision: {candidate_id}")
             assigned_candidates.add(candidate_id)
+        for related in decision["relatedCandidatesNotMerged"]:
+            if related["candidateId"] not in candidate_ids:
+                raise SystemExit(f"Editorial decision references a missing related candidate: {related['candidateId']}")
+            if related["candidateId"] in decision["mergedCandidates"]:
+                raise SystemExit(f"Editorial decision both merges and excludes a candidate: {related['candidateId']}")
         decision_count += 1
 
     print(

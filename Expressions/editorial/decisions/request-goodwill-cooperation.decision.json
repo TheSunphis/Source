@@ -26,7 +26,8 @@
       "reason": "よろしくお付き合いください makes a more specific request for an ongoing relationship and requires separate family review."
     }
   ],
-  "reviewedAt": "2026-09-30T05:17:09Z",
-  "reviewer": "Koto source-backed editorial review",
-  "finalPublicationApproved": false
+  "reviewedAt": "2026-09-30T05:28:12Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
 }

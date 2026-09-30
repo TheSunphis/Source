@@ -12,6 +12,7 @@
     "relatedCandidatesNotMerged",
     "reviewedAt",
     "reviewer",
+    "reviewerType",
     "finalPublicationApproved"
   ],
   "properties": {
@@ -38,6 +39,7 @@
     },
     "reviewedAt": { "type": "string", "format": "date-time" },
     "reviewer": { "type": "string", "minLength": 1, "maxLength": 100 },
-    "finalPublicationApproved": { "const": false }
+    "reviewerType": { "enum": ["human", "ai-editorial", "mixed"] },
+    "finalPublicationApproved": { "type": "boolean" }
   }
 }

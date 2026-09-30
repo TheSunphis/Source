@@ -173,11 +173,35 @@
           }
         },
         "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+        "verifiedAt": { "type": ["string", "null"], "format": "date-time" },
         "reviewer": { "type": ["string", "null"], "maxLength": 100 },
+        "reviewerType": { "type": ["string", "null"], "enum": ["human", "ai-editorial", "mixed", null] },
         "notes": { "type": "string", "maxLength": 2000 }
       }
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "publicationStatus": { "const": "verified" } },
+        "required": ["publicationStatus"]
+      },
+      "then": {
+        "properties": {
+          "review": {
+            "required": ["verifiedAt", "reviewerType"],
+            "properties": {
+              "verifiedAt": { "type": "string", "format": "date-time" },
+              "reviewerType": { "enum": ["human", "ai-editorial", "mixed"] },
+              "gates": {
+                "properties": { "final-publication": { "const": true } }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "nonEmptyText": { "type": "string", "minLength": 1, "maxLength": 2000 },
     "textList": {

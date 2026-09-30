@@ -1,5 +1,5 @@
 # Reviewed expression families
 
-Files in this directory have passed source-backed editorial review but are not automatically production records.
+Files may remain in this directory after source-backed editorial review while they await a separate language-proficiency sign-off.
 
-`publicationStatus: reviewed` means that source, family grouping, naturalness, meaning, reading, register, social use, Koto Difficulty, and substitution checks have been completed. `review.gates.final-publication` remains `false` until an independent human Japanese-language reviewer signs off. Only then may the record be copied into a production pack and display `Verified expression` in Koto.
+The final reviewer may be human, AI editorial, or mixed, but the reviewer type must be disclosed. AI sign-off must be record-specific, source-backed, and separate from bulk candidate extraction. Once every gate passes, the family moves into a checksummed production pack and may display `Verified expression` in Koto.

@@ -1,20 +1,28 @@
 {
   "datasetId": "koto-expressions",
   "schemaVersion": 1,
-  "releaseVersion": "0.0.0-scaffold",
-  "publicationStatus": "scaffold",
+  "releaseVersion": "0.1.0-development",
+  "publicationStatus": "candidate",
   "publishedAt": null,
-  "familyCount": 0,
-  "searchableFormCount": 0,
+  "familyCount": 1,
+  "searchableFormCount": 6,
   "difficultyCounts": {
-    "1": 0,
+    "1": 1,
     "2": 0,
     "3": 0,
     "4": 0,
     "5": 0
   },
   "searchIndex": null,
-  "packs": [],
+  "packs": [
+    {
+      "id": "pack-001",
+      "familyCount": 1,
+      "file": "packs/pack-001.json",
+      "bytes": 8434,
+      "sha256": "64a3a36b243712780e57bded1d097f607c3984ec6e967feca32d713b64a21b5b"
+    }
+  ],
   "integrityAlgorithm": "sha256",
   "licence": "CC-BY-SA-4.0",
   "sourceRegistry": "source-registry.json",
