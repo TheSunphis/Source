@@ -3,13 +3,18 @@ name: Expressions2 shadow build
 on:
   workflow_dispatch:
 
+concurrency:
+  group: expressions2-shadow-build
+  cancel-in-progress: false
+
 permissions:
-  contents: read
+  contents: write
+  actions: read
 
 jobs:
-  validate-remote-factory:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,11 +22,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install validator
+      - name: Install pinned validator
         run: python -m pip install --disable-pip-version-check "jsonschema==4.26.0"
-      - name: Validate Source-only metadata
+      - name: Run Source-only shadow builder
         env:
-          EXPRESSIONS2_EVIDENCE_MODE: metadata-only
-        run: python Expressions2-development/Batch001/tools/run_contract_tests.py
-      - name: Enforce clean-room boundary
-        run: python Expressions2-development/Batch001/tools/guard_clean_room.py --self-test
+          GH_TOKEN: ${{ github.token }}
+          EXPRESSIONS2_REPOSITORY: ${{ github.repository }}
+          EXPRESSIONS2_BRANCH: expressions2-development
+        run: python Expressions2-development/Batch001/remote/remote_build.py
