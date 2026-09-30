@@ -1,10 +1,9 @@
 {
-  "decisionId": "decision:make-request-onegaishimasu",
+  "decisionId": "decision:wish-recovery",
   "decision": "merge-into-reviewed-family",
-  "familyId": "expression:make-request-onegaishimasu",
+  "familyId": "expression:wish-recovery",
   "mergedCandidates": [
-    "candidate:jmdict:1001720",
-    "candidate:jmdict:1001730"
+    "candidate:jmdict:1002390"
   ],
   "relatedCandidatesNotMerged": [],
   "reviewedAt": "2026-09-30T09:15:00Z",

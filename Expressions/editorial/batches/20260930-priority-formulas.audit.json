@@ -1,8 +1,6 @@
 {
   "batchId": "editorial-batch:20260930-priority-formulas",
   "familyIds": [
-    "expression:express-thanks",
-    "expression:apologize-or-get-attention",
     "expression:first-meeting-greeting",
     "expression:begin-meal",
     "expression:end-meal-thanks",
@@ -11,19 +9,11 @@
     "expression:welcome-customer",
     "expression:ask-after-wellbeing",
     "expression:urge-care",
-    "expression:excuse-formal-departure",
     "expression:acknowledge-wait",
     "expression:acknowledge-request-formally",
-    "expression:make-request-onegaishimasu",
-    "expression:request-with-kudasai",
-    "expression:say-no-problem"
+    "expression:request-with-kudasai"
   ],
   "candidateIds": [
-    "candidate:jmdict:1541040",
-    "candidate:jmdict:1612720",
-    "candidate:jmdict:1295060",
-    "candidate:jmdict:1270680",
-    "candidate:jmdict:1612030",
     "candidate:jmdict:1625780",
     "candidate:jmdict:1410800",
     "candidate:jmdict:1005080",
@@ -32,13 +22,9 @@
     "candidate:jmdict:1000930",
     "candidate:jmdict:2272760",
     "candidate:jmdict:1221870",
-    "candidate:jmdict:2276200",
-    "candidate:jmdict:1320240",
     "candidate:jmdict:2149640",
     "candidate:jmdict:1002790",
-    "candidate:jmdict:1001720",
-    "candidate:jmdict:1184270",
-    "candidate:jmdict:2848696"
+    "candidate:jmdict:1184270"
   ],
   "sourceReferenceIds": [
     "jmdict",

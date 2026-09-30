@@ -1,10 +1,9 @@
 {
-  "decisionId": "decision:make-request-onegaishimasu",
+  "decisionId": "decision:offer-with-mashouka",
   "decision": "merge-into-reviewed-family",
-  "familyId": "expression:make-request-onegaishimasu",
+  "familyId": "expression:offer-with-mashouka",
   "mergedCandidates": [
-    "candidate:jmdict:1001720",
-    "candidate:jmdict:1001730"
+    "candidate:jmdict:2210710"
   ],
   "relatedCandidatesNotMerged": [],
   "reviewedAt": "2026-09-30T09:15:00Z",

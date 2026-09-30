@@ -1,10 +1,10 @@
 {
-  "decisionId": "decision:make-request-onegaishimasu",
+  "decisionId": "decision:leave-and-return",
   "decision": "merge-into-reviewed-family",
-  "familyId": "expression:make-request-onegaishimasu",
+  "familyId": "expression:leave-and-return",
   "mergedCandidates": [
-    "candidate:jmdict:1001720",
-    "candidate:jmdict:1001730"
+    "candidate:jmdict:2020140",
+    "candidate:jmdict:2172760"
   ],
   "relatedCandidatesNotMerged": [],
   "reviewedAt": "2026-09-30T09:15:00Z",

@@ -1,10 +1,11 @@
 {
-  "decisionId": "decision:make-request-onegaishimasu",
+  "decisionId": "decision:express-possibility-kamoshirenai",
   "decision": "merge-into-reviewed-family",
-  "familyId": "expression:make-request-onegaishimasu",
+  "familyId": "expression:express-possibility-kamoshirenai",
   "mergedCandidates": [
-    "candidate:jmdict:1001720",
-    "candidate:jmdict:1001730"
+    "candidate:jmdict:1002970",
+    "candidate:jmdict:1002975",
+    "candidate:jmdict:2100710"
   ],
   "relatedCandidatesNotMerged": [],
   "reviewedAt": "2026-09-30T09:15:00Z",

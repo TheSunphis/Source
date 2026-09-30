@@ -71,6 +71,30 @@
         "Do not bulk-extract, copy, or redistribute lesson text, exercises, audio, illustrations, or layouts.",
         "Write Koto explanations and examples independently."
       ]
+    },
+    {
+      "id": "jpf-reference",
+      "name": "The Japan Foundation Japanese-language teaching references",
+      "url": "https://www.jpf.go.jp/",
+      "licence": "copyrighted-reference-only",
+      "eligibility": "review-reference-only",
+      "requirements": [
+        "Use only for record-level corroboration of Japanese form, meaning, register, or communicative use.",
+        "Do not bulk-extract or redistribute teaching text, examples, audio, images, or layouts.",
+        "Write Koto explanations and examples independently."
+      ]
+    },
+    {
+      "id": "kotobank-reference",
+      "name": "Kotobank Japanese dictionary portal",
+      "url": "https://kotobank.jp/",
+      "licence": "copyrighted-reference-only",
+      "eligibility": "review-reference-only",
+      "requirements": [
+        "Record the exact entry URL and use it only to corroborate meaning, reading, idiomaticity, or usage distinctions.",
+        "Do not copy or redistribute dictionary definitions, examples, or underlying publisher content.",
+        "Write Koto explanations and examples independently."
+      ]
     }
   ],
   "excludedBulkSources": [
