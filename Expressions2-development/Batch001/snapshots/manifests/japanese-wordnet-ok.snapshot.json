@@ -1,0 +1,33 @@
+{
+  "acquisitionUrl": "https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn-ok.tab.gz",
+  "allowedRoles": [
+    "semantic-grouping",
+    "duplicate-detection"
+  ],
+  "attribution": "Japanese WordNet 1.1; NICT and named maintainers/contributors, with the required site link.",
+  "bytes": 1079974,
+  "canonicalUrl": "https://bond-lab.github.io/wnja/eng/downloads.html",
+  "finalUrl": "https://release-assets.githubusercontent.com/github-production-release-asset/281408873/6056fbcd-f611-47bf-bb81-c0cdba0012ae",
+  "license": {
+    "name": "Japanese-WordNet-License-1.1",
+    "noticeFile": "notices/japanese-wordnet-ok.license",
+    "noticeSha256": "8525ed31b2b2d91b4845ea253fbf096a2d6347191415b6fa1db872c2e6d8cdb9",
+    "url": "https://bond-lab.github.io/wnja/license.txt"
+  },
+  "mediaType": "application/gzip",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "none",
+  "retrievedAt": "2026-09-30T18:43:03Z",
+  "schemaVersion": 1,
+  "sha256": "770a3779425b8565d52db9900b49f2ded6526f71b3b996b8f78fb58b5cf52459",
+  "sourceId": "source2:japanese-wordnet-ok",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

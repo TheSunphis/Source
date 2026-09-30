@@ -1,0 +1,127 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1,
+      "kind": "family-pack",
+      "path": "family-pack-01.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "bytes": 1,
+      "kind": "family-pack",
+      "path": "family-pack-02.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "bytes": 1,
+      "kind": "family-pack",
+      "path": "family-pack-03.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "bytes": 1,
+      "kind": "family-pack",
+      "path": "family-pack-04.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "bytes": 1,
+      "kind": "analysis-pack",
+      "path": "analysis-pack-01.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "bytes": 1,
+      "kind": "analysis-pack",
+      "path": "analysis-pack-02.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "bytes": 1,
+      "kind": "analysis-pack",
+      "path": "analysis-pack-03.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "bytes": 1,
+      "kind": "analysis-pack",
+      "path": "analysis-pack-04.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "bytes": 1,
+      "kind": "library-index",
+      "path": "library-index.json",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    },
+    {
+      "bytes": 1,
+      "kind": "source-attribution",
+      "path": "source-attribution.json",
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    {
+      "bytes": 1,
+      "kind": "audit-manifest",
+      "path": "audit-manifest.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "bytes": 1,
+      "kind": "provenance-pack",
+      "path": "provenance-pack.json",
+      "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "buildId": "build2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "counts": {
+    "acceptedFamilies": 100,
+    "analysisRecords": 100,
+    "familiesPerPack": 25,
+    "familyPacks": 4,
+    "normalizedCandidates": 2000,
+    "publishedForms": 100
+  },
+  "coverage": {
+    "classCounts": {
+      "conventional-collocation": 15,
+      "discourse-routine": 12,
+      "grammar-construction": 18,
+      "idiom": 10,
+      "institutional-formula": 8,
+      "interactional-formula": 18,
+      "pragmatic-pattern": 6,
+      "productive-sentence-frame": 8,
+      "proverb-or-saying": 5
+    },
+    "difficultyCounts": {
+      "1": 20,
+      "2": 25,
+      "3": 25,
+      "4": 20,
+      "5": 10
+    },
+    "documentedDeviations": []
+  },
+  "determinism": {
+    "canonicalJson": true,
+    "secondCleanBuildMatched": true,
+    "stableOrdering": true
+  },
+  "incrementalBuild": {
+    "changedOnlySupported": true,
+    "contentAddressedCache": true
+  },
+  "inputs": [
+    {
+      "id": "fixture-schema-set",
+      "kind": "schema",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "productionReady": false,
+  "publicationStatus": "shadow-candidate",
+  "release": "0.1.0-development",
+  "schemaVersion": 1,
+  "sourceDateEpoch": 1790726400
+}

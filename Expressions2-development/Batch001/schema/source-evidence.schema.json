@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/source-evidence.schema.json",
+  "title": "Koto Expressions2 source-evidence store",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "snapshotSha256", "sourceId", "records"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "snapshotSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+    "sourceId": { "$ref": "common.schema.json#/$defs/sourceId" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["evidenceId", "locator", "recordHash", "fields", "permissionClass"],
+        "properties": {
+          "evidenceId": { "type": "string", "pattern": "^evidence2:[0-9a-f]{32}$" },
+          "locator": { "type": "string", "minLength": 1, "maxLength": 1000 },
+          "recordHash": { "$ref": "common.schema.json#/$defs/sha256" },
+          "fields": {
+            "type": "object", "minProperties": 1,
+            "additionalProperties": { "type": ["string", "number", "integer", "boolean", "null"] }
+          },
+          "permissionClass": { "enum": ["redistributable", "evidence-only", "tool-only"] }
+        }
+      }
+    }
+  }
+}

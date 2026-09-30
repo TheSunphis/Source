@@ -1,0 +1,48 @@
+{
+  "candidateIds": [
+    "candidate2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "compiler": {
+    "configurationDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "name": "koto-expressions2-family",
+    "version": "0.1.0"
+  },
+  "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+  "fieldDerivations": [
+    {
+      "criticStatus": "passed",
+      "evidence": [
+        {
+          "evidenceType": "direct-authority",
+          "locator": "entry:fixture",
+          "permissionClass": "redistributable",
+          "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceId": "source2:jmdict-english",
+          "supports": [
+            "existence",
+            "form",
+            "reading"
+          ]
+        }
+      ],
+      "jsonPointer": "/hero/japanese",
+      "method": "source-extract"
+    }
+  ],
+  "inputDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "outputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "provenanceId": "provenance2:cccccccccccccccccccccccccccccccc",
+  "review": {
+    "gateManifestId": "gates2:fixture",
+    "reviewType": "automated",
+    "reviewedAt": "2026-09-30T00:00:00Z",
+    "reviewerIdentity": "fixture-reviewer"
+  },
+  "schemaVersion": 1,
+  "sourceSnapshots": [
+    {
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sourceId": "source2:jmdict-english"
+    }
+  ]
+}

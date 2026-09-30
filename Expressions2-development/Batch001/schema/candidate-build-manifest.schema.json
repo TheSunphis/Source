@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/candidate-build-manifest.schema.json",
+  "title": "Koto Expressions2 Batch 001 candidate-build manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "buildId", "sourceDateEpoch", "inputs", "runtime", "artifacts", "counts", "determinism", "contaminationAudit", "familyGenerationStarted"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "buildId": { "type": "string", "pattern": "^candidatebuild2:[0-9a-f]{32}$" },
+    "sourceDateEpoch": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "inputs": {
+      "type": "object", "additionalProperties": false, "required": ["evidenceBuildId", "evidenceManifestSha256"],
+      "properties": {
+        "evidenceBuildId": { "type": "string", "pattern": "^evidencebuild2:[0-9a-f]{32}$" },
+        "evidenceManifestSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    },
+    "runtime": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sudachiPyVersion", "sudachiPySha256", "dictionaryVersion", "dictionarySha256", "splitMode"],
+      "properties": {
+        "sudachiPyVersion": { "const": "0.7.0" },
+        "sudachiPySha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "dictionaryVersion": { "const": "20260723.1" },
+        "dictionarySha256": { "$ref": "common.schema.json#/$defs/sha256" },
+        "splitMode": { "enum": ["A", "C-with-A-features"] }
+      }
+    },
+    "artifacts": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "file", "records", "canonicalBytes", "compressedBytes", "canonicalSha256", "compressedSha256"],
+        "properties": {
+          "kind": { "enum": ["raw", "normalized"] },
+          "file": { "enum": ["raw-candidates.json.gz", "normalized-candidates.json.gz"] },
+          "records": { "type": "integer", "minimum": 1 },
+          "canonicalBytes": { "type": "integer", "minimum": 1 },
+          "compressedBytes": { "type": "integer", "minimum": 1 },
+          "canonicalSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "compressedSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+        }
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rawCandidates", "normalizedCandidates", "rawByChannel", "normalizedByPrimaryHypothesis", "corpusAttestedNormalized", "duplicatesMerged"],
+      "properties": {
+        "rawCandidates": { "type": "integer", "minimum": 2000 },
+        "normalizedCandidates": { "type": "integer", "minimum": 2000 },
+        "rawByChannel": {
+          "type": "object", "additionalProperties": false,
+          "required": ["labelled-expression", "corpus-ngram", "wiktionary-structural"],
+          "properties": {
+            "labelled-expression": { "type": "integer", "minimum": 1 },
+            "corpus-ngram": { "type": "integer", "minimum": 1 },
+            "wiktionary-structural": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "normalizedByPrimaryHypothesis": {
+          "type": "object", "minProperties": 1,
+          "additionalProperties": { "type": "integer", "minimum": 1 }
+        },
+        "corpusAttestedNormalized": { "type": "integer", "minimum": 0 },
+        "duplicatesMerged": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "determinism": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonicalJson", "gzipMtime", "secondBuildMatched", "stableOrdering"],
+      "properties": {
+        "canonicalJson": { "const": true },
+        "gzipMtime": { "const": 0 },
+        "secondBuildMatched": { "const": true },
+        "stableOrdering": { "const": true }
+      }
+    },
+    "contaminationAudit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["legacyImports", "legacyIds", "unapprovedSources", "personalState", "verdict"],
+      "properties": {
+        "legacyImports": { "const": 0 },
+        "legacyIds": { "const": 0 },
+        "unapprovedSources": { "const": 0 },
+        "personalState": { "const": 0 },
+        "verdict": { "const": "passed" }
+      }
+    },
+    "familyGenerationStarted": { "const": false }
+  }
+}

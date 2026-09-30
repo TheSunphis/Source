@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-09-30T00:00:00Z",
+  "events": [
+    {
+      "action": "admit",
+      "actor": "fixture-generator",
+      "candidateIds": [
+        "candidate2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "eventId": "ledgerevent2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "evidence": [
+        {
+          "evidenceType": "direct-authority",
+          "locator": "entry:fixture",
+          "permissionClass": "redistributable",
+          "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceId": "source2:jmdict-english",
+          "supports": [
+            "existence",
+            "form",
+            "reading"
+          ]
+        }
+      ],
+      "explanation": "Synthetic event exercises the append-only decision ledger contract.",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+      "occurredAt": "2026-09-30T00:00:00Z",
+      "previousEventHash": null,
+      "reasonCodes": [
+        "fixture-contract"
+      ],
+      "sequence": 1
+    }
+  ],
+  "ledgerId": "ledger2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "schemaVersion": 1
+}

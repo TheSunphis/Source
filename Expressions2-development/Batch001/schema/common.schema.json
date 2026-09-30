@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/common.schema.json",
+  "title": "Koto Expressions2 shared definitions",
+  "$defs": {
+    "nonEmpty": { "type": "string", "minLength": 1 },
+    "trimmed": { "type": "string", "minLength": 1, "pattern": "^\\S(?:[\\s\\S]*\\S)?$" },
+    "japanese": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "pattern": "[ぁ-ゖァ-ヺ一-龯々〆ヵヶ]"
+    },
+    "reading": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": "^[ぁ-ゖァ-ヺー・、。！？!?「」『』（）()〜～…‥・,.\\s0-9]+$"
+    },
+    "familyId": {
+      "type": "string",
+      "pattern": "^expression2:[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "candidateId": { "type": "string", "pattern": "^candidate2:[0-9a-f]{32}$" },
+    "sourceId": { "type": "string", "pattern": "^source2:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "formId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 100 },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "familyClass": {
+      "enum": [
+        "interactional-formula", "discourse-routine", "grammar-construction",
+        "conventional-collocation", "idiom", "proverb-or-saying",
+        "institutional-formula", "productive-sentence-frame", "pragmatic-pattern"
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "locator", "evidenceType", "supports", "recordHash", "permissionClass"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/sourceId" },
+        "locator": { "$ref": "#/$defs/nonEmpty" },
+        "evidenceType": {
+          "enum": ["direct-authority", "corpus-attestation", "productive-pattern", "semantic-relation", "morphological-analysis", "canonical-vocabulary"]
+        },
+        "supports": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["existence", "form", "reading", "meaning", "register", "relationship", "pattern", "family-boundary", "vocabulary-link"] }
+        },
+        "recordHash": { "$ref": "#/$defs/sha256" },
+        "permissionClass": { "enum": ["redistributable", "evidence-only", "tool-only"] }
+      }
+    },
+    "spokenLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["japanese", "reading", "meaning", "deviceTts"],
+      "properties": {
+        "japanese": { "$ref": "#/$defs/japanese" },
+        "reading": { "$ref": "#/$defs/reading" },
+        "meaning": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "deviceTts": { "const": true }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewType", "reviewedAt", "reviewerIdentity", "gateManifestId"],
+      "properties": {
+        "reviewType": { "enum": ["automated", "agent-editorial", "human-editorial", "verified-hybrid"] },
+        "reviewedAt": { "$ref": "#/$defs/timestamp" },
+        "reviewerIdentity": { "$ref": "#/$defs/nonEmpty" },
+        "gateManifestId": { "type": "string", "pattern": "^gates2:[a-z0-9._-]+$" }
+      }
+    }
+  }
+}

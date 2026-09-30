@@ -1,0 +1,33 @@
+{
+  "acquisitionUrl": "https://downloads.tatoeba.org/exports/per_language/jpn/jpn_sentences.tsv.bz2",
+  "allowedRoles": [
+    "attestation",
+    "pattern-evidence"
+  ],
+  "attribution": "Tatoeba sentence IDs and contributor/source metadata must remain traceable.",
+  "bytes": 3417560,
+  "canonicalUrl": "https://tatoeba.org/en/downloads",
+  "finalUrl": "https://downloads.tatoeba.org/exports/per_language/jpn/jpn_sentences.tsv.bz2",
+  "license": {
+    "name": "CC-BY-2.0-FR",
+    "noticeFile": "notices/tatoeba-japanese-ccby.license",
+    "noticeSha256": "5325bb2749d7e175e485d907fe6b65e89b1e18ef06f85d502af5eb3107c4422d",
+    "url": "https://creativecommons.org/licenses/by/2.0/fr/"
+  },
+  "mediaType": "application/x-bzip2",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "derived-only",
+  "retrievedAt": "2026-09-30T18:42:42Z",
+  "schemaVersion": 1,
+  "sha256": "1a71f25043f9ecff3f1d1910bb677e99b5bb620b9ed9b22cde60d67790669b11",
+  "sourceId": "source2:tatoeba-japanese-ccby",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

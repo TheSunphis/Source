@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "adapter": {
+        "name": "jmdict-expression",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 100,
+      "canonicalSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "compressedBytes": 80,
+      "compressedSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "file": "jmdict-english.evidence.json.gz",
+      "permissionClass": "redistributable",
+      "recordCount": 1,
+      "secondPassMatched": true,
+      "snapshotSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sourceId": "source2:jmdict-english"
+    }
+  ],
+  "buildId": "evidencebuild2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "contaminationAudit": {
+    "legacyIds": 0,
+    "legacyImports": 0,
+    "permissionMismatches": 0,
+    "prohibitedWiktionaryText": 0,
+    "verdict": "passed"
+  },
+  "determinism": {
+    "allSecondPassesMatched": true,
+    "canonicalJson": true,
+    "gzipMtime": 0
+  },
+  "sourceDateEpoch": "2026-09-30T00:00:00Z",
+  "totals": {
+    "canonicalBytes": 100,
+    "compressedBytes": 80,
+    "records": 1,
+    "sources": 1
+  }
+}

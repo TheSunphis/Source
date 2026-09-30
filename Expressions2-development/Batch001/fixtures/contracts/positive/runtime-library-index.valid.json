@@ -1,0 +1,2716 @@
+{
+  "categories": [
+    {
+      "count": 100,
+      "key": "fixture",
+      "label": "Fixture"
+    }
+  ],
+  "entries": [
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-001",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000002",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-002",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000003",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-003",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000004",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-004",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000005",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-005",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000006",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-006",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000007",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-007",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000008",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-008",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000009",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-009",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-010",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-011",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-012",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-013",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-014",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000000f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-015",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000010",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-016",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000011",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-017",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000012",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-018",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000013",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-019",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000014",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-020",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000015",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-021",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000016",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-022",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000017",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-023",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000018",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-024",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000019",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-01",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-025",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-026",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-027",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-028",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-029",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-030",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000001f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-031",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000020",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-032",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000021",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-033",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000022",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-034",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000023",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-035",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000024",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-036",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000025",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-037",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000026",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-038",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000027",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-039",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000028",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-040",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000029",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-041",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-042",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-043",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-044",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-045",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-046",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000002f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-047",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000030",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-048",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000031",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-049",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000032",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-02",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-050",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000033",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-051",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000034",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-052",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000035",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-053",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000036",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-054",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000037",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-055",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000038",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-056",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000039",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-057",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-058",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-059",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-060",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-061",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-062",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000003f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-063",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000040",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-064",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000041",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-065",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000042",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-066",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000043",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-067",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000044",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-068",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000045",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-069",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000046",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-070",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000047",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-071",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000048",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-072",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000049",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-073",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-074",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-03",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-075",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-076",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-077",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-078",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000004f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-079",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000050",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-080",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000051",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-081",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000052",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-082",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000053",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-083",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000054",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-084",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000055",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-085",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000056",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-086",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000057",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-087",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000058",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-088",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000059",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-089",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005a",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-090",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005b",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-091",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005c",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-092",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005d",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-093",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005e",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-094",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-00000000005f",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-095",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 1,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000060",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-096",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 2,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000061",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-097",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 3,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000062",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-098",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 4,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000063",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-099",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    },
+    {
+      "availableActions": [
+        "recognised",
+        "review",
+        "open"
+      ],
+      "category": {
+        "key": "fixture",
+        "label": "Fixture"
+      },
+      "contextualMeaning": "Synthetic fixture only.",
+      "difficulty": 5,
+      "familyId": "expression2:00000000-0000-7000-8000-000000000064",
+      "formCount": 1,
+      "intentions": [
+        "Exercise runtime indexing."
+      ],
+      "japanese": "テスト表現",
+      "pack": "family-pack-04",
+      "reading": "てすとひょうげん",
+      "searchText": "テスト表現 てすとひょうげん synthetic fixture contract validation",
+      "slug": "synthetic-fixture-100",
+      "usageContexts": [
+        "Contract validation only"
+      ],
+      "verifiedSourceState": "verified"
+    }
+  ],
+  "familyCount": 100,
+  "formCount": 100,
+  "publicationStatus": "shadow-candidate",
+  "release": "0.1.0-development",
+  "schemaVersion": 1
+}

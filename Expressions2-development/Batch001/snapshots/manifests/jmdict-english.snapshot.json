@@ -1,0 +1,35 @@
+{
+  "acquisitionUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+  "allowedRoles": [
+    "candidate-forms",
+    "readings",
+    "lexical-senses",
+    "canonical-vocabulary"
+  ],
+  "attribution": "JMdict/EDRDG — James William Breen and the Electronic Dictionary Research and Development Group.",
+  "bytes": 10580018,
+  "canonicalUrl": "https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project",
+  "finalUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+  "license": {
+    "name": "CC-BY-SA-4.0",
+    "noticeFile": "notices/jmdict-english.license",
+    "noticeSha256": "eae1009ca2eb131177f7782ac9e0762e98404f83fed670c5994eae0590c9e92f",
+    "url": "https://www.edrdg.org/edrdg/licence.html"
+  },
+  "mediaType": "application/gzip",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "raw-and-derived",
+  "retrievedAt": "2026-09-30T18:42:38Z",
+  "schemaVersion": 1,
+  "sha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634",
+  "sourceId": "source2:jmdict-english",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/family.schema.json",
+  "title": "Koto Expressions2 complete editorial family",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "familyId", "slug", "candidateIds", "primaryClass", "facets",
+    "difficulty", "category", "publication", "library", "hero", "intentions", "guidance",
+    "forms", "responses", "followUps", "dialogue", "patterns", "distinctions",
+    "verification", "displayContract", "provenanceRef"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "familyId": { "$ref": "common.schema.json#/$defs/familyId" },
+    "slug": { "$ref": "common.schema.json#/$defs/slug" },
+    "candidateIds": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/candidateId" }
+    },
+    "primaryClass": { "$ref": "common.schema.json#/$defs/familyClass" },
+    "facets": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "enum": [
+          "greeting", "leave-taking", "gratitude", "apology", "request", "permission", "offer", "invitation", "refusal",
+          "acknowledgement", "reaction", "evaluation", "agreement-disagreement", "topic-management", "turn-management",
+          "repair-clarification", "sequencing", "cause-reason", "contrast-concession", "condition", "degree-extent",
+          "evidence-hearsay", "stance", "obligation", "possibility", "workplace", "school", "service-encounter",
+          "written-formal", "intimate-casual", "literary-historical", "regional"
+        ]
+      }
+    },
+    "difficulty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "label", "rationale"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "label": { "enum": ["Essential", "Foundational", "Intermediate", "Advanced", "Nuanced"] },
+        "rationale": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label"],
+      "properties": {
+        "key": { "$ref": "common.schema.json#/$defs/slug" },
+        "label": { "type": "string", "minLength": 1, "maxLength": 80 }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "visibility", "release", "productionReady"],
+      "properties": {
+        "state": { "const": "verified" },
+        "visibility": { "const": "private-shadow" },
+        "release": { "const": "0.1.0-development" },
+        "productionReady": { "const": false }
+      }
+    },
+    "library": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "japanese", "reading", "contextualMeaning", "intentionSummary", "usageContexts",
+        "searchDocument", "formCount", "verifiedSourceState", "availableActions"
+      ],
+      "properties": {
+        "japanese": { "$ref": "common.schema.json#/$defs/japanese" },
+        "reading": { "$ref": "common.schema.json#/$defs/reading" },
+        "contextualMeaning": { "type": "string", "minLength": 1, "maxLength": 600 },
+        "intentionSummary": { "type": "array", "minItems": 1, "maxItems": 6, "items": { "type": "string", "minLength": 1, "maxLength": 250 } },
+        "usageContexts": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 150 } },
+        "searchDocument": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["japanese", "reading", "meanings", "intentions", "usageAndContext"],
+          "properties": {
+            "japanese": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/japanese" } },
+            "reading": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/reading" } },
+            "meanings": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 500 } },
+            "intentions": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 300 } },
+            "usageAndContext": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 500 } }
+          }
+        },
+        "formCount": { "type": "integer", "minimum": 1 },
+        "verifiedSourceState": { "const": "verified" },
+        "availableActions": { "const": ["recognised", "review", "open"] }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primaryFormId", "japanese", "reading", "contextualMeaning", "usageSummary", "deviceTts"],
+      "properties": {
+        "primaryFormId": { "$ref": "common.schema.json#/$defs/formId" },
+        "japanese": { "$ref": "common.schema.json#/$defs/japanese" },
+        "reading": { "$ref": "common.schema.json#/$defs/reading" },
+        "contextualMeaning": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "usageSummary": { "type": "string", "minLength": 30, "maxLength": 3000 },
+        "deviceTts": { "const": true }
+      }
+    },
+    "intentions": {
+      "type": "array", "minItems": 1, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["action", "distinguishingNote"],
+        "properties": {
+          "action": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "distinguishingNote": { "type": "string", "minLength": 1, "maxLength": 800 }
+        }
+      }
+    },
+    "guidance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["useWhen", "takeCare", "relationships"],
+      "properties": {
+        "useWhen": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 10, "maxLength": 1000 } },
+        "takeCare": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 10, "maxLength": 1000 } },
+        "relationships": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["context", "suitability", "guidance"],
+            "properties": {
+              "context": { "enum": ["family-close", "peers", "strangers", "workplace-hierarchy", "school", "service-encounter", "formal-institutional-writing", "group-use"] },
+              "suitability": { "enum": ["natural", "conditional", "avoid", "not-applicable"] },
+              "guidance": { "type": "string", "minLength": 10, "maxLength": 1000 }
+            }
+          }
+        }
+      }
+    },
+    "forms": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["formId", "kind", "label", "register", "japanese", "reading", "contextualMeaning", "deviceTts", "analysisRef", "evidence"],
+        "properties": {
+          "formId": { "$ref": "common.schema.json#/$defs/formId" },
+          "kind": { "enum": ["primary", "alternate"] },
+          "label": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "register": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "japanese": { "$ref": "common.schema.json#/$defs/japanese" },
+          "reading": { "$ref": "common.schema.json#/$defs/reading" },
+          "contextualMeaning": { "type": "string", "minLength": 1, "maxLength": 1000 },
+          "deviceTts": { "const": true },
+          "analysisRef": { "type": "string", "pattern": "^analysis2:[0-9a-f]{32}$" },
+          "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } }
+        }
+      }
+    },
+    "responses": { "$ref": "#/$defs/spokenItems" },
+    "followUps": { "$ref": "#/$defs/spokenItems" },
+    "dialogue": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false, "required": ["applicable", "context", "relationship", "register", "turns"],
+          "properties": {
+            "applicable": { "const": true },
+            "context": { "type": "string", "minLength": 10, "maxLength": 800 },
+            "relationship": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "register": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "turns": {
+              "type": "array", "minItems": 2, "maxItems": 20,
+              "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["speaker", "containsTarget", "line"],
+                "properties": {
+                  "speaker": { "type": "string", "minLength": 1, "maxLength": 80 },
+                  "containsTarget": { "type": "boolean" },
+                  "line": { "$ref": "common.schema.json#/$defs/spokenLine" }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["applicable", "reason"],
+          "properties": {
+            "applicable": { "const": false },
+            "reason": { "type": "string", "minLength": 20, "maxLength": 1000 }
+          }
+        }
+      ]
+    },
+    "patterns": {
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false, "required": ["applicable", "items"],
+          "properties": {
+            "applicable": { "const": true },
+            "items": {
+              "type": "array", "minItems": 1,
+              "items": {
+                "type": "object", "additionalProperties": false,
+                "required": ["template", "templateReading", "function", "slots", "riskWarning", "examples"],
+                "properties": {
+                  "template": { "$ref": "common.schema.json#/$defs/japanese" },
+                  "templateReading": { "type": "string", "minLength": 1, "maxLength": 500 },
+                  "function": { "type": "string", "minLength": 10, "maxLength": 1000 },
+                  "slots": {
+                    "type": "array", "minItems": 1,
+                    "items": {
+                      "type": "object", "additionalProperties": false, "required": ["name", "constraint", "validExamples", "invalidExamples"],
+                      "properties": {
+                        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+                        "constraint": { "type": "string", "minLength": 10, "maxLength": 1000 },
+                        "validExamples": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 200 } },
+                        "invalidExamples": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1, "maxLength": 200 } }
+                      }
+                    }
+                  },
+                  "riskWarning": { "type": "string", "minLength": 10, "maxLength": 1000 },
+                  "examples": { "type": "array", "minItems": 2, "items": { "$ref": "common.schema.json#/$defs/spokenLine" } }
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["applicable", "reason"],
+          "properties": {
+            "applicable": { "const": false },
+            "reason": { "type": "string", "minLength": 20, "maxLength": 1000 }
+          }
+        }
+      ]
+    },
+    "distinctions": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["nearbyJapanese", "reading", "distinction", "registerOrPragmaticContrast", "unsafeReplacement", "publishedFamilyId"],
+        "properties": {
+          "nearbyJapanese": { "$ref": "common.schema.json#/$defs/japanese" },
+          "reading": { "$ref": "common.schema.json#/$defs/reading" },
+          "distinction": { "type": "string", "minLength": 10, "maxLength": 1000 },
+          "registerOrPragmaticContrast": { "type": "string", "minLength": 10, "maxLength": 1000 },
+          "unsafeReplacement": { "type": "string", "minLength": 10, "maxLength": 1000 },
+          "publishedFamilyId": {
+            "oneOf": [
+              { "$ref": "common.schema.json#/$defs/familyId" },
+              { "type": "null" }
+            ]
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publicationState", "evidence", "evidenceClasses", "corpusRelease", "sourceRelease", "analysisCompilerVersion", "attributionRoute", "review"],
+      "properties": {
+        "publicationState": { "const": "verified" },
+        "evidence": { "type": "array", "minItems": 2, "items": { "$ref": "common.schema.json#/$defs/evidence" } },
+        "evidenceClasses": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["level-a", "level-b", "level-c"] } },
+        "corpusRelease": { "const": "0.1.0-development" },
+        "sourceRelease": { "type": "string", "pattern": "^source2:[0-9a-f]{64}$" },
+        "analysisCompilerVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "attributionRoute": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "review": { "$ref": "common.schema.json#/$defs/review" }
+      }
+    },
+    "displayContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sectionSequence", "stateControls", "stateMutuallyExclusive", "audioMethod", "analysisInteraction"],
+      "properties": {
+        "sectionSequence": {
+          "const": [
+            "hero", "personal-state", "intentions", "use-when", "take-care", "relationships",
+            "forms-and-analysis", "responses", "follow-ups", "dialogue", "patterns-and-examples",
+            "nearby-distinctions", "verification-and-sources"
+          ]
+        },
+        "stateControls": { "const": ["recognised", "review"] },
+        "stateMutuallyExclusive": { "const": true },
+        "audioMethod": { "const": "device-japanese-tts-explicit-only" },
+        "analysisInteraction": { "const": "every-published-form-segment-focusable-and-tappable" }
+      }
+    },
+    "provenanceRef": { "type": "string", "pattern": "^provenance2:[0-9a-f]{32}$" }
+  },
+  "$defs": {
+    "spokenItems": {
+      "type": "array", "minItems": 1, "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["context", "line"],
+        "properties": {
+          "context": { "type": "string", "minLength": 10, "maxLength": 800 },
+          "line": { "$ref": "common.schema.json#/$defs/spokenLine" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "artifacts": [
+    {
+      "canonicalBytes": 1000,
+      "canonicalSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compressedBytes": 500,
+      "compressedSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "file": "raw-candidates.json.gz",
+      "kind": "raw",
+      "records": 2500
+    },
+    {
+      "canonicalBytes": 1000,
+      "canonicalSha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "compressedBytes": 500,
+      "compressedSha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "file": "normalized-candidates.json.gz",
+      "kind": "normalized",
+      "records": 2000
+    }
+  ],
+  "buildId": "candidatebuild2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "contaminationAudit": {
+    "legacyIds": 0,
+    "legacyImports": 0,
+    "personalState": 0,
+    "unapprovedSources": 0,
+    "verdict": "passed"
+  },
+  "counts": {
+    "corpusAttestedNormalized": 500,
+    "duplicatesMerged": 500,
+    "normalizedByPrimaryHypothesis": {
+      "conventional-collocation": 2000
+    },
+    "normalizedCandidates": 2000,
+    "rawByChannel": {
+      "corpus-ngram": 400,
+      "labelled-expression": 2000,
+      "wiktionary-structural": 100
+    },
+    "rawCandidates": 2500
+  },
+  "determinism": {
+    "canonicalJson": true,
+    "gzipMtime": 0,
+    "secondBuildMatched": true,
+    "stableOrdering": true
+  },
+  "familyGenerationStarted": false,
+  "inputs": {
+    "evidenceBuildId": "evidencebuild2:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidenceManifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "runtime": {
+    "dictionarySha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "dictionaryVersion": "20260723.1",
+    "splitMode": "C-with-A-features",
+    "sudachiPySha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "sudachiPyVersion": "0.7.0"
+  },
+  "sourceDateEpoch": "2026-09-30T00:00:00Z"
+}

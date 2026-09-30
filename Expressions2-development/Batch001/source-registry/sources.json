@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "targetDatasetLicense": "CC-BY-SA-4.0",
+  "sources": [
+    {
+      "sourceId": "source2:jmdict-english",
+      "name": "JMdict English edition",
+      "owner": "Electronic Dictionary Research and Development Group",
+      "canonicalUrl": "https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project",
+      "acquisitionUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+      "networkPolicy": {
+        "allowedHosts": [
+          "www.edrdg.org"
+        ],
+        "maxBytes": 30000000,
+        "expectedBytes": 10580018,
+        "expectedSha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634"
+      },
+      "roles": [
+        "candidate-forms",
+        "readings",
+        "lexical-senses",
+        "canonical-vocabulary"
+      ],
+      "permissionClass": "redistributable",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "CC-BY-SA-4.0",
+        "url": "https://www.edrdg.org/edrdg/licence.html",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": true,
+        "attribution": "JMdict/EDRDG — James William Breen and the Electronic Dictionary Research and Development Group.",
+        "notes": "Significant extracts and software use require acknowledgement; software must provide an update procedure. Pin the exact acquired bytes."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": true,
+        "redistributeExtracts": true,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "low",
+      "notes": "Candidate and canonical lexical authority. Do not equate every JMdict expression entry with a Koto family; all corpus admission tests still apply.",
+      "snapshot": {
+        "versionOrDate": "JMdict-English-current-2026-09-30",
+        "retrievedAt": "2026-09-30T18:42:38Z",
+        "byteLength": 10580018,
+        "sha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634",
+        "mediaType": "application/gzip"
+      }
+    },
+    {
+      "sourceId": "source2:tatoeba-cc0",
+      "name": "Tatoeba CC0 sentence export",
+      "owner": "Association Tatoeba and contributing authors",
+      "canonicalUrl": "https://tatoeba.org/en/downloads",
+      "acquisitionUrl": "https://downloads.tatoeba.org/exports/sentences_CC0.tar.bz2",
+      "networkPolicy": {
+        "allowedHosts": [
+          "downloads.tatoeba.org"
+        ],
+        "maxBytes": 30000000,
+        "expectedBytes": 7961039,
+        "expectedSha256": "ea567c9c3efef007eac9aecf0b518bd2845a92d16a1564ba40b003811dfca4d1"
+      },
+      "roles": [
+        "attestation",
+        "pattern-evidence"
+      ],
+      "permissionClass": "redistributable",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": false,
+        "attribution": "Tatoeba sentence identifiers and source class are retained for provenance even where CC0 does not require attribution.",
+        "notes": "Use only records actually present in the CC0 export. Language and record identity must be retained."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": true,
+        "redistributeExtracts": true,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "medium",
+      "notes": "Attestation is not a naturalness guarantee. Never assume a translation has the same licence or that all Tatoeba Japanese sentences are CC0.",
+      "snapshot": {
+        "versionOrDate": "Tatoeba-weekly-CC0-2026-09-26",
+        "retrievedAt": "2026-09-30T18:42:38Z",
+        "byteLength": 7961039,
+        "sha256": "ea567c9c3efef007eac9aecf0b518bd2845a92d16a1564ba40b003811dfca4d1",
+        "mediaType": "application/x-bzip2-tar"
+      }
+    },
+    {
+      "sourceId": "source2:tatoeba-japanese-ccby",
+      "name": "Tatoeba Japanese per-language sentence export",
+      "owner": "Association Tatoeba and contributing authors",
+      "canonicalUrl": "https://tatoeba.org/en/downloads",
+      "acquisitionUrl": "https://downloads.tatoeba.org/exports/per_language/jpn/jpn_sentences.tsv.bz2",
+      "networkPolicy": {
+        "allowedHosts": [
+          "downloads.tatoeba.org"
+        ],
+        "maxBytes": 20000000,
+        "expectedBytes": 3417560,
+        "expectedSha256": "1a71f25043f9ecff3f1d1910bb677e99b5bb620b9ed9b22cde60d67790669b11"
+      },
+      "roles": [
+        "attestation",
+        "pattern-evidence"
+      ],
+      "permissionClass": "evidence-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "CC-BY-2.0-FR",
+        "url": "https://creativecommons.org/licenses/by/2.0/fr/",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": false,
+        "attribution": "Tatoeba sentence IDs and contributor/source metadata must remain traceable.",
+        "notes": "Evidence-only in Batch 001. Do not copy sentence text into learner-facing records until a record-level attribution policy passes."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "medium",
+      "notes": "Use for attestation and aggregate pattern evidence; do not treat crowd contribution as verified naturalness.",
+      "snapshot": {
+        "versionOrDate": "Tatoeba-weekly-jpn-2026-09-26",
+        "retrievedAt": "2026-09-30T18:42:42Z",
+        "byteLength": 3417560,
+        "sha256": "1a71f25043f9ecff3f1d1910bb677e99b5bb620b9ed9b22cde60d67790669b11",
+        "mediaType": "application/x-bzip2"
+      }
+    },
+    {
+      "sourceId": "source2:japanese-wiktionary",
+      "name": "Japanese Wiktionary pages/articles dump",
+      "owner": "Wikimedia Foundation and Wiktionary contributors",
+      "canonicalUrl": "https://ja.wiktionary.org/",
+      "acquisitionUrl": "https://dumps.wikimedia.org/jawiktionary/20260901/jawiktionary-20260901-pages-articles.xml.bz2",
+      "networkPolicy": {
+        "allowedHosts": [
+          "dumps.wikimedia.org"
+        ],
+        "maxBytes": 160000000,
+        "expectedBytes": 93551022,
+        "expectedSha256": "e2edbd9f0ff5b4f85703da21fdcad76a02ebbb27c2b238a449925cfa4ddb34fa"
+      },
+      "roles": [
+        "candidate-forms",
+        "readings",
+        "lexical-senses",
+        "attestation"
+      ],
+      "permissionClass": "evidence-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "CC-BY-SA-4.0-and-GFDL",
+        "url": "https://en.wiktionary.org/wiki/Wiktionary:Copyrights",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": true,
+        "attribution": "Japanese Wiktionary contributors; retain page/revision provenance and required licence notices.",
+        "notes": "Exclude quotations, media, fair-use material, and separately licensed external content. Batch 001 uses entries as evidence, not copied definitions."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "high",
+      "notes": "Pinned to the official 2026-09-01 pages/articles dump. Evidence-only until extraction rules prove that externally sourced quotations and text are excluded.",
+      "snapshot": {
+        "versionOrDate": "2026-09-01",
+        "retrievedAt": "2026-09-30T18:42:45Z",
+        "byteLength": 93551022,
+        "sha256": "e2edbd9f0ff5b4f85703da21fdcad76a02ebbb27c2b238a449925cfa4ddb34fa",
+        "mediaType": "application/x-bzip2"
+      }
+    },
+    {
+      "sourceId": "source2:japanese-wordnet-ok",
+      "name": "Japanese WordNet 1.1 high-confidence Japanese word links",
+      "owner": "Japanese WordNet contributors",
+      "canonicalUrl": "https://bond-lab.github.io/wnja/eng/downloads.html",
+      "acquisitionUrl": "https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn-ok.tab.gz",
+      "networkPolicy": {
+        "allowedHosts": [
+          "github.com",
+          "release-assets.githubusercontent.com",
+          "objects.githubusercontent.com"
+        ],
+        "maxBytes": 10000000,
+        "expectedBytes": 1079974,
+        "expectedSha256": "770a3779425b8565d52db9900b49f2ded6526f71b3b996b8f78fb58b5cf52459"
+      },
+      "roles": [
+        "semantic-grouping",
+        "duplicate-detection"
+      ],
+      "permissionClass": "tool-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "Japanese-WordNet-License-1.1",
+        "url": "https://bond-lab.github.io/wnja/license.txt",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": true,
+        "attribution": "Japanese WordNet 1.1; NICT and named maintainers/contributors, with the required site link.",
+        "notes": "Use the high-confidence `ok` links only for Batch 001 grouping. The project discloses material error rates; WordNet cannot establish family naturalness."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": false
+      },
+      "thirdPartyContentRisk": "medium",
+      "notes": "Semantic navigation and duplicate detection only. Do not publish WordNet definitions or examples in Koto family records.",
+      "snapshot": {
+        "versionOrDate": "1.1",
+        "retrievedAt": "2026-09-30T18:43:03Z",
+        "byteLength": 1079974,
+        "sha256": "770a3779425b8565d52db9900b49f2ded6526f71b3b996b8f78fb58b5cf52459",
+        "mediaType": "application/gzip"
+      }
+    },
+    {
+      "sourceId": "source2:sudachidict-core",
+      "name": "SudachiDict Core",
+      "owner": "Works Applications Co., Ltd.",
+      "canonicalUrl": "https://github.com/WorksApplications/SudachiDict",
+      "acquisitionUrl": "https://files.pythonhosted.org/packages/85/af/ba8419f684865b8cca587e01cedb41ba83fbdc985d75ab9e6ff38fdedf1a/sudachidict_core-20260723.1-py3-none-any.whl",
+      "networkPolicy": {
+        "allowedHosts": [
+          "files.pythonhosted.org"
+        ],
+        "maxBytes": 120000000,
+        "expectedBytes": 76938227,
+        "expectedSha256": "2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1"
+      },
+      "roles": [
+        "morphology"
+      ],
+      "permissionClass": "tool-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "Apache-2.0-with-component-notices",
+        "url": "https://github.com/WorksApplications/SudachiDict/blob/develop/LICENSE-2.0.txt",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": false,
+        "attribution": "SudachiDict by Works Applications Co., Ltd.; preserve Apache 2.0 and LEGAL notices.",
+        "notes": "PyPI metadata identifies wheel version 20260723.1 with 76,938,227 bytes and SHA-256 2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1. The official LEGAL file identifies Apache 2.0 coverage plus UniDic BSD and NEologd/component notices; acquisition must confirm the wheel carries the corresponding notices."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "medium",
+      "notes": "Tool-only. Exact PyPI wheel identity and upstream component notices were reviewed; the controlled snapshot step must verify the notices inside the acquired wheel before approving it for use.",
+      "snapshot": {
+        "versionOrDate": "20260723.1",
+        "retrievedAt": "2026-09-30T18:43:03Z",
+        "byteLength": 76938227,
+        "sha256": "2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1",
+        "mediaType": "application/zip"
+      }
+    },
+    {
+      "sourceId": "source2:unidic-modern-bsd",
+      "name": "UniDic for Contemporary Written Japanese 3.1.0",
+      "owner": "The UniDic Consortium / NINJAL",
+      "canonicalUrl": "https://clrd.ninjal.ac.jp/unidic/en/",
+      "acquisitionUrl": "https://clrd.ninjal.ac.jp/unidic_archive/2302/unidic-cwj-202302.zip",
+      "networkPolicy": {
+        "allowedHosts": [
+          "clrd.ninjal.ac.jp"
+        ],
+        "maxBytes": 750000000,
+        "expectedBytes": 603549853,
+        "expectedSha256": "601bc4b0af794d3c20c2089771b8771209390e1b35b0f20c85cf0a10c9a98c6d"
+      },
+      "roles": [
+        "morphology",
+        "readings"
+      ],
+      "permissionClass": "tool-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "BSD-3-Clause-selected-from-triple-license",
+        "url": "https://clrd.ninjal.ac.jp/unidic/copying/BSD",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": false,
+        "attribution": "UniDic for Contemporary Written Japanese 3.1.0; Copyright (c) 2011-2021, The UniDic Consortium.",
+        "notes": "The official download page offers GPL v2.0, LGPL v2.1, or BSD New. Batch 001 selects the BSD New option and must preserve its copyright, conditions, and disclaimer."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "low",
+      "notes": "Exact non-full 2023-02 Contemporary Written Japanese 3.1.0 archive; tool-only independent morphology/reading checks. HEAD reported 603,549,853 bytes on 2026-09-30. Raw archive must be temporary because it exceeds the persisted workspace budget.",
+      "snapshot": {
+        "versionOrDate": "3.1.0-202302",
+        "retrievedAt": "2026-09-30T18:43:04Z",
+        "byteLength": 603549853,
+        "sha256": "601bc4b0af794d3c20c2089771b8771209390e1b35b0f20c85cf0a10c9a98c6d",
+        "mediaType": "application/zip"
+      }
+    },
+    {
+      "sourceId": "source2:sudachipy-runtime",
+      "name": "SudachiPy 0.7.0 CPython 3.10+ ABI3 manylinux x86_64 runtime",
+      "owner": "Works Applications / sudachi.rs contributors",
+      "canonicalUrl": "https://pypi.org/project/SudachiPy/0.7.0/",
+      "acquisitionUrl": "https://files.pythonhosted.org/packages/1d/2d/b2c2511b3627032e81ef1626d6bce4506efacc7b698ca0e70cf6b4345e86/sudachipy-0.7.0-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "networkPolicy": {
+        "allowedHosts": [
+          "files.pythonhosted.org"
+        ],
+        "maxBytes": 5000000,
+        "expectedBytes": 1758941,
+        "expectedSha256": "dfc90631aa2276d2165e1995bc94b56c9f5bc27b875f43fb7d67e4a3b7346d4f"
+      },
+      "roles": [
+        "morphology-runtime"
+      ],
+      "permissionClass": "tool-only",
+      "approvalStatus": "approved",
+      "license": {
+        "name": "Apache-2.0",
+        "url": "https://github.com/WorksApplications/sudachi.rs/blob/develop/LICENSE",
+        "commercialUse": true,
+        "redistribution": true,
+        "shareAlike": false,
+        "attribution": "SudachiPy 0.7.0 / sudachi.rs by Works Applications and contributors; preserve Apache 2.0 notices.",
+        "notes": "Exact ABI3 manylinux x86_64 wheel selected for the current and GitHub Linux Python 3.10+ runtime. Tool-only; no learner-facing content originates from the runtime."
+      },
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "redistributeRaw": false,
+        "redistributeExtracts": false,
+        "publishDerivedRecords": true
+      },
+      "thirdPartyContentRisk": "low",
+      "notes": "User approved the recommended SudachiPy-first morphology gate. Version 0.7.0 is explicitly pinned because upstream labels the 0.7 line unstable and dictionary binary compatibility is version-sensitive.",
+      "snapshot": {
+        "versionOrDate": "0.7.0-cp310-abi3-manylinux-x86_64",
+        "retrievedAt": "2026-09-30T19:26:20Z",
+        "byteLength": 1758941,
+        "sha256": "dfc90631aa2276d2165e1995bc94b56c9f5bc27b875f43fb7d67e4a3b7346d4f",
+        "mediaType": "application/zip"
+      }
+    }
+  ]
+}

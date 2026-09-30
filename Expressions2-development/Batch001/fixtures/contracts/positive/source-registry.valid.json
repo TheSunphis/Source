@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "acquisitionUrl": "https://example.invalid/source.dat",
+      "allowed": {
+        "machineAccess": true,
+        "modelProcessing": true,
+        "publishDerivedRecords": true,
+        "redistributeExtracts": true,
+        "redistributeRaw": true
+      },
+      "approvalStatus": "approved-for-snapshot",
+      "canonicalUrl": "https://example.invalid/source",
+      "license": {
+        "attribution": "Synthetic fixture; no attribution required.",
+        "commercialUse": true,
+        "name": "CC0-1.0",
+        "notes": "Not real source data.",
+        "redistribution": true,
+        "shareAlike": false,
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+      },
+      "name": "Synthetic fixture source",
+      "networkPolicy": {
+        "allowedHosts": [
+          "example.invalid"
+        ],
+        "expectedBytes": 12,
+        "expectedSha256": null,
+        "maxBytes": 1024
+      },
+      "notes": "Fixture only.",
+      "owner": "Koto contract tests",
+      "permissionClass": "redistributable",
+      "roles": [
+        "candidate-forms"
+      ],
+      "snapshot": null,
+      "sourceId": "source2:fixture-source",
+      "thirdPartyContentRisk": "low"
+    }
+  ],
+  "targetDatasetLicense": "CC-BY-SA-4.0"
+}

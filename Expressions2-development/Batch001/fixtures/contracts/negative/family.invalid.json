@@ -1,0 +1,282 @@
+{
+  "candidateIds": [
+    "candidate2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "category": {
+    "key": "reaction",
+    "label": "Reaction"
+  },
+  "dialogue": {
+    "applicable": true,
+    "context": "Synthetic two-turn context used only by contract tests.",
+    "register": "fixture",
+    "relationship": "fixture",
+    "turns": [
+      {
+        "containsTarget": true,
+        "line": {
+          "deviceTts": true,
+          "japanese": "テスト表現です。",
+          "meaning": "This is synthetic contract-test text.",
+          "reading": "てすとひょうげんです。"
+        },
+        "speaker": "A"
+      },
+      {
+        "containsTarget": false,
+        "line": {
+          "deviceTts": true,
+          "japanese": "テスト表現です。",
+          "meaning": "This is synthetic contract-test text.",
+          "reading": "てすとひょうげんです。"
+        },
+        "speaker": "B"
+      }
+    ]
+  },
+  "difficulty": {
+    "label": "Essential",
+    "level": 1,
+    "rationale": "Synthetic fixture value for contract validation only."
+  },
+  "displayContract": {
+    "analysisInteraction": "every-published-form-segment-focusable-and-tappable",
+    "audioMethod": "device-japanese-tts-explicit-only",
+    "sectionSequence": [
+      "hero",
+      "personal-state",
+      "intentions",
+      "use-when",
+      "take-care",
+      "relationships",
+      "forms-and-analysis",
+      "responses",
+      "follow-ups",
+      "dialogue",
+      "patterns-and-examples",
+      "nearby-distinctions",
+      "verification-and-sources"
+    ],
+    "stateControls": [
+      "recognised",
+      "review"
+    ],
+    "stateMutuallyExclusive": true
+  },
+  "distinctions": [
+    {
+      "distinction": "A synthetic nearby form included to validate the distinction schema.",
+      "nearbyJapanese": "試験表現",
+      "publishedFamilyId": null,
+      "reading": "しけんひょうげん",
+      "registerOrPragmaticContrast": "No genuine register claim is made by this test fixture.",
+      "unsafeReplacement": "Neither synthetic string is approved for learner-facing replacement guidance."
+    }
+  ],
+  "facets": [
+    "reaction"
+  ],
+  "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+  "followUps": [
+    {
+      "context": "Synthetic follow-up for contract validation.",
+      "line": {
+        "deviceTts": true,
+        "japanese": "テスト表現です。",
+        "meaning": "This is synthetic contract-test text.",
+        "reading": "てすとひょうげんです。"
+      }
+    }
+  ],
+  "forms": [
+    {
+      "analysisRef": "analysis2:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "contextualMeaning": "Synthetic contract-test expression.",
+      "deviceTts": true,
+      "evidence": [
+        {
+          "evidenceType": "direct-authority",
+          "locator": "entry:fixture",
+          "permissionClass": "redistributable",
+          "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceId": "source2:jmdict-english",
+          "supports": [
+            "existence",
+            "form",
+            "reading"
+          ]
+        }
+      ],
+      "formId": "primary",
+      "japanese": "テスト表現",
+      "kind": "primary",
+      "label": "Synthetic primary",
+      "reading": "てすとひょうげん",
+      "register": "Fixture only"
+    }
+  ],
+  "guidance": {
+    "relationships": [
+      {
+        "context": "peers",
+        "guidance": "Relationship guidance is synthetic and not instructional.",
+        "suitability": "not-applicable"
+      }
+    ],
+    "takeCare": [
+      "Never treat this synthetic fixture as Japanese teaching content."
+    ],
+    "useWhen": [
+      "Use only while validating isolated contract fixtures."
+    ]
+  },
+  "hero": {
+    "contextualMeaning": "Synthetic contract-test expression.",
+    "deviceTts": true,
+    "japanese": "テスト表現",
+    "primaryFormId": "primary",
+    "reading": "てすとひょうげん",
+    "usageSummary": "This deliberately synthetic text exercises every required family-card field."
+  },
+  "intentions": [
+    {
+      "action": "Exercise the complete family contract.",
+      "distinguishingNote": "This is not learner-facing corpus content."
+    }
+  ],
+  "library": {
+    "availableActions": [
+      "recognised",
+      "review",
+      "open"
+    ],
+    "contextualMeaning": "Synthetic contract-test expression.",
+    "formCount": 1,
+    "intentionSummary": [
+      "Exercise the runtime contract."
+    ],
+    "japanese": "テスト表現",
+    "reading": "てすとひょうげん",
+    "searchDocument": {
+      "intentions": [
+        "Exercise the runtime contract."
+      ],
+      "japanese": [
+        "テスト表現"
+      ],
+      "meanings": [
+        "Synthetic contract-test expression."
+      ],
+      "reading": [
+        "てすとひょうげん"
+      ],
+      "usageAndContext": [
+        "Used only in isolated contract fixtures."
+      ]
+    },
+    "usageContexts": [
+      "Contract validation only"
+    ],
+    "verifiedSourceState": "verified"
+  },
+  "patterns": {
+    "applicable": true,
+    "items": [
+      {
+        "examples": [
+          {
+            "deviceTts": true,
+            "japanese": "テスト表現です。",
+            "meaning": "This is synthetic contract-test text.",
+            "reading": "てすとひょうげんです。"
+          },
+          {
+            "deviceTts": true,
+            "japanese": "テスト表現です。",
+            "meaning": "This is synthetic contract-test text.",
+            "reading": "てすとひょうげんです。"
+          }
+        ],
+        "function": "Exercises the required pattern contract.",
+        "riskWarning": "Do not interpret substitutions as natural Japanese usage guidance.",
+        "slots": [
+          {
+            "constraint": "Accept only synthetic values in this contract fixture.",
+            "invalidExamples": [
+              "実データ"
+            ],
+            "name": "fixture",
+            "validExamples": [
+              "テスト"
+            ]
+          }
+        ],
+        "template": "テスト＋表現",
+        "templateReading": "てすと＋ひょうげん"
+      }
+    ]
+  },
+  "primaryClass": "interactional-formula",
+  "provenanceRef": "provenance2:cccccccccccccccccccccccccccccccc",
+  "publication": {
+    "productionReady": false,
+    "release": "0.1.0-development",
+    "state": "verified",
+    "visibility": "private-shadow"
+  },
+  "responses": [
+    {
+      "context": "Synthetic response for contract validation.",
+      "line": {
+        "deviceTts": true,
+        "japanese": "テスト表現です。",
+        "meaning": "This is synthetic contract-test text.",
+        "reading": "てすとひょうげんです。"
+      }
+    }
+  ],
+  "slug": "synthetic-contract-fixture",
+  "verification": {
+    "analysisCompilerVersion": "0.1.0",
+    "attributionRoute": "Synthetic fixture-only attribution route.",
+    "corpusRelease": "0.1.0-development",
+    "evidence": [
+      {
+        "evidenceType": "direct-authority",
+        "locator": "entry:fixture",
+        "permissionClass": "redistributable",
+        "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "sourceId": "source2:jmdict-english",
+        "supports": [
+          "existence",
+          "form",
+          "reading"
+        ]
+      },
+      {
+        "evidenceType": "corpus-attestation",
+        "locator": "sentence:fixture",
+        "permissionClass": "redistributable",
+        "recordHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "sourceId": "source2:tatoeba-cc0",
+        "supports": [
+          "existence",
+          "form",
+          "reading"
+        ]
+      }
+    ],
+    "evidenceClasses": [
+      "level-a",
+      "level-b"
+    ],
+    "publicationState": "verified",
+    "review": {
+      "gateManifestId": "gates2:fixture",
+      "reviewType": "automated",
+      "reviewedAt": "2026-09-30T00:00:00Z",
+      "reviewerIdentity": "fixture-reviewer"
+    },
+    "sourceRelease": "source2:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  }
+}

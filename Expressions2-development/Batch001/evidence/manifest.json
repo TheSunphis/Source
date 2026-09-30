@@ -1,0 +1,153 @@
+{
+  "artifacts": [
+    {
+      "adapter": {
+        "name": "wiktionary-structural-expression",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 185777,
+      "canonicalSha256": "868b182eb00c1151b9680b78351679ec841e6c81810871bd534fd5089ba40174",
+      "compressedBytes": 53665,
+      "compressedSha256": "bf2b9371af26d422a42d272877b088d831d454edf0a6a2ed7346773a7467f9a5",
+      "file": "japanese-wiktionary.evidence.json.gz",
+      "permissionClass": "evidence-only",
+      "recordCount": 565,
+      "secondPassMatched": true,
+      "snapshotSha256": "e2edbd9f0ff5b4f85703da21fdcad76a02ebbb27c2b238a449925cfa4ddb34fa",
+      "sourceId": "source2:japanese-wiktionary"
+    },
+    {
+      "adapter": {
+        "name": "wordnet-high-confidence",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 49039954,
+      "canonicalSha256": "ded1313e62e9935635e8c2606bf05e851c62bb7452fea8e3ae40f378f4a78fdc",
+      "compressedBytes": 12860634,
+      "compressedSha256": "dbc78b32eda4fc7f1a4a838847bb57fef8be7dcbadda2b1fbf760a6201d45edf",
+      "file": "japanese-wordnet-ok.evidence.json.gz",
+      "permissionClass": "tool-only",
+      "recordCount": 158068,
+      "secondPassMatched": true,
+      "snapshotSha256": "770a3779425b8565d52db9900b49f2ded6526f71b3b996b8f78fb58b5cf52459",
+      "sourceId": "source2:japanese-wordnet-ok"
+    },
+    {
+      "adapter": {
+        "name": "jmdict-expression",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 7202666,
+      "canonicalSha256": "5bc2186b1b04aa32000c87faec6730198a703ffb46d25efb053d6efe39291e33",
+      "compressedBytes": 2083756,
+      "compressedSha256": "593207c0e360b95fc749f25f09752eb6bc1af2c3194f37bff2a7341209e203f2",
+      "file": "jmdict-english.evidence.json.gz",
+      "permissionClass": "redistributable",
+      "recordCount": 15516,
+      "secondPassMatched": true,
+      "snapshotSha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634",
+      "sourceId": "source2:jmdict-english"
+    },
+    {
+      "adapter": {
+        "name": "sudachidict-inventory",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 2824,
+      "canonicalSha256": "8b7604941fc25a9011a10095a9dc93238befc34a75b51decb18f09afd130a7d5",
+      "compressedBytes": 974,
+      "compressedSha256": "30fa14826e1e03d1a1b695f03eff20d9cd91625482d6149b90fccf7f47759982",
+      "file": "sudachidict-core.evidence.json.gz",
+      "permissionClass": "tool-only",
+      "recordCount": 7,
+      "secondPassMatched": true,
+      "snapshotSha256": "2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1",
+      "sourceId": "source2:sudachidict-core"
+    },
+    {
+      "adapter": {
+        "name": "sudachipy-runtime-inventory",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 7591,
+      "canonicalSha256": "580d82a64d2168647856973dd51f527ec7d33f08f2fa250e52ace3da6efc2220",
+      "compressedBytes": 2248,
+      "compressedSha256": "8e92fa7ca440ad64b6e70e0040f18317e5f4c42c864463591c099cb6c171fb9a",
+      "file": "sudachipy-runtime.evidence.json.gz",
+      "permissionClass": "tool-only",
+      "recordCount": 21,
+      "secondPassMatched": true,
+      "snapshotSha256": "dfc90631aa2276d2165e1995bc94b56c9f5bc27b875f43fb7d67e4a3b7346d4f",
+      "sourceId": "source2:sudachipy-runtime"
+    },
+    {
+      "adapter": {
+        "name": "tatoeba-cc0-japanese",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 1061,
+      "canonicalSha256": "494989018f710c8d0661f2368b41ccea72a1a26890dd062c1f8106a9d4879b50",
+      "compressedBytes": 540,
+      "compressedSha256": "af472b8ebd790c60b75a98a394416d83856c95b2b0fc9927d07334feb3d6cbf9",
+      "file": "tatoeba-cc0.evidence.json.gz",
+      "permissionClass": "redistributable",
+      "recordCount": 2,
+      "secondPassMatched": true,
+      "snapshotSha256": "ea567c9c3efef007eac9aecf0b518bd2845a92d16a1564ba40b003811dfca4d1",
+      "sourceId": "source2:tatoeba-cc0"
+    },
+    {
+      "adapter": {
+        "name": "tatoeba-japanese-evidence",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 91736071,
+      "canonicalSha256": "691ac8b70ea3f6bf8250c066db2bc79544f220157a395fff45ea4a88d5f3c7e0",
+      "compressedBytes": 23925231,
+      "compressedSha256": "bfec75cbb926ce2980ee4063b34f3d73204ca2970d9c4ec69d0d5440c77590ad",
+      "file": "tatoeba-japanese-ccby.evidence.json.gz",
+      "permissionClass": "evidence-only",
+      "recordCount": 248917,
+      "secondPassMatched": true,
+      "snapshotSha256": "1a71f25043f9ecff3f1d1910bb677e99b5bb620b9ed9b22cde60d67790669b11",
+      "sourceId": "source2:tatoeba-japanese-ccby"
+    },
+    {
+      "adapter": {
+        "name": "unidic-inventory",
+        "version": "0.1.0"
+      },
+      "canonicalBytes": 4269,
+      "canonicalSha256": "6c4678c43e3e8f5ee7e1b3f78e0d7de22ea6344568112f96fbebdc89afe324f1",
+      "compressedBytes": 1484,
+      "compressedSha256": "764c09a4ef3c28d7b035254e9b6a9c37635b1b64e037bbcaf7c3374f895a27cc",
+      "file": "unidic-modern-bsd.evidence.json.gz",
+      "permissionClass": "tool-only",
+      "recordCount": 13,
+      "secondPassMatched": true,
+      "snapshotSha256": "601bc4b0af794d3c20c2089771b8771209390e1b35b0f20c85cf0a10c9a98c6d",
+      "sourceId": "source2:unidic-modern-bsd"
+    }
+  ],
+  "buildId": "evidencebuild2:fb1ac40e9439080eb02aa68ff7993df1",
+  "contaminationAudit": {
+    "legacyIds": 0,
+    "legacyImports": 0,
+    "permissionMismatches": 0,
+    "prohibitedWiktionaryText": 0,
+    "verdict": "passed"
+  },
+  "determinism": {
+    "allSecondPassesMatched": true,
+    "canonicalJson": true,
+    "gzipMtime": 0
+  },
+  "schemaVersion": 1,
+  "sourceDateEpoch": "2026-09-30T19:26:20Z",
+  "totals": {
+    "canonicalBytes": 148180213,
+    "compressedBytes": 38928532,
+    "records": 423109,
+    "sources": 8
+  }
+}
