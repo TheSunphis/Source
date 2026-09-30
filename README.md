@@ -12,7 +12,7 @@ This repository is deliberately data-only. It contains no account records, recog
 
 Production datasets are published as immutable GitHub Releases. A consuming Koto release must pin the dataset release and verify the SHA-256 values declared in its manifest before loading any pack. The default branch may advance, but applications must never treat an unpinned branch snapshot as trusted production data.
 
-The Expressions production manifest still has zero verified families. A reproducible first-pass audit of the 30 September 2026 JMdict snapshot has produced 5,000 explicitly non-production source candidates for editorial triage. Candidates do not become expression families until deduplication, difficulty review, rich-card editing, and human naturalness review are complete.
+The Expressions production manifest still has zero verified families. A reproducible first-pass audit of the 30 September 2026 JMdict snapshot produced 5,000 explicitly non-production source candidates. The first source-backed editorial family review is complete for `よろしくお願いします`, but independent human Japanese-language sign-off is still required before it can enter a production pack.
 
 ## Licence
 

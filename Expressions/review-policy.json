@@ -32,6 +32,30 @@
     "substitution-safety",
     "final-publication"
   ],
+  "reviewStages": [
+    {
+      "stage": "source-candidate",
+      "responsibility": "Automated extraction may identify candidates but cannot assign family, difficulty, or verification status."
+    },
+    {
+      "stage": "source-backed-editorial",
+      "responsibility": "An editor groups candidates, writes the rich record, checks authoritative references, and completes every gate except final publication."
+    },
+    {
+      "stage": "independent-human-sign-off",
+      "responsibility": "A Japanese-proficient human independently checks naturalness, meaning, reading, register, social suitability, and examples."
+    },
+    {
+      "stage": "final-publication",
+      "responsibility": "After sign-off, the record is marked verified, added to a checksummed production pack, and counted as a production family."
+    }
+  ],
+  "finalPublicationRequirements": [
+    "Independent reviewer is identified in review metadata.",
+    "Every required gate is true.",
+    "No unresolved family overlap or source-licence issue remains.",
+    "Production manifest counts and pack checksums validate."
+  ],
   "verifiedLabelRule": "The learner-facing Verified expression label is permitted only when every required gate has passed.",
   "countingRule": "Only distinct expression families count toward the 3000–5000 production target."
 }

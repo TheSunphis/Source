@@ -1,0 +1,255 @@
+{
+  "id": "expression:request-goodwill-cooperation",
+  "revision": 1,
+  "publicationStatus": "reviewed",
+  "difficulty": 1,
+  "category": "Social formula",
+  "intentions": [
+    "introduce yourself",
+    "ask for goodwill or cooperation",
+    "close a request or professional message"
+  ],
+  "primary": {
+    "japanese": "よろしくお願いします。",
+    "reading": "よろしくおねがいします。",
+    "meaning": "Nice to meet you; thank you in advance; I look forward to working with you.",
+    "deviceTts": true
+  },
+  "usage": {
+    "summary": "A highly reusable, context-dependent formula that asks for goodwill, cooperation, or favorable consideration. Its natural English translation changes with the situation.",
+    "useWhen": [
+      "Finishing a self-introduction when meeting someone for the first time.",
+      "After making a request or explaining something that will require the other person's cooperation.",
+      "Closing a work message, project introduction, or arrangement on a positive cooperative note."
+    ],
+    "avoidWhen": [
+      "Do not translate it mechanically as one fixed English sentence; its function depends on the surrounding interaction.",
+      "Do not use よろしく by itself with a customer, teacher, senior, or unfamiliar adult when a polite form is expected.",
+      "Do not let the formula replace the concrete details of a request when the other person needs to know exactly what to do.",
+      "Very formal forms can sound distant or excessively stiff with close friends and family."
+    ],
+    "suitableRelationships": [
+      "よろしく or よろしくね with close friends and familiar peers",
+      "よろしくお願いします with unfamiliar adults, teachers, colleagues, and ordinary polite interactions",
+      "よろしくお願いいたします in formal work interactions and business correspondence",
+      "何卒よろしくお願い申し上げます in especially formal written requests"
+    ]
+  },
+  "forms": [
+    {
+      "formId": "casual",
+      "register": "casual",
+      "label": "Casual",
+      "japanese": "よろしく。",
+      "reading": "よろしく。",
+      "meaning": "Thanks; I'm counting on you; nice to meet you.",
+      "deviceTts": true
+    },
+    {
+      "formId": "friendly",
+      "register": "casual",
+      "label": "Friendly casual",
+      "japanese": "よろしくね。",
+      "reading": "よろしくね。",
+      "meaning": "Thanks, okay?; nice to meet you.",
+      "deviceTts": true
+    },
+    {
+      "formId": "warm-polite",
+      "register": "polite",
+      "label": "Warm polite",
+      "japanese": "どうぞよろしくお願いします。",
+      "reading": "どうぞよろしくおねがいします。",
+      "meaning": "It is very nice to meet you; I sincerely ask for your goodwill.",
+      "deviceTts": true
+    },
+    {
+      "formId": "polite",
+      "register": "polite",
+      "label": "Standard polite",
+      "japanese": "よろしくお願いします。",
+      "reading": "よろしくおねがいします。",
+      "meaning": "Nice to meet you; thank you in advance.",
+      "deviceTts": true
+    },
+    {
+      "formId": "formal-humble",
+      "register": "formal",
+      "label": "Formal humble",
+      "japanese": "よろしくお願いいたします。",
+      "reading": "よろしくおねがいいたします。",
+      "meaning": "I respectfully ask for your cooperation or consideration.",
+      "deviceTts": true
+    },
+    {
+      "formId": "very-formal-written",
+      "register": "written",
+      "label": "Very formal written request",
+      "japanese": "何卒よろしくお願い申し上げます。",
+      "reading": "なにとぞよろしくおねがいもうしあげます。",
+      "meaning": "I respectfully and sincerely ask for your consideration.",
+      "deviceTts": true
+    }
+  ],
+  "responses": [
+    {
+      "japanese": "こちらこそ、よろしくお願いします。",
+      "reading": "こちらこそ、よろしくおねがいします。",
+      "meaning": "Likewise. I look forward to it.",
+      "deviceTts": true
+    },
+    {
+      "japanese": "はい、よろしくお願いします。",
+      "reading": "はい、よろしくおねがいします。",
+      "meaning": "Yes, likewise; thank you.",
+      "deviceTts": true
+    }
+  ],
+  "followUps": [
+    {
+      "japanese": "今後ともよろしくお願いします。",
+      "reading": "こんごともよろしくおねがいします。",
+      "meaning": "I look forward to your continued support.",
+      "deviceTts": true
+    },
+    {
+      "japanese": "引き続きよろしくお願いいたします。",
+      "reading": "ひきつづきよろしくおねがいいたします。",
+      "meaning": "I look forward to continuing to work with you.",
+      "deviceTts": true
+    }
+  ],
+  "dialogue": [
+    {
+      "speaker": "A",
+      "japanese": "はじめまして。田中です。よろしくお願いします。",
+      "reading": "はじめまして。たなかです。よろしくおねがいします。",
+      "meaning": "Nice to meet you. I'm Tanaka. I look forward to getting along with you.",
+      "deviceTts": true
+    },
+    {
+      "speaker": "B",
+      "japanese": "こちらこそ、よろしくお願いします。",
+      "reading": "こちらこそ、よろしくおねがいします。",
+      "meaning": "Likewise. I look forward to it.",
+      "deviceTts": true
+    }
+  ],
+  "patterns": [
+    {
+      "template": "［名前・所属］です。よろしくお願いします。",
+      "reading": "［なまえ・しょぞく］です。よろしくおねがいします。",
+      "meaning": "I'm [name / affiliation]. Nice to meet you.",
+      "reviewed": true,
+      "examples": [
+        {
+          "japanese": "営業部の佐藤です。よろしくお願いします。",
+          "reading": "えいぎょうぶのさとうです。よろしくおねがいします。",
+          "meaning": "I'm Sato from the Sales Department. I look forward to working with you.",
+          "deviceTts": true
+        }
+      ]
+    },
+    {
+      "template": "今後とも／引き続き＋よろしくお願いします",
+      "reading": "こんごとも／ひきつづき＋よろしくおねがいします",
+      "meaning": "I look forward to your continued support or cooperation.",
+      "reviewed": true,
+      "examples": [
+        {
+          "japanese": "今後ともよろしくお願いします。",
+          "reading": "こんごともよろしくおねがいします。",
+          "meaning": "I look forward to your continued support.",
+          "deviceTts": true
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "expression": "はじめまして。",
+      "reading": "はじめまして。",
+      "note": "Specifically marks a first meeting and commonly comes immediately before よろしくお願いします."
+    },
+    {
+      "expression": "お願いします。",
+      "reading": "おねがいします。",
+      "note": "A more direct request. よろしくお願いします adds a broader appeal for goodwill, favorable handling, or cooperation."
+    },
+    {
+      "expression": "お世話になっております。",
+      "reading": "おせわになっております。",
+      "note": "A business greeting acknowledging an existing relationship; it is not normally the same first-meeting formula."
+    },
+    {
+      "expression": "よろしくお伝えください。",
+      "reading": "よろしくおつたえください。",
+      "note": "Means to give someone one's regards and belongs to a separate communicative pattern."
+    }
+  ],
+  "searchAliases": [
+    "nice to meet you",
+    "please treat me well",
+    "thank you in advance",
+    "I look forward to working with you",
+    "best regards",
+    "ask for cooperation",
+    "self introduction closing",
+    "どうぞよろしく",
+    "よろしくお願いいたします"
+  ],
+  "vocabularyCandidates": [
+    {
+      "written": "よろしく",
+      "reading": "よろしく",
+      "headwordId": "vocab:1224890"
+    },
+    {
+      "written": "お願い",
+      "reading": "おねがい",
+      "headwordId": "vocab:2036870"
+    },
+    {
+      "written": "する",
+      "reading": "する",
+      "headwordId": "vocab:1157170"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "jmdict",
+      "locator": "ent_seq 1224890, 2133750, 2133760, and 1008960",
+      "note": "Licensed lexical candidates and register evidence; related records were merged into one family."
+    },
+    {
+      "sourceId": "nhk-world-easy-japanese",
+      "locator": "https://www3.nhk.or.jp/nhkworld/lesson/en/lessons/02.html",
+      "note": "Review reference confirming first-introduction use and casual shortening to よろしく; no lesson text was imported."
+    },
+    {
+      "sourceId": "bunka-keigo-guidelines",
+      "locator": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
+      "note": "Review reference for the function of お（ご）…いたす as a humble and courteous construction; no source text was imported."
+    },
+    {
+      "sourceId": "original-editorial",
+      "locator": "review 2026-09-30",
+      "note": "Use guidance, translations, dialogue, comparisons, and substitution patterns are original Koto editorial content."
+    }
+  ],
+  "review": {
+    "gates": {
+      "source-and-licence": true,
+      "family-deduplication": true,
+      "japanese-naturalness": true,
+      "meaning-and-reading": true,
+      "register-and-social-use": true,
+      "difficulty": true,
+      "substitution-safety": true,
+      "final-publication": false
+    },
+    "reviewedAt": "2026-09-30T05:17:09Z",
+    "reviewer": "Koto source-backed editorial review",
+    "notes": "Editorial review complete. Final publication remains blocked pending independent human Japanese-language sign-off."
+  }
+}

@@ -6,7 +6,7 @@ An expression family groups socially or functionally related casual, neutral, po
 
 ## Current state
 
-The repository currently contains the publication scaffold, schemas, source policy, review policy, and one non-production design example. The production manifest intentionally reports zero families. No record may be placed in a production pack or labelled `verified` until it passes the required provenance, licensing, deduplication, difficulty, naturalness, and social-use reviews.
+The repository contains the publication scaffold, schemas, source policy, review policy, one non-production design example, 5,000 non-production JMdict source candidates, and one source-backed reviewed family. The candidates were selected from 13,065 current eligible expression-tagged entries in the 30 September 2026 JMdict snapshot. The production manifest intentionally reports zero families because the reviewed family still requires independent human Japanese-language sign-off. No record may be placed in a production pack or labelled `verified` until every review gate passes.
 
 ## Files
 
@@ -15,9 +15,11 @@ The repository currently contains the publication scaffold, schemas, source poli
 - `review-policy.json` — publication gates and Koto Difficulty 1–5 definitions.
 - `schema/` — JSON Schemas for manifests, candidates, packs, and expression families.
 - `examples/` — non-production examples used to exercise the schema and card design.
-- `candidates/` — source-derived editorial work queues; never loaded by the learner-facing app.
+- `candidates/` — immutable source-derived editorial work queues; never loaded by the learner-facing app.
+- `editorial/` — accept, reject, split, and merge decisions connecting candidates to families.
+- `reviewed/` — rich families that passed source-backed editorial review but still await independent human sign-off.
 - `audit/` — reproducibility, source-snapshot, and extraction-count reports.
-- `packs/` — production packs; intentionally empty until review is complete.
+- `packs/` — verified production packs; intentionally empty until final publication review is complete.
 
 ## Runtime rules
 

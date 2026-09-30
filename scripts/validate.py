@@ -98,12 +98,12 @@ def main() -> None:
             raise SystemExit("Search-index integrity mismatch.")
 
     candidate_total = 0
+    candidate_ids: set[str] = set()
     candidate_manifest_path = EXPRESSIONS / "candidates" / "manifest.json"
     if candidate_manifest_path.is_file():
         candidate_manifest = load_json(candidate_manifest_path)
         validate_or_raise(validator("candidate-manifest.schema.json"), candidate_manifest, "candidate manifest")
         candidate_pack_validator = validator("candidate-pack.schema.json")
-        candidate_ids: set[str] = set()
         source_sequences: set[int] = set()
         for item in candidate_manifest["packs"]:
             path = candidate_manifest_path.parent / item["file"]
@@ -130,8 +130,44 @@ def main() -> None:
         if candidate_total != candidate_manifest["audit"]["shortlistedCount"]:
             raise SystemExit("Candidate shortlist count is inconsistent with its audit.")
 
+    source_registry = load_json(EXPRESSIONS / "source-registry.json")
+    source_ids = {item["id"] for item in source_registry["sources"]}
+    reviewed_families: dict[str, dict] = {}
+    for path in sorted((EXPRESSIONS / "reviewed").glob("*.json")):
+        family = load_json(path)
+        validate_or_raise(family_validator, family, str(path.relative_to(ROOT)))
+        if family["publicationStatus"] != "reviewed":
+            raise SystemExit(f"Reviewed directory contains a non-reviewed family: {family['id']}")
+        gates = family["review"]["gates"]
+        if gates["final-publication"] or not all(
+            passed for gate, passed in gates.items() if gate != "final-publication"
+        ):
+            raise SystemExit(f"Reviewed family gates are inconsistent: {family['id']}")
+        if any(source["sourceId"] not in source_ids for source in family["sources"]):
+            raise SystemExit(f"Reviewed family references an unknown source: {family['id']}")
+        if family["id"] in reviewed_families:
+            raise SystemExit(f"Duplicate reviewed family id: {family['id']}")
+        reviewed_families[family["id"]] = family
+
+    decision_validator = validator("editorial-decision.schema.json")
+    assigned_candidates: set[str] = set()
+    decision_count = 0
+    for path in sorted((EXPRESSIONS / "editorial" / "decisions").glob("*.json")):
+        decision = load_json(path)
+        validate_or_raise(decision_validator, decision, str(path.relative_to(ROOT)))
+        if decision["familyId"] not in reviewed_families:
+            raise SystemExit(f"Editorial decision references a missing reviewed family: {decision['familyId']}")
+        for candidate_id in decision["mergedCandidates"]:
+            if candidate_id not in candidate_ids:
+                raise SystemExit(f"Editorial decision references a missing candidate: {candidate_id}")
+            if candidate_id in assigned_candidates:
+                raise SystemExit(f"Candidate assigned by more than one decision: {candidate_id}")
+            assigned_candidates.add(candidate_id)
+        decision_count += 1
+
     print(
         f"Validated {len(json_paths)} JSON files, {total} production expression families, "
+        f"{len(reviewed_families)} reviewed families, {decision_count} editorial decisions, "
         f"and {candidate_total} non-production candidates."
     )
 

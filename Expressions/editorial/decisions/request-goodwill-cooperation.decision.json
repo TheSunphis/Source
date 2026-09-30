@@ -1,0 +1,32 @@
+{
+  "decisionId": "decision:request-goodwill-cooperation",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:request-goodwill-cooperation",
+  "mergedCandidates": [
+    "candidate:jmdict:1224890",
+    "candidate:jmdict:2133750",
+    "candidate:jmdict:2133760",
+    "candidate:jmdict:1008960"
+  ],
+  "relatedCandidatesNotMerged": [
+    {
+      "candidateId": "candidate:jmdict:2835139",
+      "reason": "夜露死苦 is a stylized slang spelling requiring separate usage and avoid guidance."
+    },
+    {
+      "candidateId": "candidate:jmdict:2846370",
+      "reason": "４６４９ is numeric slang requiring separate contemporary-usage review."
+    },
+    {
+      "candidateId": "candidate:jmdict:1915280",
+      "reason": "よろしくやる has a different lexical meaning and is not a register variant of this family."
+    },
+    {
+      "candidateId": "candidate:jmdict:2840298",
+      "reason": "よろしくお付き合いください makes a more specific request for an ongoing relationship and requires separate family review."
+    }
+  ],
+  "reviewedAt": "2026-09-30T05:17:09Z",
+  "reviewer": "Koto source-backed editorial review",
+  "finalPublicationApproved": false
+}

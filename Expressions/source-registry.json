@@ -16,9 +16,9 @@
     {
       "id": "jmdict",
       "name": "JMdict Japanese/English Dictionary",
-      "url": "https://www.edrdg.org/jmwsgi/edhelp.py?svc=jmdict",
+      "url": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
       "licence": "CC-BY-SA-4.0",
-      "eligibility": "candidate-extraction-only",
+      "eligibility": "candidate-extraction-completed",
       "requirements": [
         "Preserve EDRDG attribution and source identifiers.",
         "Treat exp-tagged entries as candidates rather than automatically verified families.",
@@ -36,6 +36,28 @@
         "Verify the licence and attribution of every selected sentence.",
         "Review contributor examples for naturalness and contextual suitability.",
         "Do not infer expression difficulty from sentence availability."
+      ]
+    },
+    {
+      "id": "nhk-world-easy-japanese",
+      "name": "NHK WORLD-JAPAN Easy Japanese",
+      "url": "https://www3.nhk.or.jp/nhkworld/lesson/en/",
+      "licence": "copyrighted-reference-only",
+      "eligibility": "review-reference-only",
+      "requirements": [
+        "Use only to corroborate naturalness and social use.",
+        "Do not import or redistribute lesson text, audio, or artwork."
+      ]
+    },
+    {
+      "id": "bunka-keigo-guidelines",
+      "name": "Agency for Cultural Affairs — Keigo no Shishin",
+      "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
+      "licence": "government-reference-only",
+      "eligibility": "review-reference-only",
+      "requirements": [
+        "Use as an authoritative reference for honorific-language analysis.",
+        "Do not treat the publication as an unrestricted expression dataset."
       ]
     }
   ],
