@@ -97,7 +97,43 @@ def main() -> None:
         if not path.is_file() or path.stat().st_size != item["bytes"] or sha256(path) != item["sha256"]:
             raise SystemExit("Search-index integrity mismatch.")
 
-    print(f"Validated {len(json_paths)} JSON files and {total} production expression families.")
+    candidate_total = 0
+    candidate_manifest_path = EXPRESSIONS / "candidates" / "manifest.json"
+    if candidate_manifest_path.is_file():
+        candidate_manifest = load_json(candidate_manifest_path)
+        validate_or_raise(validator("candidate-manifest.schema.json"), candidate_manifest, "candidate manifest")
+        candidate_pack_validator = validator("candidate-pack.schema.json")
+        candidate_ids: set[str] = set()
+        source_sequences: set[int] = set()
+        for item in candidate_manifest["packs"]:
+            path = candidate_manifest_path.parent / item["file"]
+            if not path.is_file():
+                raise SystemExit(f"Missing candidate pack: {item['file']}")
+            if path.stat().st_size != item["bytes"] or sha256(path) != item["sha256"]:
+                raise SystemExit(f"Candidate integrity mismatch: {item['file']}")
+            pack = load_json(path)
+            validate_or_raise(candidate_pack_validator, pack, item["id"])
+            if pack["packId"] != item["id"] or pack["candidateCount"] != item["candidateCount"]:
+                raise SystemExit(f"Candidate pack metadata mismatch: {item['id']}")
+            if pack["candidateCount"] != len(pack["candidates"]):
+                raise SystemExit(f"Candidate pack count mismatch: {item['id']}")
+            for candidate in pack["candidates"]:
+                if candidate["candidateId"] in candidate_ids:
+                    raise SystemExit(f"Duplicate candidate id: {candidate['candidateId']}")
+                if candidate["sourceSequence"] in source_sequences:
+                    raise SystemExit(f"Duplicate JMdict source sequence: {candidate['sourceSequence']}")
+                candidate_ids.add(candidate["candidateId"])
+                source_sequences.add(candidate["sourceSequence"])
+            candidate_total += pack["candidateCount"]
+        if candidate_total != candidate_manifest["candidateCount"]:
+            raise SystemExit("Candidate manifest count does not equal the sum of pack counts.")
+        if candidate_total != candidate_manifest["audit"]["shortlistedCount"]:
+            raise SystemExit("Candidate shortlist count is inconsistent with its audit.")
+
+    print(
+        f"Validated {len(json_paths)} JSON files, {total} production expression families, "
+        f"and {candidate_total} non-production candidates."
+    )
 
 
 if __name__ == "__main__":

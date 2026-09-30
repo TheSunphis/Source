@@ -22,7 +22,8 @@
       "requirements": [
         "Preserve EDRDG attribution and source identifiers.",
         "Treat exp-tagged entries as candidates rather than automatically verified families.",
-        "Deduplicate variants and complete Koto-specific editorial fields."
+        "Deduplicate variants and complete Koto-specific editorial fields.",
+        "Refresh from the current JMdict source at least monthly while JMdict-derived data remains in use."
       ]
     },
     {

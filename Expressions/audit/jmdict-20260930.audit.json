@@ -1,0 +1,371 @@
+{
+  "datasetId": "koto-expression-candidate-audit",
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-30T04:59:16Z",
+  "sourceSnapshot": {
+    "sourceId": "jmdict",
+    "downloadUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+    "retrievedAt": "2026-09-30T04:59:16Z",
+    "lastModified": "Wed, 30 Sep 2026 03:30:23 GMT",
+    "archiveBytes": 10580018,
+    "archiveSha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634",
+    "licence": "CC-BY-SA-4.0",
+    "attribution": "Electronic Dictionary Research and Development Group (EDRDG), JMdict Japanese/English data",
+    "licenceUrl": "https://www.edrdg.org/edrdg/licence.html"
+  },
+  "counts": {
+    "jmdictEntryCount": 218847,
+    "expressionTaggedEntryCount": 13509,
+    "eligibleCurrentEntryCount": 13065,
+    "excludedNoCurrentEnglishSenseCount": 444,
+    "shortlistedCount": 5000,
+    "reserveEligibleCount": 8065
+  },
+  "topSourceFlags": [
+    {
+      "label": "idiomatic expression",
+      "count": 1335
+    },
+    {
+      "label": "word usually written using kana alone",
+      "count": 1002
+    },
+    {
+      "label": "proverb",
+      "count": 932
+    },
+    {
+      "label": "colloquial",
+      "count": 283
+    },
+    {
+      "label": "yojijukugo",
+      "count": 141
+    },
+    {
+      "label": "polite (teineigo) language",
+      "count": 108
+    },
+    {
+      "label": "abbreviation",
+      "count": 93
+    },
+    {
+      "label": "slang",
+      "count": 91
+    },
+    {
+      "label": "Internet slang",
+      "count": 52
+    },
+    {
+      "label": "formal or literary term",
+      "count": 51
+    },
+    {
+      "label": "honorific or respectful (sonkeigo) language",
+      "count": 46
+    },
+    {
+      "label": "jocular, humorous term",
+      "count": 44
+    },
+    {
+      "label": "humble (kenjougo) language",
+      "count": 31
+    },
+    {
+      "label": "archaic",
+      "count": 30
+    },
+    {
+      "label": "quotation",
+      "count": 25
+    },
+    {
+      "label": "female term or language",
+      "count": 17
+    },
+    {
+      "label": "vulgar expression or word",
+      "count": 16
+    },
+    {
+      "label": "euphemistic",
+      "count": 15
+    },
+    {
+      "label": "derogatory",
+      "count": 14
+    },
+    {
+      "label": "onomatopoeic or mimetic word",
+      "count": 12
+    },
+    {
+      "label": "sensitive",
+      "count": 10
+    },
+    {
+      "label": "children's language",
+      "count": 6
+    },
+    {
+      "label": "male term or language",
+      "count": 4
+    },
+    {
+      "label": "familiar language",
+      "count": 4
+    },
+    {
+      "label": "rare term",
+      "count": 4
+    },
+    {
+      "label": "historical term",
+      "count": 3
+    },
+    {
+      "label": "dated term",
+      "count": 2
+    },
+    {
+      "label": "manga slang",
+      "count": 1
+    }
+  ],
+  "dialects": [
+    {
+      "label": "Kansai-ben",
+      "count": 64
+    },
+    {
+      "label": "Osaka-ben",
+      "count": 14
+    },
+    {
+      "label": "Kyoto-ben",
+      "count": 7
+    },
+    {
+      "label": "Kantou-ben",
+      "count": 6
+    },
+    {
+      "label": "Kyuushuu-ben",
+      "count": 4
+    },
+    {
+      "label": "Ryuukyuu-ben",
+      "count": 3
+    },
+    {
+      "label": "Touhoku-ben",
+      "count": 2
+    },
+    {
+      "label": "Tosa-ben",
+      "count": 1
+    }
+  ],
+  "topFields": [
+    {
+      "label": "Buddhism",
+      "count": 50
+    },
+    {
+      "label": "physics",
+      "count": 44
+    },
+    {
+      "label": "computing",
+      "count": 33
+    },
+    {
+      "label": "sumo",
+      "count": 28
+    },
+    {
+      "label": "Christianity",
+      "count": 26
+    },
+    {
+      "label": "go (game)",
+      "count": 23
+    },
+    {
+      "label": "mathematics",
+      "count": 19
+    },
+    {
+      "label": "astronomy",
+      "count": 17
+    },
+    {
+      "label": "law",
+      "count": 14
+    },
+    {
+      "label": "sports",
+      "count": 12
+    },
+    {
+      "label": "martial arts",
+      "count": 12
+    },
+    {
+      "label": "food, cooking",
+      "count": 11
+    },
+    {
+      "label": "Shinto",
+      "count": 10
+    },
+    {
+      "label": "philosophy",
+      "count": 8
+    },
+    {
+      "label": "medicine",
+      "count": 7
+    },
+    {
+      "label": "economics",
+      "count": 7
+    },
+    {
+      "label": "linguistics",
+      "count": 6
+    },
+    {
+      "label": "politics",
+      "count": 6
+    },
+    {
+      "label": "baseball",
+      "count": 5
+    },
+    {
+      "label": "business",
+      "count": 5
+    },
+    {
+      "label": "biology",
+      "count": 5
+    },
+    {
+      "label": "music",
+      "count": 4
+    },
+    {
+      "label": "finance",
+      "count": 4
+    },
+    {
+      "label": "genetics",
+      "count": 4
+    },
+    {
+      "label": "statistics",
+      "count": 4
+    },
+    {
+      "label": "card games",
+      "count": 4
+    },
+    {
+      "label": "psychology",
+      "count": 4
+    },
+    {
+      "label": "video games",
+      "count": 3
+    },
+    {
+      "label": "military",
+      "count": 3
+    },
+    {
+      "label": "mahjong",
+      "count": 3
+    },
+    {
+      "label": "art, aesthetics",
+      "count": 2
+    },
+    {
+      "label": "shogi",
+      "count": 2
+    },
+    {
+      "label": "kabuki",
+      "count": 2
+    },
+    {
+      "label": "geology",
+      "count": 2
+    },
+    {
+      "label": "hanafuda",
+      "count": 1
+    },
+    {
+      "label": "chemistry",
+      "count": 1
+    },
+    {
+      "label": "Greek mythology",
+      "count": 1
+    },
+    {
+      "label": "physiology",
+      "count": 1
+    },
+    {
+      "label": "logic",
+      "count": 1
+    },
+    {
+      "label": "geometry",
+      "count": 1
+    },
+    {
+      "label": "Japanese mythology",
+      "count": 1
+    },
+    {
+      "label": "zoology",
+      "count": 1
+    },
+    {
+      "label": "anatomy",
+      "count": 1
+    },
+    {
+      "label": "archeology",
+      "count": 1
+    },
+    {
+      "label": "Internet",
+      "count": 1
+    },
+    {
+      "label": "golf",
+      "count": 1
+    },
+    {
+      "label": "grammar",
+      "count": 1
+    },
+    {
+      "label": "horse racing",
+      "count": 1
+    },
+    {
+      "label": "ecology",
+      "count": 1
+    }
+  ],
+  "warning": "The shortlist is an editorial work queue, not a verified expression library. Candidate count must not be presented as production family count."
+}

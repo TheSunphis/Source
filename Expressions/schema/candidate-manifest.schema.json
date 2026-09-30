@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/candidate-manifest.schema.json",
+  "title": "Koto expression candidate manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "datasetId",
+    "schemaVersion",
+    "generatedAt",
+    "publicationStatus",
+    "productionEligible",
+    "candidateCount",
+    "packSize",
+    "sourceSnapshot",
+    "audit",
+    "selectionMethod",
+    "packs"
+  ],
+  "properties": {
+    "datasetId": { "const": "koto-expression-candidates" },
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "publicationStatus": { "const": "non-production-candidates" },
+    "productionEligible": { "const": false },
+    "candidateCount": { "type": "integer", "minimum": 1 },
+    "packSize": { "type": "integer", "minimum": 1, "maximum": 500 },
+    "sourceSnapshot": { "$ref": "#/$defs/sourceSnapshot" },
+    "audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "jmdictEntryCount",
+        "expressionTaggedEntryCount",
+        "eligibleCurrentEntryCount",
+        "excludedNoCurrentEnglishSenseCount",
+        "shortlistedCount",
+        "reserveEligibleCount"
+      ],
+      "properties": {
+        "jmdictEntryCount": { "type": "integer", "minimum": 1 },
+        "expressionTaggedEntryCount": { "type": "integer", "minimum": 1 },
+        "eligibleCurrentEntryCount": { "type": "integer", "minimum": 1 },
+        "excludedNoCurrentEnglishSenseCount": { "type": "integer", "minimum": 0 },
+        "shortlistedCount": { "type": "integer", "minimum": 1 },
+        "reserveEligibleCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "selectionMethod": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "file", "candidateCount", "bytes", "sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^jmdict-candidates-[0-9]{3}$" },
+          "file": { "type": "string", "pattern": "^packs/jmdict-candidates-[0-9]{3}\\.json$" },
+          "candidateCount": { "type": "integer", "minimum": 1, "maximum": 500 },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sourceSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "downloadUrl",
+        "retrievedAt",
+        "lastModified",
+        "archiveBytes",
+        "archiveSha256",
+        "licence",
+        "attribution",
+        "licenceUrl"
+      ],
+      "properties": {
+        "sourceId": { "const": "jmdict" },
+        "downloadUrl": { "type": "string", "format": "uri" },
+        "retrievedAt": { "type": "string", "format": "date-time" },
+        "lastModified": { "type": "string", "minLength": 1 },
+        "archiveBytes": { "type": "integer", "minimum": 1 },
+        "archiveSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "licence": { "const": "CC-BY-SA-4.0" },
+        "attribution": { "type": "string", "minLength": 1 },
+        "licenceUrl": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

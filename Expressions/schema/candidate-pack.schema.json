@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/candidate-pack.schema.json",
+  "title": "Koto expression candidate pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["datasetId", "schemaVersion", "packId", "sourceId", "candidateCount", "candidates"],
+  "properties": {
+    "datasetId": { "const": "koto-expression-candidates" },
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "packId": { "type": "string", "pattern": "^jmdict-candidates-[0-9]{3}$" },
+    "sourceId": { "const": "jmdict" },
+    "candidateCount": { "type": "integer", "minimum": 1, "maximum": 500 },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": { "$ref": "candidate.schema.json" }
+    }
+  }
+}

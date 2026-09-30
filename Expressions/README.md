@@ -13,8 +13,10 @@ The repository currently contains the publication scaffold, schemas, source poli
 - `manifest.json` — versioned production inventory and pack integrity metadata.
 - `source-registry.json` — eligible, conditional, and excluded source policy.
 - `review-policy.json` — publication gates and Koto Difficulty 1–5 definitions.
-- `schema/` — JSON Schemas for manifests and expression families.
+- `schema/` — JSON Schemas for manifests, candidates, packs, and expression families.
 - `examples/` — non-production examples used to exercise the schema and card design.
+- `candidates/` — source-derived editorial work queues; never loaded by the learner-facing app.
+- `audit/` — reproducibility, source-snapshot, and extraction-count reports.
 - `packs/` — production packs; intentionally empty until review is complete.
 
 ## Runtime rules

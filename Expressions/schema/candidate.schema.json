@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/candidate.schema.json",
+  "title": "Koto expression source candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidateId",
+    "sourceId",
+    "sourceSequence",
+    "primary",
+    "writings",
+    "readings",
+    "senses",
+    "sourcePriority",
+    "sourceFlags",
+    "editorial"
+  ],
+  "properties": {
+    "candidateId": { "type": "string", "pattern": "^candidate:jmdict:[0-9]+$" },
+    "sourceId": { "const": "jmdict" },
+    "sourceSequence": { "type": "integer", "minimum": 1 },
+    "primary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["japanese", "reading"],
+      "properties": {
+        "japanese": { "$ref": "#/$defs/text" },
+        "reading": { "$ref": "#/$defs/text" }
+      }
+    },
+    "writings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "information", "priority", "searchOnly"],
+        "properties": {
+          "text": { "$ref": "#/$defs/text" },
+          "information": { "$ref": "#/$defs/textList" },
+          "priority": { "$ref": "#/$defs/textList" },
+          "searchOnly": { "type": "boolean" }
+        }
+      }
+    },
+    "readings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "noKanji", "restrictions", "information", "priority", "searchOnly"],
+        "properties": {
+          "text": { "$ref": "#/$defs/text" },
+          "noKanji": { "type": "boolean" },
+          "restrictions": { "$ref": "#/$defs/textList" },
+          "information": { "$ref": "#/$defs/textList" },
+          "priority": { "$ref": "#/$defs/textList" },
+          "searchOnly": { "type": "boolean" }
+        }
+      }
+    },
+    "senses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceSense",
+          "current",
+          "appliesToWritings",
+          "appliesToReadings",
+          "partsOfSpeech",
+          "fields",
+          "miscellaneous",
+          "dialects",
+          "information",
+          "related",
+          "antonyms",
+          "glosses"
+        ],
+        "properties": {
+          "sourceSense": { "type": "integer", "minimum": 1 },
+          "current": { "type": "boolean" },
+          "appliesToWritings": { "$ref": "#/$defs/textList" },
+          "appliesToReadings": { "$ref": "#/$defs/textList" },
+          "partsOfSpeech": { "$ref": "#/$defs/textList" },
+          "fields": { "$ref": "#/$defs/textList" },
+          "miscellaneous": { "$ref": "#/$defs/textList" },
+          "dialects": { "$ref": "#/$defs/textList" },
+          "information": { "$ref": "#/$defs/textList" },
+          "related": { "$ref": "#/$defs/textList" },
+          "antonyms": { "$ref": "#/$defs/textList" },
+          "glosses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "type"],
+              "properties": {
+                "text": { "$ref": "#/$defs/text" },
+                "type": { "type": ["string", "null"], "maxLength": 80 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sourcePriority": { "$ref": "#/$defs/textList" },
+    "sourceFlags": { "$ref": "#/$defs/textList" },
+    "editorial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "familyDecision", "familyId", "difficulty", "notes", "productionEligible"],
+      "properties": {
+        "status": { "const": "unreviewed-source-candidate" },
+        "familyDecision": { "type": "null" },
+        "familyId": { "type": "null" },
+        "difficulty": { "type": "null" },
+        "notes": { "type": "array", "maxItems": 0 },
+        "productionEligible": { "const": false }
+      }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "textList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/text" }
+    }
+  }
+}

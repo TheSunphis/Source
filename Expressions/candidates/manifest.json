@@ -1,0 +1,176 @@
+{
+  "datasetId": "koto-expression-candidates",
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-30T04:59:16Z",
+  "publicationStatus": "non-production-candidates",
+  "productionEligible": false,
+  "candidateCount": 5000,
+  "packSize": 250,
+  "sourceSnapshot": {
+    "sourceId": "jmdict",
+    "downloadUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+    "retrievedAt": "2026-09-30T04:59:16Z",
+    "lastModified": "Wed, 30 Sep 2026 03:30:23 GMT",
+    "archiveBytes": 10580018,
+    "archiveSha256": "749f303d713157be1a4d873011aa32698ef6c633ee503d5cd3fb9f865ec82634",
+    "licence": "CC-BY-SA-4.0",
+    "attribution": "Electronic Dictionary Research and Development Group (EDRDG), JMdict Japanese/English data",
+    "licenceUrl": "https://www.edrdg.org/edrdg/licence.html"
+  },
+  "audit": {
+    "jmdictEntryCount": 218847,
+    "expressionTaggedEntryCount": 13509,
+    "eligibleCurrentEntryCount": 13065,
+    "excludedNoCurrentEnglishSenseCount": 444,
+    "shortlistedCount": 5000,
+    "reserveEligibleCount": 8065
+  },
+  "selectionMethod": [
+    "Resolve inherited JMdict part-of-speech metadata and require an expression-tagged sense.",
+    "Require at least one non-archaic, non-obsolete, non-dated, non-historical, non-rare, non-poetical English sense.",
+    "Prioritize JMdict source-priority evidence, then use wordfreq only to order editorial review candidates.",
+    "Do not assign Koto Difficulty, learner-facing Commonness, verification, or production eligibility automatically."
+  ],
+  "packs": [
+    {
+      "id": "jmdict-candidates-001",
+      "file": "packs/jmdict-candidates-001.json",
+      "candidateCount": 250,
+      "bytes": 310934,
+      "sha256": "1819c3c30cf7d550d61aa3493892114d934892b2999b059b2974b5bc8975e713"
+    },
+    {
+      "id": "jmdict-candidates-002",
+      "file": "packs/jmdict-candidates-002.json",
+      "candidateCount": 250,
+      "bytes": 290927,
+      "sha256": "e067dc85f5b019a7e04b0acab7899c72e6a6ec6c850404ac3487f3b8e96d31b8"
+    },
+    {
+      "id": "jmdict-candidates-003",
+      "file": "packs/jmdict-candidates-003.json",
+      "candidateCount": 250,
+      "bytes": 277754,
+      "sha256": "aaa336700b7dba32d865a549b35b1a8d269065c7b123b59faf6ff638e9c2e2ef"
+    },
+    {
+      "id": "jmdict-candidates-004",
+      "file": "packs/jmdict-candidates-004.json",
+      "candidateCount": 250,
+      "bytes": 268574,
+      "sha256": "6359d721ef4a1a4535ce24459272164b096a9fd3a3d845abd1c1a8ceafac0d1a"
+    },
+    {
+      "id": "jmdict-candidates-005",
+      "file": "packs/jmdict-candidates-005.json",
+      "candidateCount": 250,
+      "bytes": 272588,
+      "sha256": "ff1097244a9154e60dc4cf437863139a2831db8da738edb726222d0578a641be"
+    },
+    {
+      "id": "jmdict-candidates-006",
+      "file": "packs/jmdict-candidates-006.json",
+      "candidateCount": 250,
+      "bytes": 263509,
+      "sha256": "f54ca1456e1e3b36d86f466e2e06d85204a08f760a61795b471a824a4912dcc4"
+    },
+    {
+      "id": "jmdict-candidates-007",
+      "file": "packs/jmdict-candidates-007.json",
+      "candidateCount": 250,
+      "bytes": 267292,
+      "sha256": "2783d6610b613b28f695db74a82a1b683526bd27ecf8137f1f75f42391f49f7c"
+    },
+    {
+      "id": "jmdict-candidates-008",
+      "file": "packs/jmdict-candidates-008.json",
+      "candidateCount": 250,
+      "bytes": 264140,
+      "sha256": "bff69eaaf23d58c00672dcc8696e70787d54a8c9d2108d5171871bb2c5e95a20"
+    },
+    {
+      "id": "jmdict-candidates-009",
+      "file": "packs/jmdict-candidates-009.json",
+      "candidateCount": 250,
+      "bytes": 268073,
+      "sha256": "2a382cb3517bafdd9074c69c684272f67c5f191a940b74c9cca19664e6d5e65c"
+    },
+    {
+      "id": "jmdict-candidates-010",
+      "file": "packs/jmdict-candidates-010.json",
+      "candidateCount": 250,
+      "bytes": 264385,
+      "sha256": "ab7e70c83692599449d7240b26747de90643eb715e12db88995a1d96cf9a2104"
+    },
+    {
+      "id": "jmdict-candidates-011",
+      "file": "packs/jmdict-candidates-011.json",
+      "candidateCount": 250,
+      "bytes": 265671,
+      "sha256": "d0496c6c6d10d3c7daa496798a4d706386ab5e48fb3aa99542e1dddc5767e50e"
+    },
+    {
+      "id": "jmdict-candidates-012",
+      "file": "packs/jmdict-candidates-012.json",
+      "candidateCount": 250,
+      "bytes": 267335,
+      "sha256": "6835bb6c5fa69cde3a6a3a7daa9d936339687fc74376c6ab72de6f79edcb1042"
+    },
+    {
+      "id": "jmdict-candidates-013",
+      "file": "packs/jmdict-candidates-013.json",
+      "candidateCount": 250,
+      "bytes": 259667,
+      "sha256": "494a1caf9582db9ad2def98d3c70c2f8ff2ab722cfaaa008f784286959fecf10"
+    },
+    {
+      "id": "jmdict-candidates-014",
+      "file": "packs/jmdict-candidates-014.json",
+      "candidateCount": 250,
+      "bytes": 260945,
+      "sha256": "a8b47e9983a5c9aa30c2ab55b8809096d8d81207da5f5a919a66596d8686ad00"
+    },
+    {
+      "id": "jmdict-candidates-015",
+      "file": "packs/jmdict-candidates-015.json",
+      "candidateCount": 250,
+      "bytes": 261053,
+      "sha256": "729bccb9aa21ee384a4447b3ba7294bafab0a192a2baceed600c7598683114f5"
+    },
+    {
+      "id": "jmdict-candidates-016",
+      "file": "packs/jmdict-candidates-016.json",
+      "candidateCount": 250,
+      "bytes": 261736,
+      "sha256": "d77a99a9011b06774a7a7b94ea2157bd38d11c6399ef6e9ffc683bf9a2113fcc"
+    },
+    {
+      "id": "jmdict-candidates-017",
+      "file": "packs/jmdict-candidates-017.json",
+      "candidateCount": 250,
+      "bytes": 258987,
+      "sha256": "08ce1ad47e9d76c0166a0c10cd9466eec343aa5a91d62f9764a89f1af4a3078c"
+    },
+    {
+      "id": "jmdict-candidates-018",
+      "file": "packs/jmdict-candidates-018.json",
+      "candidateCount": 250,
+      "bytes": 260678,
+      "sha256": "c9043d7ee39e51ec704c533d904e464377c94a24f2dd36f81d04528252216167"
+    },
+    {
+      "id": "jmdict-candidates-019",
+      "file": "packs/jmdict-candidates-019.json",
+      "candidateCount": 250,
+      "bytes": 258768,
+      "sha256": "bb17919747eed67e31290a03babde202e240b7a5b8acaa32e25ea151b53bd99b"
+    },
+    {
+      "id": "jmdict-candidates-020",
+      "file": "packs/jmdict-candidates-020.json",
+      "candidateCount": 250,
+      "bytes": 262587,
+      "sha256": "c790e93abe1f1b99168de983d7afe5500c7d0a8d2526c6567889c218579858bc"
+    }
+  ]
+}
