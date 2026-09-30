@@ -1,0 +1,177 @@
+{
+  "id": "expression:repeat-request-polite",
+  "revision": 1,
+  "publicationStatus": "candidate",
+  "difficulty": 3,
+  "category": "Polite request",
+  "intentions": [
+    "ask someone to repeat",
+    "repair a misunderstanding"
+  ],
+  "primary": {
+    "japanese": "もう一度言っていただけますか。",
+    "reading": "もういちどいっていただけますか。",
+    "meaning": "Could you say that one more time?",
+    "deviceTts": true
+  },
+  "usage": {
+    "summary": "A polite request for someone to repeat what they said.",
+    "useWhen": [
+      "You did not hear or understand someone in a polite interaction.",
+      "You are speaking with a teacher, colleague, staff member, or unfamiliar adult."
+    ],
+    "avoidWhen": [
+      "With a close friend when the full polite wording would sound unnecessarily distant.",
+      "When you specifically need the other person to speak more slowly rather than merely repeat."
+    ],
+    "suitableRelationships": [
+      "student to teacher",
+      "customer to staff",
+      "colleagues in a polite interaction",
+      "people meeting for the first time"
+    ]
+  },
+  "forms": [
+    {
+      "formId": "casual",
+      "register": "casual",
+      "label": "Casual request",
+      "japanese": "もう一回言ってくれる？",
+      "reading": "もういっかいいってくれる？",
+      "meaning": "Can you say that again?",
+      "deviceTts": true
+    },
+    {
+      "formId": "neutral",
+      "register": "neutral",
+      "label": "Direct neutral request",
+      "japanese": "もう一度言ってください。",
+      "reading": "もういちどいってください。",
+      "meaning": "Please say it one more time.",
+      "deviceTts": true
+    },
+    {
+      "formId": "polite",
+      "register": "polite",
+      "label": "Polite request",
+      "japanese": "もう一度言っていただけますか。",
+      "reading": "もういちどいっていただけますか。",
+      "meaning": "Could you say that one more time?",
+      "deviceTts": true
+    },
+    {
+      "formId": "formal",
+      "register": "formal",
+      "label": "Formal respectful request",
+      "japanese": "もう一度おっしゃっていただけますか。",
+      "reading": "もういちどおっしゃっていただけますか。",
+      "meaning": "Could you please say that one more time?",
+      "deviceTts": true
+    }
+  ],
+  "responses": [
+    {
+      "japanese": "はい、もちろんです。",
+      "reading": "はい、もちろんです。",
+      "meaning": "Yes, of course.",
+      "deviceTts": true
+    },
+    {
+      "japanese": "すみません、もう一度言います。",
+      "reading": "すみません、もういちどいいます。",
+      "meaning": "Sorry, I'll say it again.",
+      "deviceTts": true
+    }
+  ],
+  "followUps": [
+    {
+      "japanese": "もう少しゆっくりお願いできますか。",
+      "reading": "もうすこしゆっくりおねがいできますか。",
+      "meaning": "Could you speak a little more slowly?",
+      "deviceTts": true
+    }
+  ],
+  "dialogue": [
+    {
+      "speaker": "A",
+      "japanese": "すみません、もう一度言っていただけますか。",
+      "reading": "すみません、もういちどいっていただけますか。",
+      "meaning": "Excuse me, could you say that one more time?",
+      "deviceTts": true
+    },
+    {
+      "speaker": "B",
+      "japanese": "はい、もちろんです。",
+      "reading": "はい、もちろんです。",
+      "meaning": "Yes, of course.",
+      "deviceTts": true
+    }
+  ],
+  "patterns": [
+    {
+      "template": "もう一度＋Vて＋いただけますか",
+      "reading": "もういちど＋Vて＋いただけますか",
+      "meaning": "Could you do V one more time?",
+      "reviewed": false,
+      "examples": []
+    }
+  ],
+  "comparisons": [
+    {
+      "expression": "もう一度お願いします。",
+      "reading": "もういちどおねがいします。",
+      "note": "Shorter and useful when the action to repeat is already obvious from context."
+    }
+  ],
+  "searchAliases": [
+    "say that again",
+    "repeat please",
+    "ask someone to repeat",
+    "聞き返す",
+    "もう一回"
+  ],
+  "vocabularyCandidates": [
+    {
+      "written": "もう",
+      "reading": "もう",
+      "headwordId": null
+    },
+    {
+      "written": "一度",
+      "reading": "いちど",
+      "headwordId": null
+    },
+    {
+      "written": "言う",
+      "reading": "いう",
+      "headwordId": null
+    },
+    {
+      "written": "頂く",
+      "reading": "いただく",
+      "headwordId": null
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "original-editorial",
+      "locator": null,
+      "note": "Approved product-design example; not a verified production record."
+    }
+  ],
+  "review": {
+    "gates": {
+      "source-and-licence": false,
+      "family-deduplication": false,
+      "japanese-naturalness": false,
+      "meaning-and-reading": false,
+      "register-and-social-use": false,
+      "difficulty": false,
+      "substitution-safety": false,
+      "final-publication": false
+    },
+    "reviewedAt": null,
+    "reviewer": null,
+    "notes": "Non-production schema and interface example."
+  }
+}

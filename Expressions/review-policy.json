@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "difficultyScale": {
+    "1": "Essential",
+    "2": "Basic",
+    "3": "Intermediate",
+    "4": "Upper Intermediate",
+    "5": "Advanced"
+  },
+  "familyInclusionTests": [
+    "Meaning or communicative force is not completely predictable from individual words.",
+    "Japanese conventionally prefers the recorded wording.",
+    "Register or social choice is materially important.",
+    "The item is a reusable communicative or substitution pattern.",
+    "The item is a conventional response, discourse organizer, or interactional formula."
+  ],
+  "exclusions": [
+    "Freely composed ordinary sentences",
+    "Conjugations counted as separate families",
+    "Register variants counted as separate families",
+    "Dialogue lines counted as separate families",
+    "Unreviewed generated substitutions",
+    "Particles and inflection endings represented as Vocabulary links"
+  ],
+  "requiredGates": [
+    "source-and-licence",
+    "family-deduplication",
+    "japanese-naturalness",
+    "meaning-and-reading",
+    "register-and-social-use",
+    "difficulty",
+    "substitution-safety",
+    "final-publication"
+  ],
+  "verifiedLabelRule": "The learner-facing Verified expression label is permitted only when every required gate has passed.",
+  "countingRule": "Only distinct expression families count toward the 3000–5000 production target."
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-30",
+  "sources": [
+    {
+      "id": "original-editorial",
+      "name": "Koto original editorial content",
+      "url": "https://github.com/TheSunphis/Source",
+      "licence": "CC-BY-SA-4.0",
+      "eligibility": "eligible-after-review",
+      "requirements": [
+        "Record the responsible editorial review.",
+        "Pass naturalness, register, social-use, and difficulty review."
+      ]
+    },
+    {
+      "id": "jmdict",
+      "name": "JMdict Japanese/English Dictionary",
+      "url": "https://www.edrdg.org/jmwsgi/edhelp.py?svc=jmdict",
+      "licence": "CC-BY-SA-4.0",
+      "eligibility": "candidate-extraction-only",
+      "requirements": [
+        "Preserve EDRDG attribution and source identifiers.",
+        "Treat exp-tagged entries as candidates rather than automatically verified families.",
+        "Deduplicate variants and complete Koto-specific editorial fields."
+      ]
+    },
+    {
+      "id": "tatoeba",
+      "name": "Tatoeba",
+      "url": "https://tatoeba.org/en/downloads",
+      "licence": "per-sentence-CC-BY-2.0-FR-or-CC0",
+      "eligibility": "conditional-example-source",
+      "requirements": [
+        "Verify the licence and attribution of every selected sentence.",
+        "Review contributor examples for naturalness and contextual suitability.",
+        "Do not infer expression difficulty from sentence availability."
+      ]
+    }
+  ],
+  "excludedBulkSources": [
+    {
+      "id": "irodori",
+      "reason": "Copyrighted teaching material is not an unrestricted bulk dataset."
+    },
+    {
+      "id": "marugoto",
+      "reason": "Educational-use terms do not authorize unrestricted bulk redistribution."
+    },
+    {
+      "id": "jlpt-lists",
+      "reason": "JLPT does not publish official post-2010 vocabulary, grammar, or expression item lists."
+    }
+  ]
+}

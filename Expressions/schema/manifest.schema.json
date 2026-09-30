@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/manifest.schema.json",
+  "title": "Koto Expressions manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "datasetId",
+    "schemaVersion",
+    "releaseVersion",
+    "publicationStatus",
+    "publishedAt",
+    "familyCount",
+    "searchableFormCount",
+    "difficultyCounts",
+    "searchIndex",
+    "packs",
+    "integrityAlgorithm",
+    "licence",
+    "sourceRegistry",
+    "reviewPolicy",
+    "productionReady"
+  ],
+  "properties": {
+    "datasetId": { "const": "koto-expressions" },
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "releaseVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "publicationStatus": { "enum": ["scaffold", "candidate", "production", "retired"] },
+    "publishedAt": { "type": ["string", "null"], "format": "date-time" },
+    "familyCount": { "type": "integer", "minimum": 0 },
+    "searchableFormCount": { "type": "integer", "minimum": 0 },
+    "difficultyCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["1", "2", "3", "4", "5"],
+      "properties": {
+        "1": { "type": "integer", "minimum": 0 },
+        "2": { "type": "integer", "minimum": 0 },
+        "3": { "type": "integer", "minimum": 0 },
+        "4": { "type": "integer", "minimum": 0 },
+        "5": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "searchIndex": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "#/$defs/fileAsset" }
+      ]
+    },
+    "packs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/packAsset" }
+    },
+    "integrityAlgorithm": { "const": "sha256" },
+    "licence": { "type": "string", "minLength": 1 },
+    "sourceRegistry": { "type": "string", "pattern": "^[^/]+\\.json$" },
+    "reviewPolicy": { "type": "string", "pattern": "^[^/]+\\.json$" },
+    "productionReady": { "type": "boolean" }
+  },
+  "$defs": {
+    "fileAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "bytes", "sha256"],
+      "properties": {
+        "file": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+\\.json(?:\\.gz)?$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "packAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "familyCount", "file", "bytes", "sha256"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^pack-[0-9]{3,}$" },
+        "familyCount": { "type": "integer", "minimum": 1 },
+        "file": { "type": "string", "pattern": "^packs/[A-Za-z0-9._-]+\\.json(?:\\.gz)?$" },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

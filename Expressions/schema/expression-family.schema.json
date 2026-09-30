@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/expression-family.schema.json",
+  "title": "Koto expression family",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "revision",
+    "publicationStatus",
+    "difficulty",
+    "category",
+    "intentions",
+    "primary",
+    "usage",
+    "forms",
+    "responses",
+    "followUps",
+    "dialogue",
+    "patterns",
+    "comparisons",
+    "searchAliases",
+    "vocabularyCandidates",
+    "sources",
+    "review"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^expression:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "publicationStatus": { "enum": ["candidate", "reviewed", "verified", "retired"] },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "category": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "intentions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+    },
+    "primary": { "$ref": "#/$defs/spokenLine" },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "useWhen", "avoidWhen", "suitableRelationships"],
+      "properties": {
+        "summary": { "$ref": "#/$defs/nonEmptyText" },
+        "useWhen": { "$ref": "#/$defs/textList" },
+        "avoidWhen": { "$ref": "#/$defs/textList" },
+        "suitableRelationships": { "$ref": "#/$defs/textList" }
+      }
+    },
+    "forms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          { "$ref": "#/$defs/spokenLine" },
+          {
+            "type": "object",
+            "required": ["formId", "register", "label"],
+            "properties": {
+              "formId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+              "register": { "enum": ["casual", "neutral", "polite", "formal", "written", "other"] },
+              "label": { "$ref": "#/$defs/nonEmptyText" }
+            }
+          }
+        ]
+      }
+    },
+    "responses": { "$ref": "#/$defs/spokenLines" },
+    "followUps": { "$ref": "#/$defs/spokenLines" },
+    "dialogue": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "#/$defs/spokenLine" },
+          {
+            "type": "object",
+            "required": ["speaker"],
+            "properties": {
+              "speaker": { "type": "string", "minLength": 1, "maxLength": 30 }
+            }
+          }
+        ]
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["template", "reading", "meaning", "reviewed", "examples"],
+        "properties": {
+          "template": { "$ref": "#/$defs/nonEmptyText" },
+          "reading": { "$ref": "#/$defs/nonEmptyText" },
+          "meaning": { "$ref": "#/$defs/nonEmptyText" },
+          "reviewed": { "type": "boolean" },
+          "examples": { "$ref": "#/$defs/spokenLines" }
+        }
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["expression", "reading", "note"],
+        "properties": {
+          "expression": { "$ref": "#/$defs/nonEmptyText" },
+          "reading": { "$ref": "#/$defs/nonEmptyText" },
+          "note": { "$ref": "#/$defs/nonEmptyText" }
+        }
+      }
+    },
+    "searchAliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/nonEmptyText" }
+    },
+    "vocabularyCandidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["written", "reading", "headwordId"],
+        "properties": {
+          "written": { "$ref": "#/$defs/nonEmptyText" },
+          "reading": { "$ref": "#/$defs/nonEmptyText" },
+          "headwordId": { "type": ["string", "null"], "pattern": "^vocab:[0-9]+$" }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceId", "locator", "note"],
+        "properties": {
+          "sourceId": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "locator": { "type": ["string", "null"], "maxLength": 500 },
+          "note": { "type": "string", "maxLength": 500 }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gates", "reviewedAt", "reviewer", "notes"],
+      "properties": {
+        "gates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source-and-licence",
+            "family-deduplication",
+            "japanese-naturalness",
+            "meaning-and-reading",
+            "register-and-social-use",
+            "difficulty",
+            "substitution-safety",
+            "final-publication"
+          ],
+          "properties": {
+            "source-and-licence": { "type": "boolean" },
+            "family-deduplication": { "type": "boolean" },
+            "japanese-naturalness": { "type": "boolean" },
+            "meaning-and-reading": { "type": "boolean" },
+            "register-and-social-use": { "type": "boolean" },
+            "difficulty": { "type": "boolean" },
+            "substitution-safety": { "type": "boolean" },
+            "final-publication": { "type": "boolean" }
+          }
+        },
+        "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+        "reviewer": { "type": ["string", "null"], "maxLength": 100 },
+        "notes": { "type": "string", "maxLength": 2000 }
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyText": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "textList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/nonEmptyText" }
+    },
+    "spokenLine": {
+      "type": "object",
+      "required": ["japanese", "reading", "meaning", "deviceTts"],
+      "properties": {
+        "japanese": { "$ref": "#/$defs/nonEmptyText" },
+        "reading": { "$ref": "#/$defs/nonEmptyText" },
+        "meaning": { "$ref": "#/$defs/nonEmptyText" },
+        "deviceTts": { "const": true }
+      }
+    },
+    "spokenLines": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/spokenLine" }
+    }
+  }
+}
