@@ -1,0 +1,76 @@
+{
+  "batchId": "editorial-batch:20260930-priority-formulas",
+  "familyIds": [
+    "expression:express-thanks",
+    "expression:apologize-or-get-attention",
+    "expression:first-meeting-greeting",
+    "expression:begin-meal",
+    "expression:end-meal-thanks",
+    "expression:wish-good-night",
+    "expression:offer-congratulations",
+    "expression:welcome-customer",
+    "expression:ask-after-wellbeing",
+    "expression:urge-care",
+    "expression:excuse-formal-departure",
+    "expression:acknowledge-wait",
+    "expression:acknowledge-request-formally",
+    "expression:make-request-onegaishimasu",
+    "expression:request-with-kudasai",
+    "expression:say-no-problem"
+  ],
+  "candidateIds": [
+    "candidate:jmdict:1541040",
+    "candidate:jmdict:1612720",
+    "candidate:jmdict:1295060",
+    "candidate:jmdict:1270680",
+    "candidate:jmdict:1612030",
+    "candidate:jmdict:1625780",
+    "candidate:jmdict:1410800",
+    "candidate:jmdict:1005080",
+    "candidate:jmdict:1001780",
+    "candidate:jmdict:1001540",
+    "candidate:jmdict:1000930",
+    "candidate:jmdict:2272760",
+    "candidate:jmdict:1221870",
+    "candidate:jmdict:2276200",
+    "candidate:jmdict:1320240",
+    "candidate:jmdict:2149640",
+    "candidate:jmdict:1002790",
+    "candidate:jmdict:1001720",
+    "candidate:jmdict:1184270",
+    "candidate:jmdict:2848696"
+  ],
+  "sourceReferenceIds": [
+    "jmdict",
+    "irodori-reference",
+    "nhk-world-easy-japanese",
+    "original-editorial"
+  ],
+  "sourceEditorialPass": {
+    "completedAt": "2026-09-30T06:30:00Z",
+    "reviewer": "Arena.ai Koto source-backed editorial pass",
+    "reviewerType": "ai-editorial",
+    "checks": [
+      "Candidate identity and current JMdict senses checked record by record.",
+      "Family boundaries and overlap with the existing verified family checked.",
+      "Reference-only Japan Foundation or NHK evidence checked for communicative use.",
+      "Original Koto usage, relationship, avoid, dialogue, pattern, and comparison content authored without copying lesson text.",
+      "Canonical Vocabulary candidate links retained."
+    ]
+  },
+  "finalLanguagePass": {
+    "completedAt": "2026-09-30T07:15:00Z",
+    "reviewer": "Arena.ai Koto Japanese editorial review",
+    "reviewerType": "ai-editorial",
+    "separateFromSourceEditorial": true,
+    "checks": [
+      "Japanese naturalness and readings re-read independently of extraction ranking.",
+      "English meanings checked for context dependence and over-translation.",
+      "Register, relationship, and social-use warnings checked.",
+      "Dialogue and follow-up lines checked as directly speakable device-TTS text.",
+      "Substitution patterns checked and kept separate from directly speakable forms.",
+      "All final-publication gates, pack counts, and source disclosures confirmed."
+    ]
+  },
+  "result": "verified-and-packed"
+}

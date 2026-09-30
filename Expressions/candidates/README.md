@@ -11,4 +11,4 @@ A candidate can become a production family only after:
 5. completion of the rich expression-family fields; and
 6. final publication approval.
 
-Candidate pack order is for editorial triage only. It is not a learner-facing Commonness score or Difficulty rating.
+Candidate pack order is for editorial triage only. It is not a learner-facing Commonness score or Difficulty rating. Deterministic navigation aids covering every candidate are published separately under `../triage/`; their scores and routes are not verification or editorial decisions.

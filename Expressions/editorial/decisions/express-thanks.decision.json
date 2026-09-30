@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:express-thanks",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:express-thanks",
+  "mergedCandidates": [
+    "candidate:jmdict:1541040",
+    "candidate:jmdict:1612720"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T07:15:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

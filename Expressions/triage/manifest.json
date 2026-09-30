@@ -1,0 +1,168 @@
+{
+  "datasetId": "koto-expression-candidate-triage",
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-30T07:20:00Z",
+  "methodVersion": "1.0.0",
+  "sourceCandidateManifest": "../candidates/manifest.json",
+  "candidateCount": 5000,
+  "assignedCandidateCount": 24,
+  "riskFlaggedCount": 139,
+  "automatedRouteCounts": {
+    "low-priority-review": 4280,
+    "priority-family-review": 77,
+    "specialist-review": 139,
+    "standard-family-review": 504
+  },
+  "suggestedCategoryCounts": {
+    "grammar-pattern": 293,
+    "idiom": 276,
+    "interaction-management": 35,
+    "other-expression": 4106,
+    "proverb": 134,
+    "request-or-response": 47,
+    "social-formula": 109
+  },
+  "nonVerificationNotice": "Automated triage is an editorial navigation aid only. It does not verify a candidate, assign Koto Difficulty, determine family membership, or make a record production-eligible.",
+  "packs": [
+    {
+      "id": "triage-001",
+      "file": "packs/triage-001.json",
+      "recordCount": 250,
+      "bytes": 79796,
+      "sha256": "0f190ba94e5662e19560202304ad69bac926661d2360c9c015a9a69a065220b4"
+    },
+    {
+      "id": "triage-002",
+      "file": "packs/triage-002.json",
+      "recordCount": 250,
+      "bytes": 77714,
+      "sha256": "5794fcbe048f4d1db56d854ceaaf1b34181b931024fe3679503b068465d00a7f"
+    },
+    {
+      "id": "triage-003",
+      "file": "packs/triage-003.json",
+      "recordCount": 250,
+      "bytes": 70815,
+      "sha256": "e21c568918ec471558c1efcf606dffbed5958178432cc20ac56488cea302bbc9"
+    },
+    {
+      "id": "triage-004",
+      "file": "packs/triage-004.json",
+      "recordCount": 250,
+      "bytes": 70825,
+      "sha256": "520c00d3a733654280bdabbe3056bcae8664926fd3c97192439e7e69a373e1d2"
+    },
+    {
+      "id": "triage-005",
+      "file": "packs/triage-005.json",
+      "recordCount": 250,
+      "bytes": 70793,
+      "sha256": "517770fa9792bb7a878536a082eb6a23a6ab258ca99203915e0c73f79be706aa"
+    },
+    {
+      "id": "triage-006",
+      "file": "packs/triage-006.json",
+      "recordCount": 250,
+      "bytes": 70481,
+      "sha256": "d664516d18300bb8a9d9a04df81fe0b3ba3e700195c1f086e9d5bf9343bc00eb"
+    },
+    {
+      "id": "triage-007",
+      "file": "packs/triage-007.json",
+      "recordCount": 250,
+      "bytes": 70299,
+      "sha256": "62135926ab3d90eb61e59421fae62e9edbc9de4073d1a17fb74760885aedcaa0"
+    },
+    {
+      "id": "triage-008",
+      "file": "packs/triage-008.json",
+      "recordCount": 250,
+      "bytes": 69731,
+      "sha256": "dc5709ceca37b4cdfbe2e3e9fed492c34a372dbcd68e0d95ddb9d2e198566dba"
+    },
+    {
+      "id": "triage-009",
+      "file": "packs/triage-009.json",
+      "recordCount": 250,
+      "bytes": 70177,
+      "sha256": "aabfb9984656a03c7fd1ff99b58f67567d00165c2be1da2ea5a1afd46e3705d8"
+    },
+    {
+      "id": "triage-010",
+      "file": "packs/triage-010.json",
+      "recordCount": 250,
+      "bytes": 70329,
+      "sha256": "1f0adb3dad6a0abb4c23b7ce8cc7ea04b1c3cde3ce52534ae4cb09754943fe10"
+    },
+    {
+      "id": "triage-011",
+      "file": "packs/triage-011.json",
+      "recordCount": 250,
+      "bytes": 70264,
+      "sha256": "870e0bffa8d198ac38df497446ffd9e5c419117476374c223e87d313e29e0ca9"
+    },
+    {
+      "id": "triage-012",
+      "file": "packs/triage-012.json",
+      "recordCount": 250,
+      "bytes": 69949,
+      "sha256": "900101203c142e53555c5eb82f135a39cc43d94ef531582bc36f9ef53e98517c"
+    },
+    {
+      "id": "triage-013",
+      "file": "packs/triage-013.json",
+      "recordCount": 250,
+      "bytes": 70272,
+      "sha256": "6a813c60496694b89c71faf74e18d3593adb5d76720ac00a880628b28d2a5909"
+    },
+    {
+      "id": "triage-014",
+      "file": "packs/triage-014.json",
+      "recordCount": 250,
+      "bytes": 70312,
+      "sha256": "c9825d864e7c3e5802caf000826ffa916a7b5f593f641a2aaafd62c4bf99b38f"
+    },
+    {
+      "id": "triage-015",
+      "file": "packs/triage-015.json",
+      "recordCount": 250,
+      "bytes": 70335,
+      "sha256": "77750da697d463f8c81df0e6b0bc601f88ca363929cf4d7283f1cc198ca7922d"
+    },
+    {
+      "id": "triage-016",
+      "file": "packs/triage-016.json",
+      "recordCount": 250,
+      "bytes": 70038,
+      "sha256": "c04f84991ac792094070e18631d1f46fc816450b5edff5e43c11e84d85ec9b35"
+    },
+    {
+      "id": "triage-017",
+      "file": "packs/triage-017.json",
+      "recordCount": 250,
+      "bytes": 70667,
+      "sha256": "8129b7e7cd39d849d77da4f64bd40d6745cbe83209d7e92130d3161b2d0d37a2"
+    },
+    {
+      "id": "triage-018",
+      "file": "packs/triage-018.json",
+      "recordCount": 250,
+      "bytes": 70217,
+      "sha256": "9816fd3696b7358ff7c2812d4afc7e4b740104a805fdb52aa89c084458807908"
+    },
+    {
+      "id": "triage-019",
+      "file": "packs/triage-019.json",
+      "recordCount": 250,
+      "bytes": 70347,
+      "sha256": "c73fd57a78a7e2ab240ccec2536614bdbfc396dadf65a64afe57e1cc343ce4a5"
+    },
+    {
+      "id": "triage-020",
+      "file": "packs/triage-020.json",
+      "recordCount": 250,
+      "bytes": 70624,
+      "sha256": "db7929fb2c9aae9a3e54288d1aa07a8c365cd79e5d1cb74a81a1fe38121b6ccc"
+    }
+  ]
+}

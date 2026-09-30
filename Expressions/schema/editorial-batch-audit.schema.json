@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/editorial-batch-audit.schema.json",
+  "title": "Koto expression editorial batch audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "batchId",
+    "familyIds",
+    "candidateIds",
+    "sourceReferenceIds",
+    "sourceEditorialPass",
+    "finalLanguagePass",
+    "result"
+  ],
+  "properties": {
+    "batchId": { "type": "string", "pattern": "^editorial-batch:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "familyIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^expression:[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "candidateIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^candidate:jmdict:[0-9]+$" }
+    },
+    "sourceReferenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+    },
+    "sourceEditorialPass": { "$ref": "#/$defs/pass" },
+    "finalLanguagePass": {
+      "allOf": [
+        { "$ref": "#/$defs/pass" },
+        {
+          "type": "object",
+          "required": ["separateFromSourceEditorial"],
+          "properties": { "separateFromSourceEditorial": { "const": true } }
+        }
+      ]
+    },
+    "result": { "const": "verified-and-packed" }
+  },
+  "$defs": {
+    "pass": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["completedAt", "reviewer", "reviewerType", "checks"],
+      "properties": {
+        "completedAt": { "type": "string", "format": "date-time" },
+        "reviewer": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "reviewerType": { "enum": ["human", "ai-editorial", "mixed"] },
+        "separateFromSourceEditorial": { "type": "boolean" },
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 200 }
+        }
+      }
+    }
+  }
+}

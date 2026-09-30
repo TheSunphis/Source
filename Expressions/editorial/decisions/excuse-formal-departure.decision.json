@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:excuse-formal-departure",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:excuse-formal-departure",
+  "mergedCandidates": [
+    "candidate:jmdict:2276200",
+    "candidate:jmdict:1320240"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T07:15:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

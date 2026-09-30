@@ -6,7 +6,7 @@ An expression family groups socially or functionally related casual, neutral, po
 
 ## Current state
 
-The repository contains the publication scaffold, schemas, source policy, review policy, one non-production design example, 5,000 non-production JMdict source candidates, and one verified production family. The candidates were selected from 13,065 current eligible expression-tagged entries in the 30 September 2026 JMdict snapshot. The first family passed source-backed editorial review and a separate disclosed AI Japanese-language review. The complete 3,000–5,000-family dataset is still under construction and `productionReady` remains false.
+The repository contains the publication scaffold, schemas, source policy, review policy, one non-production design example, 5,000 non-production JMdict source candidates, deterministic triage coverage for all 5,000, and 17 verified families. The candidates were selected from 13,065 current eligible expression-tagged entries in the 30 September 2026 JMdict snapshot. Twenty-four candidates have committed family decisions. Every verified family passed source-backed editorial review and a separate disclosed AI Japanese-language review. The complete 3,000–5,000-family dataset is still under construction and `productionReady` remains false.
 
 ## Files
 
@@ -16,7 +16,8 @@ The repository contains the publication scaffold, schemas, source policy, review
 - `schema/` — JSON Schemas for manifests, candidates, packs, and expression families.
 - `examples/` — non-production examples used to exercise the schema and card design.
 - `candidates/` — immutable source-derived editorial work queues; never loaded by the learner-facing app.
-- `editorial/` — accept, reject, split, and merge decisions connecting candidates to families.
+- `triage/` — deterministic automation aids covering every candidate; scores and routes are not editorial decisions or verification.
+- `editorial/` — accept, reject, split, and merge decisions plus batch-review audits connecting candidates to families.
 - `reviewed/` — rich families that passed source-backed review but still await a separate disclosed language-proficiency sign-off.
 - `audit/` — reproducibility, source-snapshot, and extraction-count reports.
 - `packs/` — checksummed packs containing families whose record-level verification gates are complete.

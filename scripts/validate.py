@@ -5,6 +5,7 @@ from __future__ import annotations
 import gzip
 import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -48,6 +49,21 @@ def validate_or_raise(checker: Draft202012Validator, payload, label: str) -> Non
         raise SystemExit(f"Schema validation failed:\n{details}")
 
 
+def validate_tts_lines(value, family_id: str) -> None:
+    """Reject template markers in fields that the app sends directly to device TTS."""
+    if isinstance(value, dict):
+        if value.get("deviceTts") is True:
+            japanese = value.get("japanese", "")
+            reading = value.get("reading", "")
+            if any(marker in japanese or marker in reading for marker in ("～", "［", "］", "[", "]")):
+                raise SystemExit(f"Device-TTS line contains a template marker: {family_id}: {japanese}")
+        for child in value.values():
+            validate_tts_lines(child, family_id)
+    elif isinstance(value, list):
+        for child in value:
+            validate_tts_lines(child, family_id)
+
+
 def main() -> None:
     json_paths = sorted(ROOT.rglob("*.json"))
     for path in json_paths:
@@ -79,6 +95,7 @@ def main() -> None:
         if pack["familyCount"] != len(pack["families"]):
             raise SystemExit(f"Pack count mismatch: {item['id']}")
         for family in pack["families"]:
+            validate_tts_lines(family, family["id"])
             if family["id"] in identifiers:
                 raise SystemExit(f"Duplicate family id: {family['id']}")
             identifiers.add(family["id"])
@@ -112,6 +129,7 @@ def main() -> None:
 
     candidate_total = 0
     candidate_ids: set[str] = set()
+    candidate_sequences: dict[str, int] = {}
     candidate_manifest_path = EXPRESSIONS / "candidates" / "manifest.json"
     if candidate_manifest_path.is_file():
         candidate_manifest = load_json(candidate_manifest_path)
@@ -136,6 +154,7 @@ def main() -> None:
                 if candidate["sourceSequence"] in source_sequences:
                     raise SystemExit(f"Duplicate JMdict source sequence: {candidate['sourceSequence']}")
                 candidate_ids.add(candidate["candidateId"])
+                candidate_sequences[candidate["candidateId"]] = candidate["sourceSequence"]
                 source_sequences.add(candidate["sourceSequence"])
             candidate_total += pack["candidateCount"]
         if candidate_total != candidate_manifest["candidateCount"]:
@@ -167,6 +186,7 @@ def main() -> None:
 
     decision_validator = validator("editorial-decision.schema.json")
     assigned_candidates: set[str] = set()
+    decision_assignments: dict[str, str] = {}
     decision_count = 0
     for path in sorted((EXPRESSIONS / "editorial" / "decisions").glob("*.json")):
         decision = load_json(path)
@@ -189,6 +209,7 @@ def main() -> None:
             if candidate_id in assigned_candidates:
                 raise SystemExit(f"Candidate assigned by more than one decision: {candidate_id}")
             assigned_candidates.add(candidate_id)
+            decision_assignments[candidate_id] = family_id
         for related in decision["relatedCandidatesNotMerged"]:
             if related["candidateId"] not in candidate_ids:
                 raise SystemExit(f"Editorial decision references a missing related candidate: {related['candidateId']}")
@@ -196,10 +217,98 @@ def main() -> None:
                 raise SystemExit(f"Editorial decision both merges and excludes a candidate: {related['candidateId']}")
         decision_count += 1
 
+    batch_validator = validator("editorial-batch-audit.schema.json")
+    batch_count = 0
+    audited_families: set[str] = set()
+    for path in sorted((EXPRESSIONS / "editorial" / "batches").glob("*.json")):
+        batch = load_json(path)
+        validate_or_raise(batch_validator, batch, str(path.relative_to(ROOT)))
+        family_ids = set(batch["familyIds"])
+        batch_candidate_ids = set(batch["candidateIds"])
+        if family_ids & audited_families:
+            raise SystemExit("A family appears in more than one editorial batch audit.")
+        if not family_ids <= production_families.keys():
+            raise SystemExit(f"Editorial batch references a missing production family: {path.name}")
+        if not set(batch["sourceReferenceIds"]) <= source_ids:
+            raise SystemExit(f"Editorial batch references an unknown source: {path.name}")
+        expected_candidates = {
+            candidate_id
+            for candidate_id, family_id in decision_assignments.items()
+            if family_id in family_ids
+        }
+        if batch_candidate_ids != expected_candidates:
+            raise SystemExit(f"Editorial batch candidate assignments are inconsistent: {path.name}")
+        for family_id in family_ids:
+            review = production_families[family_id]["review"]
+            if (
+                review["reviewedAt"] != batch["sourceEditorialPass"]["completedAt"]
+                or review["verifiedAt"] != batch["finalLanguagePass"]["completedAt"]
+                or review["reviewer"] != batch["finalLanguagePass"]["reviewer"]
+                or review["reviewerType"] != batch["finalLanguagePass"]["reviewerType"]
+            ):
+                raise SystemExit(f"Editorial batch review metadata is inconsistent: {family_id}")
+        audited_families.update(family_ids)
+        batch_count += 1
+
+    triage_total = 0
+    triage_ids: set[str] = set()
+    triage_route_counts: Counter[str] = Counter()
+    triage_category_counts: Counter[str] = Counter()
+    triage_risk_count = 0
+    triage_assigned_count = 0
+    triage_manifest_path = EXPRESSIONS / "triage" / "manifest.json"
+    if triage_manifest_path.is_file():
+        triage_manifest = load_json(triage_manifest_path)
+        validate_or_raise(validator("triage-manifest.schema.json"), triage_manifest, "triage manifest")
+        triage_pack_validator = validator("triage-pack.schema.json")
+        for item in triage_manifest["packs"]:
+            path = triage_manifest_path.parent / item["file"]
+            if not path.is_file():
+                raise SystemExit(f"Missing triage pack: {item['file']}")
+            if path.stat().st_size != item["bytes"] or sha256(path) != item["sha256"]:
+                raise SystemExit(f"Triage integrity mismatch: {item['file']}")
+            pack = load_json(path)
+            validate_or_raise(triage_pack_validator, pack, item["id"])
+            if pack["packId"] != item["id"] or pack["recordCount"] != item["recordCount"]:
+                raise SystemExit(f"Triage pack metadata mismatch: {item['id']}")
+            if pack["recordCount"] != len(pack["records"]):
+                raise SystemExit(f"Triage pack count mismatch: {item['id']}")
+            for record in pack["records"]:
+                candidate_id = record["candidateId"]
+                if candidate_id not in candidate_ids:
+                    raise SystemExit(f"Triage references a missing candidate: {candidate_id}")
+                if candidate_id in triage_ids:
+                    raise SystemExit(f"Duplicate triage candidate: {candidate_id}")
+                if record["sourceSequence"] != candidate_sequences[candidate_id]:
+                    raise SystemExit(f"Triage source sequence mismatch: {candidate_id}")
+                if record["editorialAssignment"] != decision_assignments.get(candidate_id):
+                    raise SystemExit(f"Triage editorial assignment mismatch: {candidate_id}")
+                triage_ids.add(candidate_id)
+                triage_route_counts[record["automatedRoute"]] += 1
+                triage_category_counts[record["suggestedCategory"]] += 1
+                triage_risk_count += bool(record["riskFlags"])
+                triage_assigned_count += record["editorialAssignment"] is not None
+            triage_total += pack["recordCount"]
+        if triage_ids != candidate_ids or triage_total != candidate_total:
+            raise SystemExit("Triage does not cover every candidate exactly once.")
+        if triage_total != triage_manifest["candidateCount"]:
+            raise SystemExit("Triage manifest candidate count is inconsistent.")
+        if dict(sorted(triage_route_counts.items())) != triage_manifest["automatedRouteCounts"]:
+            raise SystemExit("Triage automated-route counts are inconsistent.")
+        if dict(sorted(triage_category_counts.items())) != triage_manifest["suggestedCategoryCounts"]:
+            raise SystemExit("Triage suggested-category counts are inconsistent.")
+        if triage_risk_count != triage_manifest["riskFlaggedCount"]:
+            raise SystemExit("Triage risk-flagged count is inconsistent.")
+        if triage_assigned_count != triage_manifest["assignedCandidateCount"]:
+            raise SystemExit("Triage assigned-candidate count is inconsistent.")
+    elif candidate_total:
+        raise SystemExit("Candidate records exist without the required triage manifest.")
+
     print(
         f"Validated {len(json_paths)} JSON files, {total} production expression families, "
         f"{len(reviewed_families)} reviewed families, {decision_count} editorial decisions, "
-        f"and {candidate_total} non-production candidates."
+        f"editorial batch audit records: {batch_count}, {candidate_total} non-production candidates, "
+        f"and {triage_total} triage records."
     )
 
 

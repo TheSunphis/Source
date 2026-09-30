@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/triage-pack.schema.json",
+  "title": "Koto automated expression-candidate triage pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["datasetId", "schemaVersion", "packId", "recordCount", "records"],
+  "properties": {
+    "datasetId": { "const": "koto-expression-candidate-triage" },
+    "schemaVersion": { "const": 1 },
+    "packId": { "type": "string", "pattern": "^triage-[0-9]{3}$" },
+    "recordCount": { "type": "integer", "minimum": 1 },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "triage-record.schema.json" }
+    }
+  }
+}

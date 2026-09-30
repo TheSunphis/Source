@@ -59,6 +59,18 @@
         "Use as an authoritative reference for honorific-language analysis.",
         "Do not treat the publication as an unrestricted expression dataset."
       ]
+    },
+    {
+      "id": "irodori-reference",
+      "name": "The Japan Foundation — Irodori: Japanese for Life in Japan",
+      "url": "https://www.irodori.jpf.go.jp/",
+      "licence": "copyrighted-reference-only",
+      "eligibility": "review-reference-only",
+      "requirements": [
+        "Use only for record-level corroboration of naturalness, social use, register, and communicative context.",
+        "Do not bulk-extract, copy, or redistribute lesson text, exercises, audio, illustrations, or layouts.",
+        "Write Koto explanations and examples independently."
+      ]
     }
   ],
   "excludedBulkSources": [

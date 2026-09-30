@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:urge-care",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:urge-care",
+  "mergedCandidates": [
+    "candidate:jmdict:1221870"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T07:15:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,14 +1,14 @@
 {
   "datasetId": "koto-expressions",
   "schemaVersion": 1,
-  "releaseVersion": "0.1.0-development",
+  "releaseVersion": "0.2.0-development",
   "publicationStatus": "candidate",
   "publishedAt": null,
-  "familyCount": 1,
-  "searchableFormCount": 6,
+  "familyCount": 17,
+  "searchableFormCount": 60,
   "difficultyCounts": {
-    "1": 1,
-    "2": 0,
+    "1": 15,
+    "2": 2,
     "3": 0,
     "4": 0,
     "5": 0
@@ -21,6 +21,13 @@
       "file": "packs/pack-001.json",
       "bytes": 8434,
       "sha256": "64a3a36b243712780e57bded1d097f607c3984ec6e967feca32d713b64a21b5b"
+    },
+    {
+      "id": "pack-002",
+      "familyCount": 16,
+      "file": "packs/pack-002.json",
+      "bytes": 80000,
+      "sha256": "0a6e205693547335a0d886277122aff8491610287dfe8f1253c564a2433cd920"
     }
   ],
   "integrityAlgorithm": "sha256",

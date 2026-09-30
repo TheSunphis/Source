@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/triage-manifest.schema.json",
+  "title": "Koto automated expression-candidate triage manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "datasetId",
+    "schemaVersion",
+    "generatedAt",
+    "methodVersion",
+    "sourceCandidateManifest",
+    "candidateCount",
+    "assignedCandidateCount",
+    "riskFlaggedCount",
+    "automatedRouteCounts",
+    "suggestedCategoryCounts",
+    "nonVerificationNotice",
+    "packs"
+  ],
+  "properties": {
+    "datasetId": { "const": "koto-expression-candidate-triage" },
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "methodVersion": { "const": "1.0.0" },
+    "sourceCandidateManifest": { "const": "../candidates/manifest.json" },
+    "candidateCount": { "type": "integer", "minimum": 1 },
+    "assignedCandidateCount": { "type": "integer", "minimum": 0 },
+    "riskFlaggedCount": { "type": "integer", "minimum": 0 },
+    "automatedRouteCounts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "suggestedCategoryCounts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "nonVerificationNotice": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "packs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "file", "recordCount", "bytes", "sha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^triage-[0-9]{3}$" },
+          "file": { "type": "string", "pattern": "^packs/triage-[0-9]{3}\\.json$" },
+          "recordCount": { "type": "integer", "minimum": 1 },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    }
+  }
+}
