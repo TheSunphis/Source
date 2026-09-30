@@ -60,8 +60,8 @@
     {
       "id": "pack-007",
       "file": "packs/pack-007.json",
-      "sha256": "558a5860f88d3aa51fb8ce9abc90f63ab88849ca2eee560a1307e30d02c1e18c",
-      "bytes": 92698,
+      "sha256": "d4cea1a2e5e79dfc11d9b6267aca2eab1deb924b854ce064fa557a7ddef1baad",
+      "bytes": 92626,
       "familyCount": 20
     },
     {
@@ -74,8 +74,8 @@
     {
       "id": "pack-009",
       "file": "packs/pack-009.json",
-      "sha256": "7915411aba477f7258917501cc9fb1063e8ff2069a1bd9b83e124e85b3bf289b",
-      "bytes": 93618,
+      "sha256": "60fb2e3a9426edd69b9ccedf879fa821ca36b69d94a987269f37e17f6c9522f0",
+      "bytes": 93561,
       "familyCount": 20
     },
     {
