@@ -1,0 +1,118 @@
+{
+  "datasetId": "koto-shogun-artwork",
+  "schemaVersion": 1,
+  "publicationStatus": "published",
+  "sourceApplicationCommit": "ee2880520c5ff4d0e12afffc7645e01f0ecd371b",
+  "licence": "CC-BY-SA-4.0",
+  "imageCount": 12,
+  "images": [
+    {
+      "name": "hero",
+      "variant": "768",
+      "file": "Themes/Shogun/hero-768.jpg",
+      "bytes": 79146,
+      "sha256": "d88d48e5b01ec80c99f265fc58fff91cf1b4063c33beae58cbef66514b0c70ed",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "name": "hero",
+      "variant": "1280",
+      "file": "Themes/Shogun/hero-1280.jpg",
+      "bytes": 212891,
+      "sha256": "5bc67a872a406d8e77a46214c3a97b8c29bb7ce2779f6724bd3965dfb194c8fd",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "hero",
+      "variant": "1920",
+      "file": "Themes/Shogun/hero-1920.jpg",
+      "bytes": 414214,
+      "sha256": "bcb1ac77ad3a7a9d772df844723739f8da377fa38f291fbf9e6e06ad81baf599",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "name": "hiragana",
+      "variant": "768",
+      "file": "Themes/Shogun/hiragana-768.jpg",
+      "bytes": 76568,
+      "sha256": "6923f9a9aba895ee8360c6d39438b5bdfb74dcde1ef4dfbd8ac73d562f3cb4d9",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "name": "hiragana",
+      "variant": "1280",
+      "file": "Themes/Shogun/hiragana-1280.jpg",
+      "bytes": 208848,
+      "sha256": "b1c31e48b392ad34fda50a20693b58e4fd4d067c5fd7b1ba627a570c2f348969",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "hiragana",
+      "variant": "1920",
+      "file": "Themes/Shogun/hiragana-1920.jpg",
+      "bytes": 408370,
+      "sha256": "731e96bd9f79bd68c2f945b34d8ba49d1b07b7f880f2076f28cfc63326ee715d",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "name": "katakana",
+      "variant": "768",
+      "file": "Themes/Shogun/katakana-768.jpg",
+      "bytes": 100222,
+      "sha256": "94501e725dc9e73ca6a384a890613961bb9c2318d4623bf7a2439d31971b5057",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "name": "katakana",
+      "variant": "1280",
+      "file": "Themes/Shogun/katakana-1280.jpg",
+      "bytes": 270311,
+      "sha256": "170fe303ab1508540e940f48f981a9a07aae352532ba42c1f317732e4101b12b",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "katakana",
+      "variant": "1920",
+      "file": "Themes/Shogun/katakana-1920.jpg",
+      "bytes": 519739,
+      "sha256": "74c20f75da1be933001252c907d7737005af9d16703a2f42c2027f05e556d5a5",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "name": "joyo",
+      "variant": "768",
+      "file": "Themes/Shogun/joyo-768.jpg",
+      "bytes": 82326,
+      "sha256": "ab0720dbb281e5d1d4a2eebcbc155e6d6cc85d733c87a11b2f5cea54c356cc9c",
+      "width": 768,
+      "height": 432
+    },
+    {
+      "name": "joyo",
+      "variant": "1280",
+      "file": "Themes/Shogun/joyo-1280.jpg",
+      "bytes": 218549,
+      "sha256": "9723db37c2ca33e710f42f52c34bed5332a2635eac0e1a81d58659ee9f1375b8",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "joyo",
+      "variant": "1920",
+      "file": "Themes/Shogun/joyo-1920.jpg",
+      "bytes": 420703,
+      "sha256": "5a87a43dbcb7323074308a9c8dc2179b6aa489a63e70e2eaff5cb6704defe030",
+      "width": 1920,
+      "height": 1080
+    }
+  ]
+}
