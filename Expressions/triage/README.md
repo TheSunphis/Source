@@ -4,9 +4,11 @@ This directory contains a deterministic first-pass analysis of every record in `
 
 Triage scores, categories, cluster hints, and routes are **automation aids, not editorial decisions**. They do not assign Koto Difficulty, prove that a record belongs in the Expressions library, or make any candidate production-eligible. A family can become verified only through the record-level source, deduplication, Japanese, meaning, register, social-use, difficulty, substitution-safety, and final-publication gates in `review-policy.json`.
 
-`editorialAssignment` is populated only from committed editorial-decision files. A non-null value records an existing decision; it is not inferred by the triage heuristic.
+`editorialAssignment` is populated only from committed candidate-to-family decisions. `editorialDisposition` points to a committed decision or standalone outcome explaining why a reviewed candidate was not assigned. Neither field is inferred by the triage heuristic, and a candidate cannot have both.
 
-Regenerate deterministically from the candidate packs and decisions:
+All 77 records on `priority-family-review` now have a committed editorial result: 74 assignments and three non-assignment dispositions. Unreviewed work remains on the standard, specialist, and low-priority routes.
+
+Regenerate deterministically from the candidate packs, decisions, and outcomes:
 
 ```bash
 python3 scripts/triage_expression_candidates.py

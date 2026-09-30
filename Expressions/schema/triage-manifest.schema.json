@@ -12,6 +12,7 @@
     "sourceCandidateManifest",
     "candidateCount",
     "assignedCandidateCount",
+    "dispositionedCandidateCount",
     "riskFlaggedCount",
     "automatedRouteCounts",
     "suggestedCategoryCounts",
@@ -26,6 +27,7 @@
     "sourceCandidateManifest": { "const": "../candidates/manifest.json" },
     "candidateCount": { "type": "integer", "minimum": 1 },
     "assignedCandidateCount": { "type": "integer", "minimum": 0 },
+    "dispositionedCandidateCount": { "type": "integer", "minimum": 0 },
     "riskFlaggedCount": { "type": "integer", "minimum": 0 },
     "automatedRouteCounts": {
       "type": "object",

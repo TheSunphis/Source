@@ -1,17 +1,17 @@
 {
   "datasetId": "koto-expressions",
   "schemaVersion": 1,
-  "releaseVersion": "0.3.0-development",
+  "releaseVersion": "0.4.0-development",
   "publicationStatus": "candidate",
   "publishedAt": null,
-  "familyCount": 37,
-  "searchableFormCount": 134,
+  "familyCount": 60,
+  "searchableFormCount": 208,
   "difficultyCounts": {
-    "1": 19,
-    "2": 7,
-    "3": 4,
-    "4": 4,
-    "5": 3
+    "1": 23,
+    "2": 9,
+    "3": 13,
+    "4": 10,
+    "5": 5
   },
   "searchIndex": null,
   "packs": [
@@ -26,8 +26,8 @@
       "id": "pack-002",
       "familyCount": 16,
       "file": "packs/pack-002.json",
-      "bytes": 84252,
-      "sha256": "6680294f763a4931dd447337f853a052f35c8a269d46bda2b232b821e744defb"
+      "bytes": 85334,
+      "sha256": "3a57e6ae9e5feb6853a44b62397b947f4850d384cd66aedee1f46e511a993fe1"
     },
     {
       "id": "pack-003",
@@ -35,6 +35,13 @@
       "file": "packs/pack-003.json",
       "bytes": 101952,
       "sha256": "3c502725b072ce393327cec2d8b28b9cfa5392fe1ffee31e051dcad0d2ea8e58"
+    },
+    {
+      "id": "pack-004",
+      "familyCount": 23,
+      "file": "packs/pack-004.json",
+      "bytes": 116326,
+      "sha256": "ed89a8f50f1b32b67deb67611aeff362afac3f1339524799be58299d83f93b39"
     }
   ],
   "integrityAlgorithm": "sha256",

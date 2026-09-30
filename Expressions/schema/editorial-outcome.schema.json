@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TheSunphis/Source/blob/main/Expressions/schema/editorial-outcome.schema.json",
+  "title": "Koto expression candidate non-publication outcome",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outcomeId",
+    "candidateId",
+    "outcome",
+    "reason",
+    "futureRoute",
+    "reviewedAt",
+    "reviewer",
+    "reviewerType"
+  ],
+  "properties": {
+    "outcomeId": { "type": "string", "pattern": "^outcome:jmdict-[0-9]+$" },
+    "candidateId": { "type": "string", "pattern": "^candidate:jmdict:[0-9]+$" },
+    "outcome": {
+      "enum": [
+        "defer-split-required",
+        "defer-fragment-review",
+        "exclude-not-reusable-family"
+      ]
+    },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "futureRoute": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "reviewer": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "reviewerType": { "enum": ["human", "ai-editorial", "mixed"] }
+  }
+}

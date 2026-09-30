@@ -12,7 +12,7 @@ This repository is deliberately data-only. It contains no account records, recog
 
 Production datasets are published as immutable GitHub Releases. A consuming Koto release must pin the dataset release and verify the SHA-256 values declared in its manifest before loading any pack. The default branch may advance, but applications must never treat an unpinned branch snapshot as trusted production data.
 
-The Expressions dataset contains 5,000 explicitly non-production source candidates, a deterministic triage record for every candidate, and 37 verified expression families spanning all five Koto Difficulty levels. Sixty source candidates are now connected to those families by committed editorial decisions. Final sign-off is transparently recorded as AI editorial after separate source-backed, record-level Japanese-language review passes. The overall 3,000–5,000-family library remains under construction and is not production-ready.
+The Expressions dataset contains 5,000 explicitly non-production source candidates, a deterministic triage record for every candidate, and 60 verified expression families spanning all five Koto Difficulty levels. Eighty-nine source candidates are connected to those families by committed editorial decisions, and seven additional candidates have explicit non-assignment dispositions. All 77 candidates on the automated priority route have now received record-level editorial review: 74 were assigned to verified families and three were explicitly withheld. Final sign-off is transparently recorded as AI editorial after separate source-backed, record-level Japanese-language review passes. The overall 3,000–5,000-family library remains under construction and is not production-ready.
 
 ## Licence
 

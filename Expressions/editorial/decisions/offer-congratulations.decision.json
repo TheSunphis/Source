@@ -3,10 +3,11 @@
   "decision": "merge-into-reviewed-family",
   "familyId": "expression:offer-congratulations",
   "mergedCandidates": [
-    "candidate:jmdict:1001540"
+    "candidate:jmdict:1001540",
+    "candidate:jmdict:1002410"
   ],
   "relatedCandidatesNotMerged": [],
-  "reviewedAt": "2026-09-30T07:15:00Z",
+  "reviewedAt": "2026-09-30T12:00:00Z",
   "reviewer": "Arena.ai Koto Japanese editorial review",
   "reviewerType": "ai-editorial",
   "finalPublicationApproved": true

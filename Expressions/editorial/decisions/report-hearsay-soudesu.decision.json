@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:report-hearsay-soudesu",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:report-hearsay-soudesu",
+  "mergedCandidates": [
+    "candidate:jmdict:2837492"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

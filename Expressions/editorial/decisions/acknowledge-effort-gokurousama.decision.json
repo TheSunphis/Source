@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:acknowledge-effort-gokurousama",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:acknowledge-effort-gokurousama",
+  "mergedCandidates": [
+    "candidate:jmdict:1005030"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,0 +1,10 @@
+{
+  "outcomeId": "outcome:jmdict-2215430",
+  "candidateId": "candidate:jmdict:2215430",
+  "outcome": "defer-split-required",
+  "reason": "には combines several materially different particle functions in one source candidate. The review policy excludes bare particles as Vocabulary links, and safe publication requires separate source-backed grammar-family review rather than one over-broad record.",
+  "futureRoute": "grammar-split-review",
+  "reviewedAt": "2026-09-30T10:30:00Z",
+  "reviewer": "Arena.ai Koto source-backed editorial pass",
+  "reviewerType": "ai-editorial"
+}

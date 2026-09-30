@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:acknowledge-received-help-osewa",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:acknowledge-received-help-osewa",
+  "mergedCandidates": [
+    "candidate:jmdict:1002260"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

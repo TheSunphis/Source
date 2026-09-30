@@ -5,26 +5,22 @@
     "expression:begin-meal",
     "expression:end-meal-thanks",
     "expression:wish-good-night",
-    "expression:offer-congratulations",
     "expression:welcome-customer",
     "expression:ask-after-wellbeing",
-    "expression:urge-care",
     "expression:acknowledge-wait",
     "expression:acknowledge-request-formally",
     "expression:request-with-kudasai"
   ],
   "candidateIds": [
-    "candidate:jmdict:1625780",
+    "candidate:jmdict:1002790",
+    "candidate:jmdict:2149640",
+    "candidate:jmdict:2272760",
     "candidate:jmdict:1410800",
     "candidate:jmdict:1005080",
-    "candidate:jmdict:1001780",
-    "candidate:jmdict:1001540",
+    "candidate:jmdict:1625780",
+    "candidate:jmdict:1184270",
     "candidate:jmdict:1000930",
-    "candidate:jmdict:2272760",
-    "candidate:jmdict:1221870",
-    "candidate:jmdict:2149640",
-    "candidate:jmdict:1002790",
-    "candidate:jmdict:1184270"
+    "candidate:jmdict:1001780"
   ],
   "sourceReferenceIds": [
     "jmdict",

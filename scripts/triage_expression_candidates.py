@@ -68,6 +68,25 @@ def assignments() -> dict[str, str]:
     return result
 
 
+def dispositions() -> dict[str, str]:
+    """Return committed non-assignment outcomes, never heuristic rejections."""
+    result: dict[str, str] = {}
+    for path in sorted((EXPRESSIONS / "editorial" / "decisions").glob("*.json")):
+        decision = load(path)
+        for related in decision["relatedCandidatesNotMerged"]:
+            candidate_id = related["candidateId"]
+            if candidate_id in result:
+                raise SystemExit(f"Candidate disposition recorded twice: {candidate_id}")
+            result[candidate_id] = decision["decisionId"]
+    for path in sorted((EXPRESSIONS / "editorial" / "outcomes").glob("*.json")):
+        outcome = load(path)
+        candidate_id = outcome["candidateId"]
+        if candidate_id in result:
+            raise SystemExit(f"Candidate disposition recorded twice: {candidate_id}")
+        result[candidate_id] = outcome["outcomeId"]
+    return result
+
+
 def gloss_text(candidate: dict) -> str:
     return " ".join(
         gloss["text"].lower()
@@ -98,7 +117,7 @@ def category(candidate: dict, gloss: str) -> str:
     return "other-expression"
 
 
-def triage(candidate: dict, assigned: dict[str, str]) -> dict:
+def triage(candidate: dict, assigned: dict[str, str], dispositioned: dict[str, str]) -> dict:
     gloss = gloss_text(candidate)
     flags = set(candidate["sourceFlags"])
     poses = {pos for sense in candidate["senses"] for pos in sense["partsOfSpeech"]}
@@ -172,25 +191,32 @@ def triage(candidate: dict, assigned: dict[str, str]) -> dict:
         "signals": sorted(set(signals)),
         "riskFlags": risk_flags,
         "editorialAssignment": assigned.get(candidate["candidateId"]),
+        "editorialDisposition": dispositioned.get(candidate["candidateId"]),
     }
 
 
 def main() -> None:
     candidate_manifest = load(CANDIDATES / "manifest.json")
     assigned = assignments()
+    dispositioned = dispositions()
+    if set(assigned) & set(dispositioned):
+        raise SystemExit("A candidate cannot have both a family assignment and a non-assignment disposition.")
     records: list[dict] = []
     source_pack_sizes: list[int] = []
     for item in candidate_manifest["packs"]:
         source_pack = load(CANDIDATES / item["file"])
         source_pack_sizes.append(len(source_pack["candidates"]))
-        records.extend(triage(candidate, assigned) for candidate in source_pack["candidates"])
+        records.extend(triage(candidate, assigned, dispositioned) for candidate in source_pack["candidates"])
 
     if len(records) != candidate_manifest["candidateCount"]:
         raise SystemExit("Candidate count changed during triage.")
     if len({record["candidateId"] for record in records}) != len(records):
         raise SystemExit("Duplicate candidate in triage input.")
-    if set(assigned) - {record["candidateId"] for record in records}:
+    record_ids = {record["candidateId"] for record in records}
+    if set(assigned) - record_ids:
         raise SystemExit("An editorial decision references a candidate outside the triage set.")
+    if set(dispositioned) - record_ids:
+        raise SystemExit("An editorial disposition references a candidate outside the triage set.")
 
     packs_dir = TRIAGE / "packs"
     if packs_dir.exists():
@@ -229,6 +255,7 @@ def main() -> None:
         "sourceCandidateManifest": "../candidates/manifest.json",
         "candidateCount": len(records),
         "assignedCandidateCount": sum(record["editorialAssignment"] is not None for record in records),
+        "dispositionedCandidateCount": sum(record["editorialDisposition"] is not None for record in records),
         "riskFlaggedCount": sum(bool(record["riskFlags"]) for record in records),
         "automatedRouteCounts": dict(sorted(route_counts.items())),
         "suggestedCategoryCounts": dict(sorted(category_counts.items())),
@@ -238,7 +265,8 @@ def main() -> None:
     (TRIAGE / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"Triaged {len(records)} candidates into {len(entries)} packs; "
-        f"{manifest['assignedCandidateCount']} have committed editorial assignments and "
+        f"{manifest['assignedCandidateCount']} have committed editorial assignments, "
+        f"{manifest['dispositionedCandidateCount']} have explicit non-assignment dispositions, and "
         f"{manifest['riskFlaggedCount']} carry specialist-risk flags."
     )
 

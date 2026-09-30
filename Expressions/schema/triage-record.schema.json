@@ -13,7 +13,8 @@
     "clusterHint",
     "signals",
     "riskFlags",
-    "editorialAssignment"
+    "editorialAssignment",
+    "editorialDisposition"
   ],
   "properties": {
     "candidateId": { "type": "string", "pattern": "^candidate:jmdict:[0-9]+$" },
@@ -39,6 +40,10 @@
     "editorialAssignment": {
       "type": ["string", "null"],
       "pattern": "^expression:[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "editorialDisposition": {
+      "type": ["string", "null"],
+      "pattern": "^(?:decision|outcome):[a-z0-9]+(?:-[a-z0-9]+)*$"
     }
   }
 }

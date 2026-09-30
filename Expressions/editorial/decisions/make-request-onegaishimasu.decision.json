@@ -4,10 +4,11 @@
   "familyId": "expression:make-request-onegaishimasu",
   "mergedCandidates": [
     "candidate:jmdict:1001720",
-    "candidate:jmdict:1001730"
+    "candidate:jmdict:1001730",
+    "candidate:jmdict:2221720"
   ],
   "relatedCandidatesNotMerged": [],
-  "reviewedAt": "2026-09-30T09:15:00Z",
+  "reviewedAt": "2026-09-30T12:00:00Z",
   "reviewer": "Arena.ai Koto Japanese editorial review",
   "reviewerType": "ai-editorial",
   "finalPublicationApproved": true

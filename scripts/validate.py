@@ -187,6 +187,7 @@ def main() -> None:
     decision_validator = validator("editorial-decision.schema.json")
     assigned_candidates: set[str] = set()
     decision_assignments: dict[str, str] = {}
+    editorial_dispositions: dict[str, str] = {}
     decision_count = 0
     for path in sorted((EXPRESSIONS / "editorial" / "decisions").glob("*.json")):
         decision = load_json(path)
@@ -211,11 +212,31 @@ def main() -> None:
             assigned_candidates.add(candidate_id)
             decision_assignments[candidate_id] = family_id
         for related in decision["relatedCandidatesNotMerged"]:
-            if related["candidateId"] not in candidate_ids:
-                raise SystemExit(f"Editorial decision references a missing related candidate: {related['candidateId']}")
-            if related["candidateId"] in decision["mergedCandidates"]:
-                raise SystemExit(f"Editorial decision both merges and excludes a candidate: {related['candidateId']}")
+            candidate_id = related["candidateId"]
+            if candidate_id not in candidate_ids:
+                raise SystemExit(f"Editorial decision references a missing related candidate: {candidate_id}")
+            if candidate_id in decision["mergedCandidates"]:
+                raise SystemExit(f"Editorial decision both merges and excludes a candidate: {candidate_id}")
+            if candidate_id in editorial_dispositions:
+                raise SystemExit(f"Candidate has more than one non-assignment disposition: {candidate_id}")
+            editorial_dispositions[candidate_id] = decision["decisionId"]
         decision_count += 1
+
+    outcome_validator = validator("editorial-outcome.schema.json")
+    outcome_count = 0
+    for path in sorted((EXPRESSIONS / "editorial" / "outcomes").glob("*.json")):
+        outcome = load_json(path)
+        validate_or_raise(outcome_validator, outcome, str(path.relative_to(ROOT)))
+        candidate_id = outcome["candidateId"]
+        if candidate_id not in candidate_ids:
+            raise SystemExit(f"Editorial outcome references a missing candidate: {candidate_id}")
+        if candidate_id in editorial_dispositions:
+            raise SystemExit(f"Candidate has more than one non-assignment disposition: {candidate_id}")
+        editorial_dispositions[candidate_id] = outcome["outcomeId"]
+        outcome_count += 1
+    overlap = assigned_candidates & editorial_dispositions.keys()
+    if overlap:
+        raise SystemExit(f"Candidate is both assigned and dispositioned: {sorted(overlap)[0]}")
 
     batch_validator = validator("editorial-batch-audit.schema.json")
     batch_count = 0
@@ -256,6 +277,7 @@ def main() -> None:
     triage_category_counts: Counter[str] = Counter()
     triage_risk_count = 0
     triage_assigned_count = 0
+    triage_disposition_count = 0
     triage_manifest_path = EXPRESSIONS / "triage" / "manifest.json"
     if triage_manifest_path.is_file():
         triage_manifest = load_json(triage_manifest_path)
@@ -283,11 +305,16 @@ def main() -> None:
                     raise SystemExit(f"Triage source sequence mismatch: {candidate_id}")
                 if record["editorialAssignment"] != decision_assignments.get(candidate_id):
                     raise SystemExit(f"Triage editorial assignment mismatch: {candidate_id}")
+                if record["editorialDisposition"] != editorial_dispositions.get(candidate_id):
+                    raise SystemExit(f"Triage editorial disposition mismatch: {candidate_id}")
+                if record["editorialAssignment"] is not None and record["editorialDisposition"] is not None:
+                    raise SystemExit(f"Triage candidate is both assigned and dispositioned: {candidate_id}")
                 triage_ids.add(candidate_id)
                 triage_route_counts[record["automatedRoute"]] += 1
                 triage_category_counts[record["suggestedCategory"]] += 1
                 triage_risk_count += bool(record["riskFlags"])
                 triage_assigned_count += record["editorialAssignment"] is not None
+                triage_disposition_count += record["editorialDisposition"] is not None
             triage_total += pack["recordCount"]
         if triage_ids != candidate_ids or triage_total != candidate_total:
             raise SystemExit("Triage does not cover every candidate exactly once.")
@@ -301,13 +328,16 @@ def main() -> None:
             raise SystemExit("Triage risk-flagged count is inconsistent.")
         if triage_assigned_count != triage_manifest["assignedCandidateCount"]:
             raise SystemExit("Triage assigned-candidate count is inconsistent.")
+        if triage_disposition_count != triage_manifest["dispositionedCandidateCount"]:
+            raise SystemExit("Triage dispositioned-candidate count is inconsistent.")
     elif candidate_total:
         raise SystemExit("Candidate records exist without the required triage manifest.")
 
     print(
         f"Validated {len(json_paths)} JSON files, {total} production expression families, "
         f"{len(reviewed_families)} reviewed families, {decision_count} editorial decisions, "
-        f"editorial batch audit records: {batch_count}, {candidate_total} non-production candidates, "
+        f"{outcome_count} standalone editorial outcomes, editorial batch audit records: {batch_count}, "
+        f"{candidate_total} non-production candidates, "
         f"and {triage_total} triage records."
     )
 

@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:preface-disagreement-okotobadesuga",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:preface-disagreement-okotobadesuga",
+  "mergedCandidates": [
+    "candidate:jmdict:2847195"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

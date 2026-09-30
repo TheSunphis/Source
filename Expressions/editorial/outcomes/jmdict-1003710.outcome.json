@@ -1,0 +1,10 @@
+{
+  "outcomeId": "outcome:jmdict-1003710",
+  "candidateId": "candidate:jmdict:1003710",
+  "outcome": "exclude-not-reusable-family",
+  "reason": "The shortlisted source sense is a niche spoken charm involving a repeated sneeze word, while the primary headword is the ordinary noun for a sneeze. It does not meet the current reusable-family and unambiguous-primary tests.",
+  "futureRoute": "excluded-unless-stronger-current-source-emerges",
+  "reviewedAt": "2026-09-30T10:30:00Z",
+  "reviewer": "Arena.ai Koto source-backed editorial pass",
+  "reviewerType": "ai-editorial"
+}

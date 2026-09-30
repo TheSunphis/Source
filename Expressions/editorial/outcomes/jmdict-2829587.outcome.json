@@ -1,0 +1,10 @@
+{
+  "outcomeId": "outcome:jmdict-2829587",
+  "candidateId": "candidate:jmdict:2829587",
+  "outcome": "defer-fragment-review",
+  "reason": "いらして is an abbreviated conjunctive honorific fragment with multiple come, go, be, and progressive readings. It lacks a stable standalone communicative force and must not be published as a self-contained family.",
+  "futureRoute": "honorific-construction-review",
+  "reviewedAt": "2026-09-30T10:30:00Z",
+  "reviewer": "Arena.ai Koto source-backed editorial pass",
+  "reviewerType": "ai-editorial"
+}

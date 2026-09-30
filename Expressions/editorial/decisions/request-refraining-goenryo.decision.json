@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:request-refraining-goenryo",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:request-refraining-goenryo",
+  "mergedCandidates": [
+    "candidate:jmdict:2211850"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

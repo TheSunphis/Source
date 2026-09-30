@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:new-year-greeting",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:new-year-greeting",
+  "mergedCandidates": [
+    "candidate:jmdict:1532270"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

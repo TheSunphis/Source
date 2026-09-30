@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:attribute-beneficial-result-okagede",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:attribute-beneficial-result-okagede",
+  "mergedCandidates": [
+    "candidate:jmdict:1270210"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

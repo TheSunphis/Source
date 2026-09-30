@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:formal-regarding-nitsukimashite",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:formal-regarding-nitsukimashite",
+  "mergedCandidates": [
+    "candidate:jmdict:2872401"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T12:00:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}
