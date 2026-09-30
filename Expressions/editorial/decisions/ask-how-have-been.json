@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:ask-how-have-been",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:ask-how-have-been",
+  "mergedCandidates": [
+    "candidate:jmdict:2257240"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:throw-cold-water",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:throw-cold-water",
+  "mergedCandidates": [
+    "candidate:jmdict:1910190"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

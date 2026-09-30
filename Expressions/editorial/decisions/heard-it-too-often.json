@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:heard-it-too-often",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:heard-it-too-often",
+  "mergedCandidates": [
+    "candidate:jmdict:2755470"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:painstaking-intense",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:painstaking-intense",
+  "mergedCandidates": [
+    "candidate:jmdict:2872033"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

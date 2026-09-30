@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:rush-into-danger",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:rush-into-danger",
+  "mergedCandidates": [
+    "candidate:jmdict:2871104"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:so-much-feel-guilty",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:so-much-feel-guilty",
+  "mergedCandidates": [
+    "candidate:jmdict:2851455"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

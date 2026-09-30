@@ -6,7 +6,7 @@ An expression family groups socially or functionally related casual, neutral, po
 
 ## Current state
 
-The repository contains the publication scaffold, schemas, source policy, review policy, one non-production design example, 5,000 non-production JMdict source candidates, deterministic triage coverage for all 5,000, and 160 verified families spanning Koto Difficulty 1–5. The candidates were selected from 13,065 current eligible expression-tagged entries in the 30 September 2026 JMdict snapshot. 202 candidates have committed family assignments and seven have explicit non-assignment dispositions. The automated priority route is fully reviewed: all 77 records have either an assignment (74) or a documented non-publication outcome (3). Every verified family passed source-backed editorial review and a separate disclosed AI Japanese-language review. The complete 3,000–5,000-family dataset is still under construction and `productionReady` remains false.
+The repository contains the publication scaffold, schemas, source policy, review policy, one non-production design example, 5,000 non-production JMdict source candidates, deterministic triage coverage for all 5,000, and 260 verified families spanning Koto Difficulty 1–5. The candidates were selected from 13,065 current eligible expression-tagged entries in the 30 September 2026 JMdict snapshot. 310 candidates have committed family assignments and seven have explicit non-assignment dispositions. The automated priority route is fully reviewed: all 77 records have either an assignment (74) or a documented non-publication outcome (3). Every verified family passed source-backed editorial review and a separate disclosed AI Japanese-language review. The complete 3,000–5,000-family dataset is still under construction and `productionReady` remains false.
 
 ## Files
 
@@ -37,4 +37,13 @@ No recorded audio is stored. Koto uses device Japanese text-to-speech for primar
 - Assigned **113** source candidates after merging register variants and closely related forms into family records.
 - Balanced everyday interaction, requests and responses, reactions, social formulas, work and school, discourse, grammar, idioms, and proverbs across Difficulty 1–5.
 - Recorded separate source-backed AI editorial and final AI Japanese-language passes in `editorial/batches/20260930-balanced-expansion-b.audit.json`; no human review is claimed.
+- Production readiness remains **false** because the 3,000–5,000-family target is still incomplete.
+
+
+## 2026-09-30 balanced verified expansion C
+
+- Added **100** distinct verified expression families in `pack-010.json` through `pack-014.json`.
+- Assigned **108** source candidates after merging closely related grammatical and register forms into family records.
+- Balanced grammar, discourse, interaction, requests, workplace and learning language, social formulas, idioms, and proverbs across Difficulty 1–5.
+- Recorded separate source-backed AI editorial and final AI Japanese-language passes in `editorial/batches/20260930-balanced-expansion-c.audit.json`; no human review is claimed.
 - Production readiness remains **false** because the 3,000–5,000-family target is still incomplete.

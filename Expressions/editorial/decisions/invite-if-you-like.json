@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:invite-if-you-like",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:invite-if-you-like",
+  "mergedCandidates": [
+    "candidate:jmdict:1554530"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

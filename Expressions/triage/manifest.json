@@ -5,7 +5,7 @@
   "methodVersion": "1.0.0",
   "sourceCandidateManifest": "../candidates/manifest.json",
   "candidateCount": 5000,
-  "assignedCandidateCount": 202,
+  "assignedCandidateCount": 310,
   "dispositionedCandidateCount": 7,
   "riskFlaggedCount": 139,
   "automatedRouteCounts": {
@@ -29,78 +29,78 @@
       "id": "triage-001",
       "file": "packs/triage-001.json",
       "recordCount": 250,
-      "bytes": 89049,
-      "sha256": "893601f417e31770ded0f1dceabc0c95c122b9790b23858cc45cb33fa58072fe"
+      "bytes": 90114,
+      "sha256": "b070daf5c8393ac5ae1def29b0b92a7b62fe542fc043d06cfaf4c9cff6852e77"
     },
     {
       "id": "triage-002",
       "file": "packs/triage-002.json",
       "recordCount": 250,
-      "bytes": 86207,
-      "sha256": "06f21bcd46e7e04a72f2d62585653cc3bea6b8a2d0f319b99b87cf4f1ac0f49a"
+      "bytes": 86826,
+      "sha256": "7c7c12dad052ee9bb0f9454cd3e752aab1e813566f15f9395d30448f26098ff4"
     },
     {
       "id": "triage-003",
       "file": "packs/triage-003.json",
       "recordCount": 250,
-      "bytes": 77908,
-      "sha256": "8e39c96cdfdf2df91b5affbc14ae0ccd0ba0a3bd39115af0087f4f6c22ee090e"
+      "bytes": 77934,
+      "sha256": "e82987e0d6109fc94e053a8172e729d4cd707635a8dadefcca8c805aec3d2bff"
     },
     {
       "id": "triage-004",
       "file": "packs/triage-004.json",
       "recordCount": 250,
-      "bytes": 77825,
-      "sha256": "6b1257311cbeba8fabecc6110b5922515b1e80667d0f54b8db0326213ad0991d"
+      "bytes": 77881,
+      "sha256": "30d7bea14c9ecc0d58d24620058b30324d61d8adef42055450d234601123e13d"
     },
     {
       "id": "triage-005",
       "file": "packs/triage-005.json",
       "recordCount": 250,
-      "bytes": 77818,
-      "sha256": "d7e9d72f50e15a77cefc5bcee3f31a8200635958e7bd7bbeba2efb274d6f7c97"
+      "bytes": 77839,
+      "sha256": "acf97abd56834abbc31bf28c11bcedc5102ecaa84a2d23b2cf9ae609b3295c96"
     },
     {
       "id": "triage-006",
       "file": "packs/triage-006.json",
       "recordCount": 250,
-      "bytes": 77559,
-      "sha256": "6b7a78449f53f494e2aa53070f141c059dfb12975d179b9ce0d2f12740c611a1"
+      "bytes": 77634,
+      "sha256": "80f0e84e7e0ee3ea375cc9a26bc3ce46bbc49f0f23a3fa5fc6e5dd65676ac15c"
     },
     {
       "id": "triage-007",
       "file": "packs/triage-007.json",
       "recordCount": 250,
-      "bytes": 77334,
-      "sha256": "82b59a89761968343d9494657eb7a008de922a43f34782927c843bd7dcf66e68"
+      "bytes": 77458,
+      "sha256": "d8d3594aee63f5a666ad129470af59eef938beacec12d1d4c8131ea7f0389f5f"
     },
     {
       "id": "triage-008",
       "file": "packs/triage-008.json",
       "recordCount": 250,
-      "bytes": 76835,
-      "sha256": "1a33ebff084e8cf6ce87bbb27adf7eb68525afc38b24b870489b3d1385e07c05"
+      "bytes": 76855,
+      "sha256": "b4ae7be36912ba0eea1deba99c6c1dded6f1e688bde723041bb2cee86f1ed3be"
     },
     {
       "id": "triage-009",
       "file": "packs/triage-009.json",
       "recordCount": 250,
-      "bytes": 77276,
-      "sha256": "9db1d32cf3ad4ab4d4fe9bbdb25748282a15927d115f1d4779ff5a556d5280ba"
+      "bytes": 77328,
+      "sha256": "3162976b43ced7483d1de10b0d19b76317d59803d09d7a70287d76f62c5c6574"
     },
     {
       "id": "triage-010",
       "file": "packs/triage-010.json",
       "recordCount": 250,
-      "bytes": 77532,
-      "sha256": "5a2243a0601eeacba4cbcd456d6dd7245a945521468648ae8cfe0a6efcf6e70a"
+      "bytes": 77562,
+      "sha256": "9c8531c08e6ecd206be2b91a0871e46db1a82091135dc7c89d44116d7ce6bff4"
     },
     {
       "id": "triage-011",
       "file": "packs/triage-011.json",
       "recordCount": 250,
-      "bytes": 77302,
-      "sha256": "4ece375613f51e07263f16763bca135cbff973eb647af38fae774f214307bc10"
+      "bytes": 77353,
+      "sha256": "3fbe97400a94189296375d962d82a54f624d586ffcf7a3314f65ccf626762f30"
     },
     {
       "id": "triage-012",
@@ -113,57 +113,57 @@
       "id": "triage-013",
       "file": "packs/triage-013.json",
       "recordCount": 250,
-      "bytes": 77332,
-      "sha256": "1a26439ceca06ba9893341a9b7e6dcdd49d7fb256914348bc55dfc57aa4bed02"
+      "bytes": 77433,
+      "sha256": "039a8d951275afd840fd1153f0107eb5770e3f23d6fc87345de908b55196124e"
     },
     {
       "id": "triage-014",
       "file": "packs/triage-014.json",
       "recordCount": 250,
-      "bytes": 77352,
-      "sha256": "62489dfbdbc1b32a37ce0ff9f05ca7b35c76062cc7b53fa8159f00af3642d7b0"
+      "bytes": 77493,
+      "sha256": "8c6d2f492ed2eae454c74cff795c8617eb931d653e7d693832bf69d2762d4260"
     },
     {
       "id": "triage-015",
       "file": "packs/triage-015.json",
       "recordCount": 250,
-      "bytes": 77423,
-      "sha256": "a3f7bafb6c4e27cbbefd770f9272f69f3af4d4a7acb4e428aca19360c8e31cb0"
+      "bytes": 77560,
+      "sha256": "4f3198d9650dc3387161ec96345fb9548cf74ad0218ca05e98442633db4f44bb"
     },
     {
       "id": "triage-016",
       "file": "packs/triage-016.json",
       "recordCount": 250,
-      "bytes": 77102,
-      "sha256": "6ef87d0a821114436df93b975e5ffc54160e744f3e1330e267b7ec5787a23a99"
+      "bytes": 77132,
+      "sha256": "5eede429d953896db4d3548a6910122cd3ed7bdc31602151d17949ac151b010b"
     },
     {
       "id": "triage-017",
       "file": "packs/triage-017.json",
       "recordCount": 250,
-      "bytes": 77855,
-      "sha256": "ec008c3c4211c9df48d73312465914a616e2ea063e410a04831233b182b04dca"
+      "bytes": 77926,
+      "sha256": "87fb2d2a3269831291fe52d258d3b6edf8c49055b1361b3c27cf4db5800b2746"
     },
     {
       "id": "triage-018",
       "file": "packs/triage-018.json",
       "recordCount": 250,
-      "bytes": 77328,
-      "sha256": "a66c60caa0e472ece861d31b42657231950a95eca11ee075d08abd3a2d904b81"
+      "bytes": 77435,
+      "sha256": "8ad09f61034dda57fb5bc16b54a673b89709acc127e8962e2b89e61fd32899a7"
     },
     {
       "id": "triage-019",
       "file": "packs/triage-019.json",
       "recordCount": 250,
-      "bytes": 77418,
-      "sha256": "27a4c8ed75bb0a1793d5fa7601ae2e8e77d0708e04b1ab4829fe7ced5736cf4b"
+      "bytes": 77473,
+      "sha256": "5ed4997865bd21148efb0a143e98903425a00e73fe48e2c9e8ffcb38e5dfe972"
     },
     {
       "id": "triage-020",
       "file": "packs/triage-020.json",
       "recordCount": 250,
-      "bytes": 77730,
-      "sha256": "dc4cfc0f47c06a3716e7bbc28e080f00dc56a6789dd5885cd9d68d4a7ddcd4c1"
+      "bytes": 77819,
+      "sha256": "dddafa9a4c94338c8dd1065de52516c9f3154d4220c5c5f02267df3bdb36fcaf"
     }
   ]
 }

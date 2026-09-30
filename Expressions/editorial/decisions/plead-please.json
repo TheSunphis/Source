@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:plead-please",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:plead-please",
+  "mergedCandidates": [
+    "candidate:jmdict:2778400",
+    "candidate:jmdict:2779330"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

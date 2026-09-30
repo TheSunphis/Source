@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:hear-through-rumor",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:hear-through-rumor",
+  "mergedCandidates": [
+    "candidate:jmdict:2834956"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

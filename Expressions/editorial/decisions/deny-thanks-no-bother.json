@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:deny-thanks-no-bother",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:deny-thanks-no-bother",
+  "mergedCandidates": [
+    "candidate:jmdict:2857208",
+    "candidate:jmdict:2573910"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T19:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}
