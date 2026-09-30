@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:state-no-doubt",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:state-no-doubt",
+  "mergedCandidates": [
+    "candidate:jmdict:2006640",
+    "candidate:jmdict:1610740"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

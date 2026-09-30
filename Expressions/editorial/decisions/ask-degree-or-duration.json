@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:ask-degree-or-duration",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:ask-degree-or-duration",
+  "mergedCandidates": [
+    "candidate:jmdict:1009250",
+    "candidate:jmdict:2068080"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

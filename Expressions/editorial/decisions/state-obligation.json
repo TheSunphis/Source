@@ -1,0 +1,16 @@
+{
+  "decisionId": "decision:state-obligation",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:state-obligation",
+  "mergedCandidates": [
+    "candidate:jmdict:2098150",
+    "candidate:jmdict:2142120",
+    "candidate:jmdict:1632350",
+    "candidate:jmdict:2394660"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

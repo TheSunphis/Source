@@ -1,0 +1,14 @@
+{
+  "decisionId": "decision:express-means-or-cause",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:express-means-or-cause",
+  "mergedCandidates": [
+    "candidate:jmdict:1004600",
+    "candidate:jmdict:1313590"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

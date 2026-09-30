@@ -1,47 +1,82 @@
 {
   "datasetId": "koto-expressions",
   "schemaVersion": 1,
-  "releaseVersion": "0.4.0-development",
+  "releaseVersion": "0.5.0-development",
   "publicationStatus": "candidate",
   "publishedAt": null,
-  "familyCount": 60,
-  "searchableFormCount": 208,
+  "familyCount": 160,
+  "searchableFormCount": 321,
   "difficultyCounts": {
-    "1": 23,
-    "2": 9,
-    "3": 13,
-    "4": 10,
-    "5": 5
+    "1": 27,
+    "2": 34,
+    "3": 53,
+    "4": 32,
+    "5": 14
   },
   "searchIndex": null,
   "packs": [
     {
       "id": "pack-001",
-      "familyCount": 1,
       "file": "packs/pack-001.json",
+      "sha256": "64a3a36b243712780e57bded1d097f607c3984ec6e967feca32d713b64a21b5b",
       "bytes": 8434,
-      "sha256": "64a3a36b243712780e57bded1d097f607c3984ec6e967feca32d713b64a21b5b"
+      "familyCount": 1
     },
     {
       "id": "pack-002",
-      "familyCount": 16,
       "file": "packs/pack-002.json",
+      "sha256": "3a57e6ae9e5feb6853a44b62397b947f4850d384cd66aedee1f46e511a993fe1",
       "bytes": 85334,
-      "sha256": "3a57e6ae9e5feb6853a44b62397b947f4850d384cd66aedee1f46e511a993fe1"
+      "familyCount": 16
     },
     {
       "id": "pack-003",
-      "familyCount": 20,
       "file": "packs/pack-003.json",
+      "sha256": "3c502725b072ce393327cec2d8b28b9cfa5392fe1ffee31e051dcad0d2ea8e58",
       "bytes": 101952,
-      "sha256": "3c502725b072ce393327cec2d8b28b9cfa5392fe1ffee31e051dcad0d2ea8e58"
+      "familyCount": 20
     },
     {
       "id": "pack-004",
-      "familyCount": 23,
       "file": "packs/pack-004.json",
+      "sha256": "ed89a8f50f1b32b67deb67611aeff362afac3f1339524799be58299d83f93b39",
       "bytes": 116326,
-      "sha256": "ed89a8f50f1b32b67deb67611aeff362afac3f1339524799be58299d83f93b39"
+      "familyCount": 23
+    },
+    {
+      "id": "pack-005",
+      "file": "packs/pack-005.json",
+      "sha256": "ee2244d180fd5e5f727e81327760a3f7fca264d57962658b3a98674e3d45d7e8",
+      "bytes": 93993,
+      "familyCount": 20
+    },
+    {
+      "id": "pack-006",
+      "file": "packs/pack-006.json",
+      "sha256": "1dea699592e8ced705195413d39a257f80880ee6803946b7afc72a67ec60a978",
+      "bytes": 94071,
+      "familyCount": 20
+    },
+    {
+      "id": "pack-007",
+      "file": "packs/pack-007.json",
+      "sha256": "558a5860f88d3aa51fb8ce9abc90f63ab88849ca2eee560a1307e30d02c1e18c",
+      "bytes": 92698,
+      "familyCount": 20
+    },
+    {
+      "id": "pack-008",
+      "file": "packs/pack-008.json",
+      "sha256": "14560dff1cc207102025691d55ff002bce107acb5b01027ad1928342bd6b5135",
+      "bytes": 92955,
+      "familyCount": 20
+    },
+    {
+      "id": "pack-009",
+      "file": "packs/pack-009.json",
+      "sha256": "7915411aba477f7258917501cc9fb1063e8ff2069a1bd9b83e124e85b3bf289b",
+      "bytes": 93618,
+      "familyCount": 20
     }
   ],
   "integrityAlgorithm": "sha256",

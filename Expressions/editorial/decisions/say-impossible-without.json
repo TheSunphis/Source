@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:say-impossible-without",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:say-impossible-without",
+  "mergedCandidates": [
+    "candidate:jmdict:2134700"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:polite-therefore",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:polite-therefore",
+  "mergedCandidates": [
+    "candidate:jmdict:2871535"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}

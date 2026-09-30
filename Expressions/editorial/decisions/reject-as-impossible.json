@@ -1,0 +1,13 @@
+{
+  "decisionId": "decision:reject-as-impossible",
+  "decision": "merge-into-reviewed-family",
+  "familyId": "expression:reject-as-impossible",
+  "mergedCandidates": [
+    "candidate:jmdict:2037230"
+  ],
+  "relatedCandidatesNotMerged": [],
+  "reviewedAt": "2026-09-30T16:30:00Z",
+  "reviewer": "Arena.ai Koto Japanese editorial review",
+  "reviewerType": "ai-editorial",
+  "finalPublicationApproved": true
+}
