@@ -8,7 +8,7 @@
 - Candidate pool: unchanged
 - Editorial method: hybrid staged
 - Canonical Vocabulary resolution: deferred to Zero before acceptance
-- Current state: user selected one targeted quality-revision continuation; Valkyrie1 is ready under v9; Crow1 remains waiting
+- Current state: Valkyrie1 revision2 passed Zero structural gates; Crow1 is ACTIVE for one-launch independent review
 
 The first v7 Checkpoint 01 bundle is rejected before Crow and must be revised under v8.
 

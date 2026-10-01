@@ -1,12 +1,12 @@
 # Valkyrie1 due — Wave 002 targeted quality revision
 
-The user selected one quality-revision continuation. Preserve the 50 submitted draft Cards as revision inputs, replace their whole-line pseudo-segmentation with complete analysis, reassess mechanically minimal editorial decisions, and emit ten new immutable bundles in this one execution. Do not ask the user to relay checkpoints.
+Valkyrie1 completed the selected quality revision. Zero reconstructed and structurally verified all ten revision2 bundles and released them to Crow1. Do not relaunch, revise, or upload anything unless Zero issues a new immutable due.
 
 ## Identity and state
 
 - Exact agent: `Valkyrie1`
 - Assignment: `germinal-wave002-valkyrie1-analysis-revision-50`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_AWAITING_CROW`
 - Scope: `50 existing proposals; ten internal checkpoints of five`
 - Slot pattern: `V1-W002-C01-001` through `V1-W002-C10-005`
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
