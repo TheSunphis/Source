@@ -2,11 +2,11 @@
 
 - Exact agent: `Crow1`
 - Assignment: `germinal-goldcard-ii-yo-crow1-review-1`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_ZERO_REJECTED`
 - Exact slot: `V1-GOLD-001`
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Independently critique the one compiled linked Card. Do not repair, rewrite, contact Valkyrie1, or negotiate a pass. The rejected Wave 002 boolean-only review is audit evidence, not precedent.
+Crow1 completed the rationale-bearing review. Zero reconstructed and structurally validated it after correcting an order-sensitive validator defect, but rejected the recommendation at the final semantic gate. Do not relaunch or issue another review unless Zero provides a new immutable due.
 
 ## Compiled Card input
 

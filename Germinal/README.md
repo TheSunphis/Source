@@ -5,8 +5,8 @@ GERMINAL is the public, non-live coordination branch for the clean-room replacem
 ## Current state
 
 - Failed Wave 002 remains immutable audit evidence; accepted count is zero.
-- `Valkyrie1`: ACTIVE for one Vocabulary-first gold Card.
-- `Crow1`: waiting for Zero's linked gold Card and rationale-bearing review gate.
+- `Valkyrie1`: gold proposal complete; held after Zero compilation.
+- `Crow1`: completed the linked gold Card review; Zero rejected the pass at final semantic gates.
 - Live `Expressions/`: unchanged.
 
 Use `Germinal/START.md` as the sole worker entry point.
