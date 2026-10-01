@@ -1,0 +1,9 @@
+{
+  "$id": "https://koto.invalid/germinal/goldcard-crow-correction-v3.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "manifest",
+    "review"
+  ],
+  "type": "object"
+}
