@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `20da79b50d5dc372cc305c677976fb597dfc2984`
-- Valkyrie1 due SHA-256: `f79452d472e40a0610a046537890ffd41d1fcf969541eb484f8f3a99f4df9488`
-- Crow1 due SHA-256: `9f6e62b5ea9073a3c21393f93ed3b21775fabbd2f3167cb0b6cd3621c31b28e7`
+- Due commit: `6418b600d3bd537046333c29108f3c39e94a51e0`
+- Valkyrie1 due SHA-256: `5211855ffaa7e43e60a7efafacf3f0c7d3613d0c4270ed2c6c5c4deab28732cb`
+- Crow1 due SHA-256: `aaefed91ee737ba2a29bdd54677ab05ac8c4c68033f545c587cd8cffeab0a3d4`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -55,6 +55,7 @@ A missing dependency, inaccessible destination, permission failure, identity mis
 
 - `ACTIVE`: complete setup, update the mapped report to `in-progress` with the due commit and start UTC timestamp, then execute the due exactly.
 - `WAITING_FOR_ZERO_LINKED_GOLD_CARD`: Crow1 must not critique. Leave or update its safe report as blocked and stop. Zero will validate the proposal, compile canonical Vocabulary links, install a rationale-bearing critic gate, and repin this START file before Crow1 is launched.
+- `WAITING_FOR_USER_APPROVED_GOLD_CARD`: Crow1 must not critique. Zero must validate and show the unlinked repaired Card to the user; only explicit user approval can reopen linking and review.
 - `HOLD` or any other non-active state: do not open restricted payloads or generate content. Record the safe blocking state and stop.
 
 A launch state never overrides a missing identity or failed setup check.
@@ -83,5 +84,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 gold Card due: `HOLD_COMPLETED_ZERO_COMPILED` — do not relaunch.
-- Crow1 linked gold Card review due: `HOLD_COMPLETED_ZERO_REJECTED` — do not relaunch; Zero rejected the pass at final semantic gates.
+- Valkyrie1 gold Card repair due: `ACTIVE` — repair one evidence-locked Card for user preview.
+- Crow1 repair review due: `WAITING_FOR_USER_APPROVED_GOLD_CARD` — do not launch before explicit preview approval.
