@@ -1,10 +1,11 @@
 {
   "files": {
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec",
+    "germinal_tool.py": "d49ea0e2d4e34eb3abeef63a296b5453fc7a2930a85ef75b08c826c1c1e18773",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
   "runtime": "python>=3.11 standard-library-only",
   "selfTest": "passed in memory before commit",
-  "toolkit": "germinal-infrastructure-v1"
+  "toolkit": "germinal-infrastructure-v2",
+  "transferTest": "GitHub private release asset returned HTTP 206 with exact Content-Range"
 }

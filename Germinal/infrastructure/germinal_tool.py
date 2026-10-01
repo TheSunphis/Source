@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
-import argparse,gzip,hashlib,io,json,os,sys,tarfile
-VERSION="germinal-tool-v1"
+import argparse,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess
+VERSION="germinal-tool-v2"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 STATUSES={"submitted","abstained","failed"}
@@ -154,6 +154,58 @@ def validate_crow(manifest,records):
  p.need(manifest.get("recordsSha256")==sha(records_bytes(records)),"/manifest/recordsSha256","digest mismatch")
  for k in ("evidenceAsset","valkyrieAsset","evidenceBuild","candidateBuild"):p.need(k in manifest,"/manifest/"+k,"required")
  return p.items
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+ def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+def github_token():
+ for name in ("GH_TOKEN","GITHUB_TOKEN"):
+  value=os.environ.get(name)
+  if value:return value.strip()
+ try:
+  return subprocess.check_output(["gh","auth","token"],text=True,stderr=subprocess.DEVNULL,timeout=10).strip()
+ except Exception as e:raise RuntimeError("GitHub credential unavailable") from e
+def signed_asset_url(owner,repo,asset_id,token):
+ url=f"https://api.github.com/repos/{owner}/{repo}/releases/assets/{asset_id}"
+ req=urllib.request.Request(url,headers={"Authorization":f"Bearer {token}","Accept":"application/octet-stream","X-GitHub-Api-Version":"2022-11-28","User-Agent":"Germinal-Agent"})
+ opener=urllib.request.build_opener(NoRedirect)
+ try:
+  r=opener.open(req,timeout=30);code=r.status;location=r.headers.get("Location");r.close()
+ except urllib.error.HTTPError as e:
+  code=e.code;location=e.headers.get("Location");e.close()
+ if code not in (301,302,303,307,308) or not location:raise RuntimeError(f"asset redirect unavailable: HTTP {code}")
+ return location
+def fetch_release_asset(owner,repo,asset_id,expected_bytes,expected_sha,output,chunk_bytes=4*1024*1024,retries=5):
+ if expected_bytes<1 or chunk_bytes<65536 or retries<1:raise ValueError("invalid bounded transfer parameters")
+ token=github_token();part=output+".part"
+ if os.path.exists(output):
+  with open(output,"rb") as f:data=f.read()
+  if len(data)==expected_bytes and sha(data)==expected_sha:return len(data),expected_sha
+  os.remove(output)
+ offset=os.path.getsize(part) if os.path.exists(part) else 0
+ if offset>expected_bytes:os.remove(part);offset=0
+ while offset<expected_bytes:
+  end=min(expected_bytes-1,offset+chunk_bytes-1);need=end-offset+1;payload=None;last=None
+  for _ in range(retries):
+   try:
+    location=signed_asset_url(owner,repo,asset_id,token)
+    req=urllib.request.Request(location,headers={"Range":f"bytes={offset}-{end}","User-Agent":"Germinal-Agent"})
+    with urllib.request.urlopen(req,timeout=60) as r:
+     cr=r.headers.get("Content-Range","")
+     if r.status!=206 or not cr.startswith(f"bytes {offset}-{end}/"):raise RuntimeError(f"unexpected range response: HTTP {r.status}")
+     data=r.read(need)
+     if len(data)!=need or r.read(1):raise EOFError(f"range length mismatch at byte {offset}")
+     payload=data;break
+   except Exception as e:last=e
+  if payload is None:raise RuntimeError(f"bounded range transfer failed at byte {offset}: {type(last).__name__}") from last
+  with open(part,"ab") as f:f.write(payload);f.flush();os.fsync(f.fileno())
+  offset+=len(payload)
+  print(json.dumps({"transfer":"progress","bytes":offset,"total":expected_bytes},sort_keys=True))
+ z=hashlib.sha256();n=0
+ with open(part,"rb") as f:
+  for b in iter(lambda:f.read(1024*1024),b""):z.update(b);n+=len(b)
+ digest=z.hexdigest()
+ if n!=expected_bytes or digest!=expected_sha:
+  os.remove(part);raise RuntimeError("completed asset identity mismatch")
+ os.replace(part,output);return n,digest
 def deterministic_archive(manifest,records,records_name,out_path):
  members={"manifest.json":canonical(manifest),records_name:records_bytes(records)}
  raw=io.BytesIO()
@@ -181,6 +233,7 @@ def main(argv=None):
  c=sub.add_parser("validate-crow");c.add_argument("manifest");c.add_argument("records")
  g=sub.add_parser("package");g.add_argument("kind",choices=["valkyrie","crow"]);g.add_argument("manifest");g.add_argument("records");g.add_argument("output")
  s=sub.add_parser("sha256");s.add_argument("file")
+ f=sub.add_parser("fetch-release-asset");f.add_argument("owner");f.add_argument("repo");f.add_argument("asset_id",type=int);f.add_argument("expected_bytes",type=int);f.add_argument("expected_sha");f.add_argument("output");f.add_argument("--chunk-bytes",type=int,default=4*1024*1024);f.add_argument("--retries",type=int,default=5)
  a=ap.parse_args(argv)
  if a.cmd=="self-test":self_test();print(VERSION+" self-test passed");return 0
  if a.cmd=="sha256":
@@ -188,6 +241,8 @@ def main(argv=None):
   with open(a.file,"rb") as f:
    for b in iter(lambda:f.read(1024*1024),b""):z.update(b);n+=len(b)
   print(json.dumps({"bytes":n,"sha256":z.hexdigest()},sort_keys=True));return 0
+ if a.cmd=="fetch-release-asset":
+  n,d=fetch_release_asset(a.owner,a.repo,a.asset_id,a.expected_bytes,a.expected_sha,a.output,a.chunk_bytes,a.retries);print(json.dumps({"transfer":"complete","bytes":n,"sha256":d},sort_keys=True));return 0
  m=read_json(a.manifest);r=read_ndjson(a.records);probs=validate_valkyrie(m,r) if (a.cmd=="validate-valkyrie" or getattr(a,"kind",None)=="valkyrie") else validate_crow(m,r)
  if probs:
   print(json.dumps({"status":"failed","problemCount":len(probs),"problems":probs[:200]},ensure_ascii=False,sort_keys=True));return 1
