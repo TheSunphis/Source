@@ -17,7 +17,7 @@ Accept only an exact active identity:
 | Exact name | Role | Pinned due file | Public report |
 |---|---|---|---|
 | `Valkyrie1` | Expression creator | `Germinal/Valkyrie/Valkyrie1/due.md` | `Germinal/Valkyrie/Valkyrie1/report.md` |
-| `Crow1` | Independent critic | `Germinal/Crow/Crow1/due.md` | `Germinal/Crow/Crow1/report.md` |
+| `Crow1` | Independent reviewer and direct repairer | `Germinal/Crow/Crow1/due.md` | `Germinal/Crow/Crow1/report.md` |
 
 If the supplied name does not match exactly, stop with `failed — unknown agent identity`. Do not infer an alias, invent a number, switch roles, or read another agent's due. Valkyrie1 and Crow1 must run in separate chats.
 
@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `0172042585f30c91a063bb627bc9f92b01d77c89`
+- Due commit: `2e4144035510b9eaa31572072f786a1984c55ab7`
 - Valkyrie1 due SHA-256: `1b5b459aa4bd84222d3f12ef5bfefc14577fa8e8aac75026a16474259404e5c1`
-- Crow1 due SHA-256: `22607ed272229a1e0af378a078a8f2bf4ea01772a8e2fde644e865d3855273c1`
+- Crow1 due SHA-256: `42e09a736551c9087d95eb51b2320e2346bc32c25e12e0f6c9955e3b2870c2eb`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -85,4 +85,4 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 ## Current routing state
 
 - Valkyrie1 49-Card completion due: `HOLD_COMPLETED_AWAITING_CROW` — do not relaunch.
-- Crow1 49-Card review due: `ACTIVE` — perform one concrete batch review.
+- Crow1 49-Card review-and-repair due: `ACTIVE` — review and directly fix the full batch.
