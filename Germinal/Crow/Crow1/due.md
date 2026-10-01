@@ -45,11 +45,11 @@ Do not review a guessed or merely same-named output. When activated, stream both
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `f344522843c062db301e359627c8a04e47817097`
-- Toolkit: `germinal-infrastructure-v5`
+- Infrastructure commit: `2aff6de22aed2dad510f95b6ff17f8400b0a432d`
+- Toolkit: `germinal-infrastructure-v6`
 - Runtime: Python 3.11 or newer plus Zero-pinned curl fallback for alternate TLS transport
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73`
+- Tool SHA-256: `26321bd1bcb270451ef9cca05272b19dd46c39b330ff18d81ae181974d812515`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
@@ -64,7 +64,11 @@ python3 germinal_tool.py fetch-release-body-bundle TheSunphis Source 400905253,4
 python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
 python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
 python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz
+python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-wave001-valkyrie1-50 germinal-valkyrie1-wave001-50.tar.gz
+python3 germinal_tool.py publish-safe-report TheSunphis Source Germinal Germinal/Valkyrie/Valkyrie1/report.md Germinal/Valkyrie/Valkyrie1/report.md "Valkyrie1 report wave001"
 python3 germinal_tool.py package crow manifest.json reviews.ndjson germinal-crow1-wave001-review-50.tar.gz
+python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-wave001-crow1-review-50 germinal-crow1-wave001-review-50.tar.gz
+python3 germinal_tool.py publish-safe-report TheSunphis Source Germinal Germinal/Crow/Crow1/report.md Germinal/Crow/Crow1/report.md "Crow1 report wave001"
 python3 germinal_tool.py sha256 FILE
 ```
 
@@ -155,9 +159,11 @@ Explain why content fails but never include repaired/replacement content. `pass`
 
 ## Private output contract
 
-When this due becomes `ACTIVE`, upload one deterministic private archive to draft release ID `400491370`:
+When this due becomes `ACTIVE`, build one deterministic private archive and store it with the pinned `upload-release-body-bundle` command as authenticated unpublished draft-release metadata. Do not use the release-asset upload host:
 
-- Exact asset name: `germinal-crow1-wave001-review-50.tar.gz`
+- Exact bundle name: `germinal-crow1-wave001-review-50.tar.gz`
+- Output transport: `germinal-private-body-chunk-v1` draft-release metadata through `api.github.com`
+- Record all returned private chunk release IDs in the safe report
 - Required archive members, in lexical order:
   - `manifest.json`
   - `reviews.ndjson`
@@ -175,8 +181,8 @@ Use exact API endpoints and bounded processing. No broad recursive grep, reposit
 
 ## Public report
 
-After the private critic upload succeeds or the assignment terminates, update only `Germinal/Crow/Crow1/report.md` on branch `Germinal`. Do not place Japanese, meanings, evidence, analyses, findings, prompts, or payload excerpts in Git.
+After private critic metadata storage succeeds or the assignment terminates, update only `Germinal/Crow/Crow1/report.md`. Do not place Japanese, meanings, evidence, analyses, findings, prompts, or payload excerpts in Git. Publish it with the pinned `publish-safe-report` command so the commit reaches the remote `Germinal` branch.
 
-Fill the existing safe fields: assignment, agent, status, original evidence identity, Valkyrie1 asset identity, critic output name/length/SHA-256, attempted/reviewed/pass/quarantine counts, start/completion UTC timestamps, and a short non-content reason code if needed. Commit only that report with message `Crow1 report wave001`.
+Fill the existing safe fields: assignment, agent, status, original evidence identity, Valkyrie1 bundle identity, critic output name/length/SHA-256, ordered private chunk release IDs, attempted/reviewed/pass/quarantine counts, start/completion UTC timestamps, and a short non-content reason code if needed. Run the exact report command above and verify the returned remote commit SHA.
 
 The public terminal status is `submitted`, `abstained`, or `failed`. A submitted critic report is a recommendation artifact, not final acceptance.

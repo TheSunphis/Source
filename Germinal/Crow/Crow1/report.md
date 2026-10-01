@@ -6,8 +6,8 @@
 - Due commit read: `pending`
 - Started UTC: `pending`
 - Completed UTC: `pending`
-- Infrastructure commit: `f344522843c062db301e359627c8a04e47817097`
-- Tool SHA-256: `b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73`
+- Infrastructure commit: `2aff6de22aed2dad510f95b6ff17f8400b0a432d`
+- Tool SHA-256: `26321bd1bcb270451ef9cca05272b19dd46c39b330ff18d81ae181974d812515`
 - Original evidence asset: `germinal-wave001-valkyrie1-material.tar.gz`
 - Original evidence bytes: `510189`
 - Original evidence SHA-256: `56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364`
@@ -16,6 +16,8 @@
 - Valkyrie1 bytes: `pending`
 - Valkyrie1 SHA-256: `pending`
 - Critic output asset: `germinal-crow1-wave001-review-50.tar.gz`
+- Critic output transport: `private-draft-release-body-bundle`
+- Critic output private chunk release IDs: `pending`
 - Critic output bytes: `pending`
 - Critic output SHA-256: `pending`
 - Attempted: `0`
