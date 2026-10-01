@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
-import argparse,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v4"
+import argparse,base64,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
+VERSION="germinal-tool-v5"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 STATUSES={"submitted","abstained","failed"}
@@ -259,6 +259,8 @@ def deterministic_archive(manifest,records,records_name,out_path):
  return len(raw.getvalue()),sha(raw.getvalue())
 def self_test():
  if not shutil.which("curl"):raise RuntimeError("curl is required as the alternate TLS transport")
+ probe=b"germinal-private-body-self-test"
+ if base64.b64decode(base64.b64encode(probe),validate=True)!=probe:raise RuntimeError("base64 self-test failed")
  ev={"sourceId":"s","artifact":"a","locator":"l","claimScope":"c"}
  seg={"segmentId":"s1","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"m","grammaticalRole":"r","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"reviewed-unlinked","unlinkedReason":"none","evidence":[ev]}
  line={"lineId":"l1","japanese":"x","reading":"y","meaning":"m","ttsEligible":True,"evidence":[ev],"segments":[seg]}

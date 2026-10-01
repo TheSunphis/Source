@@ -1,11 +1,17 @@
 {
+  "exactPrivateBodyFunctionTest": {
+    "bundleBytes": 510189,
+    "bundleSha256": "56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364",
+    "filesystemPersistence": false,
+    "passed": true,
+    "releaseCount": 8
+  },
   "files": {
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "07eadfcadb708480330538b4ac3f75070dd8b292eabb4f8eeec2e467ae8d4df6",
+    "germinal_tool.py": "b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
-  "privateBodyBundleTest": "eight private draft-release bodies reconstructed through api.github.com with exact bundle identity",
   "runtime": "python>=3.11 standard-library plus curl fallback",
-  "selfTest": "passed in memory before commit",
-  "toolkit": "germinal-infrastructure-v4"
+  "selfTest": "passed including base64 handler",
+  "toolkit": "germinal-infrastructure-v5"
 }
