@@ -302,8 +302,9 @@ def evidence_maps() -> dict[tuple[str, str], dict[str, Any]]:
     result: dict[tuple[str, str], dict[str, Any]] = {}
     for path in [EVIDENCE / "jmdict-english.evidence.json.gz", EVIDENCE / "tatoeba-japanese-ccby.evidence.json.gz"]:
         store = read_gzip_json(path)
+        source_id = store["sourceId"]
         for record in store["records"]:
-            result[(record["sourceId"], record["locator"])] = record
+            result[(source_id, record["locator"])] = record
     return result
 
 
