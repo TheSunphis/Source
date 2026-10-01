@@ -1,26 +1,27 @@
 # GERMINAL commissioning command
 
-## One-file worker launch
+## One-file due system
 
-Every worker reads exactly one public instruction file:
+Each worker reads exactly one self-contained file in its own directory:
 
-- `Germinal/START.md`
+- Valkyrie1: `Germinal/Valkyrie/Valkyrie1/due.md`
+- Crow1: `Germinal/Crow/Crow1/due.md`
 
-The user supplies only the exact worker name and the instruction to read that file. Examples:
+Launch prompts:
 
-- `Your name is Valkyrie1. Read Germinal/START.md and begin.`
-- `Your name is Crow1. Read Germinal/START.md and begin.`
+- `Your name is Valkyrie1. Read Germinal/Valkyrie/Valkyrie1/due.md and do the work.`
+- After Zero activates Crow1's due: `Your name is Crow1. Read Germinal/Crow/Crow1/due.md and do the work.`
 
-`START.md` contains identity dispatch, launch state, safe assignment metadata, shared product context, execution rules, and both role procedures. A worker does not need to open the supporting Germinal documents.
+Each `due.md` contains all instructions, safe input identities, the bounded assignment, private output contract, and public reporting rules. Workers do not need another Germinal instruction file.
 
-## Active structure
+## Reports
 
-- `Zero` — this original chat; coordinator, final gate, and learner-facing implementation. Zero has no directory.
-- `Germinal/Valkyrie/Valkyrie1/` — creator identity directory.
-- `Germinal/Crow/Crow1/` — critic identity directory.
+Each agent updates `report.md` in the same numbered directory. Public reports contain safe status metadata only. Detailed Expressions, analyses, evidence, and critic findings remain private draft-release assets.
 
-Only Valkyrie1 and Crow1 are active worker identities. No content work begins while the matching `START.md` launch state is `HOLD`.
+## Current state
 
-## Zero-maintained supporting sources
+- `Valkyrie1`: active; assigned 50 attempted Expression slots.
+- `Crow1`: waiting for Valkyrie1's immutable output identity; assigned to review all 50 afterward.
+- `Zero`: this original chat; coordinator, final gate, and learner-facing implementation. Zero has no directory.
 
-The remaining shared and role documents preserve expanded governance and product design for Zero. Workers do not need to read them separately; Zero compiles all executable requirements into `START.md` before activation.
+Supporting Germinal documents are maintained by Zero as expanded design/governance sources; workers execute only their own `due.md`.
