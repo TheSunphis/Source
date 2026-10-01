@@ -28,6 +28,6 @@ Expression is the renamed Family unit. Germinal keeps the existing Family-compat
 
 ## Current state
 
-- `Valkyrie1`: active and retry-ready after Zero replaced the failed one-stream transfer with a pinned resumable range downloader; assigned 50 attempted Expression slots.
+- `Valkyrie1`: active and retry-ready after Zero replaced the 44.9 MB full-checkpoint transfer with a 510,189-byte private assignment shard and alternate TLS transport; assigned 50 attempted Expression slots.
 - `Crow1`: waiting for Valkyrie1's immutable output identity; assigned to review all 50 afterward.
 - `Zero`: this original chat; provides material, tools, infrastructure, coordination, final gates, and learner-facing implementation. Zero has no directory.
