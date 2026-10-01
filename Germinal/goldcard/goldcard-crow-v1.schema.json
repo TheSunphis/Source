@@ -1,0 +1,23 @@
+{
+  "$id": "https://koto.invalid/germinal/goldcard-crow-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "manifest": {
+      "type": "object"
+    },
+    "review": {
+      "required": [
+        "slotId",
+        "recommendation",
+        "checks",
+        "findings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "manifest",
+    "review"
+  ],
+  "type": "object"
+}
