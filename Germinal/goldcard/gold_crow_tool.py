@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse,gzip,hashlib,io,json,os,tarfile
-VERSION="germinal-goldcard-crow-tool-v1";FORMAT="germinal-goldcard-crow-v1";SLOT="V1-GOLD-001";ASSIGNMENT="germinal-goldcard-ii-yo-crow1-review-1"
+VERSION="germinal-goldcard-crow-tool-v1.1";FORMAT="germinal-goldcard-crow-v1";SLOT="V1-GOLD-001";ASSIGNMENT="germinal-goldcard-ii-yo-crow1-review-1"
 CHECKS=("targetEvidenceBoundary","japaneseNaturalness","readingMeaningAccuracy","segmentationLinguisticCorrectness","vocabularyLinkCorrectness","responsesContextFit","followUpsContextFit","dialogueCoherence","pragmaticsRegisterRelationship","formsPatternsDistinctions","libraryProvenance","noUnsupportedClaims")
 def canon(o):return json.dumps(o,ensure_ascii=False,sort_keys=True,separators=(",",":")).encode()+b"\n"
 def sha(b):return hashlib.sha256(b).hexdigest()
@@ -10,7 +10,7 @@ def validate(m,r):
   if not ok:e.append(p+": "+msg)
  need(m.get("formatVersion")==FORMAT,"/manifest/formatVersion","wrong format");need(m.get("agent")=="Crow1","/manifest/agent","wrong agent");need(m.get("assignment")==ASSIGNMENT,"/manifest/assignment","wrong assignment");need(m.get("expectedSlotIds")==[SLOT],"/manifest/expectedSlotIds","wrong slot");need(m.get("attempted")==1 and m.get("reviewed")==1,"/manifest","counts must be 1");need(m.get("recordSha256")==sha(canon(r)),"/manifest/recordSha256","mismatch")
  for k in ("compiledCardAsset","vocabularyAsset","proposalAsset"):need(k in m,"/manifest/"+k,"required")
- need(r.get("slotId")==SLOT,"/record/slotId","wrong slot");rec=r.get("recommendation");need(rec in ("pass","quarantine"),"/record/recommendation","invalid");checks=r.get("checks");need(isinstance(checks,dict) and tuple(checks)==CHECKS,"/record/checks","exact ordered checks required")
+ need(r.get("slotId")==SLOT,"/record/slotId","wrong slot");rec=r.get("recommendation");need(rec in ("pass","quarantine"),"/record/recommendation","invalid");checks=r.get("checks");need(isinstance(checks,dict) and len(checks)==len(CHECKS) and set(checks)==set(CHECKS),"/record/checks","exact checks required; JSON object key order is not semantic")
  rationales=[]
  if isinstance(checks,dict):
   for k in CHECKS:
