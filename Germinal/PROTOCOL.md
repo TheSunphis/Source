@@ -12,7 +12,7 @@ Valkyrie1 and Crow1 must be separate chats. Additional numbered directories requ
 
 ## Single-file worker launch
 
-Each worker reads only the self-contained `due.md` in its numbered directory. Zero compiles every executable requirement, bounded task, immutable private asset identity, exact output name, and safe reporting rule into that one file before setting it to `ACTIVE`. Valkyrie1 reads `Germinal/Valkyrie/Valkyrie1/due.md`; Crow1 reads `Germinal/Crow/Crow1/due.md`. Zero owns learner-facing and coloured-interaction implementation; Valkyrie owns structured content creation; Crow owns independent content critique. No role may take over another role or weaken the contract.
+Each worker reads only the self-contained `due.md` in its numbered directory. Zero supplies and tests the material, schemas, validator, deterministic packager, private storage destination, permissions, and report template. Zero then compiles every executable requirement, bounded task, immutable material/tool identity, exact output name, and safe reporting rule into that one file before setting it to `ACTIVE`. Missing or broken infrastructure is Zero's failure; workers stop rather than inventing replacements. Valkyrie1 reads `Germinal/Valkyrie/Valkyrie1/due.md`; Crow1 reads `Germinal/Crow/Crow1/due.md`. Zero owns learner-facing and coloured-interaction implementation; Valkyrie owns structured content creation; Crow owns independent content critique. No role may take over another role or weaken the contract.
 
 ## Information boundaries
 

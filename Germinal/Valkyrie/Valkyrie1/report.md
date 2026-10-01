@@ -6,6 +6,8 @@
 - Due commit read: `pending`
 - Started UTC: `pending`
 - Completed UTC: `pending`
+- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
+- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
 - Input asset: `expressions2-batch001-candidates.tar.gz`
 - Input bytes: `44861050`
 - Input SHA-256: `1cc991839e1184dfce5bdcb3e54747d1873e2dd9c707f7478aa6d5995a52060d`

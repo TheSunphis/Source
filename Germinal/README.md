@@ -24,4 +24,6 @@ Each agent updates `report.md` in the same numbered directory. Public reports co
 - `Crow1`: waiting for Valkyrie1's immutable output identity; assigned to review all 50 afterward.
 - `Zero`: this original chat; coordinator, final gate, and learner-facing implementation. Zero has no directory.
 
+Zero also provides and pins all source material, schemas, validators, packaging tools, private output destinations, permissions, and report templates before activation. Workers do not set up or repair infrastructure.
+
 Supporting Germinal documents are maintained by Zero as expanded design/governance sources; workers execute only their own `due.md`.

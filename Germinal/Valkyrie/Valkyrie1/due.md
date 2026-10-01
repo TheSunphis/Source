@@ -35,6 +35,34 @@ Stream from GitHub and verify the exact byte length and SHA-256 before using any
 
 The archive contains clean-room evidence, source/licence manifests, and extracted candidates. Candidate hypotheses are discovery aids, not editorial truth. Confirm every claim against permitted evidence. Do not inspect live or former `Expressions/`.
 
+## Zero-provided tools and output contracts
+
+Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
+
+- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
+- Toolkit: `germinal-infrastructure-v1`
+- Runtime: Python 3.11 or newer, standard library only
+- Tool path: `Germinal/infrastructure/germinal_tool.py`
+- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
+- Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
+- Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
+- Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
+- Crow schema SHA-256: `08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5`
+
+Fetch those machine files from the pinned commit, verify SHA-256 before execution, and run `python3 germinal_tool.py self-test`. A mismatch or failed self-test is an infrastructure failure: stop and report it to Zero. Workers must not repair Zero's tools.
+
+The relevant commands are:
+
+```text
+python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
+python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
+python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz
+python3 germinal_tool.py package crow manifest.json reviews.ndjson germinal-crow1-wave001-review-50.tar.gz
+python3 germinal_tool.py sha256 FILE
+```
+
+Only execute the commands applicable to your role. Tool success proves structural conformance only, never linguistic correctness.
+
 ## Mission
 
 Produce exactly 50 attempted slot records. Aim for 50 complete, distinct, high-value Japanese Expression proposals. Preserve quality over count: when a slot cannot satisfy every content and analysis gate, emit an `abstained` slot record with reason code instead of inventing content or weakening a gate.
@@ -67,6 +95,18 @@ Create complete structured data supporting:
 12. Library fields sufficient for intention-oriented search over Japanese, kana, meaning, intention, usage/context, and alternate forms.
 
 Recognised/Review state is not content and must not appear in the private proposal.
+
+### Exact submitted Expression keys
+
+For validator compatibility, each submitted slot's `expression` object uses these exact top-level keys:
+
+- `expressionId`, `primaryLineId`, `category`, `usageSummary`, `verificationState`, `kotoDifficulty`;
+- non-empty arrays `intentions`, `useWhen`, `takeCare`, `relationships`, `forms`, `responses`, `followUps`, and `sources`;
+- objects `dialogue`, `patterns`, `distinctions`, `library`, `provenance`, and `japaneseLines`.
+
+Set `verificationState` to `candidate`; never self-declare verified. Every Japanese-bearing content entry uses a `lineId` or `lineIds` reference into `japaneseLines` rather than embedding bypass text. Use `primaryLineId`, and suffix all other single/multiple references with `LineId`/`LineIds` so the validator can enforce reference closure. `patterns` and `distinctions` may record `none-supported` with an evidence-backed reason rather than inventing entries.
+
+Evidence locators use exact non-empty keys `sourceId`, `artifact`, `locator`, and `claimScope`. The Zero-provided validator is the executable structural authority for this assignment; the richer semantic rules in this due remain mandatory even where a structural tool cannot prove them.
 
 ## Universal Japanese-line analysis
 

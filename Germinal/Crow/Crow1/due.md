@@ -36,6 +36,34 @@ If the user did not name you exactly `Crow1`, stop. Do not adopt another identit
 
 Do not review a guessed or merely same-named output. When activated, stream both private assets from GitHub and verify exact names, lengths, and SHA-256 values before opening members. Do not persist evidence, candidate content, Valkyrie output, or critique payloads in the public repository or durable local storage.
 
+## Zero-provided tools and output contracts
+
+Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
+
+- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
+- Toolkit: `germinal-infrastructure-v1`
+- Runtime: Python 3.11 or newer, standard library only
+- Tool path: `Germinal/infrastructure/germinal_tool.py`
+- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
+- Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
+- Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
+- Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
+- Crow schema SHA-256: `08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5`
+
+Fetch those machine files from the pinned commit, verify SHA-256 before execution, and run `python3 germinal_tool.py self-test`. A mismatch or failed self-test is an infrastructure failure: stop and report it to Zero. Workers must not repair Zero's tools.
+
+The relevant commands are:
+
+```text
+python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
+python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
+python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz
+python3 germinal_tool.py package crow manifest.json reviews.ndjson germinal-crow1-wave001-review-50.tar.gz
+python3 germinal_tool.py sha256 FILE
+```
+
+Only execute the commands applicable to your role. Tool success proves structural conformance only, never linguistic correctness.
+
 ## Mission
 
 Independently review every one of the 50 attempted slot records. Evaluate against the original evidence, not Valkyrie1's confidence. Recommend `pass` or `quarantine` for each slot while conserving the exact count. A missing, duplicate, extra, malformed, abstained, failed, unsupported, incomplete, or unsafe slot is quarantined.
@@ -94,6 +122,10 @@ Any missing, partial, unreconstructable, unsupported, or orphaned analysis quara
 7. Resolve each of exactly 50 slot IDs to one recommendation.
 8. Build and upload the deterministic private critic archive.
 9. Update only the safe public `report.md`.
+
+## Exact critic record keys
+
+Each `reviews.ndjson` record uses exactly `slotId`, `recommendation`, `checks`, and `findings`. `checks` is a non-empty object whose values are booleans. A `pass` requires every check true and zero findings. A `quarantine` requires at least one finding. Findings use exact non-empty keys `severity`, `code`, `pointer`, `evidenceLocator`, `explanation`, and `gate`; severity is `critical`, `major`, or `minor`.
 
 ## Finding contract
 

@@ -249,7 +249,7 @@ Independently audits the Expression content, Japanese lines, readings, semantic 
 
 ### Zero
 
-Derives the result after deterministic validation. Worker confidence and worker-written gate booleans are not proof. Zero enforces count conservation, global deduplication, payload identity, and all contracts. Zero alone transforms accepted structured content into the learner-facing product and implements the Library, Full Expression Card, colour mapping, tappable explanation panels, accessibility, device TTS controls, responsive behavior, session caching, and Recognised/Review interactions.
+Derives the result after deterministic validation. Worker confidence and worker-written gate booleans are not proof. Zero supplies and freezes the source material, evidence packets, schemas, validators, packaging tools, report templates, private output destinations, permissions, immutable identities, and all infrastructure required by workers. Zero tests and pins that infrastructure before activation and owns infrastructure failures; Valkyrie and Crow must never improvise missing tools. Zero enforces count conservation, global deduplication, payload identity, and all contracts. Zero alone transforms accepted structured content into the learner-facing product and implements the Library, Full Expression Card, colour mapping, tappable explanation panels, accessibility, device TTS controls, responsive behavior, session caching, and Recognised/Review interactions.
 
 ## 8. Privacy and runtime behavior
 
