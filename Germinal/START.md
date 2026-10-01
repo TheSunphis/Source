@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `9be6bb7b0c57e7f68b5e4d4bdce2cf1b3698c1b2`
-- Valkyrie1 due SHA-256: `d1a7f009fdd58cf1520d03591d7418e104bcf81f310e9b978396b0917b027742`
-- Crow1 due SHA-256: `b4607483ccfa4c6b371577180f6dad77faf4fd659ba8624a7f75e41230d08622`
+- Due commit: `1463939a1ef13debea7693aaf437325bb6a22a01`
+- Valkyrie1 due SHA-256: `f2ef50a07aaad20831450e4e4717966dcf837fefdda130025d315168c459ac78`
+- Crow1 due SHA-256: `5de430a3fb58753fc188cbee13e880b3f2c54029bc7e123e60266792dfc9871d`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -54,7 +54,7 @@ A missing dependency, inaccessible destination, permission failure, identity mis
 ## 4. Launch-state behavior
 
 - `ACTIVE`: complete setup, update the mapped report to `in-progress` with the due commit and start UTC timestamp, then execute the due exactly.
-- `WAITING_FOR_VALKYRIE1`: Crow1 must not critique. Leave or update its safe report as blocked and stop. Zero will freeze Valkyrie1's output, update Crow1's due with asset ID/length/SHA-256, and repin this START file before Crow1 is launched again.
+- `WAITING_FOR_COMPLETE_VALKYRIE_WAVE`: Crow1 must not critique. Leave or update its safe report as blocked and stop. Zero will verify and freeze all ten Valkyrie checkpoint outputs, update Crow1's due with every asset identity, and repin this START file before Crow1 is launched.
 - `HOLD` or any other non-active state: do not open restricted payloads or generate content. Record the safe blocking state and stop.
 
 A launch state never overrides a missing identity or failed setup check.
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 Wave 002 Checkpoint 01 due: `ACTIVE` — create five hybrid-staged Expression proposals from five exact dossiers.
-- Crow1 Wave 002 Checkpoint 01 due: `WAITING_FOR_VALKYRIE1_CHECKPOINT01` — do not launch until Zero pins the five-item private output.
+- Valkyrie1 Wave 002 all-50 due: `ACTIVE` — revise Checkpoint 01, then process Checkpoints 02–10 in one execution without user relay.
+- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_VALKYRIE_WAVE` — do not launch until Zero pins all ten corrected private outputs.
