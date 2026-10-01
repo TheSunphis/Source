@@ -1,19 +1,36 @@
 # Crow1 report
 
-- Agent: `Crow1`
-- Assignment: `germinal-goldcard-ii-yo-crow1-review-1`
-- Status: `ready`
-- Due commit read: `pending`
-- Started UTC: `pending`
-- Completed UTC: `pending`
-- Expected reviews: `1`
-- Attempted: `0`
-- Reviewed: `0`
-- Recommended pass: `0`
-- Recommended quarantine: `0`
-- Review output: `pending`
-- Compiled Card SHA-256: `70d1f571167d46973ee77acd575bdbc0349df76b6a68ef2ac0bd0104b9f9fde2`
-- Vocabulary build: `vocabularybuild1:af60894aa40e5d8ce58f7b5362ba4514`
-- Reason code: `zero-activated-rationale-bearing-gold-review`
+- Agent: 
+- Assignment: 
+- Status: 
+- START commit read: 
+- Due commit read: 
+- Started UTC: 
+- Completed UTC: 
+- Core infrastructure commit: 
+- Core tool SHA-256: 
+- Compiled validator commit: 
+- Compiled validator SHA-256: 
+- Gold Crow commit: 
+- Gold Crow tool SHA-256: 
+- Gold Crow schema SHA-256: 
+- Compiled Card asset: 
+- Compiled Card bytes: 
+- Compiled Card SHA-256: 
+- Vocabulary asset: 
+- Vocabulary bytes: 
+- Vocabulary SHA-256: 
+- Proposal asset: 
+- Proposal bytes: 
+- Proposal SHA-256: 
+- Output bundle: 
+- Output bytes: 
+- Output SHA-256: 
+- Private release IDs: 
+- Attempted: 
+- Reviewed: 
+- Recommended pass: 
+- Recommended quarantine: 
+- Reason code: 
 
-Safe metadata only. Never add Japanese, meanings, evidence, analyses, findings, prompts, responses, or payload excerpts.
+This public report contains safe status metadata only. Rationale-bearing review recommendations remain subject to Zero final derivation and acceptance gates.
