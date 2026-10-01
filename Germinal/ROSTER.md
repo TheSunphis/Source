@@ -2,7 +2,7 @@
 
 | Order | Exact chat name | Role | Directory |
 |---:|---|---|---|
-| 0 | `Zero` | Main coordination, assignment, deterministic validation, and final gate | `Germinal/Zero/` |
+| 0 | `Zero` | Main coordination, assignment, deterministic validation, and final gate | Original chat; no directory |
 | 1 | `Valkyrie1` | Create assigned Expressions | `Germinal/Valkyrie/Valkyrie1/` |
 | 2 | `Crow1` | Independently critique Valkyrie1 outputs without repair | `Germinal/Crow/Crow1/` |
 

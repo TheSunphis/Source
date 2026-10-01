@@ -11,7 +11,7 @@ Every active agent must read, in order:
 
 ## Active structure
 
-- `Germinal/Zero/` — main coordinator and final gate.
+- `Zero` — this original chat; main coordinator and final gate. Zero has no directory.
 - `Germinal/Valkyrie/Valkyrie1/` — Expression creator.
 - `Germinal/Crow/Crow1/` — independent Expression critic.
 
