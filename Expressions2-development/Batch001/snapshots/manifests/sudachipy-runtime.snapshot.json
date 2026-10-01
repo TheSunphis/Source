@@ -1,0 +1,32 @@
+{
+  "acquisitionUrl": "https://files.pythonhosted.org/packages/1d/2d/b2c2511b3627032e81ef1626d6bce4506efacc7b698ca0e70cf6b4345e86/sudachipy-0.7.0-cp310-abi3-manylinux_2_28_x86_64.whl",
+  "allowedRoles": [
+    "morphology-runtime"
+  ],
+  "attribution": "SudachiPy 0.7.0 / sudachi.rs by Works Applications and contributors; preserve Apache 2.0 notices.",
+  "bytes": 1758941,
+  "canonicalUrl": "https://pypi.org/project/SudachiPy/0.7.0/",
+  "finalUrl": "https://files.pythonhosted.org/packages/1d/2d/b2c2511b3627032e81ef1626d6bce4506efacc7b698ca0e70cf6b4345e86/sudachipy-0.7.0-cp310-abi3-manylinux_2_28_x86_64.whl",
+  "license": {
+    "name": "Apache-2.0",
+    "noticeFile": "notices/sudachipy-runtime.license",
+    "noticeSha256": "28c7f6f3660cf35c6aacb15fb4879154953ad20f1b6a5c1d972d7809c03be7bc",
+    "url": "https://github.com/WorksApplications/sudachi.rs/blob/develop/LICENSE"
+  },
+  "mediaType": "application/zip",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "tool-output-only",
+  "retrievedAt": "2026-09-30T19:26:20Z",
+  "schemaVersion": 1,
+  "sha256": "dfc90631aa2276d2165e1995bc94b56c9f5bc27b875f43fb7d67e4a3b7346d4f",
+  "sourceId": "source2:sudachipy-runtime",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

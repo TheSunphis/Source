@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/snapshot-manifest.schema.json",
+  "title": "Koto Expressions2 acquired source snapshot manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "sourceId", "canonicalUrl", "acquisitionUrl", "finalUrl", "retrievedAt", "bytes", "sha256", "mediaType", "license", "attribution", "allowedRoles", "redistribution", "rawRetention", "rawFile", "verification"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "sourceId": { "$ref": "common.schema.json#/$defs/sourceId" },
+    "canonicalUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "acquisitionUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "finalUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "retrievedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "bytes": { "type": "integer", "minimum": 1 },
+    "sha256": { "$ref": "common.schema.json#/$defs/sha256" },
+    "mediaType": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "license": {
+      "type": "object", "additionalProperties": false, "required": ["name", "url", "noticeFile", "noticeSha256"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "noticeFile": { "type": "string", "pattern": "^notices/[A-Za-z0-9._-]+$" },
+        "noticeSha256": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    },
+    "attribution": { "type": "string", "minLength": 1, "maxLength": 3000 },
+    "allowedRoles": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "redistribution": { "enum": ["raw-and-derived", "derived-only", "tool-output-only", "none"] },
+    "rawRetention": { "enum": ["persisted-private", "temporary-deleted"] },
+    "rawFile": {
+      "oneOf": [
+        { "type": "string", "pattern": "^raw/[A-Za-z0-9._-]+$" },
+        { "type": "null" }
+      ]
+    },
+    "verification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["httpStatus", "registryMatch", "hashVerified", "expectedIdentityMatch", "archiveSafe", "unexpectedFormat"],
+      "properties": {
+        "httpStatus": { "const": 200 },
+        "registryMatch": { "const": true },
+        "hashVerified": { "const": true },
+        "expectedIdentityMatch": { "const": true },
+        "archiveSafe": { "const": true },
+        "unexpectedFormat": { "const": false }
+      }
+    }
+  }
+}

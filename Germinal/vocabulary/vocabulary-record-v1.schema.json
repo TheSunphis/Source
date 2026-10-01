@@ -1,0 +1,201 @@
+{
+  "$id": "https://koto.invalid/vocabulary/record-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "formatVersion": {
+      "const": "koto-vocabulary-record-v1"
+    },
+    "forms": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "canonical",
+              "accepted",
+              "inflected"
+            ]
+          },
+          "reading": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "surface": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "surface",
+          "reading",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "identity": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalLemma": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "canonicalReading": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "lexicalCategory": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "senseKey": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "canonicalLemma",
+        "canonicalReading",
+        "lexicalCategory",
+        "senseKey"
+      ],
+      "type": "object"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "buildId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "creator": {
+          "const": "Zero"
+        },
+        "identityVersion": {
+          "const": 1
+        }
+      },
+      "required": [
+        "creator",
+        "createdAt",
+        "buildId",
+        "identityVersion"
+      ],
+      "type": "object"
+    },
+    "senses": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "glosses": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "partOfSpeech": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "senseKey": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "usageNote": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "senseKey",
+          "glosses",
+          "partOfSpeech"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "sourceRefs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claimScope": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "entrySequence": {
+            "pattern": "^[0-9]+$",
+            "type": "string"
+          },
+          "locator": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "senseNumber": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "snapshotSha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "sourceId": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "sourceId",
+          "snapshotSha256",
+          "entrySequence",
+          "senseNumber",
+          "locator",
+          "claimScope"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "accepted",
+        "quarantined",
+        "redirected"
+      ]
+    },
+    "vocabularyId": {
+      "pattern": "^vocabulary2:[0-9a-f]{32}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "formatVersion",
+    "vocabularyId",
+    "identity",
+    "forms",
+    "senses",
+    "sourceRefs",
+    "status",
+    "provenance"
+  ],
+  "title": "Koto bounded canonical Vocabulary record",
+  "type": "object"
+}

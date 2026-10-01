@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/evidence-build-manifest.schema.json",
+  "title": "Koto Expressions2 deterministic evidence-build manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "buildId", "sourceDateEpoch", "artifacts", "totals", "determinism", "contaminationAudit"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "buildId": { "type": "string", "pattern": "^evidencebuild2:[0-9a-f]{32}$" },
+    "sourceDateEpoch": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "artifacts": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["sourceId", "file", "snapshotSha256", "recordCount", "canonicalBytes", "compressedBytes", "canonicalSha256", "compressedSha256", "adapter", "permissionClass", "secondPassMatched"],
+        "properties": {
+          "sourceId": { "$ref": "common.schema.json#/$defs/sourceId" },
+          "file": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*\\.evidence\\.json\\.gz$" },
+          "snapshotSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "recordCount": { "type": "integer", "minimum": 1 },
+          "canonicalBytes": { "type": "integer", "minimum": 1 },
+          "compressedBytes": { "type": "integer", "minimum": 1 },
+          "canonicalSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "compressedSha256": { "$ref": "common.schema.json#/$defs/sha256" },
+          "adapter": {
+            "type": "object", "additionalProperties": false, "required": ["name", "version"],
+            "properties": {
+              "name": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+              "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+            }
+          },
+          "permissionClass": { "enum": ["redistributable", "evidence-only", "tool-only"] },
+          "secondPassMatched": { "const": true }
+        }
+      }
+    },
+    "totals": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sources", "records", "canonicalBytes", "compressedBytes"],
+      "properties": {
+        "sources": { "type": "integer", "minimum": 1 },
+        "records": { "type": "integer", "minimum": 1 },
+        "canonicalBytes": { "type": "integer", "minimum": 1 },
+        "compressedBytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "determinism": {
+      "type": "object", "additionalProperties": false, "required": ["canonicalJson", "gzipMtime", "allSecondPassesMatched"],
+      "properties": {
+        "canonicalJson": { "const": true },
+        "gzipMtime": { "const": 0 },
+        "allSecondPassesMatched": { "const": true }
+      }
+    },
+    "contaminationAudit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["legacyImports", "legacyIds", "prohibitedWiktionaryText", "permissionMismatches", "verdict"],
+      "properties": {
+        "legacyImports": { "const": 0 },
+        "legacyIds": { "const": 0 },
+        "prohibitedWiktionaryText": { "const": 0 },
+        "permissionMismatches": { "const": 0 },
+        "verdict": { "const": "passed" }
+      }
+    }
+  }
+}

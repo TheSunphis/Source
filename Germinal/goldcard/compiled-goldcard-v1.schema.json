@@ -1,0 +1,34 @@
+{
+  "$id": "https://koto.invalid/germinal/compiled-goldcard-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "card": {
+      "type": "object"
+    },
+    "links": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "manifest": {
+      "required": [
+        "formatVersion",
+        "proposalAsset",
+        "vocabularyBuildId",
+        "vocabularyBundleSha256",
+        "cardSha256",
+        "linksSha256",
+        "segmentCount",
+        "linkCount",
+        "linkedCount",
+        "unlinkedCount"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "manifest",
+    "card",
+    "links"
+  ],
+  "type": "object"
+}

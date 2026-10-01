@@ -1,0 +1,55 @@
+{
+  "$id": "germinal-valkyrie-checkpoint-v2-slot",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "else": {
+        "not": {
+          "required": [
+            "expression"
+          ]
+        },
+        "required": [
+          "reasonCode"
+        ]
+      },
+      "if": {
+        "properties": {
+          "status": {
+            "const": "submitted"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "expression"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "expression": {
+      "type": "object"
+    },
+    "reasonCode": {
+      "type": "string"
+    },
+    "slotId": {
+      "pattern": "^V1-W002-C(?:0[1-9]|10)-00[1-5]$",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "submitted",
+        "abstained",
+        "failed"
+      ]
+    }
+  },
+  "required": [
+    "slotId",
+    "status"
+  ],
+  "type": "object"
+}

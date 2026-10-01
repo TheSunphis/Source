@@ -1,0 +1,9 @@
+{
+  "checks": 16,
+  "lineAudits": 7,
+  "linkAudits": 28,
+  "schemaSha256": "d016e5493cda36426c6e196624e42ed11b7c8cadf8dad2950dffdee5563642dc",
+  "selfTest": "passed",
+  "tool": "germinal-goldcard-crow-correction-tool-v3",
+  "toolSha256": "8557198a43c600e663613ad145d0b3a783077c2f97e1d7092603ad72a008f593"
+}

@@ -1,0 +1,9 @@
+{
+  "$id": "https://koto.invalid/germinal/complete-49-output-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "manifest",
+    "records"
+  ],
+  "type": "object"
+}

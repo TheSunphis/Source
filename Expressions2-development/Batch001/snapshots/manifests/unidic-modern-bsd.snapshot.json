@@ -1,0 +1,33 @@
+{
+  "acquisitionUrl": "https://clrd.ninjal.ac.jp/unidic_archive/2302/unidic-cwj-202302.zip",
+  "allowedRoles": [
+    "morphology",
+    "readings"
+  ],
+  "attribution": "UniDic for Contemporary Written Japanese 3.1.0; Copyright (c) 2011-2021, The UniDic Consortium.",
+  "bytes": 603549853,
+  "canonicalUrl": "https://clrd.ninjal.ac.jp/unidic/en/",
+  "finalUrl": "https://clrd.ninjal.ac.jp/unidic_archive/2302/unidic-cwj-202302.zip",
+  "license": {
+    "name": "BSD-3-Clause-selected-from-triple-license",
+    "noticeFile": "notices/unidic-modern-bsd.license",
+    "noticeSha256": "c8173ec180effe66de986778da19683cd68445bb93f45007b65265842763b260",
+    "url": "https://clrd.ninjal.ac.jp/unidic/copying/BSD"
+  },
+  "mediaType": "application/zip",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "tool-output-only",
+  "retrievedAt": "2026-09-30T18:43:04Z",
+  "schemaVersion": 1,
+  "sha256": "601bc4b0af794d3c20c2089771b8771209390e1b35b0f20c85cf0a10c9a98c6d",
+  "sourceId": "source2:unidic-modern-bsd",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

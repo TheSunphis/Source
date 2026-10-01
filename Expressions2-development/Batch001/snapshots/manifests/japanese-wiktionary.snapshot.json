@@ -1,0 +1,35 @@
+{
+  "acquisitionUrl": "https://dumps.wikimedia.org/jawiktionary/20260901/jawiktionary-20260901-pages-articles.xml.bz2",
+  "allowedRoles": [
+    "candidate-forms",
+    "readings",
+    "lexical-senses",
+    "attestation"
+  ],
+  "attribution": "Japanese Wiktionary contributors; retain page/revision provenance and required licence notices.",
+  "bytes": 93551022,
+  "canonicalUrl": "https://ja.wiktionary.org/",
+  "finalUrl": "https://dumps.wikimedia.org/jawiktionary/20260901/jawiktionary-20260901-pages-articles.xml.bz2",
+  "license": {
+    "name": "CC-BY-SA-4.0-and-GFDL",
+    "noticeFile": "notices/japanese-wiktionary.license",
+    "noticeSha256": "b55e4b1b94fd4c7c6e4245bf0e64497d8aa71b2c0b47f75eeec8fd4f2a8f81e8",
+    "url": "https://en.wiktionary.org/wiki/Wiktionary:Copyrights"
+  },
+  "mediaType": "application/x-bzip2",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "derived-only",
+  "retrievedAt": "2026-09-30T18:42:45Z",
+  "schemaVersion": 1,
+  "sha256": "e2edbd9f0ff5b4f85703da21fdcad76a02ebbb27c2b238a449925cfa4ddb34fa",
+  "sourceId": "source2:japanese-wiktionary",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

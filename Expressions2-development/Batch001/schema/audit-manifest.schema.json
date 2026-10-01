@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/audit-manifest.schema.json",
+  "title": "Koto Expressions2 Batch 001 commissioning audit manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "auditId", "release", "scope", "families", "summary", "verdict"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "auditId": { "type": "string", "pattern": "^audit2:[0-9a-f]{32}$" },
+    "release": { "const": "0.1.0-development" },
+    "scope": { "const": "all-100-accepted-families" },
+    "families": {
+      "type": "array", "minItems": 100, "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["familyId", "auditor", "auditedAt", "gates", "defects", "status"],
+        "properties": {
+          "familyId": { "$ref": "common.schema.json#/$defs/familyId" },
+          "auditor": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "auditedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+          "gates": { "$ref": "#/$defs/gates" },
+          "defects": {
+            "type": "array",
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["defectId", "type", "severity", "status", "compilerIssueRef"],
+              "properties": {
+                "defectId": { "type": "string", "pattern": "^defect2:[0-9a-f]{32}$" },
+                "type": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+                "severity": { "enum": ["minor", "major", "critical"] },
+                "status": { "const": "resolved-and-rebuilt" },
+                "compilerIssueRef": { "type": "string", "minLength": 1, "maxLength": 500 }
+              }
+            }
+          },
+          "status": { "const": "passed" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["auditedFamilies", "passedFamilies", "unresolvedDefects", "auditCoveragePercent"],
+      "properties": {
+        "auditedFamilies": { "const": 100 },
+        "passedFamilies": { "const": 100 },
+        "unresolvedDefects": { "const": 0 },
+        "auditCoveragePercent": { "const": 100 }
+      }
+    },
+    "verdict": { "const": "passed-private-shadow-only" }
+  },
+  "$defs": {
+    "gates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["familyInclusion", "mergeSplit", "naturalness", "meaningIntention", "registerRelationship", "difficulty", "formsReadings", "segments", "canonicalLinks", "conversation", "patternsDistinctions", "sourceLicenseProvenance", "librarySummary", "fullCard"],
+      "properties": {
+        "familyInclusion": { "const": "passed" }, "mergeSplit": { "const": "passed" }, "naturalness": { "const": "passed" },
+        "meaningIntention": { "const": "passed" }, "registerRelationship": { "const": "passed" }, "difficulty": { "const": "passed" },
+        "formsReadings": { "const": "passed" }, "segments": { "const": "passed" }, "canonicalLinks": { "const": "passed" },
+        "conversation": { "const": "passed" }, "patternsDistinctions": { "const": "passed" },
+        "sourceLicenseProvenance": { "const": "passed" }, "librarySummary": { "const": "passed" }, "fullCard": { "const": "passed" }
+      }
+    }
+  }
+}

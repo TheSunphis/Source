@@ -1,0 +1,34 @@
+{
+  "$id": "germinal-crow-checkpoint-v2-record",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "findings": {
+      "type": "array"
+    },
+    "recommendation": {
+      "enum": [
+        "pass",
+        "quarantine"
+      ]
+    },
+    "slotId": {
+      "pattern": "^V1-W002-C(?:0[1-9]|10)-00[1-5]$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "slotId",
+    "recommendation",
+    "checks",
+    "findings"
+  ],
+  "type": "object"
+}

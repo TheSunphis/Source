@@ -1,0 +1,147 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1,
+      "path": "pilot/families/example.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "candidateBuildId": "candidatebuild2:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "counts": {
+    "acceptedFamilies": 0,
+    "attemptedCandidates": 8,
+    "compiledFamilies": 8,
+    "independentlyCritiqued": 8,
+    "passedPilotGates": 8,
+    "quarantined": 0
+  },
+  "determinism": {
+    "canonicalJson": true,
+    "capturedModelResponsesAreInputs": true,
+    "secondDeterministicCompileMatched": true
+  },
+  "incrementalBuild": {
+    "changedOnlySupported": true,
+    "contentAddressedResponseCache": true
+  },
+  "modelLockSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "models": [
+    {
+      "fileSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "license": "Apache-2.0",
+      "repository": "Qwen/Qwen3-8B-GGUF",
+      "revision": "1111111111111111111111111111111111111111",
+      "role": "compiler"
+    },
+    {
+      "fileSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "license": "Apache-2.0",
+      "repository": "ibm-granite/granite-4.2-8b-GGUF",
+      "revision": "2222222222222222222222222222222222222222",
+      "role": "critic"
+    }
+  ],
+  "pilotId": "pilot2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "productionReady": false,
+  "publicationStatus": "shadow-candidate",
+  "records": [
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000001",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000002",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000002",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000003",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000003",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000004",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000004",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000005",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000005",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000006",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000006",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000007",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000007",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    },
+    {
+      "candidateClass": "conventional-collocation",
+      "candidateId": "candidate2:00000000000000000000000000000008",
+      "compilerResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "compilerStatus": "compiled",
+      "criticResponseSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "criticStatus": "passed",
+      "familyId": "expression2:00000000-0000-7000-8000-000000000008",
+      "pilotStatus": "passed",
+      "reasonCodes": []
+    }
+  ],
+  "release": "0.1.0-development",
+  "safety": {
+    "gatesNotLowered": true,
+    "noLiveExpressionsMutation": true,
+    "noLocalApplicationStorage": true,
+    "noModelWeightsPersisted": true,
+    "privateDraftReleaseOnly": true
+  },
+  "schemaVersion": 1,
+  "scope": "eight-family-dual-open-model"
+}

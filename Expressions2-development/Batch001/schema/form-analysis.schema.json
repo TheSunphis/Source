@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://koto.invalid/expressions2/form-analysis.schema.json",
+  "title": "Koto Expressions2 complete published-form analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "analysisId", "familyId", "formId", "japanese", "reading",
+    "segments", "vocabularyEnumeration", "ambiguities", "checks", "compiler", "review"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "analysisId": { "type": "string", "pattern": "^analysis2:[0-9a-f]{32}$" },
+    "familyId": { "$ref": "common.schema.json#/$defs/familyId" },
+    "formId": { "$ref": "common.schema.json#/$defs/formId" },
+    "japanese": { "$ref": "common.schema.json#/$defs/japanese" },
+    "reading": { "$ref": "common.schema.json#/$defs/reading" },
+    "segments": {
+      "type": "array", "minItems": 1, "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segmentId", "surface", "reading", "kind", "contextualMeaning", "grammaticalRole",
+          "lemma", "inflection", "japaneseSpan", "readingSpan", "vocabularyDisposition",
+          "evidence", "reviewIdentity"
+        ],
+        "properties": {
+          "segmentId": { "type": "string", "pattern": "^s[0-9]{2,3}$" },
+          "surface": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "reading": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "kind": { "enum": ["content-or-idiom", "particle-or-grammar", "auxiliary-or-inflection", "punctuation", "productive-slot"] },
+          "contextualMeaning": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "grammaticalRole": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "lemma": { "type": ["string", "null"], "maxLength": 100 },
+          "inflection": { "type": ["string", "null"], "maxLength": 300 },
+          "japaneseSpan": { "$ref": "#/$defs/span" },
+          "readingSpan": { "$ref": "#/$defs/span" },
+          "vocabularyDisposition": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["status", "vocabularyId", "canonicalSurface", "canonicalReading", "selectionReason", "reverseChecked"],
+                "properties": {
+                  "status": { "const": "linked" },
+                  "vocabularyId": { "type": "string", "minLength": 1, "maxLength": 200 },
+                  "canonicalSurface": { "$ref": "common.schema.json#/$defs/japanese" },
+                  "canonicalReading": { "$ref": "common.schema.json#/$defs/reading" },
+                  "selectionReason": { "type": "string", "minLength": 1, "maxLength": 500 },
+                  "reverseChecked": { "const": true }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["status", "reasonCode", "explanation", "reverseChecked"],
+                "properties": {
+                  "status": { "const": "unlinked" },
+                  "reasonCode": { "enum": ["grammar-only", "punctuation", "productive-slot", "no-exact-canonical-record", "ambiguous-no-safe-selection", "not-lexical-unit"] },
+                  "explanation": { "type": "string", "minLength": 1, "maxLength": 500 },
+                  "reverseChecked": { "const": true }
+                }
+              }
+            ]
+          },
+          "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/evidence" } },
+          "reviewIdentity": { "type": "string", "minLength": 1, "maxLength": 200 }
+        }
+      }
+    },
+    "vocabularyEnumeration": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["segmentId", "candidateIds", "selectedId", "enumeratorVersion", "indexDigest"],
+        "properties": {
+          "segmentId": { "type": "string", "pattern": "^s[0-9]{2,3}$" },
+          "candidateIds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 200 } },
+          "selectedId": { "type": ["string", "null"], "maxLength": 200 },
+          "enumeratorVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+          "indexDigest": { "$ref": "common.schema.json#/$defs/sha256" }
+        }
+      }
+    },
+    "ambiguities": { "type": "array", "maxItems": 0 },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["surfaceReconstruction", "readingReconstruction", "segmentCompleteness", "canonicalValidity", "reverseOmission", "ambiguityResolution"],
+      "properties": {
+        "surfaceReconstruction": { "const": "passed" },
+        "readingReconstruction": { "const": "passed" },
+        "segmentCompleteness": { "const": "passed" },
+        "canonicalValidity": { "const": "passed" },
+        "reverseOmission": { "const": "passed" },
+        "ambiguityResolution": { "const": "passed" }
+      }
+    },
+    "compiler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "inputDigest"],
+      "properties": {
+        "name": { "const": "koto-expressions2-analysis" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "inputDigest": { "$ref": "common.schema.json#/$defs/sha256" }
+      }
+    },
+    "review": { "$ref": "common.schema.json#/$defs/review" }
+  },
+  "$defs": {
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

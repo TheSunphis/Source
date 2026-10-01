@@ -1,0 +1,45 @@
+{
+  "candidateId": "candidate2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "classHypotheses": [
+    "interactional-formula"
+  ],
+  "createdAt": "2026-09-30T00:00:00Z",
+  "normalization": {
+    "inputDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "pipelineVersion": "0.1.0",
+    "sourceRecordIds": [
+      "entry:fixture"
+    ],
+    "unicodeForm": "NFC"
+  },
+  "normalizedKey": "テスト表現|てすとひょうげん",
+  "reading": "てすとひょうげん",
+  "schemaVersion": 1,
+  "senseGlosses": [
+    "synthetic contract-test expression"
+  ],
+  "signals": {
+    "corpusHitCount": 2,
+    "dictionaryExpressionTag": true,
+    "fixedness": 1.0,
+    "formulaic": true,
+    "multiword": true,
+    "pragmaticFunction": true,
+    "productiveSlots": 0
+  },
+  "sourceEvidence": [
+    {
+      "evidenceType": "direct-authority",
+      "locator": "entry:fixture",
+      "permissionClass": "redistributable",
+      "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sourceId": "source2:jmdict-english",
+      "supports": [
+        "existence",
+        "form",
+        "reading"
+      ]
+    }
+  ],
+  "surface": "テスト表現"
+}

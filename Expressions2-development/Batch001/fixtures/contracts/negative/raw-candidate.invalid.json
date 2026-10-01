@@ -1,0 +1,27 @@
+{
+  "channel": "labelled-expression",
+  "createdAt": "2026-09-30T00:00:00Z",
+  "extractor": {
+    "name": "fixture-extractor",
+    "ruleId": "fixture-rule",
+    "sourceSnapshotSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "version": "0.1.0"
+  },
+  "rawCandidateId": "rawcandidate2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "reading": "てすとひょうげん",
+  "sourceEvidence": [
+    {
+      "evidenceType": "direct-authority",
+      "locator": "entry:fixture",
+      "permissionClass": "redistributable",
+      "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sourceId": "source2:jmdict-english",
+      "supports": [
+        "existence",
+        "form",
+        "reading"
+      ]
+    }
+  ],
+  "surface": "テスト表現"
+}

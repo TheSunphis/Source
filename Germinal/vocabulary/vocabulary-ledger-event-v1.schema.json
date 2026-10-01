@@ -1,0 +1,67 @@
+{
+  "$id": "https://koto.invalid/vocabulary/ledger-event-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "enum": [
+        "admit",
+        "accept",
+        "quarantine",
+        "merge",
+        "redirect",
+        "supersede"
+      ]
+    },
+    "actor": {
+      "const": "Zero"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "eventId": {
+      "pattern": "^vocab-event:[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "formatVersion": {
+      "const": "koto-vocabulary-ledger-event-v1"
+    },
+    "reason": {
+      "minLength": 20,
+      "type": "string"
+    },
+    "recordSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "targetVocabularyId": {
+      "pattern": "^vocabulary2:[0-9a-f]{32}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "vocabularyId": {
+      "pattern": "^vocabulary2:[0-9a-f]{32}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "formatVersion",
+    "sequence",
+    "eventId",
+    "action",
+    "vocabularyId",
+    "recordSha256",
+    "reason",
+    "createdAt",
+    "actor"
+  ],
+  "title": "Koto Vocabulary append-only identity ledger event",
+  "type": "object"
+}

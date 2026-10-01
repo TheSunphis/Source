@@ -1,0 +1,133 @@
+{
+  "$id": "https://koto.invalid/vocabulary/build-manifest-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "buildId": {
+      "pattern": "^vocabularybuild1:[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "createdAt": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "creator": {
+      "const": "Zero"
+    },
+    "formatVersion": {
+      "const": "koto-vocabulary-build-v1"
+    },
+    "ledgerEventCount": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "ledgerSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "license": {
+      "properties": {
+        "attributionRequired": {
+          "const": true
+        },
+        "name": {
+          "const": "CC BY-SA 4.0"
+        },
+        "shareAlike": {
+          "const": true
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "attributionRequired",
+        "shareAlike"
+      ],
+      "type": "object"
+    },
+    "parentBuildId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "recordCount": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "recordIds": {
+      "items": {
+        "pattern": "^vocabulary2:[0-9a-f]{32}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "recordsSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "scope": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "sourceSnapshot": {
+      "properties": {
+        "bytes": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "lastModified": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "retrievedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "sourceId": {
+          "const": "JMdict"
+        },
+        "url": {
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceId",
+        "url",
+        "retrievedAt",
+        "lastModified",
+        "bytes",
+        "sha256"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "formatVersion",
+    "buildId",
+    "parentBuildId",
+    "scope",
+    "recordCount",
+    "recordIds",
+    "recordsSha256",
+    "ledgerEventCount",
+    "ledgerSha256",
+    "sourceSnapshot",
+    "license",
+    "createdAt",
+    "creator"
+  ],
+  "title": "Koto bounded Vocabulary build manifest",
+  "type": "object"
+}

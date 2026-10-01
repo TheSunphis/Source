@@ -1,0 +1,56 @@
+{
+  "$id": "germinal-valkyrie-output-v1-slot",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "else": {
+        "not": {
+          "required": [
+            "expression"
+          ]
+        },
+        "required": [
+          "reasonCode"
+        ]
+      },
+      "if": {
+        "properties": {
+          "status": {
+            "const": "submitted"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "expression"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "expression": {
+      "type": "object"
+    },
+    "reasonCode": {
+      "type": "string"
+    },
+    "slotId": {
+      "pattern": "^V1-W001-[0-9]{3}$",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "submitted",
+        "abstained",
+        "failed"
+      ]
+    }
+  },
+  "required": [
+    "slotId",
+    "status"
+  ],
+  "title": "Germinal Valkyrie slot record",
+  "type": "object"
+}

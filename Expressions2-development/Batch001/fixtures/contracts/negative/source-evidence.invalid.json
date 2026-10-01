@@ -1,0 +1,16 @@
+{
+  "records": [
+    {
+      "evidenceId": "evidence2:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "fields": {
+        "reading": "てすとひょうげん",
+        "surface": "テスト表現"
+      },
+      "locator": "entry:fixture",
+      "permissionClass": "redistributable",
+      "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "snapshotSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "sourceId": "source2:jmdict-english"
+}

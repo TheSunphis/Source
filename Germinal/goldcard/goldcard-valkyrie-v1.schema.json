@@ -1,0 +1,37 @@
+{
+  "$id": "https://koto.invalid/germinal/goldcard-valkyrie-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "manifest": {
+      "required": [
+        "formatVersion",
+        "agent",
+        "assignment",
+        "expectedSlotIds",
+        "attempted",
+        "submitted",
+        "abstained",
+        "failed",
+        "recordSha256",
+        "inputAsset",
+        "vocabularySeedAsset",
+        "evidenceBuild",
+        "candidateBuild"
+      ],
+      "type": "object"
+    },
+    "record": {
+      "required": [
+        "slotId",
+        "status"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "manifest",
+    "record"
+  ],
+  "title": "Germinal one-record gold Card envelope",
+  "type": "object"
+}

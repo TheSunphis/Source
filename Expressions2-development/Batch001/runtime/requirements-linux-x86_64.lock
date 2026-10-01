@@ -1,0 +1,6 @@
+# Exact tool-only morphology runtime selected for Batch 001.
+# Install only into excluded temporary storage with --no-deps --require-hashes.
+sudachipy @ https://files.pythonhosted.org/packages/1d/2d/b2c2511b3627032e81ef1626d6bce4506efacc7b698ca0e70cf6b4345e86/sudachipy-0.7.0-cp310-abi3-manylinux_2_28_x86_64.whl \
+    --hash=sha256:dfc90631aa2276d2165e1995bc94b56c9f5bc27b875f43fb7d67e4a3b7346d4f
+sudachidict-core @ https://files.pythonhosted.org/packages/85/af/ba8419f684865b8cca587e01cedb41ba83fbdc985d75ab9e6ff38fdedf1a/sudachidict_core-20260723.1-py3-none-any.whl \
+    --hash=sha256:2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1

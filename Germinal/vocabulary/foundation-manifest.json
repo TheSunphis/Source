@@ -1,0 +1,13 @@
+{
+  "files": {
+    "Germinal/vocabulary/README.md": "2f89a4f2aa2cdca43b879cc9d3c2bc7d0912d21946cd628a6181e9e0df7dc932",
+    "Germinal/vocabulary/SOURCE-POLICY-v1.md": "eb9425ccbf65868f794a17752466017bf38ee3716968bfe3fbe642b632102e47",
+    "Germinal/vocabulary/vocabulary-build-manifest-v1.schema.json": "aaec4500526336033eb04af8d1ea3b1e6a6ceb051211e36bde82b59e6eeb739e",
+    "Germinal/vocabulary/vocabulary-ledger-event-v1.schema.json": "f8c3a5a919794bfd6004c944faee4c309071e400653755f6a7317641cbd98bd8",
+    "Germinal/vocabulary/vocabulary-record-v1.schema.json": "5b6df221201455af185d14bc4eb8f641807058c1c0bf0842767873a99a976ffb",
+    "Germinal/vocabulary/vocabulary_tool.py": "f65bd9075da76353bed8c4cc1bc2f0ae1e06664cbb99bb58780df81ceb7bdafa"
+  },
+  "foundation": "koto-bounded-vocabulary-v1",
+  "selfTest": "passed",
+  "toolSha256": "f65bd9075da76353bed8c4cc1bc2f0ae1e06664cbb99bb58780df81ceb7bdafa"
+}

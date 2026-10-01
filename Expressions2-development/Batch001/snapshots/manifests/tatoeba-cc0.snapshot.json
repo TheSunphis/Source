@@ -1,0 +1,33 @@
+{
+  "acquisitionUrl": "https://downloads.tatoeba.org/exports/sentences_CC0.tar.bz2",
+  "allowedRoles": [
+    "attestation",
+    "pattern-evidence"
+  ],
+  "attribution": "Tatoeba sentence identifiers and source class are retained for provenance even where CC0 does not require attribution.",
+  "bytes": 7961039,
+  "canonicalUrl": "https://tatoeba.org/en/downloads",
+  "finalUrl": "https://downloads.tatoeba.org/exports/sentences_CC0.tar.bz2",
+  "license": {
+    "name": "CC0-1.0",
+    "noticeFile": "notices/tatoeba-cc0.license",
+    "noticeSha256": "18102eaeb5be7cf7c5bc9852604675a06afbe9b526ba807f2bbee297e2ee1ef6",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+  },
+  "mediaType": "application/x-bzip2-tar",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "raw-and-derived",
+  "retrievedAt": "2026-09-30T18:42:38Z",
+  "schemaVersion": 1,
+  "sha256": "ea567c9c3efef007eac9aecf0b518bd2845a92d16a1564ba40b003811dfca4d1",
+  "sourceId": "source2:tatoeba-cc0",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}

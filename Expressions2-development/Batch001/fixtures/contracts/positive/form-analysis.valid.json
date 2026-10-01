@@ -1,0 +1,128 @@
+{
+  "ambiguities": [],
+  "analysisId": "analysis2:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "checks": {
+    "ambiguityResolution": "passed",
+    "canonicalValidity": "passed",
+    "readingReconstruction": "passed",
+    "reverseOmission": "passed",
+    "segmentCompleteness": "passed",
+    "surfaceReconstruction": "passed"
+  },
+  "compiler": {
+    "inputDigest": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "name": "koto-expressions2-analysis",
+    "version": "0.1.0"
+  },
+  "familyId": "expression2:00000000-0000-7000-8000-000000000001",
+  "formId": "primary",
+  "japanese": "テスト表現",
+  "reading": "てすとひょうげん",
+  "review": {
+    "gateManifestId": "gates2:fixture",
+    "reviewType": "automated",
+    "reviewedAt": "2026-09-30T00:00:00Z",
+    "reviewerIdentity": "fixture-reviewer"
+  },
+  "schemaVersion": 1,
+  "segments": [
+    {
+      "contextualMeaning": "test",
+      "evidence": [
+        {
+          "evidenceType": "direct-authority",
+          "locator": "entry:fixture",
+          "permissionClass": "redistributable",
+          "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceId": "source2:jmdict-english",
+          "supports": [
+            "existence",
+            "form",
+            "reading"
+          ]
+        }
+      ],
+      "grammaticalRole": "noun modifier",
+      "inflection": null,
+      "japaneseSpan": {
+        "end": 3,
+        "start": 0
+      },
+      "kind": "content-or-idiom",
+      "lemma": "テスト",
+      "reading": "てすと",
+      "readingSpan": {
+        "end": 3,
+        "start": 0
+      },
+      "reviewIdentity": "fixture-reviewer",
+      "segmentId": "s01",
+      "surface": "テスト",
+      "vocabularyDisposition": {
+        "canonicalReading": "てすと",
+        "canonicalSurface": "テスト",
+        "reverseChecked": true,
+        "selectionReason": "Exact fixture identity.",
+        "status": "linked",
+        "vocabularyId": "fixture-vocab-1"
+      }
+    },
+    {
+      "contextualMeaning": "expression",
+      "evidence": [
+        {
+          "evidenceType": "direct-authority",
+          "locator": "entry:fixture",
+          "permissionClass": "redistributable",
+          "recordHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sourceId": "source2:jmdict-english",
+          "supports": [
+            "existence",
+            "form",
+            "reading"
+          ]
+        }
+      ],
+      "grammaticalRole": "head noun",
+      "inflection": null,
+      "japaneseSpan": {
+        "end": 5,
+        "start": 3
+      },
+      "kind": "content-or-idiom",
+      "lemma": "表現",
+      "reading": "ひょうげん",
+      "readingSpan": {
+        "end": 8,
+        "start": 3
+      },
+      "reviewIdentity": "fixture-reviewer",
+      "segmentId": "s02",
+      "surface": "表現",
+      "vocabularyDisposition": {
+        "explanation": "No real Vocabulary data is used by synthetic fixtures.",
+        "reasonCode": "no-exact-canonical-record",
+        "reverseChecked": true,
+        "status": "unlinked"
+      }
+    }
+  ],
+  "vocabularyEnumeration": [
+    {
+      "candidateIds": [
+        "fixture-vocab-1"
+      ],
+      "enumeratorVersion": "0.1.0",
+      "indexDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "segmentId": "s01",
+      "selectedId": "fixture-vocab-1"
+    },
+    {
+      "candidateIds": [],
+      "enumeratorVersion": "0.1.0",
+      "indexDigest": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+      "segmentId": "s02",
+      "selectedId": null
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "acquisitionUrl": "https://files.pythonhosted.org/packages/85/af/ba8419f684865b8cca587e01cedb41ba83fbdc985d75ab9e6ff38fdedf1a/sudachidict_core-20260723.1-py3-none-any.whl",
+  "allowedRoles": [
+    "morphology"
+  ],
+  "attribution": "SudachiDict by Works Applications Co., Ltd.; preserve Apache 2.0 and LEGAL notices.",
+  "bytes": 76938227,
+  "canonicalUrl": "https://github.com/WorksApplications/SudachiDict",
+  "finalUrl": "https://files.pythonhosted.org/packages/85/af/ba8419f684865b8cca587e01cedb41ba83fbdc985d75ab9e6ff38fdedf1a/sudachidict_core-20260723.1-py3-none-any.whl",
+  "license": {
+    "name": "Apache-2.0-with-component-notices",
+    "noticeFile": "notices/sudachidict-core.license",
+    "noticeSha256": "cece5ad39e3c7b24620c86d2c0f02f69ff423d8bee9413c3bc8d1ec7852b8c01",
+    "url": "https://github.com/WorksApplications/SudachiDict/blob/develop/LICENSE-2.0.txt"
+  },
+  "mediaType": "application/zip",
+  "rawFile": null,
+  "rawRetention": "temporary-deleted",
+  "redistribution": "tool-output-only",
+  "retrievedAt": "2026-09-30T18:43:03Z",
+  "schemaVersion": 1,
+  "sha256": "2b711055dca03423869e491eca0ddbe3e17c4d7418ed738fd7c75d4e0eb9e4b1",
+  "sourceId": "source2:sudachidict-core",
+  "verification": {
+    "archiveSafe": true,
+    "expectedIdentityMatch": true,
+    "hashVerified": true,
+    "httpStatus": 200,
+    "registryMatch": true,
+    "unexpectedFormat": false
+  }
+}
