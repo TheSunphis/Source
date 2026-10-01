@@ -6,14 +6,14 @@ This is the complete continuation work order. The user should not relay ten chec
 
 - Exact agent: `Valkyrie1`
 - Assignment: `germinal-wave002-valkyrie1-50`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_ZERO_STRUCTURAL_FAILURE`
 - Total slots: `50`
 - Checkpoints: `10`
 - Slots per checkpoint: `5`
 - Slot pattern: `V1-W002-C01-001` through `V1-W002-C10-005`
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
 
-Checkpoint 01 must be revised. Its prior v7 bundle is preserved but rejected by Zero because every Card reused one Japanese line for forms, responses, follow-ups, and a one-turn dialogue. Do not reuse that payload. Begin from the Checkpoint 01 dossiers again, then continue through Checkpoints 02–10 without waiting for user messages.
+Zero audited the submitted replacement wave and placed this assignment on hold before Crow. All 300 displayed Japanese lines were represented by one whole-line segment each, so the required complete segment analysis was not delivered. Do not relaunch, revise, or upload anything until Zero issues a new immutable due after the user chooses the next disposition.
 
 ## Immutable 50-dossier material
 
