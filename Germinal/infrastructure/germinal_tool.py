@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
-import argparse,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess
-VERSION="germinal-tool-v2"
+import argparse,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
+VERSION="germinal-tool-v3"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 STATUSES={"submitted","abstained","failed"}
@@ -187,14 +187,22 @@ def fetch_release_asset(owner,repo,asset_id,expected_bytes,expected_sha,output,c
   for _ in range(retries):
    try:
     location=signed_asset_url(owner,repo,asset_id,token)
-    req=urllib.request.Request(location,headers={"Range":f"bytes={offset}-{end}","User-Agent":"Germinal-Agent"})
-    with urllib.request.urlopen(req,timeout=60) as r:
-     cr=r.headers.get("Content-Range","")
-     if r.status!=206 or not cr.startswith(f"bytes {offset}-{end}/"):raise RuntimeError(f"unexpected range response: HTTP {r.status}")
-     data=r.read(need)
-     if len(data)!=need or r.read(1):raise EOFError(f"range length mismatch at byte {offset}")
-     payload=data;break
-   except Exception as e:last=e
+    try:
+     req=urllib.request.Request(location,headers={"Range":f"bytes={offset}-{end}","User-Agent":"Germinal-Agent"})
+     with urllib.request.urlopen(req,timeout=60) as r:
+      cr=r.headers.get("Content-Range","")
+      if r.status!=206 or not cr.startswith(f"bytes {offset}-{end}/"):raise RuntimeError(f"unexpected range response: HTTP {r.status}")
+      data=r.read(need)
+      if len(data)!=need or r.read(1):raise EOFError(f"range length mismatch at byte {offset}")
+     payload=data
+    except Exception as python_tls_error:
+     if not shutil.which("curl"):raise RuntimeError("Python TLS failed and curl fallback is unavailable") from python_tls_error
+     cmd=["curl","--http1.1","--tlsv1.2","--fail","--silent","--show-error","--connect-timeout","30","--max-time","90","--range",f"{offset}-{end}",location]
+     run=subprocess.run(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=100)
+     if run.returncode!=0 or len(run.stdout)!=need:raise RuntimeError(f"curl range fallback failed at byte {offset}") from python_tls_error
+     payload=run.stdout
+    break
+   except Exception as e:last=e;payload=None
   if payload is None:raise RuntimeError(f"bounded range transfer failed at byte {offset}: {type(last).__name__}") from last
   with open(part,"ab") as f:f.write(payload);f.flush();os.fsync(f.fileno())
   offset+=len(payload)
@@ -217,6 +225,7 @@ def deterministic_archive(manifest,records,records_name,out_path):
  with open(out_path,"wb") as f:f.write(raw.getvalue())
  return len(raw.getvalue()),sha(raw.getvalue())
 def self_test():
+ if not shutil.which("curl"):raise RuntimeError("curl is required as the alternate TLS transport")
  ev={"sourceId":"s","artifact":"a","locator":"l","claimScope":"c"}
  seg={"segmentId":"s1","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"m","grammaticalRole":"r","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"reviewed-unlinked","unlinkedReason":"none","evidence":[ev]}
  line={"lineId":"l1","japanese":"x","reading":"y","meaning":"m","ttsEligible":True,"evidence":[ev],"segments":[seg]}
