@@ -1,16 +1,9 @@
 # GERMINAL agent roster
 
-| Slot | Compiler chat | Independent critic chat |
-|---:|---|---|
-| 01 | `GERMINAL // VALKYRIE SUBJECT-01 // ASH` | `GERMINAL // DARK-CROW INSPECTOR-01 // VIGIL` |
-| 02 | `GERMINAL // VALKYRIE SUBJECT-02 // EMBER` | `GERMINAL // DARK-CROW INSPECTOR-02 // WARDEN` |
-| 03 | `GERMINAL // VALKYRIE SUBJECT-03 // CINDER` | `GERMINAL // DARK-CROW INSPECTOR-03 // SENTINEL` |
-| 04 | `GERMINAL // VALKYRIE SUBJECT-04 // FALCON` | `GERMINAL // DARK-CROW INSPECTOR-04 // BASTION` |
-| 05 | `GERMINAL // VALKYRIE SUBJECT-05 // VIPER` | `GERMINAL // DARK-CROW INSPECTOR-05 // LANTERN` |
-| 06 | `GERMINAL // VALKYRIE SUBJECT-06 // RAVEN` | `GERMINAL // DARK-CROW INSPECTOR-06 // CIPHER` |
-| 07 | `GERMINAL // VALKYRIE SUBJECT-07 // PHANTOM` | `GERMINAL // DARK-CROW INSPECTOR-07 // ORACLE` |
-| 08 | `GERMINAL // VALKYRIE SUBJECT-08 // SPECTER` | `GERMINAL // DARK-CROW INSPECTOR-08 // NIGHTWATCH` |
+| Order | Exact chat name | Role | Directory |
+|---:|---|---|---|
+| 0 | `Zero` | Main coordination, assignment, deterministic validation, and final gate | `Germinal/Zero/` |
+| 1 | `Valkyrie1` | Create assigned Expressions | `Germinal/Valkyrie/Valkyrie1/` |
+| 2 | `Crow1` | Independently critique Valkyrie1 outputs without repair | `Germinal/Crow/Crow1/` |
 
-Create exactly **16 additional chats**. This chat remains `GERMINAL // ZERO COMMAND`.
-
-Each new chat must begin by reading its one task file and `Germinal/PROTOCOL.md`. Do not give one chat multiple identities.
+Create exactly two additional chats for now: `Valkyrie1` and `Crow1`.

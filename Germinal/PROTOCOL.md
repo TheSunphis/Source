@@ -2,13 +2,13 @@
 
 ## Force structure
 
-The pilot uses seventeen chats in total:
+The active operation uses three chats:
 
-- one main agent: `GERMINAL // ZERO COMMAND`;
-- eight compiler agents: `GERMINAL // VALKYRIE SUBJECT-01` through `SUBJECT-08`;
-- eight critic agents: `GERMINAL // DARK-CROW INSPECTOR-01` through `INSPECTOR-08`.
+- `Zero` — main coordinator;
+- `Valkyrie1` — creator;
+- `Crow1` — independent critic.
 
-The user creates sixteen additional chats. A compiler and its matching inspector must never be the same chat.
+Valkyrie1 and Crow1 must be separate chats. Additional numbered directories require explicit user approval.
 
 ## Information boundaries
 
