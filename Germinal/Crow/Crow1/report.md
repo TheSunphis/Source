@@ -1,17 +1,17 @@
 # Crow1 report
 
 - Agent: `Crow1`
-- Assignment: `germinal-crow1-review-49-1`
+- Assignment: `germinal-crow1-review-repair-49-1`
 - Status: `ready`
 - START commit read: `pending`
 - Due commit read: `pending`
 - Started UTC: `pending`
 - Completed UTC: `pending`
-- Attempted: `0`
 - Reviewed: `0`
-- Recommended pass: `0`
-- Recommended quarantine: `0`
+- Repaired: `0`
+- Candidate-complete: `0`
+- Quarantined: `0`
 - Output: `pending`
-- Reason code: `concrete-49-card-review`
+- Reason code: `review-and-direct-repair-49`
 
-Safe metadata only. Never add restricted findings or payload excerpts.
+Safe metadata only. Never add restricted content, findings, or payload excerpts.

@@ -1,13 +1,15 @@
-# Crow1 due — one concrete review of 49 completed Cards
+# Crow1 due — review and directly repair all 49 Cards
 
 - Exact agent: `Crow1`
-- Assignment: `germinal-crow1-review-49-1`
+- Assignment: `germinal-crow1-review-repair-49-1`
 - Launch state: `ACTIVE`
-- Expected reviews: `49`
-- Role: critic only; do not repair
+- Scope: `49` Cards
+- Role: independent reviewer **and direct repairer**
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Review all 49 once. The user will not mediate Card-by-Card disputes. A quarantine recommendation is actionable only when it names the exact Card ID, JSON pointer, failed gate, observed problem, and a concrete repair directive. Broad or template criticism will be ignored by Zero.
+Crow is not limited to suggesting fixes. Inspect every Card, apply every repair you can substantiate, rerun validation, and return the corrected full 49-record batch. Do not leave ordinary linguistic, dialogue, segment, form, punctuation, boilerplate, or evidence-boundary defects for Zero, Valkyrie, or the user. Quarantine only a specific Card that cannot be made safe and accurate from the available material.
+
+The user will not mediate Card-by-Card disputes. There is no back-and-forth with Valkyrie. Your output is one bounded, corrected batch.
 
 ## Inputs
 
@@ -15,34 +17,50 @@ Seed material:
 - Release `401235338`; bytes `8302`
 - SHA-256 `ae5587937a6c1baa588ecf1ab1b3920c58857a4fe8a1aecba8747ab687864870`
 
-Valkyrie completed batch:
-- Release `401239153`; bundle `germinal-valkyrie1-complete-49-v1.tar.gz`; bytes `36357`
+Valkyrie batch to review and repair:
+- Release `401239153`; asset `germinal-valkyrie1-complete-49-v1.tar.gz`; bytes `36357`
 - SHA-256 `9b45fcf8be8c2f67efa823eabe478fad8613dc15d32c2ab41c8b7f3c04dd7e1e`
 - Records `49`; Valkyrie submitted/quarantined `47/2`
 
 Accepted quality exemplar:
-- Compiled release `401125726`
-- Prototype release `401210597`
+- Compiled Card release `401125726`
+- Full prototype release `401210597`
 
-Reconstruct and verify every private asset before review.
+## Required work per Card
 
-## Required per-Card review
+Review and, where needed, rewrite:
 
-Return exactly 49 ordered review records matching the seed IDs. Each record must contain:
+1. meaning and intentions;
+2. specific usage, register, cautions, and relationships;
+3. Japanese naturalness;
+4. whether each Response actually responds to the target expression;
+5. whether each Follow-up naturally continues it;
+6. coherent three-or-more-turn dialogue order and meanings;
+7. complete, accurate surface-covering segmentation for every displayed Japanese line;
+8. evidence boundaries: source anchor versus original editorial teaching;
+9. genuine searchable Forms rather than duplicate filler;
+10. duplicated boilerplate, doubled punctuation, or generic rationales.
 
-- `id`;
-- `decision`: `pass` or `quarantine`;
-- exact checks: `meaningAndIntentions`, `usageAndRelationships`, `japaneseNaturalness`, `responseFit`, `followUpFit`, `dialogueCoherence`, `segmentAccuracy`, `evidenceBoundary`, `searchableForms`;
-- for every check: boolean `passed`, concrete JSON `pointer`, Card-specific `observedDetail`, and substantive `rationale`;
-- for quarantine: one or more findings with `gate`, `pointer`, `problem`, and `repairDirective`.
+Preserve exact Card IDs and direct JMdict anchors. Keep every `selectedVocabularyId` null. Do not invent source attestation, Commonness, CEFR, JF, or JLPT claims. Use Koto Difficulty only.
 
-Explicitly test whether responses actually answer the target expression, dialogue turn order is coherent, meanings avoid doubled punctuation or boilerplate, segment surfaces exactly cover each line, forms are genuinely searchable alternatives, and source claims stay separate from editorial teaching content. Do not pass a Card merely because the structural validator passed.
+Add a `crowReview` object to each record with:
+- nine gate booleans after repair;
+- `repairsApplied`: concrete JSON pointers and short repair descriptions;
+- `finalRationale`: why the resulting Card passes or remains quarantined.
 
-## Output
+A corrected Card must have `publicationStatus: candidate-complete`. A quarantine must identify its exact unresolved fact and why direct repair was unsafe.
 
-- `manifest.json`: format `germinal-crow-review-49-output-v1`, assignment `germinal-crow1-review-49-1`, attempted/reviewed/pass/quarantine counts, and SHA-256 of canonical `reviews.ndjson`
-- `reviews.ndjson`: 49 ordered records
-- Bundle: `germinal-crow1-review-49-v1.tar.gz`
-- Private release title: `germinal-crow1-review-49-1`
+## Validator and output
 
-Use Zero’s core upload tool at commit `5eccc8e4c768bce21ff00398cb172f97617d3f24`, SHA-256 `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`. Publish only safe count/hash metadata in the report, then stop.
+- Tool: `Germinal/batch49/crow_repair_49_tool.py`
+- Tool SHA-256: `577cd989ba4edb2a1bb7df11671f9d4f488fb7f974d339e2d5ffbdd4932da09a`
+- Tool version: `germinal-crow-repair-49-tool-v1`
+- Manifest format: `germinal-crow-repair-49-output-v1`
+- Assignment: `germinal-crow1-review-repair-49-1`
+- Files: `manifest.json`, `records.ndjson`
+- Bundle: `germinal-crow1-reviewed-repaired-49-v1.tar.gz`
+- Private release title: `germinal-crow1-review-repair-49-1`
+
+Run `self-test`, then validate and package the corrected records. Use Zero’s upload core at commit `5eccc8e4c768bce21ff00398cb172f97617d3f24`, SHA-256 `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`.
+
+The safe report must include reviewed, repaired, candidate-complete, quarantined, bundle bytes/SHA-256, and private release IDs. Do not publish content or findings. Then stop.
