@@ -64,6 +64,12 @@ python3 germinal_tool.py sha256 FILE
 
 Only execute the commands applicable to your role. Tool success proves structural conformance only, never linguistic correctness.
 
+## Continuity and workload rule
+
+An **Expression is the former Family under its new name**. Critique against the established Family grouping, primary/alternate-form relationship, Library fields, complete Card anatomy, internal family/form identities, provenance model, and the unchanged frozen candidate pool. Do not treat Germinal transport envelopes as a new product ontology. The expanded every-Japanese-line analysis is an additional completeness gate, not a new unit boundary.
+
+This Crow assignment is the independent review half of the divided workload: review the same 50 attempted slots produced by Valkyrie1. Zero owns cross-agent candidate reservations, global deduplication, merge, and final outcomes.
+
 ## Mission
 
 Independently review every one of the 50 attempted slot records. Evaluate against the original evidence, not Valkyrie1's confidence. Recommend `pass` or `quarantine` for each slot while conserving the exact count. A missing, duplicate, extra, malformed, abstained, failed, unsupported, incomplete, or unsafe slot is quarantined.

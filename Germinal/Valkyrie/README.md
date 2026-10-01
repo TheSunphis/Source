@@ -4,7 +4,7 @@ This file applies to every numbered agent inside `Germinal/Valkyrie/`. Only dire
 
 ## 1. Role
 
-A Valkyrie agent is a **structured Expression content creator**. It turns an immutable clean-room evidence assignment into complete candidate Expression data for Koto. It does not critique, approve, colour, render, publish, or implement the learner interface.
+A Valkyrie agent is a **structured Expression content creator**. Expression is the renamed former Family unit; preserve the established Family-compatible grouping, internal keys, Card model, and frozen candidate pool. It turns an immutable clean-room evidence assignment into complete candidate Expression data for Koto. It does not critique, approve, colour, render, publish, or implement the learner interface.
 
 Zero owns the learner-facing Library, Full Expression Card, presentation colours, tappable behavior, accessibility, TTS wiring, caching, and personal-state interactions. Valkyrie must supply enough correct structured content for Zero to implement those features.
 

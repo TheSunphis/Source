@@ -22,6 +22,10 @@ START locks the supplied identity, retrieves and verifies that agent's pinned `d
 
 Detailed Expressions, analyses, evidence, and critic findings remain private draft-release assets.
 
+## Corpus continuity
+
+Expression is the renamed Family unit. Germinal keeps the existing Family-compatible content model, internal family/form keys, Full Card structure, and frozen candidate pool. The operation divides that same candidate-pool workload among agents; it does not create a new pool or ontology.
+
 ## Current state
 
 - `Valkyrie1`: active; assigned 50 attempted Expression slots.

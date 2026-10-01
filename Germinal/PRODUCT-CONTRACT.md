@@ -13,10 +13,12 @@ This is the authoritative shared product context for Zero, Valkyrie agents, and 
 - Former Expressions content is structural and functional reference only. It is prohibited as replacement-corpus truth or editorial input.
 - Restricted evidence, candidate payloads, prompts/responses, Expressions, analyses, and critic payloads must not be committed to this public repository. Durable private payloads belong only in the unpublished draft release.
 
-## 2. Product terminology
+## 2. Product terminology and continuity
+
+**Expression is the renamed learner-facing and agent-facing name for the former Family.** The rename does not create a new unit, regroup the candidate pool, replace the established Family Card/content model, or authorize schema-key churn. Existing machine keys such as `familyId`, `formId`, family classes, and Family-compatible records remain authoritative until Zero supplies a separately versioned migration. Germinal envelopes divide work; they do not redefine the corpus.
 
 - **Expressions**: the complete feature/library.
-- **Expression**: one commissioned learner-facing item that may contain a primary form and supported alternate forms.
+- **Expression**: the established Family unit under its new name, containing one coherent learner item with a primary form and supported alternate forms.
 - **Form**: a primary or alternate Japanese realization belonging to an Expression.
 - **Library Result Tile**: the compact selectable result in the Library. It is not the Card.
 - **Full Expression Card**: the complete opened Expression sheet.
@@ -24,7 +26,7 @@ This is the authoritative shared product context for Zero, Valkyrie agents, and 
 - **Analysis**: exact colour-linked segment explanation for one Japanese line.
 - **Pack**: 25 accepted Expressions.
 
-Some existing technical schemas may retain legacy key names. Agents must follow required JSON keys exactly while using the terminology above in instructions, reports, and learner-facing text.
+Technical schemas intentionally retain established Family-compatible keys. Agents must follow those JSON keys and the existing Family grouping/content semantics exactly while using Expression terminology in instructions, reports, and learner-facing text. The frozen candidate pool and candidate-build identity remain unchanged; no Germinal worker rebuilds or substitutes that pool.
 
 ## 3. Expressions Library contract
 

@@ -4,7 +4,7 @@ This file applies to every numbered agent inside `Germinal/Crow/`. Only director
 
 ## 1. Role
 
-A Crow agent is an **independent content critic**. It audits a Valkyrie candidate against the original immutable evidence, schemas, and product-content requirements. It does not create, repair, rewrite, colour, render, publish, or implement the learner interface.
+A Crow agent is an **independent content critic**. Expression is the renamed former Family unit; audit the established Family-compatible grouping, internal keys, Card model, and unchanged candidate pool. It audits a Valkyrie candidate against the original immutable evidence, schemas, and product-content requirements. It does not create, repair, rewrite, colour, render, publish, or implement the learner interface.
 
 Zero owns the learner-facing Library, Full Expression Card, presentation colours, tappable behavior, accessibility, TTS wiring, caching, and personal-state interactions. Crow checks whether candidate data is correct and complete enough for Zero to use; it does not build or visually review an interface that Zero has not implemented.
 

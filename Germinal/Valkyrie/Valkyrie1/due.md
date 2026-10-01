@@ -63,6 +63,12 @@ python3 germinal_tool.py sha256 FILE
 
 Only execute the commands applicable to your role. Tool success proves structural conformance only, never linguistic correctness.
 
+## Continuity and workload rule
+
+An **Expression is the former Family under its new name**. Preserve the established Family grouping, primary/alternate-form relationship, Library fields, complete Card anatomy, internal `familyId`/`formId` concepts, candidate identities, and provenance model. Do not invent a new corpus unit or rebuild/re-normalize the candidate pool.
+
+Use the already frozen `20745`-record normalized candidate pool with candidate build `candidatebuild2:405c22b24e5835bddf6f33fa4fc0e5d7`. The work assignment is a divided slice of production responsibility: Valkyrie1 must produce 50 proposals from this same pool, and Zero owns cross-agent reservation, merge, and global deduplication. The assignment's `expression` transport object is a handoff wrapper only; its content must map losslessly to the established Family-compatible Expression model. The requirement to analyse every displayed Japanese line extends completeness without changing the Family boundary.
+
 ## Mission
 
 Produce exactly 50 attempted slot records. Aim for 50 complete, distinct, high-value Japanese Expression proposals. Preserve quality over count: when a slot cannot satisfy every content and analysis gate, emit an `abstained` slot record with reason code instead of inventing content or weakening a gate.
