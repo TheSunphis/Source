@@ -31,7 +31,9 @@ Retrieve only this private draft-release asset from `TheSunphis/Source`:
 - Normalized candidate canonical SHA-256: `8dc6fec2c14a4f53ecea90439965a15a6aca7ea87e53233098786bb92d5e3995`
 - Frozen contamination verdict: `passed` with zero legacy IDs, legacy imports, personal state, and unapproved sources
 
-Stream from GitHub and verify the exact byte length and SHA-256 before using any member. Do not persist evidence or work payloads in the public repository or durable local storage. If identity differs, stop and update only the safe public report with status `failed`.
+Use Zero's pinned `fetch-release-asset` command below. It transfers the private asset in verified 4 MiB HTTP ranges with five bounded retries per range and resumes from the last complete range after an unexpected EOF. Verify the final exact byte length and SHA-256 before using any member. Do not persist evidence or work payloads in the public repository or durable local storage; delete ephemeral transfer material after private output submission. If final identity differs or bounded retries are exhausted, stop and update only the safe public report with status `failed`.
+
+A prior bootstrap attempt on 2026-10-01 stopped before content generation because the unsegmented transfer ended unexpectedly. No candidate or output work was produced, so this assignment may restart from setup without duplication.
 
 The archive contains clean-room evidence, source/licence manifests, and extracted candidates. Candidate hypotheses are discovery aids, not editorial truth. Confirm every claim against permitted evidence. Do not inspect live or former `Expressions/`.
 
@@ -39,11 +41,11 @@ The archive contains clean-room evidence, source/licence manifests, and extracte
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
-- Toolkit: `germinal-infrastructure-v1`
+- Infrastructure commit: `bc16b53bd73ead51df925536a51d9521d376d564`
+- Toolkit: `germinal-infrastructure-v2`
 - Runtime: Python 3.11 or newer, standard library only
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
+- Tool SHA-256: `d49ea0e2d4e34eb3abeef63a296b5453fc7a2930a85ef75b08c826c1c1e18773`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
@@ -54,6 +56,7 @@ Fetch those machine files from the pinned commit, verify SHA-256 before executio
 The relevant commands are:
 
 ```text
+python3 germinal_tool.py fetch-release-asset TheSunphis Source 601941135 44861050 1cc991839e1184dfce5bdcb3e54747d1873e2dd9c707f7478aa6d5995a52060d expressions2-batch001-candidates.tar.gz
 python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
 python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
 python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz

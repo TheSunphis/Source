@@ -40,11 +40,11 @@ Do not review a guessed or merely same-named output. When activated, stream both
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
-- Toolkit: `germinal-infrastructure-v1`
+- Infrastructure commit: `bc16b53bd73ead51df925536a51d9521d376d564`
+- Toolkit: `germinal-infrastructure-v2`
 - Runtime: Python 3.11 or newer, standard library only
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
+- Tool SHA-256: `d49ea0e2d4e34eb3abeef63a296b5453fc7a2930a85ef75b08c826c1c1e18773`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
@@ -55,6 +55,7 @@ Fetch those machine files from the pinned commit, verify SHA-256 before executio
 The relevant commands are:
 
 ```text
+python3 germinal_tool.py fetch-release-asset TheSunphis Source 601941135 44861050 1cc991839e1184dfce5bdcb3e54747d1873e2dd9c707f7478aa6d5995a52060d expressions2-batch001-candidates.tar.gz
 python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
 python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
 python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz

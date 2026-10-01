@@ -6,8 +6,8 @@
 - Due commit read: `pending`
 - Started UTC: `pending`
 - Completed UTC: `pending`
-- Infrastructure commit: `9ca264e234d6a05c7faa66e4905b7189602f3010`
-- Tool SHA-256: `56c309fce89a41cbf6d927f2978a58d3714b4b4517cc919bb393cacd2481d1ec`
+- Infrastructure commit: `bc16b53bd73ead51df925536a51d9521d376d564`
+- Tool SHA-256: `d49ea0e2d4e34eb3abeef63a296b5453fc7a2930a85ef75b08c826c1c1e18773`
 - Original evidence asset: `expressions2-batch001-candidates.tar.gz`
 - Original evidence bytes: `44861050`
 - Original evidence SHA-256: `1cc991839e1184dfce5bdcb3e54747d1873e2dd9c707f7478aa6d5995a52060d`
