@@ -7,7 +7,7 @@ This is the **only public instruction file Valkyrie1 must read**. It contains th
 - Exact agent name: `Valkyrie1`
 - Role: structured Expression creator
 - Assignment: `germinal-wave001-valkyrie1-50`
-- Launch state: `ACTIVE`
+- Launch state: `CLOSED_ABSTAINED`
 - Attempted slots: exactly `50`
 - Slot IDs: `V1-W001-001` through `V1-W001-050`
 - Public status report: `Germinal/Valkyrie/Valkyrie1/report.md`
@@ -84,7 +84,7 @@ Use the already frozen `20745`-record normalized candidate pool with candidate b
 
 ## Mission
 
-Produce exactly 50 attempted slot records. Aim for 50 complete, distinct, high-value Japanese Expression proposals. Preserve quality over count: when a slot cannot satisfy every content and analysis gate, emit an `abstained` slot record with reason code instead of inventing content or weakening a gate.
+This Wave 001 assignment is closed. It produced exactly 50 attempted slot records, all safely abstained. Do not execute it again. A future assignment requires a new due identity and enriched Zero-provided material. Aim for 50 complete, distinct, high-value Japanese Expression proposals. Preserve quality over count: when a slot cannot satisfy every content and analysis gate, emit an `abstained` slot record with reason code instead of inventing content or weakening a gate.
 
 An Expression is one coherent communicative item with a primary form and all important evidence-supported alternate forms. Do not merge items merely because they are similar. Do not split or suppress important forms to escape analysis. Use Koto Difficulty 1–5 only; never use Commonness, JLPT, CEFR, or JF grading.
 

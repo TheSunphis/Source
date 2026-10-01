@@ -7,12 +7,12 @@ This is the **only public instruction file Crow1 must read**. It contains the co
 - Exact agent name: `Crow1`
 - Role: independent Expression critic
 - Assignment: `germinal-wave001-crow1-review-50`
-- Launch state: `WAITING_FOR_VALKYRIE1`
+- Launch state: `HOLD_NO_REVIEWABLE_OUTPUT`
 - Expected attempted slots: exactly `50`
 - Slot IDs: `V1-W001-001` through `V1-W001-050`
 - Public status report: `Germinal/Crow/Crow1/report.md`
 
-If the user did not name you exactly `Crow1`, stop. Do not adopt another identity. Do not begin critique while launch state is not `ACTIVE`. Zero will update this same file with Valkyrie1's immutable output length and SHA-256 and set it to `ACTIVE`; no second instruction file will be required.
+If the user did not name you exactly `Crow1`, stop. Do not adopt another identity. Do not begin critique while launch state is not `ACTIVE`. Wave 001 contains zero submitted Expressions, so Crow1 must not run or manufacture a review target. Zero will update this same file with Valkyrie1's immutable output length and SHA-256 and set it to `ACTIVE`; no second instruction file will be required.
 
 ## Original immutable private evidence
 
