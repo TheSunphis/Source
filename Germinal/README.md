@@ -28,6 +28,6 @@ Expression is the renamed Family unit. Germinal keeps the existing Family-compat
 
 ## Current state
 
-- `Valkyrie1` Wave 001: closed with 50 attempted, 0 submitted, and 50 abstained; no relaunch on the same material.
-- `Crow1` Wave 001: held because Valkyrie1 produced no reviewable Expression content.
+- `Valkyrie1` Wave 002 Checkpoint 01: ACTIVE for five hybrid-staged Expression proposals.
+- `Crow1` Wave 002 Checkpoint 01: waiting for Valkyrie1's five-item private output.
 - `Zero`: this original chat; provides material, tools, infrastructure, coordination, final gates, and learner-facing implementation. Zero has no directory.
