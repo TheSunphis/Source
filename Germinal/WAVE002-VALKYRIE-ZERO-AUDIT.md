@@ -35,3 +35,7 @@ All Cards also use exact minimum module counts, and all 50 report `none-supporte
 - Current state: `hold pending user disposition`
 
 The ten private bundles remain immutable audit evidence and are not accepted or review-ready.
+
+## User disposition
+
+The user selected the recommended one-launch targeted quality revision. Infrastructure v9 and ten replacement revision2 bundles are required before Crow activation.

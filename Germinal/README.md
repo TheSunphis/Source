@@ -28,6 +28,6 @@ Expression is the renamed Family unit. Germinal keeps the existing Family-compat
 
 ## Current state
 
-- `Valkyrie1` Wave 002: submitted ten replacement checkpoint bundles; Zero structural hold because complete segment analysis was not delivered.
-- `Crow1` Wave 002: blocked; Zero has not released the structurally deficient bundles for review.
+- `Valkyrie1` Wave 002: ACTIVE for one targeted v9 quality-revision continuation across all 50 drafts.
+- `Crow1` Wave 002: waiting for all ten v9-corrected revision2 checkpoint bundles.
 - `Zero`: this original chat; provides material, tools, infrastructure, coordination, final gates, and learner-facing implementation. Zero has no directory.

@@ -1,119 +1,112 @@
-# Valkyrie1 due — Wave 002 one-launch production
+# Valkyrie1 due — Wave 002 targeted quality revision
 
-This is the complete continuation work order. The user should not relay ten checkpoints manually. Valkyrie1 processes all 50 dossiers in ten bounded five-item checkpoints during this one execution.
+The user selected one quality-revision continuation. Preserve the 50 submitted draft Cards as revision inputs, replace their whole-line pseudo-segmentation with complete analysis, reassess mechanically minimal editorial decisions, and emit ten new immutable bundles in this one execution. Do not ask the user to relay checkpoints.
 
 ## Identity and state
 
 - Exact agent: `Valkyrie1`
-- Assignment: `germinal-wave002-valkyrie1-50`
-- Launch state: `HOLD_ZERO_STRUCTURAL_FAILURE`
-- Total slots: `50`
-- Checkpoints: `10`
-- Slots per checkpoint: `5`
+- Assignment: `germinal-wave002-valkyrie1-analysis-revision-50`
+- Launch state: `ACTIVE`
+- Scope: `50 existing proposals; ten internal checkpoints of five`
 - Slot pattern: `V1-W002-C01-001` through `V1-W002-C10-005`
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
 
-Zero audited the submitted replacement wave and placed this assignment on hold before Crow. All 300 displayed Japanese lines were represented by one whole-line segment each, so the required complete segment analysis was not delivered. Do not relaunch, revise, or upload anything until Zero issues a new immutable due after the user chooses the next disposition.
+This is a targeted revision, not a clean rewrite. Preserve sound candidate identity, externally anchored form/reading/meaning, and useful editorial material. Correct anything that becomes unsafe or incoherent during analysis. Abstain rather than invent.
 
-## Immutable 50-dossier material
+## Original dossier material
 
-- Private release ID: `400995823`
-- Bundle: `germinal-wave002-valkyrie1-material-50.tar.gz`
+- Release ID: `400995823`
 - Bytes: `22011`
 - SHA-256: `c1297bba768f7510ec0ce05efad0018702ac524e35e78200e520f7534ac3bb4e`
-- Format: `germinal-wave002-dossier-v2`
-- Dossiers: `50`
-- Candidate build: `candidatebuild2:405c22b24e5835bddf6f33fa4fc0e5d7`
-- Source pool: unchanged frozen 20,745 candidates
-- Allocation: ten candidates in each of five major classes, one of each class per checkpoint
+- Bundle: `germinal-wave002-valkyrie1-material-50.tar.gz`
+
+Use the original dossier for evidence authorization and candidate identity.
+
+## Immutable revision inputs
+
+| Checkpoint | Private release ID | Bytes | SHA-256 |
+|---:|---:|---:|---|
+| 01 | `401004191` | 4669 | `49f852d385d9ec90d176f8ba382bb617807bf44578bdb794968dbb288bd7aaf4` |
+| 02 | `401004222` | 4613 | `a017ffb8aef0a21702263e87975097ddabb73827988c5b6e4522daf8230acb78` |
+| 03 | `401004244` | 4733 | `722d8f1e37dae4950cab51dc4e2ea805c8ac4dc2d125c44a935f67ed8653dc92` |
+| 04 | `401004266` | 4701 | `577288eb03752d4101b52b4984300af55b9e03077e429540de38a2df8e603bb3` |
+| 05 | `401004299` | 4666 | `8dc2a39e3849ad0e309096f1761ba6855aa760972236318dc6f3675f70bad1df` |
+| 06 | `401004322` | 4665 | `f87a092eb6da887ede98a4569230162b44352dd87213acb91272fc3ab00c42c1` |
+| 07 | `401004346` | 4634 | `0a589034c8bbf08e7ab90abc8a44d049d8ece4de52f2670d599a4c31c523a04b` |
+| 08 | `401004364` | 4584 | `483083d80a24dca78b76411c27b5e8b440d790c4f5fdd1da728b7605eb829fb9` |
+| 09 | `401004386` | 4622 | `5da070faa1a36eff8a9f4a103415c986cd21cb4cd6dc58751080750e051ddd80` |
+| 10 | `401004412` | 4604 | `1795a60d5c3fdc3ab994cbd7c53e4d8d6d2b686eea96f843f0a2201ae34a8833` |
+
+The bundles are immutable audit evidence. Never overwrite them or represent them as accepted. Reconstruct each with `fetch-release-body-bundle` and verify its exact byte length and digest before opening.
 
 ## Zero-provided infrastructure
 
-- Commit: `c7160f58990c490c497840e4b5583db63d054051`
-- Toolkit: `germinal-infrastructure-v8`
-- Tool SHA-256: `11310d21dba3bdb65306e6fcefcf52893369106cc23cb50ded605f7fddd369f9`
+- Commit: `5eccc8e4c768bce21ff00398cb172f97617d3f24`
+- Toolkit: `germinal-infrastructure-v9`
+- Tool SHA-256: `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
 - Valkyrie checkpoint schema SHA-256: `81cb1e0c47159017454080d55d974e9466e324c8b5d6c2744548df7e2c860fb1`
-- Input/output/report transport: authenticated `api.github.com`
+- Segmentation contract: `Germinal/infrastructure/SEGMENTATION-CONTRACT-v9.md`
 
-Verify identities and run self-test. The v8 self-test covers Checkpoints 01 and 10 and the complete Card structure. Never repair or replace Zero's tool.
+Retrieve tool, schema, and contract from the immutable infrastructure commit; verify hashes; run `self-test`. Do not alter or replace Zero's infrastructure. v9 deterministically rejects the submitted v8 pseudo-segmentation.
 
-Initial command:
+## Required correction
 
-```text
-python3 germinal_tool.py fetch-release-body-bundle TheSunphis Source 400995823 22011 c1297bba768f7510ec0ce05efad0018702ac524e35e78200e520f7534ac3bb4e germinal-wave002-valkyrie1-material-50.tar.gz
-```
+Every displayed Japanese line must be decomposed at meaningful lexical, idiomatic, particle/grammar, auxiliary/inflectional, productive-slot, and punctuation boundaries. Arbitrary character slicing is prohibited.
 
-## One-launch checkpoint loop
+Every segment requires:
+
+- ordered `segmentId` values `s01` through `sNN`;
+- exact contiguous Japanese and reading spans;
+- `kind`: `content-or-idiom`, `particle-or-grammar`, `auxiliary-or-inflection`, `punctuation`, or `productive-slot`;
+- segment-specific contextual meaning and grammatical role;
+- a linguistically appropriate lemma except punctuation;
+- explicit inflection explanation for auxiliary/inflection segments;
+- proposed Vocabulary candidate objects with surface, reading, and lemma for non-punctuation segments;
+- null `selectedVocabularyId`, disposition `deferred-zero-canonical-index`, and a substantive Zero-resolution reason;
+- honest evidence identity.
+
+Structural anti-placeholder floors:
+
+- a line of 6–9 Japanese characters has at least two meaningful segments;
+- a line of 10 or more has at least three meaningful segments;
+- each Card has at least twelve segments across all displayed lines;
+- each Card identifies at least one grammatical, inflectional, or punctuation segment;
+- the six or more displayed Japanese texts are actually distinct.
+
+These floors are not the goal. Use as many linguistically meaningful segments as required. One whole-line segment is permissible only for a genuinely atomic short expression and cannot be the treatment of every line.
+
+## Required quality reassessment
+
+Re-open every Card, not only its segment arrays. All previous Cards used exactly the minimum numbers of forms, responses, follow-ups, and dialogue turns; all 50 marked both patterns and distinctions `none-supported`. Do not change fields merely to create variety, but independently reassess each decision against its candidate and evidence.
+
+- Preserve `none-supported` only when the dossier and Expression genuinely warrant it, with a candidate-specific reason.
+- Add a safe pattern, distinction, or alternate form only when genuinely supported; every added Japanese line must be fully analysed and referenced.
+- Check that responses, follow-ups, and dialogue are natural, coherent, relationship-safe, and useful rather than template fillers.
+- Keep editorial material labeled `editorial:Valkyrie1`; never present it as external attestation.
+- Never invent Koto Vocabulary IDs.
+
+## One-launch output loop
 
 For checkpoint `NN` from `01` through `10`:
 
-1. Load only the five dossiers whose `checkpoint` equals `NN`.
-2. Create exactly five ordered records with IDs `V1-W002-CNN-001` through `005`.
-3. Use manifest format `germinal-valkyrie-checkpoint-v2`.
-4. Use assignment `germinal-wave002-valkyrie1-checkpointNN-5`.
-5. Set `expectedSlotIds` to those exact five IDs.
-6. Validate with `validate-valkyrie`.
-7. Package as `germinal-valkyrie1-wave002-cNN-5.tar.gz`.
-8. Store privately with `upload-release-body-bundle`.
-9. Record bundle bytes, SHA-256, counts, and ordered private release IDs in an in-memory wave ledger.
-10. Continue directly to the next checkpoint. Do not ask the user to relay or activate it.
+1. Pair the five existing records with their exact original dossiers.
+2. Produce five conserved outcomes using manifest format `germinal-valkyrie-checkpoint-v2`.
+3. Set assignment to `germinal-wave002-valkyrie1-revision2-checkpointNN-5`.
+4. Preserve exact ordered slot IDs `V1-W002-CNN-001` through `005`.
+5. Validate using v9.
+6. Package as `germinal-valkyrie1-wave002-r2-cNN-5.tar.gz`.
+7. Upload under release title `germinal-wave002-valkyrie1-revision2-checkpointNN-5`.
+8. Record bytes, SHA-256, private release IDs, and counts in the wave ledger.
+9. Continue directly through all checkpoints without user relay.
 
 Command pattern:
 
 ```text
 python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
-python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave002-cNN-5.tar.gz
-python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-wave002-valkyrie1-checkpointNN-5 germinal-valkyrie1-wave002-cNN-5.tar.gz
+python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave002-r2-cNN-5.tar.gz
+python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-wave002-valkyrie1-revision2-checkpointNN-5 germinal-valkyrie1-wave002-r2-cNN-5.tar.gz
 ```
 
-If one slot must abstain, conserve it and continue the remaining slots/checkpoints. An infrastructure failure stops the wave; a content abstention does not.
+## Final report
 
-## Expression and hybrid editorial contract
-
-Expression is the renamed former Family. Preserve its established boundary, forms, Library fields, complete Card anatomy, and internal family/form concepts.
-
-External evidence anchors the primary form, reading, meaning, boundary, supported alternates, register/history/region facts, and provenance. Valkyrie1 may author usage guidance, responses, follow-ups, dialogue, safe patterns/examples, and distinction explanations as clearly identified editorial proposals. Editorial content is not source attestation; Crow independently audits it. Lack of a copied source sentence is not grounds to abstain.
-
-The canonical Koto Vocabulary index remains a later Zero gate. Do not invent IDs or abstain solely because it is absent. For every segment set `selectedVocabularyId` to null, provide proposed surface/reading/lemma candidates, use disposition `deferred-zero-canonical-index`, and state that Zero resolution is required before acceptance.
-
-## Complete Card structure — mandatory
-
-Each submitted Expression must contain substantive intentions, Use when, Take care, relationships, forms, responses, follow-ups, dialogue, patterns/disposition, distinctions/disposition, Library fields, provenance, sources, and complete analyses.
-
-Minimum structural requirements enforced by v8:
-
-- exactly one primary form matching `primaryLineId`;
-- at least two responses with distinct non-primary Japanese lines;
-- at least two follow-ups with distinct non-primary lines, different from responses;
-- dialogue with situation, relationship, register, at least two turns, and at least two distinct Japanese lines;
-- target Expression occurs in the dialogue;
-- at least six distinct analysed Japanese lines per Card;
-- every Japanese-bearing module references the complete `japaneseLines` map;
-- no orphan or unknown line references;
-- patterns and distinctions are either supported with entries or `none-supported` with a substantive reason;
-- complete Library search arrays and provenance;
-- externally evidenced primary line; honestly identified editorial evidence for agent-authored lines.
-
-Every line must reconstruct Japanese and reading exactly from segments. Every segment needs meaning, grammatical role, spans, lemma/inflection disposition, deferred Vocabulary disposition, and evidence identity. Zero later handles colours, tappable UI, accessibility, TTS wiring, caching, and personal state.
-
-## Exact expression keys
-
-Use `expressionId`, `primaryLineId`, `category`, `usageSummary`, `verificationState`=`candidate`, `kotoDifficulty`, arrays `intentions`, `useWhen`, `takeCare`, `relationships`, `forms`, `responses`, `followUps`, `sources`, objects `dialogue`, `patterns`, `distinctions`, `library`, `provenance`, and the complete `japaneseLines` map.
-
-Source locators use `sourceId`, `artifact`, `locator`, and `claimScope`. Agent-authored lines use `sourceId: editorial:Valkyrie1`, `artifact: private-checkpoint-output`, their line ID as locator, and `claimScope: editorial-proposal-not-source-attestation`.
-
-## Final wave report
-
-After all ten private checkpoint bundles are stored, update `report.md` once with:
-
-- total attempted/submitted/abstained/failed counts across all 50;
-- one safe row for each checkpoint: bundle name, bytes, SHA-256, private release IDs, and counts;
-- start/completion timestamps and terminal status.
-
-No Japanese, meanings, evidence, analyses, or payload excerpts may enter the report. Publish remotely with:
-
-```text
-python3 germinal_tool.py publish-safe-report TheSunphis Source Germinal Germinal/Valkyrie/Valkyrie1/report.md Germinal/Valkyrie/Valkyrie1/report.md "Valkyrie1 report wave002 complete"
-```
-
-Verify the returned remote commit SHA. Then stop. Crow1 and Zero handle later gates.
+After all ten corrected bundles are stored, update `report.md` once with total counts and one safe identity row per replacement bundle. Include no Japanese, meanings, evidence, analyses, findings, or excerpts. Publish with the Zero tool, verify its remote commit SHA, then stop. Crow1 remains Zero-controlled.

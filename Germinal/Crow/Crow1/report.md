@@ -2,14 +2,14 @@
 
 - Agent: `Crow1`
 - Assignment: `germinal-wave002-crow1-review-50`
-- Status: `blocked-waiting-for-complete-valkyrie-wave`
-- Infrastructure commit: `c7160f58990c490c497840e4b5583db63d054051`
-- Tool SHA-256: `11310d21dba3bdb65306e6fcefcf52893369106cc23cb50ded605f7fddd369f9`
-- Valkyrie checkpoint bundles: `pending c01-c10`
+- Status: `blocked-waiting-for-complete-corrected-valkyrie-wave`
+- Infrastructure commit: `5eccc8e4c768bce21ff00398cb172f97617d3f24`
+- Tool SHA-256: `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
+- Corrected Valkyrie checkpoint bundles: `pending r2-c01 through r2-c10`
 - Attempted: `0`
 - Reviewed: `0`
 - Recommended pass: `0`
 - Recommended quarantine: `0`
-- Reason code: `waiting-for-complete-corrected-valkyrie-wave`
+- Reason code: `waiting-for-v9-corrected-valkyrie-wave`
 
 Safe metadata only. Never add Japanese, meanings, evidence, analyses, findings, prompts, responses, or payload excerpts.

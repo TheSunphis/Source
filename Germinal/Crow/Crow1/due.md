@@ -2,23 +2,23 @@
 
 - Exact agent: `Crow1`
 - Assignment: `germinal-wave002-crow1-review-50`
-- Launch state: `WAITING_FOR_COMPLETE_VALKYRIE_WAVE`
+- Launch state: `WAITING_FOR_COMPLETE_CORRECTED_VALKYRIE_WAVE`
 - Expected Valkyrie checkpoints: 10
 - Expected slots: 50
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Do not start until Zero verifies all ten corrected Valkyrie checkpoint bundles, records every immutable identity here, and changes state to `ACTIVE`. When activated, Crow1 will review all 50 in one execution, internally processing ten checkpoints of five without user relay.
+Do not start until Zero verifies all ten revision2 checkpoint bundles under infrastructure v9, records every immutable identity here, and changes state to `ACTIVE`. The v8 bundles failed Zero complete-analysis gating and must never be reviewed as the active wave. When activated, Crow1 will review all 50 in one execution, internally processing ten checkpoints of five without user relay.
 
 ## Infrastructure
 
-- Commit: `c7160f58990c490c497840e4b5583db63d054051`
-- Toolkit: `germinal-infrastructure-v8`
-- Tool SHA-256: `11310d21dba3bdb65306e6fcefcf52893369106cc23cb50ded605f7fddd369f9`
+- Commit: `5eccc8e4c768bce21ff00398cb172f97617d3f24`
+- Toolkit: `germinal-infrastructure-v9`
+- Tool SHA-256: `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
 - Crow checkpoint schema SHA-256: `775cb4162f09f8c5b6bfcaf6f8f16e2a14c488d7815c163ad910d3fd2a16accc`
 
 ## Pending Valkyrie inputs
 
-Checkpoint bundle names `germinal-valkyrie1-wave002-c01-5.tar.gz` through `c10-5.tar.gz`; bytes, SHA-256 values, and private release IDs are pending.
+Corrected checkpoint bundle names `germinal-valkyrie1-wave002-r2-c01-5.tar.gz` through `r2-c10-5.tar.gz`; bytes, SHA-256 values, and private release IDs are pending.
 
 ## Review contract
 

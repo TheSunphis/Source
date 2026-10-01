@@ -8,6 +8,8 @@
 - Candidate pool: unchanged
 - Editorial method: hybrid staged
 - Canonical Vocabulary resolution: deferred to Zero before acceptance
-- Current state: Valkyrie1 submitted 50 but Zero placed the wave on structural hold; Crow1 remains waiting
+- Current state: user selected one targeted quality-revision continuation; Valkyrie1 is ready under v9; Crow1 remains waiting
 
 The first v7 Checkpoint 01 bundle is rejected before Crow and must be revised under v8.
+
+The revision preserves the 50 drafts while replacing whole-line pseudo-segmentation and reassessing minimum-only editorial decisions.
