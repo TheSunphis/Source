@@ -1,6 +1,8 @@
 # Koto Expressions product and commissioning contract
 
-This is the authoritative shared contract for Zero, Valkyrie agents, and Crow agents. Every agent must read it before opening an assignment. Role files may add restrictions but may not weaken this document.
+This is the authoritative shared product context for Zero, Valkyrie agents, and Crow agents. Every agent must read it before opening an assignment. Role files may add restrictions but may not weaken this document.
+
+**Responsibility boundary:** Zero alone owns the learner-facing implementation, including Library and Card rendering, colour assignment, tappable behavior, accessibility, device TTS wiring, caching, and personal-state behavior. Valkyrie supplies structured Expression content and semantic segment explanations. Crow independently critiques that content and analysis. Valkyrie and Crow do not design, colour, render, or implement the user interface.
 
 ## 1. Status and safety boundary
 
@@ -26,7 +28,7 @@ Some existing technical schemas may retain legacy key names. Agents must follow 
 
 ## 3. Expressions Library contract
 
-The Library must preserve the established rich product level.
+The Library must preserve the established rich product level. This is a **Zero implementation responsibility**. Valkyrie supplies the validated content consumed by the Library, and Crow audits that content; neither worker builds the Library.
 
 ### 3.1 Header and summary
 
@@ -83,7 +85,7 @@ Each rich tile must show enough information to choose intelligently:
 
 ## 4. Full Expression Card sequence
 
-The opened Card must retain this information density and order.
+The opened Card must retain this information density and order. Zero owns Card composition, rendering, interaction, and learner-facing behavior. Valkyrie supplies the required structured content, and Crow audits its completeness and correctness.
 
 ### 4.1 Hero
 
@@ -161,7 +163,9 @@ Show evidence-backed verification state, source locators, licence/attribution ro
 
 ## 5. Universal coloured tappable analysis
 
-This applies to **all Japanese displayed on the Full Expression Card**, including:
+Zero alone implements the coloured tappable interface. Valkyrie must provide complete structured segmentation and explanations for every Japanese line so Zero can render it; Crow must audit those segments and explanations. Valkyrie and Crow must not choose presentation colours or produce frontend code.
+
+The Zero-rendered interaction applies to **all Japanese displayed on the Full Expression Card**, including:
 
 - hero and primary form;
 - every alternate form;
@@ -191,6 +195,8 @@ Every line must reconstruct exactly from its segments. Each segment records:
 Japanese reconstruction, reading reconstruction, segment completeness, canonical validity, reverse omission, and ambiguity handling must all pass.
 
 ### 5.2 Colour and interaction
+
+Zero derives presentation colours from validated segment data and owns all behavior in this subsection. Colours are presentation metadata, not linguistic claims supplied by Valkyrie.
 
 - Render Japanese as stable colour-coded segments.
 - Every segment is tappable and keyboard-focusable.
@@ -235,15 +241,15 @@ If any displayed Japanese line lacks complete passed coloured analysis, quaranti
 
 ### Valkyrie
 
-Creates evidence-backed Expression proposals. Valkyrie cannot approve its own output and reports only `submitted`, `abstained`, or `failed`.
+Creates evidence-backed Expression proposals, including complete structured Japanese lines, readings, semantic segments, explanations, and all content required by the Library and Card. Valkyrie supplies data only: it does not assign colours, design screens, render Cards, write frontend code, or implement learner interactions. Valkyrie cannot approve its own output and reports only `submitted`, `abstained`, or `failed`.
 
 ### Crow
 
-Independently audits without repairing. Every finding needs severity, stable code, JSON pointer, evidence locator, and concise explanation. A pass requires every check to pass and zero findings.
+Independently audits the Expression content, Japanese lines, readings, semantic segmentation, explanations, evidence, and payload completeness without repairing. Crow does not select colours, design screens, render Cards, write frontend code, or judge implementation that Zero has not yet produced. Every finding needs severity, stable code, JSON pointer, evidence locator, and concise explanation. A pass requires every assigned content check to pass and zero findings.
 
 ### Zero
 
-Derives the result after deterministic validation. Worker confidence and worker-written gate booleans are not proof. Zero enforces count conservation, global deduplication, payload identity, and all contracts.
+Derives the result after deterministic validation. Worker confidence and worker-written gate booleans are not proof. Zero enforces count conservation, global deduplication, payload identity, and all contracts. Zero alone transforms accepted structured content into the learner-facing product and implements the Library, Full Expression Card, colour mapping, tappable explanation panels, accessibility, device TTS controls, responsive behavior, session caching, and Recognised/Review interactions.
 
 ## 8. Privacy and runtime behavior
 

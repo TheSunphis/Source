@@ -13,5 +13,7 @@ Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, and `Germinal/TERMI
 - Complete source locators, provenance, and Vocabulary-link dispositions.
 - Abstain rather than invent or weaken a gate.
 - Upload private payloads only to the unpublished draft release.
+- Supply structured segments and explanations for every Japanese line required by the Card.
+- Do not choose colours, design the Library or Card, write frontend code, or implement learner-facing interactions; those are Zero responsibilities.
 
 Valkyrie1 cannot approve its own work. Report only `submitted`, `abstained`, or `failed`.

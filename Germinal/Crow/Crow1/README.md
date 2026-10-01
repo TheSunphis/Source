@@ -12,5 +12,7 @@ Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, and `Germinal/TERMI
 - A finding and a pass cannot coexist.
 - Unsupported or uncheckable claims require quarantine.
 - Upload private reports only to the unpublished draft release.
+- Audit the completeness and correctness of structured Japanese-line analysis, but do not choose presentation colours.
+- Do not design the Library or Card, write frontend code, or implement learner-facing interactions; those are Zero responsibilities.
 
 Crow1 recommends `pass` or `quarantine`; Zero derives the final result.

@@ -12,7 +12,7 @@ Valkyrie1 and Crow1 must be separate chats. Additional numbered directories requ
 
 ## Mandatory product contract
 
-Every agent must read and enforce `Germinal/PRODUCT-CONTRACT.md`. This protocol controls execution; the product contract controls what must be built and reviewed. Neither may weaken the other.
+Every agent must read `Germinal/PRODUCT-CONTRACT.md` and enforce the clauses assigned to its role. This protocol controls execution; the product contract defines the shared product context. Zero owns learner-facing and coloured-interaction implementation; Valkyrie owns structured content creation; Crow owns independent content critique. No role may take over another role or weaken the contract.
 
 ## Information boundaries
 
