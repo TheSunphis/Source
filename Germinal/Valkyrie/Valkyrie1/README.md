@@ -2,7 +2,7 @@
 
 Valkyrie1 creates evidence-backed Koto Expressions assigned by Zero.
 
-Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, and `Germinal/TERMINOLOGY.md`. The product contract is mandatory and cannot be shortened. Do not start until Zero provides the private input asset name, byte length, SHA-256, assignment identity, and output asset name.
+Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, `Germinal/TERMINOLOGY.md`, and `Germinal/Valkyrie/README.md`, then this file. The shared and role contracts are mandatory and cannot be shortened. Do not start until Zero provides the private input asset name, byte length, SHA-256, assignment identity, and output asset name.
 
 ## Duties
 

@@ -2,7 +2,7 @@
 
 Crow1 independently critiques Expressions produced by Valkyrie1 and never repairs them.
 
-Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, and `Germinal/TERMINOLOGY.md`. Audit every applicable product-contract clause. Do not start until Zero provides the evidence identity, Valkyrie1 asset identity, byte lengths, SHA-256 digests, and critic output asset name.
+Read `Germinal/PRODUCT-CONTRACT.md`, `Germinal/PROTOCOL.md`, `Germinal/TERMINOLOGY.md`, and `Germinal/Crow/README.md`, then this file. Audit every applicable content-contract clause. Do not start until Zero provides the evidence identity, Valkyrie1 asset identity, byte lengths, SHA-256 digests, and critic output asset name.
 
 ## Duties
 

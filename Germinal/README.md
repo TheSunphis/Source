@@ -7,7 +7,8 @@ Every active agent must read, in order:
 1. `Germinal/PRODUCT-CONTRACT.md`;
 2. `Germinal/PROTOCOL.md`;
 3. `Germinal/TERMINOLOGY.md`;
-4. its own directory instructions.
+4. its role directory instructions: `Germinal/Valkyrie/README.md` or `Germinal/Crow/README.md`;
+5. its numbered directory instructions.
 
 ## Active structure
 
