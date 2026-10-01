@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `175352ad680e5db9b753558370dbd9454fc57104`
-- Valkyrie1 due SHA-256: `bbe646965b8ac715a998e4ba6052aa03befa1939e17bba03dfbf26f2a29d31db`
-- Crow1 due SHA-256: `5de430a3fb58753fc188cbee13e880b3f2c54029bc7e123e60266792dfc9871d`
+- Due commit: `f567f71dce314a2017efdf94e3d41df27ed569fb`
+- Valkyrie1 due SHA-256: `b892241647e866572642eb7e49e830ef31425168843c43f0a4ffcf0d0db25a14`
+- Crow1 due SHA-256: `85a5335faa5b7134dbfc787e3659b41a9590e25abd17ef83c98e2d008798653c`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -54,7 +54,7 @@ A missing dependency, inaccessible destination, permission failure, identity mis
 ## 4. Launch-state behavior
 
 - `ACTIVE`: complete setup, update the mapped report to `in-progress` with the due commit and start UTC timestamp, then execute the due exactly.
-- `WAITING_FOR_COMPLETE_VALKYRIE_WAVE`: Crow1 must not critique. Leave or update its safe report as blocked and stop. Zero will verify and freeze all ten Valkyrie checkpoint outputs, update Crow1's due with every asset identity, and repin this START file before Crow1 is launched.
+- `WAITING_FOR_COMPLETE_CORRECTED_VALKYRIE_WAVE`: Crow1 must not critique. Leave or update its safe report as blocked and stop. Zero will verify and freeze all ten v9 revision2 checkpoint outputs, update Crow1's due with every asset identity, and repin this START file before Crow1 is launched.
 - `HOLD` or any other non-active state: do not open restricted payloads or generate content. Record the safe blocking state and stop.
 
 A launch state never overrides a missing identity or failed setup check.
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 Wave 002 all-50 due: `HOLD_ZERO_STRUCTURAL_FAILURE` — do not relaunch pending the user's disposition.
-- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_VALKYRIE_WAVE` — do not launch; Zero has not released the submitted bundles for review.
+- Valkyrie1 Wave 002 targeted revision due: `ACTIVE` — revise all 50 drafts under v9 in one execution without user relay.
+- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_CORRECTED_VALKYRIE_WAVE` — do not launch until Zero pins all ten revision2 outputs.
