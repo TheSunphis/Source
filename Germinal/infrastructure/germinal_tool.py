@@ -2,9 +2,11 @@
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
 import argparse,base64,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v6"
+VERSION="germinal-tool-v7"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
+VALK_CHECKPOINT_FORMAT="germinal-valkyrie-checkpoint-v2"
+CROW_CHECKPOINT_FORMAT="germinal-crow-checkpoint-v2"
 STATUSES={"submitted","abstained","failed"}
 SEVERITIES={"critical","major","minor"}
 class Problems:
@@ -97,11 +99,17 @@ def validate_expression(p,e,problems):
 def validate_valkyrie(manifest,records):
  p=Problems();p.need(isinstance(manifest,dict),"/manifest","must be object")
  if not isinstance(manifest,dict):return p.items
- p.need(manifest.get("formatVersion")==VALK_FORMAT,"/manifest/formatVersion","wrong format")
+ fmt=manifest.get("formatVersion")
+ p.need(fmt in (VALK_FORMAT,VALK_CHECKPOINT_FORMAT),"/manifest/formatVersion","wrong format")
  p.need(manifest.get("agent")=="Valkyrie1","/manifest/agent","must be Valkyrie1")
- p.need(manifest.get("assignment")=="germinal-wave001-valkyrie1-50","/manifest/assignment","wrong assignment")
- p.need(len(records)==50,"/records","must contain exactly 50 records")
- expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
+ if fmt==VALK_FORMAT:
+  p.need(manifest.get("assignment")=="germinal-wave001-valkyrie1-50","/manifest/assignment","wrong assignment")
+  expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
+ else:
+  p.need(manifest.get("assignment")=="germinal-wave002-valkyrie1-checkpoint01-5","/manifest/assignment","wrong checkpoint assignment")
+  expected=[f"V1-W002-C01-{i:03d}" for i in range(1,6)]
+  p.need(manifest.get("expectedSlotIds")==expected,"/manifest/expectedSlotIds","checkpoint slot identity mismatch")
+ p.need(len(records)==len(expected),"/records",f"must contain exactly {len(expected)} records")
  p.need([x.get("slotId") if isinstance(x,dict) else None for x in records]==expected,"/records","slot IDs/order mismatch")
  counts={x:0 for x in STATUSES}
  for i,r in enumerate(records):
@@ -113,20 +121,26 @@ def validate_valkyrie(manifest,records):
   else:
    p.need(isinstance(r.get("reasonCode"),str) and bool(r["reasonCode"]),q+"/reasonCode","required")
    p.need("expression" not in r,q+"/expression","forbidden for non-submitted slot")
- p.need(manifest.get("attempted")==50,"/manifest/attempted","must be 50")
+ p.need(manifest.get("attempted")==len(expected),"/manifest/attempted",f"must be {len(expected)}")
  for k,v in counts.items():p.need(manifest.get(k)==v,f"/manifest/{k}","count mismatch")
- p.need(sum(counts.values())==50,"/manifest","count conservation failed")
+ p.need(sum(counts.values())==len(expected),"/manifest","count conservation failed")
  p.need(manifest.get("recordsSha256")==sha(records_bytes(records)),"/manifest/recordsSha256","digest mismatch")
  for k in ("inputAsset","evidenceBuild","candidateBuild"):p.need(k in manifest,"/manifest/"+k,"required")
  return p.items
 def validate_crow(manifest,records):
  p=Problems();p.need(isinstance(manifest,dict),"/manifest","must be object")
  if not isinstance(manifest,dict):return p.items
- p.need(manifest.get("formatVersion")==CROW_FORMAT,"/manifest/formatVersion","wrong format")
+ fmt=manifest.get("formatVersion")
+ p.need(fmt in (CROW_FORMAT,CROW_CHECKPOINT_FORMAT),"/manifest/formatVersion","wrong format")
  p.need(manifest.get("agent")=="Crow1","/manifest/agent","must be Crow1")
- p.need(manifest.get("assignment")=="germinal-wave001-crow1-review-50","/manifest/assignment","wrong assignment")
- p.need(len(records)==50,"/records","must contain exactly 50 records")
- expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
+ if fmt==CROW_FORMAT:
+  p.need(manifest.get("assignment")=="germinal-wave001-crow1-review-50","/manifest/assignment","wrong assignment")
+  expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
+ else:
+  p.need(manifest.get("assignment")=="germinal-wave002-crow1-checkpoint01-review-5","/manifest/assignment","wrong checkpoint assignment")
+  expected=[f"V1-W002-C01-{i:03d}" for i in range(1,6)]
+  p.need(manifest.get("expectedSlotIds")==expected,"/manifest/expectedSlotIds","checkpoint slot identity mismatch")
+ p.need(len(records)==len(expected),"/records",f"must contain exactly {len(expected)} records")
  p.need([x.get("slotId") if isinstance(x,dict) else None for x in records]==expected,"/records","slot IDs/order mismatch")
  counts={"pass":0,"quarantine":0}
  for i,r in enumerate(records):
@@ -147,10 +161,10 @@ def validate_crow(manifest,records):
     if not isinstance(f,dict):p.add(z,"must be object");continue
     required_strings(z,f,["severity","code","pointer","evidenceLocator","explanation","gate"],p)
     p.need(f.get("severity") in SEVERITIES,z+"/severity","invalid severity")
- p.need(manifest.get("attempted")==50 and manifest.get("reviewed")==50,"/manifest","attempted/reviewed must be 50")
+ p.need(manifest.get("attempted")==len(expected) and manifest.get("reviewed")==len(expected),"/manifest",f"attempted/reviewed must be {len(expected)}")
  p.need(manifest.get("pass")==counts["pass"],"/manifest/pass","count mismatch")
  p.need(manifest.get("quarantine")==counts["quarantine"],"/manifest/quarantine","count mismatch")
- p.need(sum(counts.values())==50,"/manifest","count conservation failed")
+ p.need(sum(counts.values())==len(expected),"/manifest","count conservation failed")
  p.need(manifest.get("recordsSha256")==sha(records_bytes(records)),"/manifest/recordsSha256","digest mismatch")
  for k in ("evidenceAsset","valkyrieAsset","evidenceBuild","candidateBuild"):p.need(k in manifest,"/manifest/"+k,"required")
  return p.items
@@ -320,6 +334,12 @@ def self_test():
  m={"formatVersion":VALK_FORMAT,"agent":"Valkyrie1","assignment":"germinal-wave001-valkyrie1-50","attempted":50,"submitted":50,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(rs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"}
  probs=validate_valkyrie(m,rs)
  if probs:raise RuntimeError("self-test failed: "+probs[0])
+ crs=[]
+ for i in range(1,6):
+  item=json.loads(json.dumps(rs[i-1]));item["slotId"]=f"V1-W002-C01-{i:03d}";crs.append(item)
+ cm={"formatVersion":VALK_CHECKPOINT_FORMAT,"agent":"Valkyrie1","assignment":"germinal-wave002-valkyrie1-checkpoint01-5","expectedSlotIds":[f"V1-W002-C01-{i:03d}" for i in range(1,6)],"attempted":5,"submitted":5,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(crs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"}
+ probs=validate_valkyrie(cm,crs)
+ if probs:raise RuntimeError("checkpoint self-test failed: "+probs[0])
  return True
 def main(argv=None):
  ap=argparse.ArgumentParser();sub=ap.add_subparsers(dest="cmd",required=True)
