@@ -1,90 +1,75 @@
-# Crow1 due — issue-specific repaired gold Card review
+# Crow1 due — corrected evidence-matrix review
 
 - Exact agent: `Crow1`
-- Assignment: `germinal-goldcard-ii-yo-crow1-review-repair-1`
-- Launch state: `HOLD_COMPLETED_ZERO_REJECTED`
+- Assignment: `germinal-goldcard-ii-yo-crow1-correction-1`
+- Launch state: `ACTIVE`
 - Expected reviews: `1`
 - Exact slot: `V1-GOLD-001`
 - Role: independent critic; do not repair
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Crow1 submitted one issue-specific review. Zero rejected its pass at final substantive gates. Do not relaunch or revise until the user chooses a recovery path.
+The user selected a canonical-link repair followed by one bounded corrected review. Card teaching content is unchanged. Zero added an explicit canonical construction, recompiled one link, and retained the superseded candidate record as append-only audit history.
 
-## Immutable restricted inputs
+## Immutable inputs
 
 Original evidence dossier:
-- Release ID: `401068873`
-- Bundle: `germinal-goldcard-ii-yo-material-v1.tar.gz`
-- Bytes: `2311`
-- SHA-256: `26f5ade563e9f4eca8a1afd1a106c74215961090067e6d48685611a218e0095d`
+- Release `401068873`; bytes `2311`
+- SHA-256 `26f5ade563e9f4eca8a1afd1a106c74215961090067e6d48685611a218e0095d`
 
 User-approved clarified proposal:
-- Release ID: `401107799`
-- Bundle: `germinal-goldcard-ii-yo-zero-clarified-v1.tar.gz`
-- Bytes: `6088`
-- SHA-256: `eaeeb56978d573e10b8273d764b753106ed05d2ac0d037275df00d1c2e7b7cc7`
+- Release `401107799`; bytes `6088`
+- SHA-256 `eaeeb56978d573e10b8273d764b753106ed05d2ac0d037275df00d1c2e7b7cc7`
 
-Canonical Vocabulary build:
-- Release ID: `401110574`
-- Bundle: `koto-vocabulary-goldcard-repair-build-v1.tar.gz`
-- Bytes: `9267`
-- SHA-256: `6f5e6cfb09af286aac36cd069a7ac8127c689632e389f6908736db2218e1e6f1`
-- Build ID: `vocabularybuild1:8e6a82612d02c2df724795773cdab8b1`
-- Records: `36`
+Repaired canonical Vocabulary:
+- Release `401125715`; bundle `koto-vocabulary-goldcard-link-repair-v1.tar.gz`; bytes `9775`
+- SHA-256 `495bdef4db1cc04855e9bfb8ef841dc12fc6165da8c0e40e6308441cf814b855`
+- Build `vocabularybuild1:db44e2051a42d45da44d98f2f4757611`; records `37`
 
-Compiled Card:
-- Release ID: `401110587`
-- Bundle: `germinal-goldcard-ii-yo-compiled-repair-v1.tar.gz`
-- Bytes: `7597`
-- Bundle SHA-256: `859b747d4ac3ae53f54230bf5e658b464ecbbd7bcd2f0d7261ea88f26dc63602`
-- Card SHA-256: `a637009768152ed225238aba055a5f3182ff4c68ac653c04743641ef68a5e2a0`
-- Segments: `32`; linked: `28`; punctuation exclusions: `4`
+Recompiled Card:
+- Release `401125726`; bundle `germinal-goldcard-ii-yo-compiled-link-repair-v1.tar.gz`; bytes `8245`
+- Bundle SHA-256 `db070cb3e5d7c6b37c54f57881bc67cf33b27c15381075d7b5049476335a6d2d`
+- Card SHA-256 `c6f672adfd478cce9df7b6edb4d2d59cd0ad18465196f4f01ae828659f6dc8ce`
+- Linked `28`; exact lemma alignments `28`; punctuation exclusions `4`
 
-Reconstruct every asset from authenticated draft-release body chunks. Verify identities before opening payloads.
+Rejected prior review, defect comparison only:
+- Release `401117372`; bytes `3248`
+- SHA-256 `8402af17f9ead0254aadff9038a7f45ebfc7bcaa9a9b4d6eea380da70e431d95`
+
+Verify and reconstruct every private body bundle before review.
 
 ## Infrastructure
 
 - Upload core `germinal_tool.py`, commit `5eccc8e4c768bce21ff00398cb172f97617d3f24`, SHA-256 `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
-- Review tool `gold_crow_repair_tool.py`, commit `518e995d1f247fc10c4cb68a1092be9ca1fedb1f`, SHA-256 `f05cc5ca70f72962475f77e2512bebf0e5608af2766e054d39d6d72b7f951e4d`
-- Schema SHA-256: `480a9cb6b209c8a9047c61cb9525a34a40b1b63a12bf25684e6a58a7cdd30562`
+- Review tool `gold_crow_correction_tool.py`, commit `428368cc148a5948a174c8cd2b001c5cbe746779`, SHA-256 `8557198a43c600e663613ad145d0b3a783077c2f97e1d7092603ad72a008f593`
+- Schema SHA-256 `d016e5493cda36426c6e196624e42ed11b7c8cadf8dad2950dffdee5563642dc`
 
 Run every self-test. Do not patch infrastructure.
 
-## Required issue-specific checks
+## Required corrected review
 
-Return all sixteen exact check IDs required by the tool. For each, provide a substantive rationale, one primary JSON pointer, at least two supporting pointers, and a concrete evidence locator. Independently inspect:
+The private review must include:
 
-1. `reassuranceBoundaryExcludesPermission` — the target is reassurance after apology, never authorization to act.
-2. `minorApologyTriggerIsConcrete` — the trigger is a specific low-stakes apology with no concealed serious harm.
-3. `primaryAdjectiveFinalParticleSegmentation` — adjective and final particle are separate and complete.
-4. `finalParticleForceIsSubstantive` — explain the final particle’s force in this reassurance, not merely that it adds emphasis.
-5. `casualContractionAnalysisIsAccurate` — verify the contracted past auxiliary and its accidental/regrettable contribution.
-6. `declaredSegmentationPolicyIsConsistent` — apply the declared target and support-verb policies everywhere relevant.
-7. `repeatedFormsUseCompatibleAnalysis` — repeated or inflectionally related forms do not receive contradictory analyses.
-8. `socialClosureAndPracticalCleanupCoexist` — ending further apology does not deny ordinary cleanup.
-9. `allDisplayedLinesAreNaturalAndComplete` — review every line, not a sample.
-10. `readingsAndMeaningsAreContextAccurate` — review every line and contextual segment meaning.
-11. `responsesFitReassuranceContext` — both responses are natural consequences of reassurance.
-12. `followUpsFitMinorAccidentContext` — both follow-ups are coherent and do not reintroduce permission drift.
-13. `registerRelationshipAndSafetyAreAligned` — casual relationship and warnings are adequate.
-14. `canonicalLinksReverseCheckExactly` — all 28 links have exact form/reading matches and correct senses; all four exclusions are punctuation only.
-15. `expressionClaimsDoNotExceedEvidence` — distinguish JMdict lexical anchors from expression-level attestation and editorial teaching content.
-16. `patternsAndDistinctionsAreHonestlyDeferred` — unsupported productive patterns or contrasts are not manufactured.
+- all sixteen issue-specific checks with substantive rationales and at least two concrete release/source locators each;
+- seven separate line audits covering naturalness, reading, meaning, and analysis completeness;
+- twenty-eight ordered link audits covering exact form/reading, exact canonical lemma alignment, and sense fit;
+- four exact punctuation exclusions;
+- an explicit `applicable: false` decision for the support-verb policy because no instance occurs in this Card;
+- three separate evidence classes: lexical anchors, bounded expression anchors, and editorial teaching content that is not source attestation.
 
-A structural pass is not evidence. Resolve every pointer and test each claim. If any required gate fails, recommend quarantine and report the finding; do not repair it.
+Concrete locators must identify actual release payload paths or source entries. Critic-authored labels are invalid. Do not repeat the prior aggregate assertions. Inspect each line and link. If any substantive gate fails, recommend quarantine; do not repair.
 
 ## Output
 
-- Manifest format: `germinal-goldcard-crow-repair-v2`
-- Assignment: `germinal-goldcard-ii-yo-crow1-review-repair-1`
+- Manifest format: `germinal-goldcard-crow-correction-v3`
+- Assignment: `germinal-goldcard-ii-yo-crow1-correction-1`
 - Expected slot IDs: [`V1-GOLD-001`]
-- Bundle: `germinal-crow1-goldcard-ii-yo-review-repair-v2.tar.gz`
-- Private release title: `germinal-goldcard-ii-yo-crow1-review-repair-1`
+- Bundle: `germinal-crow1-goldcard-ii-yo-correction-v3.tar.gz`
+- Private release title: `germinal-goldcard-ii-yo-crow1-correction-1`
 
 ```text
-python3 gold_crow_repair_tool.py validate manifest.json review.json
-python3 gold_crow_repair_tool.py package manifest.json review.json germinal-crow1-goldcard-ii-yo-review-repair-v2.tar.gz
-python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-goldcard-ii-yo-crow1-review-repair-1 germinal-crow1-goldcard-ii-yo-review-repair-v2.tar.gz
+python3 gold_crow_correction_tool.py validate manifest.json review.json
+python3 gold_crow_correction_tool.py package manifest.json review.json germinal-crow1-goldcard-ii-yo-correction-v3.tar.gz
+python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-goldcard-ii-yo-crow1-correction-1 germinal-crow1-goldcard-ii-yo-correction-v3.tar.gz
 ```
 
-Publish one safe report with recommendation counts, release IDs, output bytes, SHA-256, and conserved counts. Then stop. Never place findings, Japanese, meanings, evidence, or payload excerpts in Git.
+Publish one safe report with exact START and due commits, recommendation counts, output release/bytes/SHA-256, and conserved counts. Then stop. Never place findings or restricted content in Git.
