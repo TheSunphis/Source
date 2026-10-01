@@ -232,12 +232,16 @@ def verified_download(url: str, target: Path, expected_bytes: int, expected_sha2
 def build_vocabulary_index(prior: PriorArchive, source: dict[str, Any]) -> tuple[dict[str, Any], str]:
     output = VOCABULARY / "jmdict-canonical.json.gz"
     cached = prior.read("vocabulary/jmdict-canonical.json.gz")
-    if cached:
+    cached_raw = prior.read("vocabulary/source/JMdict_e.gz")
+    if cached and cached_raw and len(cached_raw) == source["snapshot"]["byteLength"] and sha(cached_raw) == source["snapshot"]["sha256"]:
         try:
             value = json.loads(gzip.decompress(cached))
             if value.get("sourceSnapshotSha256") == source["snapshot"]["sha256"]:
                 output.parent.mkdir(parents=True, exist_ok=True)
                 output.write_bytes(cached)
+                raw_output = VOCABULARY / "source" / "JMdict_e.gz"
+                raw_output.parent.mkdir(parents=True, exist_ok=True)
+                raw_output.write_bytes(cached_raw)
                 return value, sha(canonical(value))
         except Exception:
             pass
@@ -245,6 +249,9 @@ def build_vocabulary_index(prior: PriorArchive, source: dict[str, Any]) -> tuple
     verified_download(
         source["acquisitionUrl"], raw, source["snapshot"]["byteLength"], source["snapshot"]["sha256"]
     )
+    raw_output = VOCABULARY / "source" / "JMdict_e.gz"
+    raw_output.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(raw, raw_output)
     entries: list[dict[str, Any]] = []
     seen: set[tuple[str, str, str]] = set()
     with gzip.open(raw, "rb") as stream:
@@ -648,7 +655,7 @@ def vocabulary_maps(index: dict[str, Any]) -> tuple[dict[tuple[str, str], list[d
 
 
 def vocabulary_evidence(entry: dict[str, Any]) -> dict[str, Any]:
-    return {"sourceId": "source2:jmdict-english", "locator": entry["locator"], "evidenceType": "canonical-vocabulary", "supports": ["form", "reading", "vocabulary-link"], "recordHash": entry["recordHash"], "permissionClass": "redistributable"}
+    return {"sourceId": "source2:jmdict-vocabulary", "locator": entry["locator"], "evidenceType": "canonical-vocabulary", "supports": ["form", "reading", "vocabulary-link"], "recordHash": entry["recordHash"], "permissionClass": "redistributable"}
 
 
 def compile_analysis(candidate: dict[str, Any], editorial: dict[str, Any], family_id: str, segments: list[dict[str, Any]], exact_vocab: dict[tuple[str, str], list[dict[str, Any]]], vocab_by_id: dict[str, dict[str, Any]], vocab_digest: str, reviewed_at: str) -> dict[str, Any]:
@@ -759,19 +766,19 @@ def compile_family(candidate: dict[str, Any], context: dict[str, Any], editorial
         "dialogue": {"applicable": True, "context": editorial["dialogue"]["context"], "relationship": editorial["dialogue"]["relationship"], "register": editorial["dialogue"]["register"], "turns": turns},
         "patterns": patterns,
         "distinctions": [{"nearbyJapanese": nearby["surface"], "reading": nearby["reading"], "distinction": distinction_raw["distinction"], "registerOrPragmaticContrast": distinction_raw["registerOrPragmaticContrast"], "unsafeReplacement": distinction_raw["unsafeReplacement"], "publishedFamilyId": None}],
-        "verification": {"publicationState": "verified", "evidence": evidence, "evidenceClasses": ["level-a", "level-b"], "corpusRelease": "0.1.0-development", "sourceRelease": source_release, "analysisCompilerVersion": "0.1.0", "attributionRoute": "Expressions2-development/Batch001/source-registry/sources.json plus retained evidence locators", "review": review},
+        "verification": {"publicationState": "verified", "evidence": evidence, "evidenceClasses": ["level-a", "level-b"], "corpusRelease": "0.1.0-development", "sourceRelease": source_release, "analysisCompilerVersion": "0.1.0", "attributionRoute": "Expressions2-development/Batch001/source-registry/sources.json, remote/model-lock.json vocabulary snapshot, and retained evidence locators", "review": review},
         "displayContract": DISPLAY_CONTRACT, "provenanceRef": provenance_id,
     }
     return family, [analysis]
 
 
-def compile_provenance(candidate: dict[str, Any], family: dict[str, Any], source_registry: dict[str, Any], reviewed_at: str, model_lock_sha: str, critic_capture: dict[str, Any]) -> dict[str, Any]:
+def compile_provenance(candidate: dict[str, Any], family: dict[str, Any], source_registry: dict[str, Any], vocabulary_source: dict[str, Any], reviewed_at: str, model_lock_sha: str, critic_capture: dict[str, Any]) -> dict[str, Any]:
     sources = {item["sourceId"]: item for item in source_registry["sources"]}
     used = sorted({item["sourceId"] for item in candidate["sourceEvidence"]})
     evidence = candidate["sourceEvidence"]
     return {
         "schemaVersion": 1, "provenanceId": family["provenanceRef"], "familyId": family["familyId"], "candidateIds": family["candidateIds"],
-        "sourceSnapshots": [{"sourceId": source_id, "sha256": sources[source_id]["snapshot"]["sha256"]} for source_id in used],
+        "sourceSnapshots": ([{"sourceId": source_id, "sha256": sources[source_id]["snapshot"]["sha256"]} for source_id in used] + [{"sourceId": vocabulary_source["sourceId"], "sha256": vocabulary_source["snapshot"]["sha256"]}]),
         "fieldDerivations": [
             {"jsonPointer": "/hero/japanese", "method": "source-extract", "evidence": evidence, "criticStatus": "passed"},
             {"jsonPointer": "/hero/contextualMeaning", "method": "editorial-synthesis", "evidence": evidence, "criticStatus": "passed"},
@@ -818,7 +825,7 @@ def main() -> int:
     evidence_manifest = read_json(EVIDENCE / "manifest.json")
     candidate_manifest = read_json(CANDIDATES / "manifest.json")
     reviewed_at = source_timestamp(evidence_manifest["sourceDateEpoch"])
-    source_release = "source2:" + sha((ROOT / "source-registry" / "sources.json").read_bytes())
+    source_release = "source2:" + sha(canonical({"registrySha256": sha((ROOT / "source-registry" / "sources.json").read_bytes()), "vocabularySource": lock["vocabularySource"]}))
     sys.path.insert(0, os.environ["EXPRESSIONS2_RUNTIME"])
     from sudachipy import Dictionary, SplitMode
     tokenizer = Dictionary(dict="core").tokenizer()
@@ -826,7 +833,7 @@ def main() -> int:
     records = evidence_maps()
     selected, contexts, segments = select_candidates(tokenizer, SplitMode, candidate_store["records"], records)
     candidate_by_id = {item["candidateId"]: item for item in candidate_store["records"]}
-    vocabulary, vocabulary_digest = build_vocabulary_index(prior, sources["source2:jmdict-english"])
+    vocabulary, vocabulary_digest = build_vocabulary_index(prior, lock["vocabularySource"])
     exact_vocab, vocab_by_id = vocabulary_maps(vocabulary)
     metrics = {"schemaVersion": 1, "githubRunId": os.environ.get("GITHUB_RUN_ID", "unknown"), "modelCalls": 0, "cacheHits": 0, "modelSeconds": {"compiler": 0.0, "critic": 0.0}}
     compiler_requests = []
@@ -879,7 +886,7 @@ def main() -> int:
                 reasons.append("critic-quarantine")
         reasons = unique([re.sub(r"[^a-z0-9]+", "-", reason.lower()).strip("-") or "unspecified" for reason in reasons])
         if status_pass:
-            provenance = compile_provenance(candidate, package["family"], source_registry, reviewed_at, lock_sha, critic_captures[candidate_id])
+            provenance = compile_provenance(candidate, package["family"], source_registry, lock["vocabularySource"], reviewed_at, lock_sha, critic_captures[candidate_id])
             validate(provenance, schemas["provenance"], registry, "provenance")
             family_dir = PILOT / "families" / candidate_id.removeprefix("candidate2:")
             write_json(family_dir / "family.json", package["family"])

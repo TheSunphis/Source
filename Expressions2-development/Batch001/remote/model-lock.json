@@ -48,5 +48,22 @@
     "persistence": "weights-ephemeral-on-github-runner",
     "provenance": "official-publisher-only"
   },
-  "schemaVersion": 1
+  "schemaVersion": 1,
+  "vocabularySource": {
+    "acquisitionUrl": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+    "license": {
+      "attribution": "JMdict/EDRDG — James William Breen and the Electronic Dictionary Research and Development Group.",
+      "name": "CC-BY-SA-4.0",
+      "url": "https://www.edrdg.org/edrdg/licence.html"
+    },
+    "name": "JMdict English canonical Vocabulary snapshot",
+    "owner": "Electronic Dictionary Research and Development Group",
+    "persistence": "exact-raw-snapshot-private-draft-asset",
+    "retrievedAt": "2026-10-01T05:46:00Z",
+    "snapshot": {
+      "byteLength": 10580129,
+      "sha256": "89777236dbf06f4d7b01c6dbff5e1f707978ddd067061b66bcb782d1f24e6ed3"
+    },
+    "sourceId": "source2:jmdict-vocabulary"
+  }
 }
