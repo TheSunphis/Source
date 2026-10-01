@@ -2,13 +2,13 @@
 
 - Exact agent: `Crow1`
 - Assignment: `germinal-goldcard-ii-yo-crow1-review-repair-1`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_ZERO_REJECTED`
 - Expected reviews: `1`
 - Exact slot: `V1-GOLD-001`
 - Role: independent critic; do not repair
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-The user approved the evidence-locked Card after one exact learner-facing wording clarification. Review the clarified, canonically linked Card. Earlier broad assurances are not acceptable.
+Crow1 submitted one issue-specific review. Zero rejected its pass at final substantive gates. Do not relaunch or revise until the user chooses a recovery path.
 
 ## Immutable restricted inputs
 
