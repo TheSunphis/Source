@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `682ddb56e1135988e4a4b65f7b0d7ba0f045166a`
-- Valkyrie1 due SHA-256: `09b4e5a345620dc0b13cb061e07effe0414445be7c344004daba12b1e9d01d71`
-- Crow1 due SHA-256: `40ceb86088fa05df49b6df8b7bd7a26b5471041b637baf8691550df32926e0d5`
+- Due commit: `9be6bb7b0c57e7f68b5e4d4bdce2cf1b3698c1b2`
+- Valkyrie1 due SHA-256: `d1a7f009fdd58cf1520d03591d7418e104bcf81f310e9b978396b0917b027742`
+- Crow1 due SHA-256: `b4607483ccfa4c6b371577180f6dad77faf4fd659ba8624a7f75e41230d08622`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 Wave 001 due: `CLOSED_ABSTAINED` — 50 attempted, 0 submitted, 50 abstained; do not relaunch.
-- Crow1 Wave 001 due: `HOLD_NO_REVIEWABLE_OUTPUT` — Valkyrie1 submitted no Expressions; do not launch Crow1.
+- Valkyrie1 Wave 002 Checkpoint 01 due: `ACTIVE` — create five hybrid-staged Expression proposals from five exact dossiers.
+- Crow1 Wave 002 Checkpoint 01 due: `WAITING_FOR_VALKYRIE1_CHECKPOINT01` — do not launch until Zero pins the five-item private output.
