@@ -8,7 +8,7 @@
 - Candidate pool: unchanged
 - Editorial method: hybrid staged
 - Canonical Vocabulary resolution: deferred to Zero before acceptance
-- Current state: Valkyrie1 revision2 passed Zero structural gates; Crow1 is ACTIVE for one-launch independent review
+- Current state: Crow1 completed but Zero rejected the non-discriminating all-pass review after systemic template reuse was detected; accepted count remains zero
 
 The first v7 Checkpoint 01 bundle is rejected before Crow and must be revised under v8.
 

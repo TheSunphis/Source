@@ -2,12 +2,12 @@
 
 - Exact agent: `Crow1`
 - Assignment: `germinal-wave002-crow1-review-50`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_ZERO_REJECTED`
 - Expected Valkyrie checkpoints: `10`
 - Expected slots: `50`
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Review all ten immutable revision2 bundles in this one execution. Internally process ten checkpoints of five without asking the user to relay, activate, or copy anything. Do not review the rejected v7 or v8 bundles.
+Crow1 completed all ten review checkpoints. Zero verified the private outputs but rejected the all-pass review as non-discriminating after a deterministic cross-Card audit exposed systemic template reuse and a missed segmentation defect. Do not relaunch or issue another review unless Zero provides a new immutable due.
 
 ## Infrastructure
 
