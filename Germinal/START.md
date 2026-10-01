@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `f567f71dce314a2017efdf94e3d41df27ed569fb`
-- Valkyrie1 due SHA-256: `b892241647e866572642eb7e49e830ef31425168843c43f0a4ffcf0d0db25a14`
-- Crow1 due SHA-256: `85a5335faa5b7134dbfc787e3659b41a9590e25abd17ef83c98e2d008798653c`
+- Due commit: `1b58919c4abf6ca15da56bfa36058c89d129b72e`
+- Valkyrie1 due SHA-256: `73ca37e68b4b50266638cb8ab17f08be7545d1643a4c60d7fc013db73d7925df`
+- Crow1 due SHA-256: `8472963ae85b85431773c34a39e7cab7a01f911d37b4a99b7287536630983177`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 Wave 002 targeted revision due: `ACTIVE` — revise all 50 drafts under v9 in one execution without user relay.
-- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_CORRECTED_VALKYRIE_WAVE` — do not launch until Zero pins all ten revision2 outputs.
+- Valkyrie1 Wave 002 targeted revision due: `HOLD_COMPLETED_AWAITING_CROW` — do not relaunch.
+- Crow1 Wave 002 all-50 review due: `ACTIVE` — independently review all ten revision2 checkpoints in one execution without user relay.
