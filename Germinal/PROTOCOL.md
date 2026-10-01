@@ -10,9 +10,9 @@ The active operation uses three chats:
 
 Valkyrie1 and Crow1 must be separate chats. Additional numbered directories require explicit user approval.
 
-## Mandatory product contract
+## Single-file worker launch
 
-Every agent must read `Germinal/PRODUCT-CONTRACT.md` and enforce the clauses assigned to its role. This protocol controls execution; the product contract defines the shared product context. Zero owns learner-facing and coloured-interaction implementation; Valkyrie owns structured content creation; Crow owns independent content critique. No role may take over another role or weaken the contract.
+Workers read only `Germinal/START.md`. Zero maintains this protocol and the expanded product/role sources, then compiles every executable requirement and safe assignment identity into `START.md` before setting a worker to `ACTIVE`. Zero owns learner-facing and coloured-interaction implementation; Valkyrie owns structured content creation; Crow owns independent content critique. No role may take over another role or weaken the contract.
 
 ## Information boundaries
 
