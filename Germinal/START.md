@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `58c07a00852b80db8749a95da9b282ac21529e7a`
-- Valkyrie1 due SHA-256: `18877f815e1e5fb0352ebd096e36889cbe5df5b09e9845f2d5838b9161ba893a`
-- Crow1 due SHA-256: `79b5dc91a92c5f081b530575953ac51a48843bc5d4475f3c712075df1f28940e`
+- Due commit: `9152228332f0faaeeabbf32c65543a94b950804b`
+- Valkyrie1 due SHA-256: `69c0d5043d496478d6d01a920cfde70d3dd37ebf6c0f2addd716632cbb7a492d`
+- Crow1 due SHA-256: `0058416d90ec8ed85d3db852143f487b693e1d46342d709c128264044e3ec96f`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 due: `ACTIVE` and retry-ready with Zero's private `api.github.com` metadata transport, which bypasses the unreachable release-asset host — 50 attempted Expression proposals.
+- Valkyrie1 due: `ACTIVE` and retry-ready on Zero's integration-tested v5 private metadata decoder — 50 attempted Expression proposals.
 - Crow1 due: `WAITING_FOR_VALKYRIE1` — review the same 50 after Zero freezes and pins Valkyrie1's output.
