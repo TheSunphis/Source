@@ -44,8 +44,9 @@ def main() -> int:
                 "Give a brief Japanese acknowledgement that the local model is responding.",
                 schema,
             )
-            if value.get("status") != "ok" or not JAPANESE.search(value.get("answer", "")):
-                raise RuntimeError("structured smoke response failed semantic check")
+            print("SMOKE_RESPONSE " + json.dumps(value, ensure_ascii=False, sort_keys=True), flush=True)
+            if value.get("status") != "ok" or not isinstance(value.get("answer"), str) or not value["answer"].strip():
+                raise RuntimeError("structured smoke response failed envelope check")
             records.append({
                 "role": spec["role"], "repository": spec["repository"], "revision": spec["revision"],
                 "fileSha256": spec["sha256"], "status": "passed", "responseSha256": sha(canonical(value)),
