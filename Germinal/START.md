@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `1cbeedd60f0cbf7946fc0595518dfcba21bbfeed`
-- Valkyrie1 due SHA-256: `edb341021295cf06bec5149966b41dae67d0e1081b4040b4fe31c24c2933bed2`
-- Crow1 due SHA-256: `4f6e156fa6bffdd542feb2890fc8e2ad37401a3a991e37d9a8d6cfc6c2833d28`
+- Due commit: `ffacd184f28e3c8cb84edd6a00b490a0fc4dc91f`
+- Valkyrie1 due SHA-256: `c0bc43eec4b62312cbc671db1654cd1c18c7db33452df0464d9a6d24a82bd2e9`
+- Crow1 due SHA-256: `b5ce410a1b95b31fc4f00d3182fb36fd01cb51db44963ca3be04b98961597878`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
