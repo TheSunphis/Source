@@ -32,5 +32,3 @@ This public report may contain safe status metadata only. Never add Japanese, me
 - Attempt 3: Python and curl release-asset transports both failed at byte 0; zero content generated; reported commit `e513df0` did not reach the remote branch.
 - Attempt 4: v4 reached private metadata but failed because Zero omitted the `base64` import; zero content generated; reported commit `c0485a6` did not reach the remote branch.
 - Recovery: Zero fixed the import and ran the exact live input function successfully. Infrastructure v6 also supplies API-only private output storage and remote Contents-API report publication.
-
-- Infrastructure report API probe: `passed`
