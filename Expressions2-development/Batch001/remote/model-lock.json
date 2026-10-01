@@ -1,0 +1,52 @@
+{
+  "engine": {
+    "asset": "llama-b11312-bin-ubuntu-x64.tar.gz",
+    "expectedBytes": 17537177,
+    "name": "llama.cpp",
+    "release": "b11312",
+    "repository": "ggml-org/llama.cpp",
+    "sha256": "c250f4a85fb736b92ab369e531c2c769af4ad6180718c72ac0350e26678008de",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11312/llama-b11312-bin-ubuntu-x64.tar.gz"
+  },
+  "models": [
+    {
+      "contextTokens": 16384,
+      "expectedBytes": 5027783488,
+      "file": "Qwen3-8B-Q4_K_M.gguf",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/blob/7c41481f57cb95916b40956ab2f0b139b296d974/LICENSE",
+      "maxOutputTokens": 6000,
+      "publisher": "Qwen",
+      "repository": "Qwen/Qwen3-8B-GGUF",
+      "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "role": "compiler",
+      "seed": 4242,
+      "sha256": "d98cdcbd03e17ce47681435b5150e34c1417f50b5c0019dd560e4882c5745785",
+      "temperature": 0,
+      "url": "https://huggingface.co/Qwen/Qwen3-8B-GGUF/resolve/7c41481f57cb95916b40956ab2f0b139b296d974/Qwen3-8B-Q4_K_M.gguf?download=true"
+    },
+    {
+      "contextTokens": 16384,
+      "expectedBytes": 5347917952,
+      "file": "granite-4.2-8b-Q4_K_M.gguf",
+      "license": "Apache-2.0",
+      "licenseUrl": "https://huggingface.co/ibm-granite/granite-4.2-8b-GGUF/blob/93f3f6a8938ee922b784cf4e5b4203cd3428df8f/LICENSE",
+      "maxOutputTokens": 2600,
+      "publisher": "IBM",
+      "repository": "ibm-granite/granite-4.2-8b-GGUF",
+      "revision": "93f3f6a8938ee922b784cf4e5b4203cd3428df8f",
+      "role": "critic",
+      "seed": 4343,
+      "sha256": "16a9369d0805f80b7377d25d87f937a90c05dc04ad79173a52001e42c9aab311",
+      "temperature": 0,
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-GGUF/resolve/93f3f6a8938ee922b784cf4e5b4203cd3428df8f/granite-4.2-8b-Q4_K_M.gguf?download=true"
+    }
+  ],
+  "policy": {
+    "networkInference": false,
+    "paidServices": false,
+    "persistence": "weights-ephemeral-on-github-runner",
+    "provenance": "official-publisher-only"
+  },
+  "schemaVersion": 1
+}

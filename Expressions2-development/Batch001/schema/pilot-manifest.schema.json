@@ -1,0 +1,289 @@
+{
+  "$id": "https://koto.invalid/expressions2/pilot-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "bytes": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "path": {
+            "pattern": "^[A-Za-z0-9._/-]+$",
+            "type": "string"
+          },
+          "sha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          }
+        },
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "candidateBuildId": {
+      "pattern": "^candidatebuild2:[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "counts": {
+      "additionalProperties": false,
+      "properties": {
+        "acceptedFamilies": {
+          "const": 0
+        },
+        "attemptedCandidates": {
+          "const": 8
+        },
+        "compiledFamilies": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "independentlyCritiqued": {
+          "const": 8
+        },
+        "passedPilotGates": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "quarantined": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "attemptedCandidates",
+        "compiledFamilies",
+        "independentlyCritiqued",
+        "passedPilotGates",
+        "quarantined",
+        "acceptedFamilies"
+      ],
+      "type": "object"
+    },
+    "determinism": {
+      "additionalProperties": false,
+      "properties": {
+        "canonicalJson": {
+          "const": true
+        },
+        "capturedModelResponsesAreInputs": {
+          "const": true
+        },
+        "secondDeterministicCompileMatched": {
+          "const": true
+        }
+      },
+      "required": [
+        "canonicalJson",
+        "capturedModelResponsesAreInputs",
+        "secondDeterministicCompileMatched"
+      ],
+      "type": "object"
+    },
+    "incrementalBuild": {
+      "additionalProperties": false,
+      "properties": {
+        "changedOnlySupported": {
+          "const": true
+        },
+        "contentAddressedResponseCache": {
+          "const": true
+        }
+      },
+      "required": [
+        "contentAddressedResponseCache",
+        "changedOnlySupported"
+      ],
+      "type": "object"
+    },
+    "modelLockSha256": {
+      "$ref": "common.schema.json#/$defs/sha256"
+    },
+    "models": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "fileSha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "license": {
+            "const": "Apache-2.0"
+          },
+          "repository": {
+            "minLength": 3,
+            "type": "string"
+          },
+          "revision": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "compiler",
+              "critic"
+            ]
+          }
+        },
+        "required": [
+          "role",
+          "repository",
+          "revision",
+          "fileSha256",
+          "license"
+        ],
+        "type": "object"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    "pilotId": {
+      "pattern": "^pilot2:[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "productionReady": {
+      "const": false
+    },
+    "publicationStatus": {
+      "const": "shadow-candidate"
+    },
+    "records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidateClass": {
+            "$ref": "common.schema.json#/$defs/familyClass"
+          },
+          "candidateId": {
+            "$ref": "common.schema.json#/$defs/candidateId"
+          },
+          "compilerResponseSha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "compilerStatus": {
+            "enum": [
+              "compiled",
+              "abstained",
+              "deterministic-gate-failed"
+            ]
+          },
+          "criticResponseSha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "criticStatus": {
+            "enum": [
+              "passed",
+              "quarantined"
+            ]
+          },
+          "familyId": {
+            "oneOf": [
+              {
+                "$ref": "common.schema.json#/$defs/familyId"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pilotStatus": {
+            "enum": [
+              "passed",
+              "quarantined"
+            ]
+          },
+          "reasonCodes": {
+            "items": {
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "candidateId",
+          "candidateClass",
+          "compilerStatus",
+          "criticStatus",
+          "pilotStatus",
+          "familyId",
+          "reasonCodes",
+          "compilerResponseSha256",
+          "criticResponseSha256"
+        ],
+        "type": "object"
+      },
+      "maxItems": 8,
+      "minItems": 8,
+      "type": "array"
+    },
+    "release": {
+      "const": "0.1.0-development"
+    },
+    "safety": {
+      "additionalProperties": false,
+      "properties": {
+        "gatesNotLowered": {
+          "const": true
+        },
+        "noLiveExpressionsMutation": {
+          "const": true
+        },
+        "noLocalApplicationStorage": {
+          "const": true
+        },
+        "noModelWeightsPersisted": {
+          "const": true
+        },
+        "privateDraftReleaseOnly": {
+          "const": true
+        }
+      },
+      "required": [
+        "noLocalApplicationStorage",
+        "noLiveExpressionsMutation",
+        "noModelWeightsPersisted",
+        "privateDraftReleaseOnly",
+        "gatesNotLowered"
+      ],
+      "type": "object"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "scope": {
+      "const": "eight-family-dual-open-model"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "pilotId",
+    "scope",
+    "release",
+    "publicationStatus",
+    "productionReady",
+    "candidateBuildId",
+    "modelLockSha256",
+    "models",
+    "counts",
+    "records",
+    "determinism",
+    "incrementalBuild",
+    "safety",
+    "artifacts"
+  ],
+  "title": "Koto Expressions2 eight-family dual-open-model pilot manifest",
+  "type": "object"
+}
