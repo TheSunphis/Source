@@ -41,7 +41,6 @@ def main() -> int:
     if not os.environ.get("GITHUB_ACTIONS"):
         raise SystemExit("GitHub Actions only")
     env = dict(os.environ)
-    run(sys.executable, "tools/run_contract_tests.py", env=env)
     runtime = Path("/tmp/expressions2-runtime")
     run(
         sys.executable, "-m", "pip", "install", "--disable-pip-version-check", "--no-deps", "--require-hashes",
@@ -50,6 +49,7 @@ def main() -> int:
     env["PYTHONPATH"] = str(runtime)
     env["EXPRESSIONS2_RUNTIME"] = str(runtime)
     run(sys.executable, "tools/build_evidence_stores.py", env=env)
+    run(sys.executable, "tools/run_contract_tests.py", env=env)
     run(sys.executable, "remote/build_candidates.py", env=env)
 
     tag = "expressions2-0.1.0-development-shadow"
