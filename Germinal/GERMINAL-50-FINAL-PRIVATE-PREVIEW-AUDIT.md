@@ -1,7 +1,7 @@
 # Germinal 50 final private-preview acceptance audit
 
 - Private app branch: `germinal-50-preview`
-- Private app commit: `93824897d8292f7e4666a52c7ac3a465b93460af`
+- Private app commit: `36f5b4c98ba9275847d5d82a0f179ce0b26486d6`
 - App main changed: `no`
 - Deployment or publication: `none`
 - Cards: `50`
@@ -20,6 +20,8 @@
 ## Worker adjudication
 
 Valkyrie completed the structure but retained high template similarity. Crow's first result changed no substantive Card roots. Crow's correction passed its mechanical change gate but retained template-driven guidance and interactional-fit problems. Zero rejected those worker acceptance claims, directly curated all 49 Cards, preserved their JMdict anchors, separated editorial teaching provenance, compiled bounded app Vocabulary links, and reran the full app suite.
+
+- Full Card UI: approved one-Card prototype design restored for all 50 Cards
 
 ## Library behaviour
 
