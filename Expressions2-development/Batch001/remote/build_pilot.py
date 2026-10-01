@@ -215,6 +215,7 @@ class PriorArchive:
 
 def verified_download(url: str, target: Path, expected_bytes: int, expected_sha256: str) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
+    print(f"DOWNLOAD_START {target.name} bytes={expected_bytes}", flush=True)
     subprocess.run([
         "curl", "-L", "--fail", "--retry", "5", "--retry-all-errors", "--connect-timeout", "30",
         "--output", str(target), url,
@@ -227,6 +228,7 @@ def verified_download(url: str, target: Path, expected_bytes: int, expected_sha2
             digest.update(block)
     if digest.hexdigest() != expected_sha256:
         raise PilotError(f"download digest mismatch for {target.name}")
+    print(f"DOWNLOAD_PASS {target.name} sha256={expected_sha256}", flush=True)
 
 
 def build_vocabulary_index(prior: PriorArchive, source: dict[str, Any]) -> tuple[dict[str, Any], str]:
@@ -537,6 +539,7 @@ class ModelServer:
             str(engine), "-m", str(model), "-a", "pilot-" + spec["role"], "--host", "127.0.0.1", "--port", str(self.port),
             "-c", str(spec["contextTokens"]), "-t", "4", "-tb", "4", "-np", "1", "-b", "512", "-ub", "256", "--jinja",
         ]
+        print(f"MODEL_SERVER_START role={spec['role']} model={spec['repository']}", flush=True)
         self.process = subprocess.Popen(command, stdout=self.log_stream, stderr=subprocess.STDOUT, env=env)
         deadline = time.monotonic() + 300
         while time.monotonic() < deadline:
@@ -547,6 +550,7 @@ class ModelServer:
             try:
                 with urllib.request.urlopen(f"http://127.0.0.1:{self.port}/health", timeout=5) as response:
                     if response.status == 200:
+                        print(f"MODEL_SERVER_READY role={spec['role']}", flush=True)
                         return model
             except Exception:
                 time.sleep(2)
@@ -567,7 +571,7 @@ class ModelServer:
         )
         started = time.monotonic()
         try:
-            with urllib.request.urlopen(request, timeout=1800) as response:
+            with urllib.request.urlopen(request, timeout=spec.get("requestTimeoutSeconds", 1800)) as response:
                 envelope = json.load(response)
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode(errors="replace")[:4000]
@@ -578,6 +582,7 @@ class ModelServer:
             value = json.loads(content)
         except Exception as exc:
             raise PilotError("model returned no parseable JSON content") from exc
+        print(f"MODEL_RESPONSE role={spec['role']} seconds={elapsed:.2f}", flush=True)
         return value, envelope.get("usage", {}), elapsed
 
     def stop(self, model: Path | None = None) -> None:
