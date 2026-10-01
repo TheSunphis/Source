@@ -1,20 +1,39 @@
 # Crow1 report
 
-- Agent: `Crow1`
-- Assignment: `germinal-wave002-crow1-review-50`
-- Status: `ready`
-- Due commit read: `pending`
-- Started UTC: `pending`
-- Completed UTC: `pending`
-- Infrastructure commit: `5eccc8e4c768bce21ff00398cb172f97617d3f24`
-- Tool SHA-256: `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
-- Valkyrie revision2 checkpoints: `10`
-- Expected reviews: `50`
-- Attempted: `0`
-- Reviewed: `0`
-- Recommended pass: `0`
-- Recommended quarantine: `0`
-- Critic checkpoint outputs: `pending c01-c10`
-- Reason code: `zero-activated-one-launch-independent-review`
+- Agent: 
+- Assignment: 
+- Status: 
+- START commit read: 
+- Due commit read: 
+- Started UTC: 
+- Completed UTC: 
+- Infrastructure commit: 
+- Tool SHA-256: 
+- Input dossier asset: 
+- Input dossier bytes: 
+- Input dossier SHA-256: 
+- Valkyrie revision2 checkpoints: 
+- Attempted: 
+- Reviewed: 
+- Recommended pass: 
+- Recommended quarantine: 
+- Reason code: 
 
-Safe metadata only. Never add Japanese, meanings, evidence, analyses, findings, prompts, responses, or payload excerpts.
+## Private review checkpoint bundles
+
+| Checkpoint | Bundle | Bytes | SHA-256 | Private release IDs | Attempted | Reviewed | Pass | Quarantine |
+|---:|---|---:|---|---|---:|---:|---:|---:|
+| 01 |  | 870 |  |  | 5 | 5 | 5 | 0 |
+| 02 |  | 869 |  |  | 5 | 5 | 5 | 0 |
+| 03 |  | 870 |  |  | 5 | 5 | 5 | 0 |
+| 04 |  | 870 |  |  | 5 | 5 | 5 | 0 |
+| 05 |  | 869 |  |  | 5 | 5 | 5 | 0 |
+| 06 |  | 868 |  |  | 5 | 5 | 5 | 0 |
+| 07 |  | 870 |  |  | 5 | 5 | 5 | 0 |
+| 08 |  | 871 |  |  | 5 | 5 | 5 | 0 |
+| 09 |  | 869 |  |  | 5 | 5 | 5 | 0 |
+| 10 |  | 869 |  |  | 5 | 5 | 5 | 0 |
+
+All ten immutable revision2 checkpoints were independently reviewed against original candidate dossiers and Germinal v9 segmentation, pragmatic, and deferral criteria.
+
+This public report contains safe status metadata only. Recommendations remain subject to Zero deterministic validation and canonical Vocabulary resolution.
