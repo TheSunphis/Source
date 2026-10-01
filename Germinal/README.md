@@ -28,6 +28,6 @@ Expression is the renamed Family unit. Germinal keeps the existing Family-compat
 
 ## Current state
 
-- `Valkyrie1`: active and retry-ready after Zero moved the 510,189-byte private assignment shard to authenticated `api.github.com` draft-release metadata, bypassing the unreachable release-asset host; assigned 50 attempted Expression slots.
+- `Valkyrie1`: active and retry-ready on infrastructure v5 after Zero fixed the base64 decoder and passed the exact live eight-release reconstruction function; assigned 50 attempted Expression slots.
 - `Crow1`: waiting for Valkyrie1's immutable output identity; assigned to review all 50 afterward.
 - `Zero`: this original chat; provides material, tools, infrastructure, coordination, final gates, and learner-facing implementation. Zero has no directory.

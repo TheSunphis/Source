@@ -39,7 +39,7 @@ Retrieve only this private draft-release asset from `TheSunphis/Source`:
 
 Use Zero's pinned `fetch-release-body-bundle` command below. It retrieves eight authenticated private draft-release JSON bodies only from `api.github.com`, validates each base64 chunk and its SHA-256, reconstructs the 510,189-byte material shard, and validates the final SHA-256. It does not contact GitHub's release-asset delivery host. The shard is derived from the same frozen pool and contains 1,000 reserved candidates plus 1,124 resolved evidence records with zero unresolved references. Verify final identity before using any member. Do not persist evidence or work payloads in the public repository or durable local storage; delete ephemeral transfer material after private output submission. If final identity differs or bounded retries are exhausted, stop and update only the safe public report with status `failed`.
 
-Three prior bootstrap attempts on 2026-10-01 stopped before content generation. The release-asset delivery host failed through a full stream, Python ranged TLS, and curl fallback, all before usable bytes reached the agent. No candidate or output work was produced. Zero now bypasses that host completely: the same 510,189-byte private assignment shard is carried in authenticated draft-release metadata through `api.github.com`, whose full eight-chunk reconstruction and bundle identity have passed. The assignment may restart without duplication.
+Four prior bootstrap attempts on 2026-10-01 stopped before content generation. The first three established that the release-asset delivery host was unreachable. The fourth reached the new API metadata transport but exposed a Zero-authored v4 tool defect: `base64` was not imported, and the resulting name error was mislabeled as invalid base64. No candidate or output work was produced. Zero fixed the import and expanded the self-test, then executed the exact v5 eight-release retrieval function against the live private metadata with an in-memory sink; all 510,189 bytes and the final SHA-256 passed. The assignment may restart without duplication.
 
 The archive contains clean-room evidence, source/licence manifests, and extracted candidates. Candidate hypotheses are discovery aids, not editorial truth. Confirm every claim against permitted evidence. Do not inspect live or former `Expressions/`.
 
@@ -47,11 +47,11 @@ The archive contains clean-room evidence, source/licence manifests, and extracte
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `fef1e1f958b01513a4ae5b21fbe432d7b06bba9a`
-- Toolkit: `germinal-infrastructure-v4`
+- Infrastructure commit: `f344522843c062db301e359627c8a04e47817097`
+- Toolkit: `germinal-infrastructure-v5`
 - Runtime: Python 3.11 or newer plus Zero-pinned curl fallback for alternate TLS transport
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `07eadfcadb708480330538b4ac3f75070dd8b292eabb4f8eeec2e467ae8d4df6`
+- Tool SHA-256: `b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`

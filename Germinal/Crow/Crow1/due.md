@@ -45,11 +45,11 @@ Do not review a guessed or merely same-named output. When activated, stream both
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `fef1e1f958b01513a4ae5b21fbe432d7b06bba9a`
-- Toolkit: `germinal-infrastructure-v4`
+- Infrastructure commit: `f344522843c062db301e359627c8a04e47817097`
+- Toolkit: `germinal-infrastructure-v5`
 - Runtime: Python 3.11 or newer plus Zero-pinned curl fallback for alternate TLS transport
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `07eadfcadb708480330538b4ac3f75070dd8b292eabb4f8eeec2e467ae8d4df6`
+- Tool SHA-256: `b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
