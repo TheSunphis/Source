@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `48407360dc6d8c38ec5bf13fe04630d0b458f5b3`
-- Valkyrie1 due SHA-256: `d4db74471c9309c65a0e6568bbd20e2d394b3f411ab90f78e29c58e03870d378`
-- Crow1 due SHA-256: `9cb26a79dc948f237a433190512822e347d520c8d9bc81119d20d1223e31ac27`
+- Due commit: `53c6a7c13d99e9e9fd978d649be62fde372d18b2`
+- Valkyrie1 due SHA-256: `f79452d472e40a0610a046537890ffd41d1fcf969541eb484f8f3a99f4df9488`
+- Crow1 due SHA-256: `256ac2f5b8050f093da1ba0cd67d0b7418f3773615ad361545d9663b8153743b`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 gold Card due: `ACTIVE` — author one candidate-specific proposal from the pinned dossier and Vocabulary seed.
-- Crow1 gold Card review due: `WAITING_FOR_ZERO_LINKED_GOLD_CARD` — do not launch until Zero freezes the compiled linked Card.
+- Valkyrie1 gold Card due: `HOLD_COMPLETED_ZERO_COMPILED` — do not relaunch.
+- Crow1 linked gold Card review due: `ACTIVE` — perform one rationale-bearing independent review.
