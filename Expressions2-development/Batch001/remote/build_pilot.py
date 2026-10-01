@@ -538,6 +538,7 @@ class ModelServer:
         command = [
             str(engine), "-m", str(model), "-a", "pilot-" + spec["role"], "--host", "127.0.0.1", "--port", str(self.port),
             "-c", str(spec["contextTokens"]), "-t", "4", "-tb", "4", "-np", "1", "-b", "512", "-ub", "256", "--jinja",
+            "--chat-template-kwargs", '{"enable_thinking":false}',
         ]
         print(f"MODEL_SERVER_START role={spec['role']} model={spec['repository']}", flush=True)
         self.process = subprocess.Popen(command, stdout=self.log_stream, stderr=subprocess.STDOUT, env=env)
@@ -557,16 +558,24 @@ class ModelServer:
         raise PilotError("llama-server health timeout")
 
     def call(self, spec: dict[str, Any], system: str, user: str, schema: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], float]:
+        messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
+        template_request = urllib.request.Request(
+            f"http://127.0.0.1:{self.port}/apply-template",
+            data=json.dumps({"messages": messages}).encode(),
+            headers={"Content-Type": "application/json"}, method="POST",
+        )
+        try:
+            with urllib.request.urlopen(template_request, timeout=60) as response:
+                prompt = json.load(response)["prompt"]
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode(errors="replace")[:4000]
+            raise PilotError(f"template HTTP {exc.code}: {detail}") from exc
         body = {
-            "model": "pilot-" + spec["role"],
-            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-            "temperature": spec["temperature"], "top_p": 1, "seed": spec["seed"],
-            "max_tokens": spec["maxOutputTokens"], "stream": False,
-            "response_format": {"type": "json_schema", "schema": schema},
-            "chat_template_kwargs": {"enable_thinking": False}, "reasoning_effort": "none",
+            "prompt": prompt, "temperature": spec["temperature"], "top_p": 1, "seed": spec["seed"],
+            "n_predict": spec["maxOutputTokens"], "cache_prompt": True, "json_schema": schema,
         }
         request = urllib.request.Request(
-            f"http://127.0.0.1:{self.port}/v1/chat/completions", data=json.dumps(body).encode(),
+            f"http://127.0.0.1:{self.port}/completion", data=json.dumps(body).encode(),
             headers={"Content-Type": "application/json"}, method="POST",
         )
         started = time.monotonic()
@@ -578,12 +587,17 @@ class ModelServer:
             raise PilotError(f"model HTTP {exc.code}: {detail}") from exc
         elapsed = time.monotonic() - started
         try:
-            content = envelope["choices"][0]["message"]["content"]
-            value = json.loads(content)
+            value = json.loads(envelope["content"])
         except Exception as exc:
-            raise PilotError("model returned no parseable JSON content") from exc
-        print(f"MODEL_RESPONSE role={spec['role']} seconds={elapsed:.2f}", flush=True)
-        return value, envelope.get("usage", {}), elapsed
+            raise PilotError("model returned no parseable schema-constrained JSON content") from exc
+        usage = {
+            "promptTokens": envelope.get("tokens_evaluated", 0),
+            "completionTokens": envelope.get("tokens_predicted", 0),
+            "stoppedEos": envelope.get("stopped_eos", False),
+            "stoppedLimit": envelope.get("stopped_limit", False),
+        }
+        print(f"MODEL_RESPONSE role={spec['role']} seconds={elapsed:.2f} tokens={usage['completionTokens']}", flush=True)
+        return value, usage, elapsed
 
     def stop(self, model: Path | None = None) -> None:
         if self.process and self.process.poll() is None:
