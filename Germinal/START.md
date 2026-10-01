@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `ffacd184f28e3c8cb84edd6a00b490a0fc4dc91f`
-- Valkyrie1 due SHA-256: `c0bc43eec4b62312cbc671db1654cd1c18c7db33452df0464d9a6d24a82bd2e9`
-- Crow1 due SHA-256: `b5ce410a1b95b31fc4f00d3182fb36fd01cb51db44963ca3be04b98961597878`
+- Due commit: `1e7d9e9a1b589ad28d0ce4d33caaedf669263819`
+- Valkyrie1 due SHA-256: `48a973fbf8c961a9b84666ac4a03b2ce4dc33503989fdc939f516b23649f00c7`
+- Crow1 due SHA-256: `477e771046f44faea2887feeeaa4b027dc845d9387047105ba245540f6a62ca4`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 due: `ACTIVE` — 50 attempted Expression proposals.
+- Valkyrie1 due: `ACTIVE` and retry-ready with Zero's resumable range downloader — 50 attempted Expression proposals.
 - Crow1 due: `WAITING_FOR_VALKYRIE1` — review the same 50 after Zero freezes and pins Valkyrie1's output.
