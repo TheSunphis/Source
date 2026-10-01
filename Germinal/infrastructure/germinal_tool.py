@@ -2,7 +2,7 @@
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
 import argparse,base64,gzip,hashlib,io,json,os,re,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v8"
+VERSION="germinal-tool-v9"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 VALK_CHECKPOINT_FORMAT="germinal-valkyrie-checkpoint-v2"
@@ -37,33 +37,41 @@ def validate_line(p,line,problems):
  ev=line.get("evidence");problems.need(isinstance(ev,list) and ev and all(evidence_ok(x) for x in ev),p+"/evidence","requires evidence locators")
  segs=line.get("segments");problems.need(isinstance(segs,list) and bool(segs),p+"/segments","requires segments")
  if not isinstance(segs,list):return
- js=line.get("japanese","");rd=line.get("reading","");jparts=[];rparts=[];jpos=rpos=0
- for i,s in enumerate(segs):
+ js=line.get("japanese","");rd=line.get("reading","");jparts=[];rparts=[];jpos=rpos=0;ids=[];kinds=[]
+ allowed_kinds=("content-or-idiom","particle-or-grammar","auxiliary-or-inflection","punctuation","productive-slot")
+ for i,seg in enumerate(segs):
   q=f"{p}/segments/{i}"
-  if not isinstance(s,dict):problems.add(q,"must be object");continue
-  required_strings(q,s,["segmentId","surface","reading","contextualMeaning","grammaticalRole","vocabularyDisposition"],problems)
-  for k in ("japaneseStart","japaneseEnd","readingStart","readingEnd"):problems.need(isinstance(s.get(k),int),q+"/"+k,"must be integer")
-  a,b=s.get("japaneseStart"),s.get("japaneseEnd");c,d=s.get("readingStart"),s.get("readingEnd")
-  if all(isinstance(x,int) for x in (a,b)):
-   problems.need(a==jpos,q+"/japaneseStart","segments must be contiguous")
-   problems.need(0<=a<=b<=len(js),q,"Japanese span out of range")
-   if 0<=a<=b<=len(js):problems.need(js[a:b]==s.get("surface"),q+"/surface","surface/span mismatch")
-   jpos=b;jparts.append(s.get("surface", ""))
-  if all(isinstance(x,int) for x in (c,d)):
-   problems.need(c==rpos,q+"/readingStart","reading segments must be contiguous")
-   problems.need(0<=c<=d<=len(rd),q,"reading span out of range")
-   if 0<=c<=d<=len(rd):problems.need(rd[c:d]==s.get("reading"),q+"/reading","reading/span mismatch")
-   rpos=d;rparts.append(s.get("reading", ""))
-  for k in ("lemma","inflection"):problems.need(k in s,q+"/"+k,"required; use null when not applicable")
-  vc=s.get("vocabularyCandidates");problems.need(isinstance(vc,list),q+"/vocabularyCandidates","must be list")
-  selected=s.get("selectedVocabularyId");problems.need(selected is None or isinstance(selected,str),q+"/selectedVocabularyId","must be string or null")
-  reason=s.get("unlinkedReason")
-  if selected is None:problems.need(isinstance(reason,str) and bool(reason),q+"/unlinkedReason","required when no selected destination")
-  sev=s.get("evidence");problems.need(isinstance(sev,list) and sev and all(evidence_ok(x) for x in sev),q+"/evidence","requires evidence locators")
- problems.need("".join(jparts)==js,p+"/segments","Japanese reconstruction failed")
- problems.need("".join(rparts)==rd,p+"/segments","reading reconstruction failed")
- problems.need(jpos==len(js),p+"/segments","Japanese spans do not cover line")
- problems.need(rpos==len(rd),p+"/segments","reading spans do not cover line")
+  if not isinstance(seg,dict):problems.add(q,"must be object");continue
+  required_strings(q,seg,["segmentId","surface","reading","kind","contextualMeaning","grammaticalRole","vocabularyDisposition"],problems)
+  ids.append(seg.get("segmentId"));kind=seg.get("kind");kinds.append(kind);problems.need(kind in allowed_kinds,q+"/kind","invalid segment kind")
+  for k in ("japaneseStart","japaneseEnd","readingStart","readingEnd"):problems.need(isinstance(seg.get(k),int),q+"/"+k,"must be integer")
+  ja,jb=seg.get("japaneseStart"),seg.get("japaneseEnd");ra,rb=seg.get("readingStart"),seg.get("readingEnd")
+  if all(isinstance(x,int) for x in (ja,jb)):
+   problems.need(ja==jpos,q+"/japaneseStart","segments must be contiguous");problems.need(0<=ja<jb<=len(js),q,"Japanese span must be non-empty and in range")
+   if 0<=ja<=jb<=len(js):problems.need(js[ja:jb]==seg.get("surface"),q+"/surface","surface/span mismatch")
+   jpos=jb;jparts.append(seg.get("surface", ""))
+  if all(isinstance(x,int) for x in (ra,rb)):
+   problems.need(ra==rpos,q+"/readingStart","reading segments must be contiguous");problems.need(0<=ra<rb<=len(rd),q,"reading span must be non-empty and in range")
+   if 0<=ra<=rb<=len(rd):problems.need(rd[ra:rb]==seg.get("reading"),q+"/reading","reading/span mismatch")
+   rpos=rb;rparts.append(seg.get("reading", ""))
+  for k in ("lemma","inflection"):problems.need(k in seg,q+"/"+k,"required; use null only when linguistically inapplicable")
+  if kind!="punctuation":problems.need(isinstance(seg.get("lemma"),str) and bool(seg["lemma"].strip()),q+"/lemma","non-punctuation segment requires lemma")
+  if kind=="auxiliary-or-inflection":problems.need(isinstance(seg.get("inflection"),str) and bool(seg["inflection"].strip()),q+"/inflection","auxiliary/inflection segment requires inflection explanation")
+  vc=seg.get("vocabularyCandidates");problems.need(isinstance(vc,list),q+"/vocabularyCandidates","must be list")
+  if isinstance(vc,list):
+   if kind!="punctuation":problems.need(bool(vc),q+"/vocabularyCandidates","non-punctuation segment requires proposed candidates")
+   for j,v in enumerate(vc):
+    z=f"{q}/vocabularyCandidates/{j}";problems.need(isinstance(v,dict),z,"must be object")
+    if isinstance(v,dict):required_strings(z,v,["surface","reading","lemma"],problems)
+  problems.need(seg.get("selectedVocabularyId") is None,q+"/selectedVocabularyId","must remain null pending Zero canonical resolution")
+  problems.need(seg.get("vocabularyDisposition")=="deferred-zero-canonical-index",q+"/vocabularyDisposition","must defer to Zero canonical index")
+  reason=seg.get("unlinkedReason");problems.need(isinstance(reason,str) and len(reason.strip())>=20,q+"/unlinkedReason","requires substantive deferred-resolution reason")
+  sev=seg.get("evidence");problems.need(isinstance(sev,list) and sev and all(evidence_ok(x) for x in sev),q+"/evidence","requires evidence locators")
+ problems.need(ids==[f"s{i:02d}" for i in range(1,len(segs)+1)],p+"/segments","segment IDs must be ordered s01..sNN")
+ problems.need("".join(jparts)==js,p+"/segments","Japanese reconstruction failed");problems.need("".join(rparts)==rd,p+"/segments","reading reconstruction failed")
+ problems.need(jpos==len(js),p+"/segments","Japanese spans do not cover line");problems.need(rpos==len(rd),p+"/segments","reading spans do not cover line")
+ if len(js)>=10:problems.need(len(segs)>=3,p+"/segments","line of 10+ characters requires at least three meaningful segments")
+ elif len(js)>=6:problems.need(len(segs)>=2,p+"/segments","line of 6+ characters requires at least two meaningful segments")
 def collect_line_refs(obj,path=""):
  refs=[]
  if isinstance(obj,dict):
@@ -130,6 +138,12 @@ def validate_expression(p,e,problems):
  for key,line in lines.items():
   validate_line(p+"/japaneseLines/"+str(key),line,problems)
   if isinstance(line,dict):problems.need(line.get("lineId")==key,p+"/japaneseLines/"+str(key)+"/lineId","must equal map key")
+ texts=[x.get("japanese") for x in lines.values() if isinstance(x,dict)]
+ problems.need(len(texts)==len(set(texts)),p+"/japaneseLines","Japanese texts must be distinct, not only line IDs")
+ total_segments=sum(len(x.get("segments",[])) for x in lines.values() if isinstance(x,dict) and isinstance(x.get("segments"),list))
+ problems.need(total_segments>=12,p+"/japaneseLines","Full Card requires at least twelve meaningful segments across displayed lines")
+ noncontent=sum(1 for x in lines.values() if isinstance(x,dict) for seg in x.get("segments",[]) if isinstance(seg,dict) and seg.get("kind") in ("particle-or-grammar","auxiliary-or-inflection","punctuation"))
+ problems.need(noncontent>=1,p+"/japaneseLines","analysis must identify grammatical, inflectional, or punctuation structure")
  refs=collect_line_refs(e,p);referenced=set()
  for q,r in refs:problems.need(r in lines,q,"unknown line reference");referenced.add(r)
  problems.need(e.get("primaryLineId") in lines,p+"/primaryLineId","unknown primary line");referenced.add(e.get("primaryLineId"))
@@ -146,7 +160,7 @@ def validate_valkyrie(manifest,records):
   p.need(manifest.get("assignment")=="germinal-wave001-valkyrie1-50","/manifest/assignment","wrong assignment")
   expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
  else:
-  match=re.fullmatch(r"germinal-wave002-valkyrie1-checkpoint(0[1-9]|10)-5",str(manifest.get("assignment","")))
+  match=re.fullmatch(r"germinal-wave002-valkyrie1-(?:revision2-)?checkpoint(0[1-9]|10)-5",str(manifest.get("assignment","")))
   p.need(match is not None,"/manifest/assignment","wrong checkpoint assignment")
   checkpoint=int(match.group(1)) if match else 0;expected=[f"V1-W002-C{checkpoint:02d}-{i:03d}" for i in range(1,6)]
   p.need(manifest.get("expectedSlotIds")==expected,"/manifest/expectedSlotIds","checkpoint slot identity mismatch")
@@ -365,11 +379,14 @@ def self_test():
  if not shutil.which("curl"):raise RuntimeError("curl required")
  probe=b"germinal-test";body=json.loads(private_chunk_body("p",probe,probe,1,1));assert base64.b64decode(body["payloadBase64"],validate=True)==probe;validate_safe_report_text("# Safe report\n- Status: `submitted`\n")
  ext={"sourceId":"source:test","artifact":"a","locator":"l","claimScope":"c"};ed={"sourceId":"editorial:Valkyrie1","artifact":"private-checkpoint-output","locator":"line","claimScope":"editorial-proposal-not-source-attestation"}
- def line(lid,external=False):
-  ev=ext if external else ed;seg={"segmentId":"s01","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"meaning","grammaticalRole":"role","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"deferred-zero-canonical-index","unlinkedReason":"checkpoint proposal; Zero canonical resolution required before acceptance","evidence":[ev]};return {"lineId":lid,"japanese":"x","reading":"y","meaning":"meaning","ttsEligible":True,"evidence":[ev],"segments":[seg]}
- ids=["p","r1","r2","f1","f2","d1"];lines={x:line(x,x=="p") for x in ids};exp={"expressionId":"e","primaryLineId":"p","category":"category","usageSummary":"substantive usage summary","verificationState":"candidate","kotoDifficulty":1,"intentions":["intention"],"useWhen":["use when"],"takeCare":["take care"],"relationships":[{"context":"peers","guidance":"relationship guidance"}],"forms":[{"lineId":"p","kind":"primary","register":"standard","meaning":"meaning","ttsEligible":True}],"responses":[{"lineId":"r1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"r2","context":"context","meaning":"meaning","ttsEligible":True}],"followUps":[{"lineId":"f1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"f2","context":"context","meaning":"meaning","ttsEligible":True}],"sources":[ext],"dialogue":{"situation":"situation","relationship":"peers","register":"standard","targetLineId":"p","turns":[{"speaker":"A","lineId":"p","meaning":"meaning"},{"speaker":"B","lineId":"d1","meaning":"meaning"}]},"patterns":{"status":"none-supported","reason":"No safe productive pattern is supported."},"distinctions":{"status":"none-supported","reason":"No safe nearby distinction is supported."},"library":{"searchJapanese":["x"],"searchKana":["y"],"searchMeaning":["m"],"searchIntentions":["i"],"searchUsage":["u"],"alternateForms":[]},"provenance":{"candidateBuild":"c","candidateId":"id","creationDate":"2026-01-01","creator":"Valkyrie1","editorialStatus":"proposal","evidenceBuild":"e"},"japaneseLines":lines}
+ def line(lid,jp,external=False):
+  ev=ext if external else ed;parts=[jp[0],jp[1:]];segs=[];jpos=rpos=0
+  for i,part in enumerate(parts,1):
+   kind="content-or-idiom" if i==1 else "particle-or-grammar";seg={"segmentId":f"s{i:02d}","surface":part,"reading":part,"kind":kind,"contextualMeaning":"segment meaning","grammaticalRole":"content" if i==1 else "grammar","lemma":part,"inflection":None,"japaneseStart":jpos,"japaneseEnd":jpos+len(part),"readingStart":rpos,"readingEnd":rpos+len(part),"vocabularyCandidates":[{"surface":part,"reading":part,"lemma":part}],"selectedVocabularyId":None,"vocabularyDisposition":"deferred-zero-canonical-index","unlinkedReason":"Zero canonical resolution required before acceptance","evidence":[ev]};segs.append(seg);jpos+=len(part);rpos+=len(part)
+  return {"lineId":lid,"japanese":jp,"reading":jp,"meaning":"meaning","ttsEligible":True,"evidence":[ev],"segments":segs}
+ vals={"p":"あい","r1":"うえ","r2":"おか","f1":"きく","f2":"けこ","d1":"さし"};lines={k:line(k,v,k=="p") for k,v in vals.items()};exp={"expressionId":"e","primaryLineId":"p","category":"category","usageSummary":"substantive usage summary","verificationState":"candidate","kotoDifficulty":1,"intentions":["intention"],"useWhen":["use when"],"takeCare":["take care"],"relationships":[{"context":"peers","guidance":"relationship guidance"}],"forms":[{"lineId":"p","kind":"primary","register":"standard","meaning":"meaning","ttsEligible":True}],"responses":[{"lineId":"r1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"r2","context":"context","meaning":"meaning","ttsEligible":True}],"followUps":[{"lineId":"f1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"f2","context":"context","meaning":"meaning","ttsEligible":True}],"sources":[ext],"dialogue":{"situation":"situation","relationship":"peers","register":"standard","targetLineId":"p","turns":[{"speaker":"A","lineId":"p","meaning":"meaning"},{"speaker":"B","lineId":"d1","meaning":"meaning"}]},"patterns":{"status":"none-supported","reason":"No safe productive pattern is supported."},"distinctions":{"status":"none-supported","reason":"No safe nearby distinction is supported."},"library":{"searchJapanese":["x"],"searchKana":["y"],"searchMeaning":["m"],"searchIntentions":["i"],"searchUsage":["u"],"alternateForms":[]},"provenance":{"candidateBuild":"c","candidateId":"id","creationDate":"2026-01-01","creator":"Valkyrie1","editorialStatus":"proposal","evidenceBuild":"e"},"japaneseLines":lines}
  for cp in (1,10):
-  rs=[{"slotId":f"V1-W002-C{cp:02d}-{i:03d}","status":"submitted","expression":exp} for i in range(1,6)];m={"formatVersion":VALK_CHECKPOINT_FORMAT,"agent":"Valkyrie1","assignment":f"germinal-wave002-valkyrie1-checkpoint{cp:02d}-5","expectedSlotIds":[r["slotId"] for r in rs],"attempted":5,"submitted":5,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(rs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"};probs=validate_valkyrie(m,rs)
+  rs=[{"slotId":f"V1-W002-C{cp:02d}-{i:03d}","status":"submitted","expression":exp} for i in range(1,6)];m={"formatVersion":VALK_CHECKPOINT_FORMAT,"agent":"Valkyrie1","assignment":f"germinal-wave002-valkyrie1-revision2-checkpoint{cp:02d}-5","expectedSlotIds":[r["slotId"] for r in rs],"attempted":5,"submitted":5,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(rs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"};probs=validate_valkyrie(m,rs)
   if probs:raise RuntimeError(f"checkpoint {cp} self-test failed: "+probs[0])
  return True
 def main(argv=None):

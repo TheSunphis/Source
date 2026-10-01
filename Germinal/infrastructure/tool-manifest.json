@@ -7,7 +7,7 @@
   "files": {
     "crow-checkpoint-v2.schema.json": "775cb4162f09f8c5b6bfcaf6f8f16e2a14c488d7815c163ad910d3fd2a16accc",
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "11310d21dba3bdb65306e6fcefcf52893369106cc23cb50ded605f7fddd369f9",
+    "germinal_tool.py": "d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985",
     "valkyrie-checkpoint-v2.schema.json": "81cb1e0c47159017454080d55d974e9466e324c8b5d6c2744548df7e2c860fb1",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
@@ -15,6 +15,12 @@
     "reason": "one-line reuse and one-turn dialogue",
     "sha256": "dd027dfdec8de610347463e93af2e6c5a395c559f098458204d774200e037e21"
   },
-  "selfTest": "passed rich Card checkpoints 01 and 10",
-  "toolkit": "germinal-infrastructure-v8"
+  "selfTest": "passed segmented Full Cards at checkpoints 01 and 10",
+  "toolkit": "germinal-infrastructure-v9",
+  "v8PseudoSegmentationRejectionTest": {
+    "bytes": 4669,
+    "passed": true,
+    "releaseId": 401004191,
+    "sha256": "49f852d385d9ec90d176f8ba382bb617807bf44578bdb794968dbb288bd7aaf4"
+  }
 }

@@ -18,3 +18,5 @@ Version 6 completes the API-only path: private worker outputs are split into ide
 Version 7 adds user-approved Wave 002 five-item checkpoint validation while retaining the closed Wave 001 formats. The exact live Checkpoint 01 dossier bundle was reconstructed and verified through the API-only input function before activation.
 
 Version 8 enables one-launch ten-checkpoint processing and enforces complete Card structure: distinct response/follow-up lines, two-turn dialogue, at least six analysed Japanese lines, Library/provenance checks, and explicit pattern/distinction dispositions. The first v7 checkpoint bundle is preserved but rejected before Crow.
+
+Version 9 rejects whole-line pseudo-segmentation, requires the established segment-kind taxonomy and meaningful lemma/inflection/candidate fields, and supports the Wave 002 revision2 assignment. Length/count floors are structural anti-placeholder gates, not linguistic proof.
