@@ -2,7 +2,7 @@
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
 import argparse,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v3"
+VERSION="germinal-tool-v4"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 STATUSES={"submitted","abstained","failed"}
@@ -214,6 +214,39 @@ def fetch_release_asset(owner,repo,asset_id,expected_bytes,expected_sha,output,c
  if n!=expected_bytes or digest!=expected_sha:
   os.remove(part);raise RuntimeError("completed asset identity mismatch")
  os.replace(part,output);return n,digest
+def fetch_release_body_bundle(owner,repo,release_ids,expected_bytes,expected_sha,output,retries=5):
+ token=github_token();ids=[int(x) for x in release_ids.split(",") if x.strip()]
+ if not ids or expected_bytes<1 or retries<1:raise ValueError("invalid private body-bundle parameters")
+ parts={};bundle_name=None;declared_count=None
+ for release_id in ids:
+  obj=None;last=None
+  for _ in range(retries):
+   try:
+    url=f"https://api.github.com/repos/{owner}/{repo}/releases/{release_id}"
+    req=urllib.request.Request(url,headers={"Authorization":f"Bearer {token}","Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28","User-Agent":"Germinal-Agent"})
+    with urllib.request.urlopen(req,timeout=60) as r:obj=json.loads(r.read())
+    break
+   except Exception as e:last=e;obj=None
+  if obj is None:raise RuntimeError(f"private release metadata unavailable for release {release_id}: {type(last).__name__}") from last
+  if not obj.get("draft"):raise RuntimeError(f"release {release_id} is not private draft metadata")
+  try:chunk=json.loads(obj.get("body") or "")
+  except Exception as e:raise RuntimeError(f"release {release_id} has invalid private chunk body") from e
+  if chunk.get("format")!="germinal-private-body-chunk-v1":raise RuntimeError(f"release {release_id} has wrong chunk format")
+  try:data=base64.b64decode(chunk["payloadBase64"],validate=True)
+  except Exception as e:raise RuntimeError(f"release {release_id} has invalid base64") from e
+  index=chunk.get("index");count=chunk.get("count")
+  if not isinstance(index,int) or not isinstance(count,int) or not 1<=index<=count:raise RuntimeError(f"release {release_id} has invalid chunk index")
+  if len(data)!=chunk.get("chunkBytes") or sha(data)!=chunk.get("chunkSha256"):raise RuntimeError(f"release {release_id} chunk identity mismatch")
+  if chunk.get("bundleBytes")!=expected_bytes or chunk.get("bundleSha256")!=expected_sha:raise RuntimeError(f"release {release_id} bundle identity mismatch")
+  if declared_count is None:declared_count=count;bundle_name=chunk.get("bundle")
+  if count!=declared_count or chunk.get("bundle")!=bundle_name or index in parts:raise RuntimeError("inconsistent or duplicate private chunks")
+  parts[index]=data;print(json.dumps({"privateChunk":"verified","index":index,"count":count},sort_keys=True))
+ if declared_count!=len(ids) or set(parts)!=set(range(1,declared_count+1)):raise RuntimeError("private chunk set incomplete")
+ payload=b"".join(parts[i] for i in range(1,declared_count+1))
+ if len(payload)!=expected_bytes or sha(payload)!=expected_sha:raise RuntimeError("reconstructed private bundle identity mismatch")
+ part=output+".part"
+ with open(part,"wb") as f:f.write(payload);f.flush();os.fsync(f.fileno())
+ os.replace(part,output);return len(payload),sha(payload),bundle_name
 def deterministic_archive(manifest,records,records_name,out_path):
  members={"manifest.json":canonical(manifest),records_name:records_bytes(records)}
  raw=io.BytesIO()
@@ -243,6 +276,7 @@ def main(argv=None):
  g=sub.add_parser("package");g.add_argument("kind",choices=["valkyrie","crow"]);g.add_argument("manifest");g.add_argument("records");g.add_argument("output")
  s=sub.add_parser("sha256");s.add_argument("file")
  f=sub.add_parser("fetch-release-asset");f.add_argument("owner");f.add_argument("repo");f.add_argument("asset_id",type=int);f.add_argument("expected_bytes",type=int);f.add_argument("expected_sha");f.add_argument("output");f.add_argument("--chunk-bytes",type=int,default=4*1024*1024);f.add_argument("--retries",type=int,default=5)
+ b=sub.add_parser("fetch-release-body-bundle");b.add_argument("owner");b.add_argument("repo");b.add_argument("release_ids");b.add_argument("expected_bytes",type=int);b.add_argument("expected_sha");b.add_argument("output");b.add_argument("--retries",type=int,default=5)
  a=ap.parse_args(argv)
  if a.cmd=="self-test":self_test();print(VERSION+" self-test passed");return 0
  if a.cmd=="sha256":
@@ -252,6 +286,8 @@ def main(argv=None):
   print(json.dumps({"bytes":n,"sha256":z.hexdigest()},sort_keys=True));return 0
  if a.cmd=="fetch-release-asset":
   n,d=fetch_release_asset(a.owner,a.repo,a.asset_id,a.expected_bytes,a.expected_sha,a.output,a.chunk_bytes,a.retries);print(json.dumps({"transfer":"complete","bytes":n,"sha256":d},sort_keys=True));return 0
+ if a.cmd=="fetch-release-body-bundle":
+  n,d,name=fetch_release_body_bundle(a.owner,a.repo,a.release_ids,a.expected_bytes,a.expected_sha,a.output,a.retries);print(json.dumps({"privateBodyBundle":"complete","bundle":name,"bytes":n,"sha256":d},sort_keys=True));return 0
  m=read_json(a.manifest);r=read_ndjson(a.records);probs=validate_valkyrie(m,r) if (a.cmd=="validate-valkyrie" or getattr(a,"kind",None)=="valkyrie") else validate_crow(m,r)
  if probs:
   print(json.dumps({"status":"failed","problemCount":len(probs),"problems":probs[:200]},ensure_ascii=False,sort_keys=True));return 1

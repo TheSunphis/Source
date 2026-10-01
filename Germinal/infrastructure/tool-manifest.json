@@ -1,14 +1,11 @@
 {
   "files": {
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "e2d005a05509815c4b3687c624677f031bbe183c3f7ae6ab051b003c8907cc58",
+    "germinal_tool.py": "07eadfcadb708480330538b4ac3f75070dd8b292eabb4f8eeec2e467ae8d4df6",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
+  "privateBodyBundleTest": "eight private draft-release bodies reconstructed through api.github.com with exact bundle identity",
   "runtime": "python>=3.11 standard-library plus curl fallback",
   "selfTest": "passed in memory before commit",
-  "toolkit": "germinal-infrastructure-v3",
-  "transferTests": [
-    "Python HTTP 206 range and full identity passed",
-    "curl HTTP/1.1 TLS 1.2 range passed"
-  ]
+  "toolkit": "germinal-infrastructure-v4"
 }
