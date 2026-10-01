@@ -1,90 +1,97 @@
-# Valkyrie1 due — one gold Card
+# Valkyrie1 due — evidence-locked gold Card repair
 
 - Exact agent: `Valkyrie1`
-- Assignment: `germinal-goldcard-ii-yo-valkyrie1-1`
-- Launch state: `HOLD_COMPLETED_ZERO_COMPILED`
+- Assignment: `germinal-goldcard-ii-yo-valkyrie1-repair-1`
+- Launch state: `ACTIVE`
 - Exact slot: `V1-GOLD-001`
-- Output scope: one candidate-specific Full Expression Card
+- Scope: repair one proposal; no Vocabulary compilation
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
 
-Valkyrie1 completed the one-Card proposal. Zero validated it, expanded the canonical Vocabulary build, compiled 27 links with four explicit punctuation dispositions, and released the immutable Card to Crow1. Do not relaunch or revise unless Zero issues a new immutable due.
+The user selected one repair of the same Card with a user-visible checkpoint before any new linking or Crow review. Preserve the frozen candidate boundary.
 
-## Private gold material
+## Non-negotiable semantic lock
+
+- Dialogue act: `casual-reassurance-after-minor-apology`
+- Excluded act: `affirmative-permission`
+- Source constraint: `frozen-candidate-reassurance-boundary`
+
+The target reassures a familiar person after a minor apology, mistake, or inconvenience: there is no serious unresolved harm and no further repair is demanded. It must not grant permission to perform an action.
+
+## Analysis policy
+
+- Target segmentation: `ii-adjective-plus-yo-final-particle`
+- Suru-taking nouns: `split-noun-and-support-verb` consistently wherever they occur
+- Every displayed Japanese line requires complete meaningful analysis
+- All `selectedVocabularyId` values remain null in this preview proposal
+- Do not mint or reuse canonical IDs; Zero will link only after user approval
+
+## Inputs
+
+Original one-dossier material:
 
 - Release ID: `401068873`
 - Bundle: `germinal-goldcard-ii-yo-material-v1.tar.gz`
 - Bytes: `2311`
 - SHA-256: `26f5ade563e9f4eca8a1afd1a106c74215961090067e6d48685611a218e0095d`
-- Contents: exact original dossier plus Zero's one-slot assignment contract
 
-## Canonical Vocabulary seed
+Rejected prior proposal, for defect comparison only:
 
-- Release ID: `401067757`
-- Bundle: `koto-vocabulary-goldcard-seed-v1.tar.gz`
-- Bytes: `1947`
-- SHA-256: `382de490cbc26463c98fd6837856cecbb019233fa17f4818723e0dd6ad207d1c`
-- Build ID: `vocabularybuild1:e43cee2b001e9fd512f2ccd5e66deb88`
-- Zero-provided identities: `vocabulary2:9388217c802184c295872c8415e616c2`, `vocabulary2:0c6dad3ba8bac1f9b07660f354af8b13`
+- Release ID: `401073594`
+- Bytes: `5783`
+- SHA-256: `c7289083e48af3f5d06622ddc36cbd9fa0ed4d2f12f18d85e604eb602a7ec914`
 
-The seed is evidence and identity input. The proposal validator deliberately keeps every `selectedVocabularyId` null. Supply surface/reading/lemma candidates; Zero alone expands the registry and compiles real links after the proposal passes. Never mint an ID.
+Do not preserve its permission scenario or inconsistent repeated-construction analysis merely because it already exists.
 
 ## Infrastructure
 
-Core transport and expression validation:
+Retrieve these immutable tools into one directory and verify hashes:
 
-- Commit: `5eccc8e4c768bce21ff00398cb172f97617d3f24`
-- Tool: `Germinal/infrastructure/germinal_tool.py`
-- SHA-256: `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
+- Core `germinal_tool.py`, commit `5eccc8e4c768bce21ff00398cb172f97617d3f24`, SHA-256 `d55a1d94555ba1a0ad75cd43489380a5c51ede3b2c04a727f1c747c277a9e985`
+- Base `goldcard_tool.py`, commit `68102abf9e9aac39989881849d89b12285258959`, SHA-256 `acbd61452325517af2dffb7c57aaa5159dc37a8ff5b95dfb1ef404278fca3aa1`
+- Repair `goldcard_repair_tool.py`, commit `5576866e9ffd13528689b24be5c1129ee138e32a`, SHA-256 `b19c05f77bb724fcd3c765f051333c54c9057227e2dca6159de88192c1b74918`
+- Repair schema SHA-256: `ff98bd7e9275d28985424c68f57c173eea1ad86dfdb222736473ede94cf9f890`
 
-Gold validator and packager:
+Run every self-test. Do not patch infrastructure.
 
-- Commit: `68102abf9e9aac39989881849d89b12285258959`
-- Tool: `Germinal/goldcard/goldcard_tool.py`
-- SHA-256: `acbd61452325517af2dffb7c57aaa5159dc37a8ff5b95dfb1ef404278fca3aa1`
-- Schema SHA-256: `e0c51d3409b503f4ba9524d0a01981c1af4a4995ef00d09a36cbc7695b8c0999`
+## Card requirements
 
-Place the verified core and gold tools together so `goldcard_tool.py` imports the pinned core. Run both self-tests. Do not patch or replace them.
+Author concrete, candidate-specific content from the original dossier:
 
-## Authoring contract
+- a primary meaning that clearly conveys reassurance or “no problem / do not worry,” not permission;
+- a specific minor-apology situation and appropriate familiar relationship;
+- at least two natural responses to the reassurance;
+- at least two useful follow-ups by the reassuring speaker;
+- at least three coherent dialogue turns and seven distinct analysed lines;
+- complete forms, intentions, Use when, Take care, relationships, Library fields, provenance, and honest pattern/distinction decisions;
+- specific rationale for every response, follow-up, and dialogue choice;
+- no generic Wave 002 boilerplate.
 
-Create a concrete Card for the target Expression in a specific believable interaction. External dossier evidence anchors the target form, reading, meaning boundary, and factual claims. Editorial teaching material is permitted only as `editorial:Valkyrie1` proposal content and remains independently reviewable.
+Add exact objects:
 
-Required:
-
-- substantive candidate-specific intention, Use when, Take care, and relationship guidance;
-- at least two context-fitting responses and two context-fitting follow-ups;
-- a concrete dialogue with at least three turns and three distinct analysed lines;
-- at least seven distinct Japanese lines across the Card;
-- complete meaningful segmentation for every displayed line;
-- exact target segmentation into `いい` and final particle `よ`;
-- complete forms, Library fields, provenance, source identities, and Koto Difficulty;
-- honest alternate-form, pattern, and distinction decisions;
-- a `specificityAudit` explaining why every response/follow-up fits, the dialogue is coherent, and each omission is justified.
-
-Do not write generic placeholders such as “dossier-anchored meaning” or a context that merely says one speaker uses the target. Do not add unsupported variety. Do not use Commonness, CEFR/JF/JLPT grades, or external TTS.
-
-## Output format
-
-Manifest:
-
-- `formatVersion`: `germinal-goldcard-valkyrie-v1`
-- `agent`: `Valkyrie1`
-- `assignment`: `germinal-goldcard-ii-yo-valkyrie1-1`
-- `expectedSlotIds`: [`V1-GOLD-001`]
-- exact attempted/submitted/abstained/failed conservation for one slot
-- `recordSha256`: canonical Gold-tool record digest
-- exact `inputAsset`, `vocabularySeedAsset`, `evidenceBuild`, and `candidateBuild` identities
-
-Record: `slotId`, `status`, and either the Full Expression object or an honest `reasonCode`.
-
-Commands:
-
-```text
-python3 goldcard_tool.py validate manifest.json record.json
-python3 goldcard_tool.py package manifest.json record.json germinal-valkyrie1-goldcard-ii-yo-v1.tar.gz
-python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-goldcard-ii-yo-valkyrie1-1 germinal-valkyrie1-goldcard-ii-yo-v1.tar.gz
+```json
+"boundaryLock": {
+  "dialogueAct": "casual-reassurance-after-minor-apology",
+  "excludedDialogueActs": ["affirmative-permission"],
+  "sourceConstraint": "frozen-candidate-reassurance-boundary"
+},
+"analysisPolicy": {
+  "targetSegmentation": "ii-adjective-plus-yo-final-particle",
+  "suruTakingNounPolicy": "split-noun-and-support-verb"
+}
 ```
 
-## Completion
+## Output
 
-Update the safe public report with one output bundle's bytes, SHA-256, and private release IDs. Include no Japanese, meanings, evidence, analyses, or payload excerpts. Publish the report with the pinned core tool and stop. Zero will validate, expand the registry, compile links, and only then decide whether Crow receives the Card.
+- Manifest format: `germinal-goldcard-valkyrie-v2`
+- Assignment: `germinal-goldcard-ii-yo-valkyrie1-repair-1`
+- Expected slot IDs: [`V1-GOLD-001`]
+- Bundle: `germinal-valkyrie1-goldcard-ii-yo-repair-v2.tar.gz`
+- Private release title: `germinal-goldcard-ii-yo-valkyrie1-repair-1`
+
+```text
+python3 goldcard_repair_tool.py validate manifest.json record.json
+python3 goldcard_repair_tool.py package manifest.json record.json germinal-valkyrie1-goldcard-ii-yo-repair-v2.tar.gz
+python3 germinal_tool.py upload-release-body-bundle TheSunphis Source germinal-goldcard-ii-yo-valkyrie1-repair-1 germinal-valkyrie1-goldcard-ii-yo-repair-v2.tar.gz
+```
+
+Publish one safe report with output bytes, SHA-256, release IDs, and conserved counts. Then stop. Zero will validate and show the unlinked Card to the user. Do not contact Crow1.

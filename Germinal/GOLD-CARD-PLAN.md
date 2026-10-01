@@ -11,3 +11,7 @@
 - Scale decision: user sees the linked reviewed Card before any larger batch
 - Accepted count: zero
 - Live release changes: none
+
+## Evidence-locked repair
+
+The user selected one repair of the same Card. The frozen reassurance dialogue act and a single segmentation policy are binding. Zero must show the unlinked repair to the user before any Vocabulary compile or Crow activation.
