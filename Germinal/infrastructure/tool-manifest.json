@@ -1,5 +1,5 @@
 {
-  "exactPrivateBodyFunctionTest": {
+  "exactPrivateInputFunctionTest": {
     "bundleBytes": 510189,
     "bundleSha256": "56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364",
     "filesystemPersistence": false,
@@ -8,10 +8,12 @@
   },
   "files": {
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "b3ca5e1a5713120e05e94b09e62c261058ac8e3b05dbce5ded59021469b3ff73",
+    "germinal_tool.py": "26321bd1bcb270451ef9cca05272b19dd46c39b330ff18d81ae181974d812515",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
+  "outputTransport": "authenticated api.github.com private draft-release bodies",
+  "reportTransport": "authenticated GitHub Contents API",
   "runtime": "python>=3.11 standard-library plus curl fallback",
-  "selfTest": "passed including base64 handler",
-  "toolkit": "germinal-infrastructure-v5"
+  "selfTest": "passed including input decode, output chunk construction, and safe-report validation",
+  "toolkit": "germinal-infrastructure-v6"
 }

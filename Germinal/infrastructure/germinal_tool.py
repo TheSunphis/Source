@@ -2,7 +2,7 @@
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
 import argparse,base64,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v5"
+VERSION="germinal-tool-v6"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 STATUSES={"submitted","abstained","failed"}
@@ -247,6 +247,54 @@ def fetch_release_body_bundle(owner,repo,release_ids,expected_bytes,expected_sha
  part=output+".part"
  with open(part,"wb") as f:f.write(payload);f.flush();os.fsync(f.fileno())
  os.replace(part,output);return len(payload),sha(payload),bundle_name
+def github_api_json(owner,repo,path,token,method="GET",payload=None,retries=5):
+ data=None if payload is None else json.dumps(payload,separators=(",",":")).encode();last=None
+ for _ in range(retries):
+  try:
+   req=urllib.request.Request(f"https://api.github.com/repos/{owner}/{repo}{path}",data=data,method=method,headers={"Authorization":f"Bearer {token}","Accept":"application/vnd.github+json","Content-Type":"application/json","X-GitHub-Api-Version":"2022-11-28","User-Agent":"Germinal-Agent"})
+   with urllib.request.urlopen(req,timeout=60) as r:
+    body=r.read();return json.loads(body) if body else None
+  except Exception as e:last=e
+ raise RuntimeError(f"GitHub API {method} failed for safe endpoint: {type(last).__name__}") from last
+def private_chunk_body(bundle_name,bundle,part,index,count):
+ obj={"format":"germinal-private-body-chunk-v1","bundle":bundle_name,"index":index,"count":count,"chunkBytes":len(part),"chunkSha256":sha(part),"bundleBytes":len(bundle),"bundleSha256":sha(bundle),"payloadBase64":base64.b64encode(part).decode()}
+ return json.dumps(obj,sort_keys=True,separators=(",",":"))
+def upload_release_body_bundle(owner,repo,assignment,bundle_path,chunk_bytes=70000,retries=5):
+ if chunk_bytes<16384 or chunk_bytes>80000:raise ValueError("private metadata chunk size out of bounds")
+ token=github_token()
+ with open(bundle_path,"rb") as f:bundle=f.read()
+ if not bundle:raise ValueError("private output bundle is empty")
+ digest=sha(bundle);parts=[bundle[i:i+chunk_bytes] for i in range(0,len(bundle),chunk_bytes)];slug="".join(ch if ch.isalnum() or ch=="-" else "-" for ch in assignment.lower()).strip("-")
+ existing={};page=1
+ while page<=10:
+  rels=github_api_json(owner,repo,f"/releases?per_page=100&page={page}",token,retries=retries)
+  for rel in rels:existing[rel.get("tag_name")]=rel
+  if len(rels)<100:break
+  page+=1
+ ids=[]
+ for i,part in enumerate(parts,1):
+  tag=f"germinal-private-{slug}-{digest[:16]}-{i:03d}";body=private_chunk_body(os.path.basename(bundle_path),bundle,part,i,len(parts));rel=existing.get(tag)
+  if rel:
+   if not rel.get("draft") or rel.get("body")!=body:raise RuntimeError(f"existing private output chunk conflict at index {i}")
+  else:
+   rel=github_api_json(owner,repo,"/releases",token,"POST",{"tag_name":tag,"target_commitish":"Germinal","name":f"Germinal private output {i}/{len(parts)}","body":body,"draft":True,"prerelease":True,"generate_release_notes":False},retries)
+  ids.append(rel["id"]);print(json.dumps({"privateOutputChunk":"stored","index":i,"count":len(parts),"releaseId":rel["id"]},sort_keys=True))
+ return len(bundle),digest,ids
+def validate_safe_report_text(text):
+ if len(text.encode())>32768:raise ValueError("safe report exceeds 32 KiB")
+ forbidden=("payloadBase64","Authorization: Bearer","oauth_token","<token>")
+ if any(x in text for x in forbidden):raise ValueError("safe report contains forbidden material")
+ for ch in text:
+  o=ord(ch)
+  if 0x3040<=o<=0x30ff or 0x3400<=o<=0x9fff:raise ValueError("safe report contains Japanese payload text")
+ return True
+def publish_safe_report(owner,repo,branch,path,report_file,message,retries=5):
+ token=github_token()
+ with open(report_file,"r",encoding="utf-8") as f:text=f.read()
+ validate_safe_report_text(text)
+ current=github_api_json(owner,repo,f"/contents/{path}?ref={branch}",token,retries=retries)
+ result=github_api_json(owner,repo,f"/contents/{path}",token,"PUT",{"message":message,"content":base64.b64encode(text.encode()).decode(),"sha":current["sha"],"branch":branch},retries)
+ return result["commit"]["sha"]
 def deterministic_archive(manifest,records,records_name,out_path):
  members={"manifest.json":canonical(manifest),records_name:records_bytes(records)}
  raw=io.BytesIO()
@@ -261,6 +309,9 @@ def self_test():
  if not shutil.which("curl"):raise RuntimeError("curl is required as the alternate TLS transport")
  probe=b"germinal-private-body-self-test"
  if base64.b64decode(base64.b64encode(probe),validate=True)!=probe:raise RuntimeError("base64 self-test failed")
+ body=json.loads(private_chunk_body("probe.tar.gz",probe,probe,1,1))
+ if base64.b64decode(body["payloadBase64"],validate=True)!=probe or body["bundleSha256"]!=sha(probe):raise RuntimeError("private output chunk self-test failed")
+ validate_safe_report_text("# Safe report\n\n- Status: `submitted`\n")
  ev={"sourceId":"s","artifact":"a","locator":"l","claimScope":"c"}
  seg={"segmentId":"s1","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"m","grammaticalRole":"r","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"reviewed-unlinked","unlinkedReason":"none","evidence":[ev]}
  line={"lineId":"l1","japanese":"x","reading":"y","meaning":"m","ttsEligible":True,"evidence":[ev],"segments":[seg]}
@@ -279,6 +330,8 @@ def main(argv=None):
  s=sub.add_parser("sha256");s.add_argument("file")
  f=sub.add_parser("fetch-release-asset");f.add_argument("owner");f.add_argument("repo");f.add_argument("asset_id",type=int);f.add_argument("expected_bytes",type=int);f.add_argument("expected_sha");f.add_argument("output");f.add_argument("--chunk-bytes",type=int,default=4*1024*1024);f.add_argument("--retries",type=int,default=5)
  b=sub.add_parser("fetch-release-body-bundle");b.add_argument("owner");b.add_argument("repo");b.add_argument("release_ids");b.add_argument("expected_bytes",type=int);b.add_argument("expected_sha");b.add_argument("output");b.add_argument("--retries",type=int,default=5)
+ u=sub.add_parser("upload-release-body-bundle");u.add_argument("owner");u.add_argument("repo");u.add_argument("assignment");u.add_argument("bundle");u.add_argument("--chunk-bytes",type=int,default=70000);u.add_argument("--retries",type=int,default=5)
+ r=sub.add_parser("publish-safe-report");r.add_argument("owner");r.add_argument("repo");r.add_argument("branch");r.add_argument("path");r.add_argument("report_file");r.add_argument("message");r.add_argument("--retries",type=int,default=5)
  a=ap.parse_args(argv)
  if a.cmd=="self-test":self_test();print(VERSION+" self-test passed");return 0
  if a.cmd=="sha256":
@@ -290,6 +343,10 @@ def main(argv=None):
   n,d=fetch_release_asset(a.owner,a.repo,a.asset_id,a.expected_bytes,a.expected_sha,a.output,a.chunk_bytes,a.retries);print(json.dumps({"transfer":"complete","bytes":n,"sha256":d},sort_keys=True));return 0
  if a.cmd=="fetch-release-body-bundle":
   n,d,name=fetch_release_body_bundle(a.owner,a.repo,a.release_ids,a.expected_bytes,a.expected_sha,a.output,a.retries);print(json.dumps({"privateBodyBundle":"complete","bundle":name,"bytes":n,"sha256":d},sort_keys=True));return 0
+ if a.cmd=="upload-release-body-bundle":
+  n,d,ids=upload_release_body_bundle(a.owner,a.repo,a.assignment,a.bundle,a.chunk_bytes,a.retries);print(json.dumps({"privateOutputBundle":"stored","bytes":n,"sha256":d,"releaseIds":ids},sort_keys=True));return 0
+ if a.cmd=="publish-safe-report":
+  commit=publish_safe_report(a.owner,a.repo,a.branch,a.path,a.report_file,a.message,a.retries);print(json.dumps({"safeReport":"published","commit":commit},sort_keys=True));return 0
  m=read_json(a.manifest);r=read_ndjson(a.records);probs=validate_valkyrie(m,r) if (a.cmd=="validate-valkyrie" or getattr(a,"kind",None)=="valkyrie") else validate_crow(m,r)
  if probs:
   print(json.dumps({"status":"failed","problemCount":len(probs),"problems":probs[:200]},ensure_ascii=False,sort_keys=True));return 1

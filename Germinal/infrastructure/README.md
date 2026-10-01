@@ -12,3 +12,5 @@ The validator proves structural conditions only. It is never independent linguis
 Version 4 adds private body-bundle retrieval through authenticated `api.github.com` draft-release metadata. This avoids the release-asset delivery host entirely while preserving private GitHub-only storage and exact per-chunk/final identity checks.
 
 Version 5 fixes the missing base64 import in version 4. Before publication, Zero executed the exact eight-release `fetch_release_body_bundle` function against the live private draft metadata with an in-memory output sink and verified all 510,189 bytes and the final SHA-256.
+
+Version 6 completes the API-only path: private worker outputs are split into idempotently named draft-release metadata chunks, and safe public reports are committed through the GitHub Contents API. The self-test covers output chunk encoding and report safety; the exact live input retrieval remains integration-tested.
