@@ -20,14 +20,14 @@ Do not begin until ZERO COMMAND supplies all of the following:
 ## Independence rules
 
 - Do not ask the compiler for explanations or corrections.
-- Do not repair, rewrite, complete, or improve the family.
+- Do not repair, rewrite, complete, or improve the sentence.
 - Do not rely on the compiler's confidence or gate booleans.
 - Compare every substantive claim with supplied evidence.
 - A finding and a pass cannot coexist.
 
 ## Required audit
 
-Evaluate inclusion, family boundaries, Japanese naturalness, reading and meaning, register and relationship safety, Koto Difficulty, forms, complete per-form analysis, canonical Vocabulary candidates, reverse-link omissions, dialogue, responses, follow-ups, patterns, distinctions, source/licence provenance, Library density, and Full Family Card completeness.
+Evaluate inclusion, sentence boundaries, Japanese naturalness, reading and meaning, register and relationship safety, Koto Difficulty, forms, complete per-form analysis, canonical Vocabulary candidates, reverse-link omissions, dialogue, responses, follow-ups, patterns, distinctions, source/licence provenance, Library density, and Full Sentence Card completeness.
 
 Every failure must include a stable code, severity, JSON pointer, evidence locator, and concise explanation. Unsupported or uncheckable claims require quarantine.
 

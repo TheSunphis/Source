@@ -13,7 +13,7 @@ The user creates sixteen additional chats. A compiler and its matching inspector
 ## Information boundaries
 
 - Workers may use only their immutable clean-room task packet, the current schemas, the source registry, and these instructions.
-- Workers must not inspect `Expressions/`, former family JSON, former decisions, former annotations, or former IDs.
+- Workers must not inspect `Expressions/`, former sentence JSON, former decisions, former annotations, or former IDs.
 - Model memory is not source authority.
 - Important attested forms may not be silently omitted. If complete analysis cannot be supplied for every displayed form, abstain or quarantine the slot.
 - Personal state, live routes, and current runtime data are out of scope.
@@ -25,7 +25,7 @@ Source is public. Never commit or expose:
 - restricted evidence;
 - candidate payloads;
 - agent prompts or responses containing evidence;
-- family or analysis payloads;
+- sentence or analysis payloads;
 - critic reports containing retained evidence;
 - raw Vocabulary snapshots.
 
@@ -54,4 +54,4 @@ Only ZERO COMMAND may derive `passed-pilot-gates` after deterministic merge vali
 
 ## Pilot law
 
-Eight attempted slots must resolve to eight passed-or-quarantined records. Accepted families remain zero. Scaling is forbidden unless the merged result is exactly 8/8 passed without weakening any gate.
+Eight attempted slots must resolve to eight passed-or-quarantined records. Accepted sentences remain zero. Scaling is forbidden unless the merged result is exactly 8/8 passed without weakening any gate.
