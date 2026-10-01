@@ -1,0 +1,46 @@
+{
+  "$id": "germinal-crow-review-v1-record",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "checks": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "findings": {
+      "items": {
+        "required": [
+          "severity",
+          "code",
+          "pointer",
+          "evidenceLocator",
+          "explanation",
+          "gate"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "recommendation": {
+      "enum": [
+        "pass",
+        "quarantine"
+      ]
+    },
+    "slotId": {
+      "pattern": "^V1-W001-[0-9]{3}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "slotId",
+    "recommendation",
+    "checks",
+    "findings"
+  ],
+  "title": "Germinal Crow review record",
+  "type": "object"
+}
