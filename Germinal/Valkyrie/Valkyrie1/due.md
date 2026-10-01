@@ -2,12 +2,12 @@
 
 - Exact agent: `Valkyrie1`
 - Assignment: `germinal-goldcard-ii-yo-valkyrie1-1`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_ZERO_COMPILED`
 - Exact slot: `V1-GOLD-001`
 - Output scope: one candidate-specific Full Expression Card
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
 
-Wave 002 is failed audit evidence and is not a content source. Rebuild the selected target from the exact original dossier and the new bounded Vocabulary seed. Do not reuse the rejected generic intentions, contexts, five-line support template, or dialogue frame.
+Valkyrie1 completed the one-Card proposal. Zero validated it, expanded the canonical Vocabulary build, compiled 27 links with four explicit punctuation dispositions, and released the immutable Card to Crow1. Do not relaunch or revise unless Zero issues a new immutable due.
 
 ## Private gold material
 
