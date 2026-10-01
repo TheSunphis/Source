@@ -2,13 +2,13 @@
 
 - Exact agent: `Crow1`
 - Assignment: `germinal-goldcard-ii-yo-crow1-correction-1`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_ZERO_REJECTED`
 - Expected reviews: `1`
 - Exact slot: `V1-GOLD-001`
 - Role: independent critic; do not repair
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-The user selected a canonical-link repair followed by one bounded corrected review. Card teaching content is unchanged. Zero added an explicit canonical construction, recompiled one link, and retained the superseded candidate record as append-only audit history.
+Crow1 submitted the bounded corrected review. Zero rejected its pass because the line and sense rationales remained templated aggregate assurances rather than substantive independent scrutiny. Do not relaunch until the user decides final disposition.
 
 ## Immutable inputs
 
