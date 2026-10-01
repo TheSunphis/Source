@@ -1,0 +1,7 @@
+{
+  "checkCount": 16,
+  "schemaSha256": "480a9cb6b209c8a9047c61cb9525a34a40b1b63a12bf25684e6a58a7cdd30562",
+  "selfTest": "passed",
+  "tool": "germinal-goldcard-crow-repair-tool-v2",
+  "toolSha256": "f05cc5ca70f72962475f77e2512bebf0e5608af2766e054d39d6d72b7f951e4d"
+}
