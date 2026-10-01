@@ -1,0 +1,7 @@
+{
+  "baseToolCommit": "68102abf9e9aac39989881849d89b12285258959",
+  "schemaSha256": "ff98bd7e9275d28985424c68f57c173eea1ad86dfdb222736473ede94cf9f890",
+  "selfTest": "passed",
+  "tool": "germinal-goldcard-repair-tool-v2",
+  "toolSha256": "b19c05f77bb724fcd3c765f051333c54c9057227e2dca6159de88192c1b74918"
+}
