@@ -20,13 +20,8 @@
       ]
     },
     "slotId": {
-      "enum": [
-        "V1-W002-C01-001",
-        "V1-W002-C01-002",
-        "V1-W002-C01-003",
-        "V1-W002-C01-004",
-        "V1-W002-C01-005"
-      ]
+      "pattern": "^V1-W002-C(?:0[1-9]|10)-00[1-5]$",
+      "type": "string"
     }
   },
   "required": [
@@ -35,6 +30,5 @@
     "checks",
     "findings"
   ],
-  "title": "Germinal Crow checkpoint review",
   "type": "object"
 }

@@ -1,20 +1,20 @@
 {
-  "exactCheckpointInputFunctionTest": {
-    "bundleBytes": 4083,
-    "bundleSha256": "042fba366d3d0c0df12518a1569b2a70e8507baffa5e6cb58aa7386cbdb69ab1",
+  "exactWaveMaterialFunctionTest": {
+    "bytes": 22011,
     "passed": true,
-    "releaseCount": 1
+    "sha256": "c1297bba768f7510ec0ce05efad0018702ac524e35e78200e520f7534ac3bb4e"
   },
   "files": {
-    "crow-checkpoint-v2.schema.json": "21dbe95a25455f94397b8d3a9f19b6c85670103034ce37ff85de8b8d10066fa9",
+    "crow-checkpoint-v2.schema.json": "775cb4162f09f8c5b6bfcaf6f8f16e2a14c488d7815c163ad910d3fd2a16accc",
     "crow-review-v1.schema.json": "08d988695931961a7fa7ab5208af766aea3358c3cd19351b9538b7fc0832b6b5",
-    "germinal_tool.py": "8a2d169022db17e56b087618a7056819cd8e2d46f208810ef49df0339aa90b44",
-    "valkyrie-checkpoint-v2.schema.json": "00974715344cc5f7bf28740ab612617fb8d36621f4c062a7f64fe58e73f9e9ad",
+    "germinal_tool.py": "11310d21dba3bdb65306e6fcefcf52893369106cc23cb50ded605f7fddd369f9",
+    "valkyrie-checkpoint-v2.schema.json": "81cb1e0c47159017454080d55d974e9466e324c8b5d6c2744548df7e2c860fb1",
     "valkyrie-output-v1.schema.json": "4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026"
   },
-  "outputTransport": "authenticated api.github.com private draft-release bodies",
-  "reportTransport": "authenticated GitHub Contents API",
-  "runtime": "python>=3.11 standard-library plus curl fallback",
-  "selfTest": "passed for legacy 50-slot and Wave 002 five-slot checkpoint validators",
-  "toolkit": "germinal-infrastructure-v7"
+  "rejectedCheckpoint01Bundle": {
+    "reason": "one-line reuse and one-turn dialogue",
+    "sha256": "dd027dfdec8de610347463e93af2e6c5a395c559f098458204d774200e037e21"
+  },
+  "selfTest": "passed rich Card checkpoints 01 and 10",
+  "toolkit": "germinal-infrastructure-v8"
 }

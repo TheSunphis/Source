@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Germinal deterministic structural validator and packager. Standard library only."""
 from __future__ import annotations
-import argparse,base64,gzip,hashlib,io,json,os,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
-VERSION="germinal-tool-v7"
+import argparse,base64,gzip,hashlib,io,json,os,re,sys,tarfile,urllib.error,urllib.request,subprocess,shutil
+VERSION="germinal-tool-v8"
 VALK_FORMAT="germinal-valkyrie-output-v1"
 CROW_FORMAT="germinal-crow-review-v1"
 VALK_CHECKPOINT_FORMAT="germinal-valkyrie-checkpoint-v2"
@@ -69,8 +69,8 @@ def collect_line_refs(obj,path=""):
  if isinstance(obj,dict):
   for k,v in obj.items():
    q=path+"/"+k
-   if k.endswith("LineId") and isinstance(v,str):refs.append((q,v))
-   elif k.endswith("LineIds") and isinstance(v,list):refs.extend((q+f"/{i}",x) for i,x in enumerate(v) if isinstance(x,str))
+   if (k=="lineId" or k.endswith("LineId")) and isinstance(v,str):refs.append((q,v))
+   elif (k=="lineIds" or k.endswith("LineIds")) and isinstance(v,list):refs.extend((q+f"/{i}",x) for i,x in enumerate(v) if isinstance(x,str))
    elif k!="japaneseLines":refs.extend(collect_line_refs(v,q))
  elif isinstance(obj,list):
   for i,v in enumerate(obj):refs.extend(collect_line_refs(v,path+f"/{i}"))
@@ -80,22 +80,62 @@ def validate_expression(p,e,problems):
  required_strings(p,e,["expressionId","primaryLineId","category","usageSummary","verificationState"],problems)
  problems.need(e.get("verificationState")=="candidate",p+"/verificationState","must be candidate")
  problems.need(isinstance(e.get("kotoDifficulty"),int) and 1<=e.get("kotoDifficulty",0)<=5,p+"/kotoDifficulty","must be integer 1..5")
- for k in ("intentions","useWhen","takeCare","relationships","forms","responses","followUps","sources"):
-  problems.need(isinstance(e.get(k),list) and bool(e[k]),p+"/"+k,"required non-empty list")
- for k in ("dialogue","patterns","distinctions","library","provenance"):
-  problems.need(isinstance(e.get(k),dict),p+"/"+k,"required object")
+ for k in ("intentions","useWhen","takeCare","relationships","forms","responses","followUps","sources"):problems.need(isinstance(e.get(k),list) and bool(e[k]),p+"/"+k,"required non-empty list")
+ for k in ("dialogue","patterns","distinctions","library","provenance"):problems.need(isinstance(e.get(k),dict),p+"/"+k,"required object")
+ for k in ("intentions","useWhen","takeCare"):
+  if isinstance(e.get(k),list):problems.need(all(isinstance(x,str) and len(x.strip())>=5 for x in e[k]),p+"/"+k,"requires substantive strings")
+ for i,x in enumerate(e.get("relationships",[]) if isinstance(e.get("relationships"),list) else []):
+  q=f"{p}/relationships/{i}";problems.need(isinstance(x,dict),q,"must be object")
+  if isinstance(x,dict):required_strings(q,x,["context","guidance"],problems)
+ forms=e.get("forms",[]);primary_forms=[]
+ if isinstance(forms,list):
+  for i,x in enumerate(forms):
+   q=f"{p}/forms/{i}";problems.need(isinstance(x,dict),q,"must be object")
+   if isinstance(x,dict):
+    required_strings(q,x,["lineId","kind","register","meaning"],problems);problems.need(x.get("kind") in ("primary","alternate"),q+"/kind","invalid kind");problems.need(isinstance(x.get("ttsEligible"),bool),q+"/ttsEligible","must be boolean")
+    if x.get("kind")=="primary":primary_forms.append(x.get("lineId"))
+ problems.need(primary_forms==[e.get("primaryLineId")],p+"/forms","requires exactly one matching primary form")
+ module_ids={}
+ for k in ("responses","followUps"):
+  items=e.get(k,[]);problems.need(isinstance(items,list) and len(items)>=2,p+"/"+k,"requires at least two items");ids=[]
+  if isinstance(items,list):
+   for i,x in enumerate(items):
+    q=f"{p}/{k}/{i}";problems.need(isinstance(x,dict),q,"must be object")
+    if isinstance(x,dict):required_strings(q,x,["lineId","context","meaning"],problems);problems.need(isinstance(x.get("ttsEligible"),bool),q+"/ttsEligible","must be boolean");ids.append(x.get("lineId"))
+  problems.need(len(ids)==len(set(ids)),p+"/"+k,"line IDs must be unique");problems.need(e.get("primaryLineId") not in ids,p+"/"+k,"must not reuse primary line");module_ids[k]=ids
+ problems.need(set(module_ids.get("responses",[])).isdisjoint(module_ids.get("followUps",[])),p,"responses and follow-ups require distinct lines")
+ dialogue=e.get("dialogue",{})
+ if isinstance(dialogue,dict):
+  required_strings(p+"/dialogue",dialogue,["situation","relationship","register","targetLineId"],problems);turns=dialogue.get("turns");problems.need(isinstance(turns,list) and len(turns)>=2,p+"/dialogue/turns","requires at least two turns");turn_ids=[]
+  if isinstance(turns,list):
+   for i,x in enumerate(turns):
+    q=f"{p}/dialogue/turns/{i}";problems.need(isinstance(x,dict),q,"must be object")
+    if isinstance(x,dict):required_strings(q,x,["speaker","lineId","meaning"],problems);turn_ids.append(x.get("lineId"))
+  problems.need(len(set(turn_ids))>=2,p+"/dialogue/turns","requires at least two distinct lines");problems.need(dialogue.get("targetLineId") in turn_ids,p+"/dialogue/targetLineId","target must occur");module_ids["dialogue"]=turn_ids
+ for k in ("patterns","distinctions"):
+  obj=e.get(k,{})
+  if isinstance(obj,dict):
+   problems.need(obj.get("status") in ("supported","none-supported"),p+"/"+k+"/status","invalid status")
+   if obj.get("status")=="none-supported":problems.need(isinstance(obj.get("reason"),str) and len(obj["reason"].strip())>=20,p+"/"+k+"/reason","requires substantive reason")
+   if obj.get("status")=="supported":problems.need(isinstance(obj.get("entries"),list) and bool(obj["entries"]),p+"/"+k+"/entries","supported status requires entries")
+ library=e.get("library",{})
+ if isinstance(library,dict):
+  for k in ("searchJapanese","searchKana","searchMeaning","searchIntentions","searchUsage"):problems.need(isinstance(library.get(k),list) and bool(library[k]),p+"/library/"+k,"required non-empty list")
+  problems.need(isinstance(library.get("alternateForms"),list),p+"/library/alternateForms","must be list")
+ provenance=e.get("provenance",{})
+ if isinstance(provenance,dict):required_strings(p+"/provenance",provenance,["candidateBuild","candidateId","creationDate","creator","editorialStatus","evidenceBuild"],problems)
+ for i,src in enumerate(e.get("sources",[]) if isinstance(e.get("sources"),list) else []):problems.need(evidence_ok(src),f"{p}/sources/{i}","invalid source locator")
  lines=e.get("japaneseLines");problems.need(isinstance(lines,dict) and bool(lines),p+"/japaneseLines","required non-empty map")
  if not isinstance(lines,dict):return
  for key,line in lines.items():
   validate_line(p+"/japaneseLines/"+str(key),line,problems)
   if isinstance(line,dict):problems.need(line.get("lineId")==key,p+"/japaneseLines/"+str(key)+"/lineId","must equal map key")
- refs=collect_line_refs(e,p)
- referenced=set()
+ refs=collect_line_refs(e,p);referenced=set()
  for q,r in refs:problems.need(r in lines,q,"unknown line reference");referenced.add(r)
- problems.need(e.get("primaryLineId") in lines,p+"/primaryLineId","unknown primary line")
- referenced.add(e.get("primaryLineId"))
- problems.need(set(lines)==referenced,p+"/japaneseLines","orphan or unreferenced lines exist")
- for s in e.get("sources",[]):problems.need(evidence_ok(s),p+"/sources","invalid source locator")
+ problems.need(e.get("primaryLineId") in lines,p+"/primaryLineId","unknown primary line");referenced.add(e.get("primaryLineId"))
+ problems.need(set(lines)==referenced,p+"/japaneseLines","orphan or unreferenced lines exist");problems.need(len(lines)>=6,p+"/japaneseLines","Full Card requires at least six distinct Japanese lines")
+ primary=lines.get(e.get("primaryLineId"),{})
+ if isinstance(primary,dict):problems.need(any(not str(x.get("sourceId","")).startswith("editorial:") for x in primary.get("evidence",[])),p+"/primaryLineId","primary line requires external evidence")
 def validate_valkyrie(manifest,records):
  p=Problems();p.need(isinstance(manifest,dict),"/manifest","must be object")
  if not isinstance(manifest,dict):return p.items
@@ -106,8 +146,9 @@ def validate_valkyrie(manifest,records):
   p.need(manifest.get("assignment")=="germinal-wave001-valkyrie1-50","/manifest/assignment","wrong assignment")
   expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
  else:
-  p.need(manifest.get("assignment")=="germinal-wave002-valkyrie1-checkpoint01-5","/manifest/assignment","wrong checkpoint assignment")
-  expected=[f"V1-W002-C01-{i:03d}" for i in range(1,6)]
+  match=re.fullmatch(r"germinal-wave002-valkyrie1-checkpoint(0[1-9]|10)-5",str(manifest.get("assignment","")))
+  p.need(match is not None,"/manifest/assignment","wrong checkpoint assignment")
+  checkpoint=int(match.group(1)) if match else 0;expected=[f"V1-W002-C{checkpoint:02d}-{i:03d}" for i in range(1,6)]
   p.need(manifest.get("expectedSlotIds")==expected,"/manifest/expectedSlotIds","checkpoint slot identity mismatch")
  p.need(len(records)==len(expected),"/records",f"must contain exactly {len(expected)} records")
  p.need([x.get("slotId") if isinstance(x,dict) else None for x in records]==expected,"/records","slot IDs/order mismatch")
@@ -137,8 +178,9 @@ def validate_crow(manifest,records):
   p.need(manifest.get("assignment")=="germinal-wave001-crow1-review-50","/manifest/assignment","wrong assignment")
   expected=[f"V1-W001-{i:03d}" for i in range(1,51)]
  else:
-  p.need(manifest.get("assignment")=="germinal-wave002-crow1-checkpoint01-review-5","/manifest/assignment","wrong checkpoint assignment")
-  expected=[f"V1-W002-C01-{i:03d}" for i in range(1,6)]
+  match=re.fullmatch(r"germinal-wave002-crow1-checkpoint(0[1-9]|10)-review-5",str(manifest.get("assignment","")))
+  p.need(match is not None,"/manifest/assignment","wrong checkpoint assignment")
+  checkpoint=int(match.group(1)) if match else 0;expected=[f"V1-W002-C{checkpoint:02d}-{i:03d}" for i in range(1,6)]
   p.need(manifest.get("expectedSlotIds")==expected,"/manifest/expectedSlotIds","checkpoint slot identity mismatch")
  p.need(len(records)==len(expected),"/records",f"must contain exactly {len(expected)} records")
  p.need([x.get("slotId") if isinstance(x,dict) else None for x in records]==expected,"/records","slot IDs/order mismatch")
@@ -320,26 +362,15 @@ def deterministic_archive(manifest,records,records_name,out_path):
  with open(out_path,"wb") as f:f.write(raw.getvalue())
  return len(raw.getvalue()),sha(raw.getvalue())
 def self_test():
- if not shutil.which("curl"):raise RuntimeError("curl is required as the alternate TLS transport")
- probe=b"germinal-private-body-self-test"
- if base64.b64decode(base64.b64encode(probe),validate=True)!=probe:raise RuntimeError("base64 self-test failed")
- body=json.loads(private_chunk_body("probe.tar.gz",probe,probe,1,1))
- if base64.b64decode(body["payloadBase64"],validate=True)!=probe or body["bundleSha256"]!=sha(probe):raise RuntimeError("private output chunk self-test failed")
- validate_safe_report_text("# Safe report\n\n- Status: `submitted`\n")
- ev={"sourceId":"s","artifact":"a","locator":"l","claimScope":"c"}
- seg={"segmentId":"s1","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"m","grammaticalRole":"r","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"reviewed-unlinked","unlinkedReason":"none","evidence":[ev]}
- line={"lineId":"l1","japanese":"x","reading":"y","meaning":"m","ttsEligible":True,"evidence":[ev],"segments":[seg]}
- exp={"expressionId":"e","primaryLineId":"l1","category":"c","usageSummary":"u","verificationState":"candidate","kotoDifficulty":1,"intentions":["i"],"useWhen":["u"],"takeCare":["t"],"relationships":[{"context":"c","guidance":"g"}],"forms":[{"lineId":"l1"}],"responses":[{"lineId":"l1"}],"followUps":[{"lineId":"l1"}],"sources":[ev],"dialogue":{"targetLineId":"l1"},"patterns":{},"distinctions":{},"library":{},"provenance":{},"japaneseLines":{"l1":line}}
- rs=[{"slotId":f"V1-W001-{i:03d}","status":"submitted","expression":exp} for i in range(1,51)]
- m={"formatVersion":VALK_FORMAT,"agent":"Valkyrie1","assignment":"germinal-wave001-valkyrie1-50","attempted":50,"submitted":50,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(rs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"}
- probs=validate_valkyrie(m,rs)
- if probs:raise RuntimeError("self-test failed: "+probs[0])
- crs=[]
- for i in range(1,6):
-  item=json.loads(json.dumps(rs[i-1]));item["slotId"]=f"V1-W002-C01-{i:03d}";crs.append(item)
- cm={"formatVersion":VALK_CHECKPOINT_FORMAT,"agent":"Valkyrie1","assignment":"germinal-wave002-valkyrie1-checkpoint01-5","expectedSlotIds":[f"V1-W002-C01-{i:03d}" for i in range(1,6)],"attempted":5,"submitted":5,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(crs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"}
- probs=validate_valkyrie(cm,crs)
- if probs:raise RuntimeError("checkpoint self-test failed: "+probs[0])
+ if not shutil.which("curl"):raise RuntimeError("curl required")
+ probe=b"germinal-test";body=json.loads(private_chunk_body("p",probe,probe,1,1));assert base64.b64decode(body["payloadBase64"],validate=True)==probe;validate_safe_report_text("# Safe report\n- Status: `submitted`\n")
+ ext={"sourceId":"source:test","artifact":"a","locator":"l","claimScope":"c"};ed={"sourceId":"editorial:Valkyrie1","artifact":"private-checkpoint-output","locator":"line","claimScope":"editorial-proposal-not-source-attestation"}
+ def line(lid,external=False):
+  ev=ext if external else ed;seg={"segmentId":"s01","surface":"x","reading":"y","japaneseStart":0,"japaneseEnd":1,"readingStart":0,"readingEnd":1,"contextualMeaning":"meaning","grammaticalRole":"role","lemma":None,"inflection":None,"vocabularyCandidates":[],"selectedVocabularyId":None,"vocabularyDisposition":"deferred-zero-canonical-index","unlinkedReason":"checkpoint proposal; Zero canonical resolution required before acceptance","evidence":[ev]};return {"lineId":lid,"japanese":"x","reading":"y","meaning":"meaning","ttsEligible":True,"evidence":[ev],"segments":[seg]}
+ ids=["p","r1","r2","f1","f2","d1"];lines={x:line(x,x=="p") for x in ids};exp={"expressionId":"e","primaryLineId":"p","category":"category","usageSummary":"substantive usage summary","verificationState":"candidate","kotoDifficulty":1,"intentions":["intention"],"useWhen":["use when"],"takeCare":["take care"],"relationships":[{"context":"peers","guidance":"relationship guidance"}],"forms":[{"lineId":"p","kind":"primary","register":"standard","meaning":"meaning","ttsEligible":True}],"responses":[{"lineId":"r1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"r2","context":"context","meaning":"meaning","ttsEligible":True}],"followUps":[{"lineId":"f1","context":"context","meaning":"meaning","ttsEligible":True},{"lineId":"f2","context":"context","meaning":"meaning","ttsEligible":True}],"sources":[ext],"dialogue":{"situation":"situation","relationship":"peers","register":"standard","targetLineId":"p","turns":[{"speaker":"A","lineId":"p","meaning":"meaning"},{"speaker":"B","lineId":"d1","meaning":"meaning"}]},"patterns":{"status":"none-supported","reason":"No safe productive pattern is supported."},"distinctions":{"status":"none-supported","reason":"No safe nearby distinction is supported."},"library":{"searchJapanese":["x"],"searchKana":["y"],"searchMeaning":["m"],"searchIntentions":["i"],"searchUsage":["u"],"alternateForms":[]},"provenance":{"candidateBuild":"c","candidateId":"id","creationDate":"2026-01-01","creator":"Valkyrie1","editorialStatus":"proposal","evidenceBuild":"e"},"japaneseLines":lines}
+ for cp in (1,10):
+  rs=[{"slotId":f"V1-W002-C{cp:02d}-{i:03d}","status":"submitted","expression":exp} for i in range(1,6)];m={"formatVersion":VALK_CHECKPOINT_FORMAT,"agent":"Valkyrie1","assignment":f"germinal-wave002-valkyrie1-checkpoint{cp:02d}-5","expectedSlotIds":[r["slotId"] for r in rs],"attempted":5,"submitted":5,"abstained":0,"failed":0,"recordsSha256":sha(records_bytes(rs)),"inputAsset":{},"evidenceBuild":"e","candidateBuild":"c"};probs=validate_valkyrie(m,rs)
+  if probs:raise RuntimeError(f"checkpoint {cp} self-test failed: "+probs[0])
  return True
 def main(argv=None):
  ap=argparse.ArgumentParser();sub=ap.add_subparsers(dest="cmd",required=True)
