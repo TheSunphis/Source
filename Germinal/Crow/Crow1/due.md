@@ -1,9 +1,9 @@
-# Crow1 due — final hold after Zero acceptance exception
+# Crow1 due — waiting for completed 49-Card batch
 
 - Exact agent: `Crow1`
-- Assignment: `germinal-goldcard-ii-yo-crow1-correction-1`
-- Launch state: `HOLD_COMPLETED_EXCEPTION_RECORDED`
-- Expected reviews: `0`
+- Assignment: `germinal-crow1-review-49-1`
+- Launch state: `WAITING_FOR_ZERO_COMPILED_49`
+- Expected reviews: `49`
 - Public report: `Germinal/Crow/Crow1/report.md`
 
-Zero rejected both Crow passes as independent linguistic reviews. The user explicitly waived the Crow gate and authorized one non-live acceptance based on the approved preview, direct expression evidence, Zero review, and exact canonical checks. Do not relaunch.
+Do not start. Valkyrie1 must complete the 49 Cards; Zero will reconstruct, validate, compile canonical links, and provide one concrete per-Card review package. Crow will then perform one bounded batch review. No user mediation is required between individual Cards.
