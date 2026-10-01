@@ -1,29 +1,29 @@
 # GERMINAL commissioning command
 
-## One-file due system
+## Universal worker launch
 
-Each worker reads exactly one self-contained file in its own directory:
+The user points every worker to one bootstrap file:
 
-- Valkyrie1: `Germinal/Valkyrie/Valkyrie1/due.md`
-- Crow1: `Germinal/Crow/Crow1/due.md`
+- `Germinal/START.md`
 
 Launch prompts:
 
-- `Your name is Valkyrie1. Read Germinal/Valkyrie/Valkyrie1/due.md and do the work.`
-- After Zero activates Crow1's due: `Your name is Crow1. Read Germinal/Crow/Crow1/due.md and do the work.`
+- `Your name is Valkyrie1. Read Germinal/START.md and begin.`
+- After Crow1 activation: `Your name is Crow1. Read Germinal/START.md and begin.`
 
-Each `due.md` contains all instructions, safe input identities, the bounded assignment, private output contract, and public reporting rules. Workers do not need another Germinal instruction file.
+START locks the supplied identity, retrieves and verifies that agent's pinned `due.md`, verifies Zero-provided material and infrastructure, runs the self-test, checks assignment state, and begins the work. The user does not need to explain the task or manually provide another file.
 
-## Reports
+## Agent directories
 
-Each agent updates `report.md` in the same numbered directory. Public reports contain safe status metadata only. Detailed Expressions, analyses, evidence, and critic findings remain private draft-release assets.
+- `Germinal/Valkyrie/Valkyrie1/due.md` — complete creator work order.
+- `Germinal/Valkyrie/Valkyrie1/report.md` — public safe creator status.
+- `Germinal/Crow/Crow1/due.md` — complete critic work order.
+- `Germinal/Crow/Crow1/report.md` — public safe critic status.
+
+Detailed Expressions, analyses, evidence, and critic findings remain private draft-release assets.
 
 ## Current state
 
 - `Valkyrie1`: active; assigned 50 attempted Expression slots.
 - `Crow1`: waiting for Valkyrie1's immutable output identity; assigned to review all 50 afterward.
-- `Zero`: this original chat; coordinator, final gate, and learner-facing implementation. Zero has no directory.
-
-Zero also provides and pins all source material, schemas, validators, packaging tools, private output destinations, permissions, and report templates before activation. Workers do not set up or repair infrastructure.
-
-Supporting Germinal documents are maintained by Zero as expanded design/governance sources; workers execute only their own `due.md`.
+- `Zero`: this original chat; provides material, tools, infrastructure, coordination, final gates, and learner-facing implementation. Zero has no directory.
