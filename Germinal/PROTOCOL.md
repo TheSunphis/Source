@@ -10,6 +10,10 @@ The active operation uses three chats:
 
 Valkyrie1 and Crow1 must be separate chats. Additional numbered directories require explicit user approval.
 
+## Mandatory product contract
+
+Every agent must read and enforce `Germinal/PRODUCT-CONTRACT.md`. This protocol controls execution; the product contract controls what must be built and reviewed. Neither may weaken the other.
+
 ## Information boundaries
 
 - Workers may use only their immutable clean-room task packet, the current schemas, the source registry, and these instructions.
