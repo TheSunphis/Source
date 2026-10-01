@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `fb93ea9e1f20d194dd2ef04cf64e8b42eb64052b`
-- Valkyrie1 due SHA-256: `aee07e7b986b1ffdb3d39ae37a576c0669dda1bbe2a9ced338437b41707c8c3a`
-- Crow1 due SHA-256: `bbc6ff66213434a8331f139c6ebcec573b06988299ff43b6847dd66fd6376981`
+- Due commit: `0172042585f30c91a063bb627bc9f92b01d77c89`
+- Valkyrie1 due SHA-256: `1b5b459aa4bd84222d3f12ef5bfefc14577fa8e8aac75026a16474259404e5c1`
+- Crow1 due SHA-256: `22607ed272229a1e0af378a078a8f2bf4ea01772a8e2fde644e865d3855273c1`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -84,5 +84,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 49-Card completion due: `ACTIVE` — complete one bounded batch.
-- Crow1 49-Card review due: `WAITING_FOR_ZERO_COMPILED_49` — do not launch yet.
+- Valkyrie1 49-Card completion due: `HOLD_COMPLETED_AWAITING_CROW` — do not relaunch.
+- Crow1 49-Card review due: `ACTIVE` — perform one concrete batch review.
