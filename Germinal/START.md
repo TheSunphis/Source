@@ -25,8 +25,8 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `1463939a1ef13debea7693aaf437325bb6a22a01`
-- Valkyrie1 due SHA-256: `f2ef50a07aaad20831450e4e4717966dcf837fefdda130025d315168c459ac78`
+- Due commit: `175352ad680e5db9b753558370dbd9454fc57104`
+- Valkyrie1 due SHA-256: `bbe646965b8ac715a998e4ba6052aa03befa1939e17bba03dfbf26f2a29d31db`
 - Crow1 due SHA-256: `5de430a3fb58753fc188cbee13e880b3f2c54029bc7e123e60266792dfc9871d`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
@@ -83,5 +83,5 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 Wave 002 all-50 due: `ACTIVE` — revise Checkpoint 01, then process Checkpoints 02–10 in one execution without user relay.
-- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_VALKYRIE_WAVE` — do not launch until Zero pins all ten corrected private outputs.
+- Valkyrie1 Wave 002 all-50 due: `HOLD_ZERO_STRUCTURAL_FAILURE` — do not relaunch pending the user's disposition.
+- Crow1 Wave 002 all-50 review due: `WAITING_FOR_COMPLETE_VALKYRIE_WAVE` — do not launch; Zero has not released the submitted bundles for review.
