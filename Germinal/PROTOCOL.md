@@ -58,4 +58,4 @@ Only ZERO COMMAND may derive `passed-pilot-gates` after deterministic merge vali
 
 ## Staged production law
 
-Wave 001 is closed at 50 attempted, 0 submitted, and 50 abstained. Wave 002 uses ten gated checkpoints of five proposals from the same frozen candidate pool. For each checkpoint, Valkyrie must conserve five slot outcomes, Crow independently reviews all submitted proposals, and Zero closes deterministic gates before the next checkpoint opens. Accepted Expressions remain zero until canonical Vocabulary resolution and every final gate pass.
+Wave 001 is closed at 50 attempted, 0 submitted, and 50 abstained. Wave 002 uses ten gated checkpoints of five proposals from the same frozen candidate pool. Valkyrie processes all ten bounded checkpoints in one launch and conserves five outcomes per checkpoint. Zero validates all ten outputs before Crow is activated. Crow then reviews all ten checkpoints in one launch. The user is not a relay between checkpoints. Accepted Expressions remain zero until canonical Vocabulary resolution and every final gate pass.
