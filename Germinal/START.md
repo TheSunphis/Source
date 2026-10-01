@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `271d5eda556deedf89e42dd78e8d715986efac34`
-- Valkyrie1 due SHA-256: `1b5b459aa4bd84222d3f12ef5bfefc14577fa8e8aac75026a16474259404e5c1`
-- Crow1 due SHA-256: `ad54f371496d5c89cb0bb6b4f99ddf176d0dfe7288655070ed24976ab6c9ff32`
+- Due commit: `782c11e094ce140e37caf228e318f87b87933fc3`
+- Valkyrie1 due SHA-256: `9f8439030dce2da263fb941149460a7d56bc8551a0e1fd02afb9c10c9d9877e8`
+- Crow1 due SHA-256: `da8e4fc3daef9207f310e54b164e540f4a24052c636f6d60a919020340431b11`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -84,5 +84,7 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 
 ## Current routing state
 
-- Valkyrie1 49-Card completion due: `HOLD_COMPLETED_AWAITING_CROW` — do not relaunch.
-- Crow1 substantive 49-Card correction: `ACTIVE` — replace the rejected metadata-only result with actual Card repairs.
+- Germinal 50 private preview: `COMPLETED` — 50 accepted non-live Cards.
+- Valkyrie1: `HOLD_COMPLETED`.
+- Crow1: `HOLD_COMPLETED`.
+- Production publication and deployment remain unauthorized.
