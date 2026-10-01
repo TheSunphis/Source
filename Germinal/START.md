@@ -25,9 +25,9 @@ If the supplied name does not match exactly, stop with `failed — unknown agent
 
 Retrieve the mapped due from repository `TheSunphis/Source` at this exact immutable Git commit:
 
-- Due commit: `b34fd7f89708cb6a339bd26148c9e8be9d2ae9e6`
+- Due commit: `1537806d582bff72417737856d5b6f4d2d982664`
 - Valkyrie1 due SHA-256: `d8af9e2b9a231d78c845a2f7aac4377baf15110c645901de4fedf8f26fdd8298`
-- Crow1 due SHA-256: `3516dfd5b43bd732312f5ccd70a893152225d275acf28246d13fdeb48da9ecae`
+- Crow1 due SHA-256: `90a490fafcd28ddf82ae188b4216915e004942d19e7c787be9fe48e790b55733`
 
 Verify the selected file's SHA-256 before obeying it. Do not use a same-named file from another branch, commit, fork, cache, or local copy. On mismatch, stop and update only the mapped safe report with an infrastructure-failure reason code.
 
@@ -85,4 +85,4 @@ Allowed worker terminal statuses are `submitted`, `abstained`, or `failed`. Crow
 ## Current routing state
 
 - Valkyrie1 gold Card repair due: `HOLD_COMPLETED_USER_APPROVED_COMPILED` — do not relaunch.
-- Crow1 repair review due: `ACTIVE` — perform one issue-specific independent review.
+- Crow1 repair review due: `HOLD_COMPLETED_ZERO_REJECTED` — do not relaunch until the user chooses a recovery path.
