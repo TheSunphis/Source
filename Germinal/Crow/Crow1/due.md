@@ -23,6 +23,9 @@ If the user did not name you exactly `Crow1`, stop. Do not adopt another identit
 - Byte length: `510189`
 - SHA-256: `56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364`
 - Assignment material format: `germinal-assignment-material-v1`
+- Required transport: authenticated `api.github.com` private draft-release bodies; do not call the release-asset download host
+- Private chunk format: `germinal-private-body-chunk-v1`
+- Private chunk release IDs, in order: `400905253,400905261,400905274,400905281,400905290,400905301,400905309,400905316`
 - Parent frozen-pool asset: `expressions2-batch001-candidates.tar.gz` (`601941135`, `44861050` bytes, SHA-256 `1cc991839e1184dfce5bdcb3e54747d1873e2dd9c707f7478aa6d5995a52060d`)
 - Evidence build: `evidencebuild2:4cc90019ead5aa2e7b2dcbc7e82b1bcb`
 - Evidence manifest SHA-256: `849e288d8c05df9d1c9f24566e06c41fa91ed36db8199dd83b197f29a61fb252`
@@ -42,11 +45,11 @@ Do not review a guessed or merely same-named output. When activated, stream both
 
 Zero has prepared, self-tested, and pinned the infrastructure. Use it; do not rewrite, replace, or improvise a validator or packager.
 
-- Infrastructure commit: `1e386d2eded9135cfb6e964850aef0fbdb37d5b9`
-- Toolkit: `germinal-infrastructure-v3`
+- Infrastructure commit: `fef1e1f958b01513a4ae5b21fbe432d7b06bba9a`
+- Toolkit: `germinal-infrastructure-v4`
 - Runtime: Python 3.11 or newer plus Zero-pinned curl fallback for alternate TLS transport
 - Tool path: `Germinal/infrastructure/germinal_tool.py`
-- Tool SHA-256: `e2d005a05509815c4b3687c624677f031bbe183c3f7ae6ab051b003c8907cc58`
+- Tool SHA-256: `07eadfcadb708480330538b4ac3f75070dd8b292eabb4f8eeec2e467ae8d4df6`
 - Valkyrie schema: `Germinal/infrastructure/valkyrie-output-v1.schema.json`
 - Valkyrie schema SHA-256: `4f3130167991670833355b97ac54017189859dcb6d8c23b8d34d91bc68a87026`
 - Crow schema: `Germinal/infrastructure/crow-review-v1.schema.json`
@@ -57,7 +60,7 @@ Fetch those machine files from the pinned commit, verify SHA-256 before executio
 The relevant commands are:
 
 ```text
-python3 germinal_tool.py fetch-release-asset TheSunphis Source 603086307 510189 56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364 germinal-wave001-valkyrie1-material.tar.gz
+python3 germinal_tool.py fetch-release-body-bundle TheSunphis Source 400905253,400905261,400905274,400905281,400905290,400905301,400905309,400905316 510189 56c69937ecc6e2a1ae3d01ff16a6e3db319c645eef916d443e5d14816002c364 germinal-wave001-valkyrie1-material.tar.gz
 python3 germinal_tool.py validate-valkyrie manifest.json slots.ndjson
 python3 germinal_tool.py validate-crow manifest.json reviews.ndjson
 python3 germinal_tool.py package valkyrie manifest.json slots.ndjson germinal-valkyrie1-wave001-50.tar.gz
