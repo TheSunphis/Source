@@ -15,3 +15,5 @@
 ## Evidence-locked repair
 
 The user selected one repair of the same Card. The frozen reassurance dialogue act and a single segmentation policy are binding. Zero must show the unlinked repair to the user before any Vocabulary compile or Crow activation.
+
+The evidence-locked repair passed Zero structural validation and is held for explicit user preview approval. No linking or review has started.

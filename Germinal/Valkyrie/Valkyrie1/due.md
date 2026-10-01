@@ -2,12 +2,12 @@
 
 - Exact agent: `Valkyrie1`
 - Assignment: `germinal-goldcard-ii-yo-valkyrie1-repair-1`
-- Launch state: `ACTIVE`
+- Launch state: `HOLD_COMPLETED_AWAITING_USER_PREVIEW`
 - Exact slot: `V1-GOLD-001`
 - Scope: repair one proposal; no Vocabulary compilation
 - Public report: `Germinal/Valkyrie/Valkyrie1/report.md`
 
-The user selected one repair of the same Card with a user-visible checkpoint before any new linking or Crow review. Preserve the frozen candidate boundary.
+Valkyrie1 completed the evidence-locked repair. Zero reconstructed and validated the immutable proposal and is presenting it to the user. Do not relaunch or revise until the user explicitly approves or requests changes.
 
 ## Non-negotiable semantic lock
 
