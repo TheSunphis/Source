@@ -1,6 +1,6 @@
 # Source-Only Storage Policy
 
-- Authority: `TheSunphis/Source`, branch `expressions2-development`.
+- Authority: `TheSunphis/Source`, branch `Germinal`.
 - Development path: `Expressions2-development/Batch001/`.
 - The live `Expressions/` tree is untouched.
 - Public branch content is limited to schemas, source/snapshot metadata, licence routes, deterministic fixtures, tools, hashes, counts, and reports.

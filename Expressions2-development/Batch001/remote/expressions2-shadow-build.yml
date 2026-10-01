@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: expressions2-development
+          ref: Germinal
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -34,7 +34,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           EXPRESSIONS2_REPOSITORY: ${{ github.repository }}
-          EXPRESSIONS2_BRANCH: expressions2-development
+          EXPRESSIONS2_BRANCH: Germinal
           EXPRESSIONS2_MODE: pilot-shard
           EXPRESSIONS2_PILOT_INDEX: ${{ matrix.index }}
           EXPRESSIONS2_RUN_ID: ${{ github.run_id }}
@@ -49,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: expressions2-development
+          ref: Germinal
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -59,7 +59,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           EXPRESSIONS2_REPOSITORY: ${{ github.repository }}
-          EXPRESSIONS2_BRANCH: expressions2-development
+          EXPRESSIONS2_BRANCH: Germinal
           EXPRESSIONS2_MODE: pilot-merge
           EXPRESSIONS2_RUN_ID: ${{ github.run_id }}
         run: python Expressions2-development/Batch001/remote/remote_build.py

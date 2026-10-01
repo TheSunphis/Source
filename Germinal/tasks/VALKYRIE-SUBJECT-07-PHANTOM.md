@@ -1,14 +1,14 @@
-# GERMINAL // VALKYRIE SUBJECT-04 // FALCON
+# GERMINAL // VALKYRIE SUBJECT-07 // PHANTOM
 
 ## Startup identity
 
-Use this exact chat name: `GERMINAL // VALKYRIE SUBJECT-04 // FALCON`.
+Use this exact chat name: `GERMINAL // VALKYRIE SUBJECT-07 // PHANTOM`.
 
-Read `Instruction/PROTOCOL.md` before doing anything else.
+Read `Germinal/PROTOCOL.md` before doing anything else.
 
 ## Mission
 
-Compile exactly **one** clean-room pilot family for slot `04` from the immutable private evidence packet assigned by ZERO COMMAND.
+Compile exactly **one** clean-room pilot family for slot `07` from the immutable private evidence packet assigned by ZERO COMMAND.
 
 Do not begin until ZERO COMMAND supplies all of the following:
 
@@ -16,7 +16,7 @@ Do not begin until ZERO COMMAND supplies all of the following:
 - exact asset byte length;
 - SHA-256 digest;
 - candidate-build identity;
-- slot identity `04`;
+- slot identity `07`;
 - output asset name.
 
 ## Required work

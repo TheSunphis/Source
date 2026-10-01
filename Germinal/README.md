@@ -1,4 +1,4 @@
-# Instruction — GERMINAL commissioning command
+# GERMINAL commissioning command
 
 This folder is the repository-safe command board for a bounded Koto Expressions clean-room agent swarm. The naming is inspired by the Germinal Organisation style in *The Legendary Mechanic* while remaining operationally explicit.
 

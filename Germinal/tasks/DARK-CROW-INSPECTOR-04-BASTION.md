@@ -4,7 +4,7 @@
 
 Use this exact chat name: `GERMINAL // DARK-CROW INSPECTOR-04 // BASTION`.
 
-Read `Instruction/PROTOCOL.md` before doing anything else.
+Read `Germinal/PROTOCOL.md` before doing anything else.
 
 ## Mission
 

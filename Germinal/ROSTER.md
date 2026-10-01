@@ -13,4 +13,4 @@
 
 Create exactly **16 additional chats**. This chat remains `GERMINAL // ZERO COMMAND`.
 
-Each new chat must begin by reading its one task file and `Instruction/PROTOCOL.md`. Do not give one chat multiple identities.
+Each new chat must begin by reading its one task file and `Germinal/PROTOCOL.md`. Do not give one chat multiple identities.

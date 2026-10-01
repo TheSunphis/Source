@@ -1,14 +1,14 @@
-# GERMINAL // DARK-CROW INSPECTOR-02 // WARDEN
+# GERMINAL // DARK-CROW INSPECTOR-06 // CIPHER
 
 ## Startup identity
 
-Use this exact chat name: `GERMINAL // DARK-CROW INSPECTOR-02 // WARDEN`.
+Use this exact chat name: `GERMINAL // DARK-CROW INSPECTOR-06 // CIPHER`.
 
-Read `Instruction/PROTOCOL.md` before doing anything else.
+Read `Germinal/PROTOCOL.md` before doing anything else.
 
 ## Mission
 
-Independently audit pilot slot `02` produced by `GERMINAL // VALKYRIE SUBJECT-02 // EMBER`.
+Independently audit pilot slot `06` produced by `GERMINAL // VALKYRIE SUBJECT-06 // RAVEN`.
 
 Do not begin until ZERO COMMAND supplies all of the following:
 
