@@ -1,0 +1,7 @@
+{
+  "liveTarget": false,
+  "restrictedPayloadEmbedded": false,
+  "selfTest": "passed",
+  "tool": "germinal-full-expression-card-renderer-v1",
+  "toolSha256": "a4468f706d7973251e8308761efbd44c16412005e94b20cd8a34e7f2e92953d9"
+}
