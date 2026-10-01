@@ -648,7 +648,17 @@ def run_model_requests(role: str, requests: list[dict[str, Any]], lock: dict[str
         try:
             model_path = server.start(spec)
             for item in misses:
-                value, usage, elapsed = server.call(spec, item["system"], item["user"], item["schema"])
+                timeout_seconds = int(spec.get("requestTimeoutSeconds", 1800))
+                print(
+                    f"MODEL_REQUEST_START role={role} candidate={item['candidateId']} timeoutSeconds={timeout_seconds}",
+                    flush=True,
+                )
+                try:
+                    value, usage, elapsed = server.call(spec, item["system"], item["user"], item["schema"])
+                except TimeoutError as exc:
+                    raise PilotError(
+                        f"model request exceeded hard timeout: role={role} candidate={item['candidateId']} seconds={timeout_seconds}"
+                    ) from exc
                 validate(value, item["schema"], registry, role + " response")
                 capture = {
                     "schemaVersion": 1, "role": role, "candidateId": item["candidateId"], "cacheKey": item["cacheKey"],
